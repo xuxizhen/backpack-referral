@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 
-type Language = 'en' | 'zh-cn' | 'zh-tw';
+type Language = 'en' | 'zh-cn' | 'zh-tw' | 'fr' | 'pt' | 'it' | 'de' | 'ja' | 'ko';
 
 // Google Analytics type definition
 declare global {
@@ -17,6 +17,12 @@ interface Translations {
     en: string;
     'zh-cn': string;
     'zh-tw': string;
+    fr: string;
+    pt: string;
+    it: string;
+    de: string;
+    ja: string;
+    ko: string;
   };
 }
 
@@ -24,138 +30,145 @@ const translations: Translations = {
   title: {
     en: 'Backpack',
     'zh-cn': 'Backpack',
-    'zh-tw': 'Backpack'
+    'zh-tw': 'Backpack',
+    fr: 'Backpack',
+    pt: 'Backpack',
+    it: 'Backpack',
+    de: 'Backpack',
+    ja: 'Backpack',
+    ko: 'Backpack'
   },
   subtitle: {
     en: 'The crypto trading platform built for the community',
     'zh-cn': '为社区打造的加密货币交易平台',
-    'zh-tw': '為社群打造的加密貨幣交易平台'
+    'zh-tw': '為社群打造的加密貨幣交易平台',
+    fr: 'La plateforme de trading crypto conçue pour la communauté',
+    pt: 'A plataforma de negociação de criptomoedas construída para a comunidade',
+    it: 'La piattaforma di trading crypto costruita per la comunità',
+    de: 'Die Krypto-Handelsplattform für die Community',
+    ja: 'コミュニティのために構築された暗号通貨取引プラットフォーム',
+    ko: '커뮤니티를 위해 구축된 암호화폐 거래 플랫폼'
   },
-  description: {
-    en: 'Experience the future of crypto trading with Backpack - the fastest, most intuitive exchange platform. Join millions of traders worldwide and discover why we\'re the #1 choice for crypto enthusiasts.',
-    'zh-cn': '体验Backpack加密货币交易的未来 - 最快速、最直观的交易平台。加入全球数百万交易者，发现为什么我们是加密货币爱好者的首选。',
-    'zh-tw': '體驗Backpack加密貨幣交易的未來 - 最快速、最直觀的交易平台。加入全球數百萬交易者，發現為什麼我們是加密貨幣愛好者的首選。'
+  hotActivities: {
+    en: '🔥 Hot Activities & Campaigns',
+    'zh-cn': '🔥 热门活动与奖励',
+    'zh-tw': '🔥 熱門活動與獎勵',
+    fr: '🔥 Activités et Campagnes Populaires',
+    pt: '🔥 Atividades e Campanhas Populares',
+    it: '🔥 Attività e Campagne Popolari',
+    de: '🔥 Beliebte Aktivitäten & Kampagnen',
+    ja: '🔥 人気のアクティビティ＆キャンペーン',
+    ko: '🔥 인기 활동 및 캠페인'
   },
-  limitedOffer: {
-    en: '🎉 Limited Time Offer - Get Started Today!',
-    'zh-cn': '🎉 限时优惠 - 立即开始！',
-    'zh-tw': '🎉 限時優惠 - 立即開始！'
+  tradingFeatures: {
+    en: '⚡ Trading Features',
+    'zh-cn': '⚡ 交易功能',
+    'zh-tw': '⚡ 交易功能',
+    fr: '⚡ Fonctionnalités de Trading',
+    pt: '⚡ Recursos de Negociação',
+    it: '⚡ Funzionalità di Trading',
+    de: '⚡ Trading-Funktionen',
+    ja: '⚡ トレーディング機能',
+    ko: '⚡ 거래 기능'
   },
-  offerDetails: {
-    en: '• Zero trading fees for your first 30 days\n• Instant deposits and withdrawals\n• Access to exclusive token launches\n• 24/7 premium customer support',
-    'zh-cn': '• 前30天零交易费用\n• 即时存取款\n• 独家代币发行\n• 24/7高级客户支持',
-    'zh-tw': '• 前30天零交易費用\n• 即時存取款\n• 獨家代幣發行\n• 24/7高級客戶支援'
+  pointsProgram: {
+    en: 'Backpack Points Season 2 is LIVE! Earn points for every trade and unlock exclusive rewards.',
+    'zh-cn': 'Backpack积分第二季正式上线！每笔交易都能获得积分，解锁独家奖励。',
+    'zh-tw': 'Backpack積分第二季正式上線！每筆交易都能獲得積分，解鎖獨家獎勵。',
+    fr: 'La Saison 2 des Points Backpack est EN DIRECT ! Gagnez des points pour chaque trade et débloquez des récompenses exclusives.',
+    pt: 'A Temporada 2 dos Pontos Backpack está AO VIVO! Ganhe pontos para cada negociação e desbloqueie recompensas exclusivas.',
+    it: 'La Stagione 2 dei Punti Backpack è LIVE! Guadagna punti per ogni trade e sblocca ricompense esclusive.',
+    de: 'Backpack Points Season 2 ist LIVE! Verdiene Punkte für jeden Trade und schalte exklusive Belohnungen frei.',
+    ja: 'Backpackポイントシーズン2が開始！取引ごとにポイントを獲得し、限定報酬をアンロック。',
+    ko: 'Backpack 포인트 시즌 2가 시작됐습니다! 모든 거래에서 포인트를 획득하고 독점 보상을 잠금해제하세요.'
   },
-  trustText: {
-    en: 'Join over 5 million traders who trust Backpack for their crypto journey',
-    'zh-cn': '加入超过500万信任Backpack的交易者',
-    'zh-tw': '加入超過500萬信任Backpack的交易者'
+  eclipseAirdrop: {
+    en: 'Eclipse ES Airdrop LIVE on Backpack - Trade Eclipse tokens and earn exclusive rewards!',
+    'zh-cn': 'Eclipse ES空投在Backpack上线 - 交易Eclipse代币并获得独家奖励！',
+    'zh-tw': 'Eclipse ES空投在Backpack上線 - 交易Eclipse代幣並獲得獨家獎勵！',
+    fr: 'Eclipse ES Airdrop EN DIRECT sur Backpack - Tradez les tokens Eclipse et gagnez des récompenses exclusives !',
+    pt: 'Eclipse ES Airdrop AO VIVO no Backpack - Negocie tokens Eclipse e ganhe recompensas exclusivas!',
+    it: 'Eclipse ES Airdrop LIVE su Backpack - Fai trading di token Eclipse e guadagna ricompense esclusive!',
+    de: 'Eclipse ES Airdrop LIVE auf Backpack - Handle Eclipse-Token und verdiene exklusive Belohnungen!',
+    ja: 'Eclipse ES エアドロップがBackpackで開始 - Eclipseトークンを取引して限定報酬を獲得！',
+    ko: 'Eclipse ES 에어드롭이 Backpack에서 진행 중 - Eclipse 토큰을 거래하고 독점 보상을 획득하세요!'
   },
-  memeTitle: {
-    en: 'Meme Coin Masters',
-    'zh-cn': 'Meme币大师',
-    'zh-tw': 'Meme幣大師'
+  pumpTrading: {
+    en: 'Pump.fun tokens are now LIVE for trading on Backpack! Discover the next viral meme coin.',
+    'zh-cn': 'Pump.fun代币现已在Backpack上线交易！发现下一个病毒式meme币。',
+    'zh-tw': 'Pump.fun代幣現已在Backpack上線交易！發現下一個病毒式meme幣。',
+    fr: 'Les tokens Pump.fun sont maintenant EN DIRECT pour le trading sur Backpack ! Découvrez la prochaine meme coin virale.',
+    pt: 'Os tokens Pump.fun estão agora AO VIVO para negociação no Backpack! Descubra a próxima meme coin viral.',
+    it: 'I token Pump.fun sono ora LIVE per il trading su Backpack! Scopri la prossima meme coin virale.',
+    de: 'Pump.fun-Token sind jetzt LIVE für den Handel auf Backpack! Entdecke die nächste virale Meme-Münze.',
+    ja: 'Pump.funトークンがBackpackで取引開始！次のバイラルミームコインを発見しよう。',
+    ko: 'Pump.fun 토큰이 이제 Backpack에서 거래 가능합니다! 다음 바이럴 밈 코인을 발견하세요.'
   },
-  memeDescription: {
-    en: 'Join the meme coin revolution! Trade $PEPE, $DOGE, $SHIB and discover the next 100x gem. Lightning-fast execution, real-time alerts, and exclusive meme coin launches.',
-    'zh-cn': '加入meme币革命！交易$PEPE、$DOGE、$SHIB，发现下一个100倍宝石。闪电般的执行、实时提醒和独家meme币发行。',
-    'zh-tw': '加入meme幣革命！交易$PEPE、$DOGE、$SHIB，發現下一個100倍寶石。閃電般的執行、即時提醒和獨家meme幣發行。'
+  fragmetricCampaign: {
+    en: 'Fragmetric Frenzy Airdrop Campaign - Participate in trading campaigns and win big!',
+    'zh-cn': 'Fragmetric Frenzy空投活动 - 参与交易活动，赢取大奖！',
+    'zh-tw': 'Fragmetric Frenzy空投活動 - 參與交易活動，贏取大獎！',
+    fr: 'Campagne Airdrop Fragmetric Frenzy - Participez aux campagnes de trading et gagnez gros !',
+    pt: 'Campanha Airdrop Fragmetric Frenzy - Participe das campanhas de negociação e ganhe muito!',
+    it: 'Campagna Airdrop Fragmetric Frenzy - Partecipa alle campagne di trading e vinci alla grande!',
+    de: 'Fragmetric Frenzy Airdrop-Kampagne - Nimm an Trading-Kampagnen teil und gewinne groß!',
+    ja: 'Fragmetric Frenzy エアドロップキャンペーン - トレーディングキャンペーンに参加して大きく勝利しよう！',
+    ko: 'Fragmetric Frenzy 에어드롭 캠페인 - 거래 캠페인에 참여하고 큰 상금을 획득하세요!'
   },
-  memeButton: {
+  newUserCampaign: {
+    en: 'New User Campaign - Get up to $200 in trading rewards for new signups!',
+    'zh-cn': '新用户活动 - 新注册用户可获得高达200美元的交易奖励！',
+    'zh-tw': '新用戶活動 - 新註冊用戶可獲得高達200美元的交易獎勵！',
+    fr: 'Campagne Nouveaux Utilisateurs - Obtenez jusqu\'à 200$ en récompenses de trading pour les nouvelles inscriptions !',
+    pt: 'Campanha de Novos Usuários - Ganhe até $200 em recompensas de negociação para novas inscrições!',
+    it: 'Campagna Nuovi Utenti - Ottieni fino a $200 in ricompense di trading per le nuove iscrizioni!',
+    de: 'Neue Benutzer-Kampagne - Erhalte bis zu $200 in Trading-Belohnungen für neue Anmeldungen!',
+    ja: '新規ユーザーキャンペーン - 新規登録で最大200ドルのトレーディング報酬を獲得！',
+    ko: '신규 사용자 캠페인 - 신규 가입자에게 최대 $200의 거래 보상을 제공합니다!'
+  },
+  lowFees: {
+    en: '0.02% Maker Fees - Industry-leading low trading fees',
+    'zh-cn': '0.02%挂单费用 - 行业领先的低交易费用',
+    'zh-tw': '0.02%掛單費用 - 行業領先的低交易費用',
+    fr: '0.02% de Frais Maker - Frais de trading bas leaders de l\'industrie',
+    pt: '0.02% de Taxas Maker - Taxas de negociação baixas líderes da indústria',
+    it: '0.02% di Commissioni Maker - Commissioni di trading basse leader del settore',
+    de: '0.02% Maker-Gebühren - Branchenführende niedrige Handelsgebühren',
+    ja: '0.02%メイカー手数料 - 業界トップクラスの低取引手数料',
+    ko: '0.02% 메이커 수수료 - 업계 최고 수준의 낮은 거래 수수료'
+  },
+  fastExecution: {
+    en: 'Sub-millisecond execution speed for professional traders',
+    'zh-cn': '专业交易者的亚毫秒执行速度',
+    'zh-tw': '專業交易者的亞毫秒執行速度',
+    fr: 'Vitesse d\'exécution inférieure à la milliseconde pour les traders professionnels',
+    pt: 'Velocidade de execução sub-milissegundo para traders profissionais',
+    it: 'Velocità di esecuzione sub-millisecondi per trader professionali',
+    de: 'Sub-Millisekunden-Ausführungsgeschwindigkeit für professionelle Trader',
+    ja: 'プロトレーダー向けのミリ秒未満の実行速度',
+    ko: '프로 트레이더를 위한 밀리초 미만의 실행 속도'
+  },
+  registerButton: {
     en: 'Register & Trade Now →',
     'zh-cn': '立即注册交易 →',
-    'zh-tw': '立即註冊交易 →'
-  },
-  chineseTitle: {
-    en: 'Chinese Community',
-    'zh-cn': '中文社区',
-    'zh-tw': '中文社群'
-  },
-  chineseDescription: {
-    en: 'Crypto trading platform built for Chinese users! Chinese customer service, USD/fiat deposits, simplified interface. Compliant and secure, mainland China KYC support, Hong Kong bank card USD deposits.',
-    'zh-cn': '专为华人用户打造的加密货币交易平台！中文客服、美元法币出入金、简体界面。合规安全，大陆KYC合法通过，香港地区银行卡美金法币出入金。',
-    'zh-tw': '專為華人用戶打造的加密貨幣交易平台！中文客服、美元法幣出入金、簡體界面。合規安全，大陸KYC合法通過，香港地區銀行卡美金法幣出入金。'
-  },
-  chineseButton: {
-    en: 'Register & Trade Now →',
-    'zh-cn': '立即注册交易 →',
-    'zh-tw': '立即註冊交易 →'
-  },
-  gamingTitle: {
-    en: 'Gaming Community',
-    'zh-cn': '游戏社区',
-    'zh-tw': '遊戲社群'
-  },
-  gamingDescription: {
-    en: 'Level up your crypto game! Trade gaming tokens, NFTs, and metaverse assets. From $AXS to $SAND, find all gaming tokens in one place with pro-level tools.',
-    'zh-cn': '提升你的加密游戏！交易游戏代币、NFT和元宇宙资产。从$AXS到$SAND，在一个地方找到所有游戏代币，配备专业级工具。',
-    'zh-tw': '提升你的加密遊戲！交易遊戲代幣、NFT和元宇宙資產。從$AXS到$SAND，在一個地方找到所有遊戲代幣，配備專業級工具。'
-  },
-  gamingButton: {
-    en: 'Register & Trade Now →',
-    'zh-cn': '立即注册交易 →',
-    'zh-tw': '立即註冊交易 →'
-  },
-  whyTitle: {
-    en: 'Why 5M+ Traders Choose Backpack',
-    'zh-cn': '为什么500万+交易者选择Backpack',
-    'zh-tw': '為什麼500萬+交易者選擇Backpack'
-  },
-  readyTitle: {
-    en: 'Ready to Start Your Crypto Journey?',
-    'zh-cn': '准备好开始您的加密之旅了吗？',
-    'zh-tw': '準備好開始您的加密之旅了嗎？'
-  },
-  readyDescription: {
-    en: 'Join millions of traders who\'ve already discovered the Backpack advantage. Don\'t miss out on the next big opportunity!',
-    'zh-cn': '加入已经发现Backpack优势的数百万交易者。不要错过下一个大机会！',
-    'zh-tw': '加入已經發現Backpack優勢的數百萬交易者。不要錯過下一個大機會！'
-  },
-  getStartedButton: {
-    en: 'Register & Trade Now →',
-    'zh-cn': '立即注册交易 →',
-    'zh-tw': '立即註冊交易 →'
-  },
-  alreadyAccount: {
-    en: 'Already have an account?',
-    'zh-cn': '已经有账户？',
-    'zh-tw': '已經有賬戶？'
-  },
-  signIn: {
-    en: 'Sign in to Backpack',
-    'zh-cn': '登录Backpack',
-    'zh-tw': '登錄Backpack'
+    'zh-tw': '立即註冊交易 →',
+    fr: 'S\'inscrire et Trader Maintenant →',
+    pt: 'Registrar e Negociar Agora →',
+    it: 'Registrati e Fai Trading Ora →',
+    de: 'Jetzt Registrieren & Handeln →',
+    ja: '今すぐ登録して取引 →',
+    ko: '지금 등록하고 거래하기 →'
   },
   disclaimer: {
     en: 'All website content is AI-generated. Backpack promotions mentioned are not guaranteed to be real or effective, and do not constitute investment advice. Virtual currency investment requires caution - please do your own research.',
     'zh-cn': '所有网站内容由AI生成，页面提及的Backpack优惠不保证真实有效，不构成投资建议，虚拟货币投资需谨慎，请自己做好研究。',
-    'zh-tw': '所有網站內容由AI生成，頁面提及的Backpack優惠不保證真實有效，不構成投資建議，虛擬貨幣投資需謹慎，請自己做好研究。'
-  },
-  // SEO Meta Tags
-  seoTitle: {
-    en: 'Backpack Exchange - Register & Trade Crypto with 10% Referral Bonus',
-    'zh-cn': 'Backpack交易所 - 注册交易加密货币，获得10%推荐返佣',
-    'zh-tw': 'Backpack交易所 - 註冊交易加密貨幣，獲得10%推薦返佣'
-  },
-  seoDescription: {
-    en: 'Join Backpack crypto exchange and get exclusive newbie rewards plus up to 10% referral commission. Trade meme coins, access Chinese support, and join gaming communities. Register now for zero fees!',
-    'zh-cn': '加入Backpack加密货币交易所，获得独家新手奖励和高达10%推荐返佣。交易meme币，享受中文支持，加入游戏社区。立即注册享受零手续费！',
-    'zh-tw': '加入Backpack加密貨幣交易所，獲得獨家新手獎勵和高達10%推薦返佣。交易meme幣，享受中文支援，加入遊戲社群。立即註冊享受零手續費！'
-  },
-  seoKeywords: {
-    en: 'Backpack exchange, crypto trading, meme coins, referral bonus, cryptocurrency, Bitcoin, Ethereum, trading platform, crypto exchange, blockchain',
-    'zh-cn': 'Backpack交易所, 加密货币交易, meme币, 推荐返佣, 数字货币, 比特币, 以太坊, 交易平台, 加密交易所, 区块链',
-    'zh-tw': 'Backpack交易所, 加密貨幣交易, meme幣, 推薦返佣, 數位貨幣, 比特幣, 以太坊, 交易平台, 加密交易所, 區塊鏈'
-  },
-  exclusiveBonus: {
-    en: '🎁 Exclusive Bonus: Up to 10% Referral Commission',
-    'zh-cn': '🎁 专属福利：最高10%返佣奖励',
-    'zh-tw': '🎁 專屬福利：最高10%返佣獎勵'
-  },
-  bonusDetails: {
-    en: '• Register through this page to get exclusive newbie rewards\n• Earn up to 10% commission on referrals\n• Additional trading bonuses for active users\n• VIP customer support access',
-    'zh-cn': '• 通过此页面注册获得独家新手奖励\n• 推荐返佣最高可达10%\n• 活跃用户额外交易奖励\n• VIP客户支持通道',
-    'zh-tw': '• 透過此頁面註冊獲得獨家新手獎勵\n• 推薦返佣最高可達10%\n• 活躍用戶額外交易獎勵\n• VIP客戶支援通道'
+    'zh-tw': '所有網站內容由AI生成，頁面提及的Backpack優惠不保證真實有效，不構成投資建議，虛擬貨幣投資需謹慎，請自己做好研究。',
+    fr: 'Tout le contenu du site Web est généré par l\'IA. Les promotions Backpack mentionnées ne sont pas garanties d\'être réelles ou efficaces, et ne constituent pas des conseils d\'investissement. L\'investissement en crypto-monnaies nécessite de la prudence - veuillez faire vos propres recherches.',
+    pt: 'Todo o conteúdo do site é gerado por IA. As promoções Backpack mencionadas não têm garantia de serem reais ou eficazes, e não constituem conselho de investimento. O investimento em criptomoedas requer cautela - faça sua própria pesquisa.',
+    it: 'Tutto il contenuto del sito web è generato dall\'IA. Le promozioni Backpack menzionate non sono garantite per essere reali o efficaci, e non costituiscono consigli di investimento. L\'investimento in criptovalute richiede cautela - fai le tue ricerche.',
+    de: 'Alle Website-Inhalte sind KI-generiert. Die erwähnten Backpack-Promotionen sind nicht garantiert real oder wirksam und stellen keine Anlageberatung dar. Kryptowährungs-Investitionen erfordern Vorsicht - bitte recherchieren Sie selbst.',
+    ja: 'すべてのウェブサイトコンテンツはAI生成です。記載されているBackpackのプロモーションは真実性や有効性が保証されておらず、投資アドバイスを構成するものではありません。暗号通貨投資には注意が必要です - 自分で調査してください。',
+    ko: '모든 웹사이트 콘텐츠는 AI에 의해 생성되었습니다. 언급된 Backpack 프로모션은 실제이거나 효과적임이 보장되지 않으며 투자 조언을 구성하지 않습니다. 암호화폐 투자에는 주의가 필요합니다 - 스스로 조사하십시오.'
   }
 };
 
@@ -166,21 +179,21 @@ const detectUserLanguage = (): Language => {
   const userLanguage = navigator.language || navigator.languages?.[0] || 'en';
   const langCode = userLanguage.toLowerCase();
   
-  // Match simplified Chinese
+  // Match specific languages
   if (langCode.includes('zh-cn') || langCode.includes('zh-hans') || langCode === 'zh') {
     return 'zh-cn';
   }
-  
-  // Match traditional Chinese
   if (langCode.includes('zh-tw') || langCode.includes('zh-hant') || 
       langCode.includes('zh-hk') || langCode.includes('zh-mo')) {
     return 'zh-tw';
   }
-  
-  // Match English
-  if (langCode.includes('en')) {
-    return 'en';
-  }
+  if (langCode.includes('fr')) return 'fr';
+  if (langCode.includes('pt')) return 'pt';
+  if (langCode.includes('it')) return 'it';
+  if (langCode.includes('de')) return 'de';
+  if (langCode.includes('ja')) return 'ja';
+  if (langCode.includes('ko')) return 'ko';
+  if (langCode.includes('en')) return 'en';
   
   // Default to English for all other languages
   return 'en';
@@ -231,22 +244,13 @@ export default function Home() {
 
   // Update document title and meta tags when language changes
   useEffect(() => {
-    document.title = t('seoTitle');
+    document.title = `Backpack Exchange - ${t('subtitle')}`;
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', t('seoDescription'));
+      metaDescription.setAttribute('content', t('subtitle'));
     }
-    
-    // Update meta keywords
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
-      document.head.appendChild(metaKeywords);
-    }
-    metaKeywords.setAttribute('content', t('seoKeywords'));
     
     // Update language attribute
     document.documentElement.setAttribute('lang', language);
@@ -260,8 +264,8 @@ export default function Home() {
           "@context": "https://schema.org",
           "@type": "WebSite",
           "name": "Backpack Exchange Referral",
-          "url": "https://backpack-referral.vercel.app/",
-          "description": t('seoDescription'),
+          "url": "https://www.backpackref.com/",
+          "description": t('subtitle'),
           "potentialAction": {
             "@type": "SearchAction",
             "target": "https://backpack.exchange/join/meme",
@@ -278,35 +282,33 @@ export default function Home() {
       <div className="container mx-auto px-4 py-16">
         {/* Language Switcher */}
         <div className="flex justify-end mb-8">
-          <div className="flex space-x-2">
-            <button
-              onClick={() => handleLanguageChange('en')}
-              className={`px-3 py-1 rounded text-sm ${
-                language === 'en' ? 'bg-black text-white' : 'bg-gray-200 text-black'
-              }`}
-            >
-              English
-            </button>
-            <button
-              onClick={() => handleLanguageChange('zh-cn')}
-              className={`px-3 py-1 rounded text-sm ${
-                language === 'zh-cn' ? 'bg-black text-white' : 'bg-gray-200 text-black'
-              }`}
-            >
-              简体中文
-            </button>
-            <button
-              onClick={() => handleLanguageChange('zh-tw')}
-              className={`px-3 py-1 rounded text-sm ${
-                language === 'zh-tw' ? 'bg-black text-white' : 'bg-gray-200 text-black'
-              }`}
-            >
-              繁體中文
-            </button>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { code: 'en', name: 'English' },
+              { code: 'zh-cn', name: '简体中文' },
+              { code: 'zh-tw', name: '繁體中文' },
+              { code: 'fr', name: 'Français' },
+              { code: 'pt', name: 'Português' },
+              { code: 'it', name: 'Italiano' },
+              { code: 'de', name: 'Deutsch' },
+              { code: 'ja', name: '日本語' },
+              { code: 'ko', name: '한국어' }
+            ].map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => handleLanguageChange(lang.code as Language)}
+                className={`px-2 py-1 rounded text-xs ${
+                  language === lang.code ? 'bg-black text-white' : 'bg-gray-200 text-black'
+                }`}
+              >
+                {lang.name}
+              </button>
+            ))}
           </div>
         </div>
 
-        <div className="text-center mb-20">
+        {/* Header */}
+        <div className="text-center mb-16">
           <div className="flex justify-center items-center mb-8">
             <Image
               src="https://cdn.prod.website-files.com/66830ad123bea7f626bcf58f/670f68cdb73b3a75c01956b9_Group%20427324273.svg"
@@ -322,161 +324,104 @@ export default function Home() {
           <p className="text-2xl md:text-3xl font-semibold text-black mb-8">
             {t('subtitle')}
           </p>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
-            {t('description')}
-          </p>
-          <div className="bg-gray-50 rounded-2xl p-8 mb-12 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">{t('limitedOffer')}</h2>
-            <p className="text-gray-700 mb-4 whitespace-pre-line">
-              {t('offerDetails')}
-            </p>
-            <p className="text-sm text-gray-500">
-              {t('trustText')}
-            </p>
+        </div>
+
+        {/* Hot Activities Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-10">{t('hotActivities')}</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Backpack Points Season 2",
+                content: t('pointsProgram'),
+                icon: "🎯",
+                gradient: "from-purple-500 to-pink-500"
+              },
+              {
+                title: "Eclipse ES Airdrop",
+                content: t('eclipseAirdrop'),
+                icon: "🌟",
+                gradient: "from-blue-500 to-cyan-500"
+              },
+              {
+                title: "Pump.fun Trading",
+                content: t('pumpTrading'),
+                icon: "🚀",
+                gradient: "from-green-500 to-emerald-500"
+              },
+              {
+                title: "Fragmetric Frenzy",
+                content: t('fragmetricCampaign'),
+                icon: "💎",
+                gradient: "from-yellow-500 to-orange-500"
+              },
+              {
+                title: "New User Campaign",
+                content: t('newUserCampaign'),
+                icon: "🎁",
+                gradient: "from-red-500 to-pink-500"
+              }
+            ].map((activity, index) => (
+              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-100">
+                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r ${activity.gradient} text-white text-2xl mb-4`}>
+                  {activity.icon}
+                </div>
+                <h3 className="text-lg font-bold mb-3">{activity.title}</h3>
+                <p className="text-gray-600 text-sm mb-4">{activity.content}</p>
+                <a
+                  href="https://backpack.exchange/join/meme"
+                  onClick={() => handleButtonClick(`activity_${index}`, 'https://backpack.exchange/join/meme')}
+                  className="inline-block bg-black hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded-full text-sm transition-colors duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t('registerButton')}
+                </a>
+              </div>
+            ))}
           </div>
-          
-          {/* Exclusive Bonus Section */}
-          <div className="bg-gradient-to-r from-yellow-100 to-orange-100 border-2 border-yellow-300 rounded-2xl p-8 mb-12 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6 text-center text-orange-800">{t('exclusiveBonus')}</h2>
-            <p className="text-gray-700 mb-4 whitespace-pre-line text-center">
-              {t('bonusDetails')}
-            </p>
-            <div className="text-center">
-              <p className="text-lg font-bold text-orange-700 mb-2">
-                {language === 'en' ? '🚀 Register Now to Unlock All Benefits!' : language === 'zh-cn' ? '🚀 立即注册解锁所有福利！' : '🚀 立即註冊解鎖所有福利！'}
+        </div>
+
+        {/* Trading Features */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-10">{t('tradingFeatures')}</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8">
+              <div className="text-4xl mb-4">💰</div>
+              <h3 className="text-xl font-bold mb-4">{t('lowFees')}</h3>
+              <p className="text-gray-600">
+                Trade with the lowest fees in the industry. More profit for you!
               </p>
-              <p className="text-sm text-gray-600">
-                {language === 'en' ? 'Limited time offer - Don\'t miss out!' : language === 'zh-cn' ? '限时优惠 - 不要错过！' : '限時優惠 - 不要錯過！'}
+            </div>
+            <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8">
+              <div className="text-4xl mb-4">⚡</div>
+              <h3 className="text-xl font-bold mb-4">{t('fastExecution')}</h3>
+              <p className="text-gray-600">
+                Lightning-fast order execution for competitive trading.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
-          <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col">
-            <div className="text-5xl mb-6">🚀</div>
-            <h3 className="text-2xl font-bold text-black mb-4">{t('memeTitle')}</h3>
-            <p className="text-gray-600 mb-6 text-sm flex-grow">
-              {t('memeDescription')}
-            </p>
-            <div className="mb-6">
-              <p className="text-xs text-gray-500 mb-2">🔥 Hot Right Now:</p>
-              <p className="text-sm font-semibold">$BONK +127% • $WIF +89% • $POPCAT +156%</p>
-              <p className="text-xs text-green-600 font-semibold mt-2">
-                {language === 'en' ? '💰 +10% Referral Bonus' : language === 'zh-cn' ? '💰 +10%推荐返佣' : '💰 +10%推薦返佣'}
-              </p>
-            </div>
-            <a
-              href="https://backpack.exchange/join/meme"
-              className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => handleButtonClick('meme', 'https://backpack.exchange/join/meme')}
-            >
-              {t('memeButton')}
-            </a>
-          </div>
-
-          <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col">
-            <div className="text-5xl mb-6">🌏</div>
-            <h3 className="text-2xl font-bold text-black mb-4">{t('chineseTitle')}</h3>
-            <p className="text-gray-600 mb-6 text-sm flex-grow">
-              {t('chineseDescription')}
-            </p>
-            <div className="mb-6">
-              <p className="text-xs text-gray-500 mb-2">🎯 {language === 'en' ? 'Exclusive Benefits:' : '专属优势:'}</p>
-              <p className="text-sm font-semibold">{language === 'en' ? 'Chinese Support • USD Deposits • Mainland KYC • HK Bank Cards' : language === 'zh-cn' ? '中文支持 • 美元出入金 • 大陆KYC • 香港银行卡' : '中文支援 • 美元出入金 • 大陸KYC • 香港銀行卡'}</p>
-              <p className="text-xs text-green-600 font-semibold mt-2">
-                {language === 'en' ? '💰 +10% Referral Bonus' : language === 'zh-cn' ? '💰 +10%推荐返佣' : '💰 +10%推薦返佣'}
-              </p>
-            </div>
-            <a
-              href="https://backpack.exchange/join/zh-cn"
-              className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => handleButtonClick('chinese', 'https://backpack.exchange/join/zh-cn')}
-            >
-              {t('chineseButton')}
-            </a>
-          </div>
-
-          <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col">
-            <div className="text-5xl mb-6">🎮</div>
-            <h3 className="text-2xl font-bold text-black mb-4">{t('gamingTitle')}</h3>
-            <p className="text-gray-600 mb-6 text-sm flex-grow">
-              {t('gamingDescription')}
-            </p>
-            <div className="mb-6">
-              <p className="text-xs text-gray-500 mb-2">🎯 {language === 'en' ? 'Gaming Tokens:' : '游戏代币:'}</p>
-              <p className="text-sm font-semibold">$RONIN • $IMX • $GALA • $ENJ • $MANA</p>
-              <p className="text-xs text-green-600 font-semibold mt-2">
-                {language === 'en' ? '💰 +10% Referral Bonus' : language === 'zh-cn' ? '💰 +10%推荐返佣' : '💰 +10%推薦返佣'}
-              </p>
-            </div>
-            <a
-              href="https://backpack.exchange/join/lol"
-              className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => handleButtonClick('gaming', 'https://backpack.exchange/join/lol')}
-            >
-              {t('gamingButton')}
-            </a>
-          </div>
-        </div>
-
-        <div className="bg-black text-white rounded-2xl p-12 mb-16 max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">{t('whyTitle')}</h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-3xl mb-3">⚡</div>
-              <h4 className="text-lg font-semibold mb-2">{language === 'en' ? 'Lightning Speed' : language === 'zh-cn' ? '闪电速度' : '閃電速度'}</h4>
-              <p className="text-gray-300 text-sm">{language === 'en' ? 'Sub-millisecond execution' : language === 'zh-cn' ? '亚毫秒执行' : '亞毫秒執行'}</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl mb-3">🔒</div>
-              <h4 className="text-lg font-semibold mb-2">{language === 'en' ? 'Fort Knox Security' : language === 'zh-cn' ? '银行级安全' : '銀行級安全'}</h4>
-              <p className="text-gray-300 text-sm">{language === 'en' ? '$2B+ assets protected' : language === 'zh-cn' ? '20亿美元+资产保护' : '20億美元+資產保護'}</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl mb-3">💎</div>
-              <h4 className="text-lg font-semibold mb-2">{language === 'en' ? 'Lowest Fees' : language === 'zh-cn' ? '最低费率' : '最低費率'}</h4>
-              <p className="text-gray-300 text-sm">{language === 'en' ? '0.02% maker fee' : language === 'zh-cn' ? '0.02%挂单费' : '0.02%掛單費'}</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl mb-3">🌟</div>
-              <h4 className="text-lg font-semibold mb-2">{language === 'en' ? '24/7 Support' : language === 'zh-cn' ? '24/7支持' : '24/7支援'}</h4>
-              <p className="text-gray-300 text-sm">{language === 'en' ? 'Always here for you' : language === 'zh-cn' ? '随时为您服务' : '隨時為您服務'}</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center bg-gray-50 rounded-2xl p-8 mb-12">
-          <h3 className="text-2xl font-bold mb-4">{t('readyTitle')}</h3>
-          <p className="text-gray-600 mb-6">
-            {t('readyDescription')}
+        {/* Main CTA */}
+        <div className="text-center bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-2xl p-12 mb-16">
+          <h2 className="text-4xl font-bold mb-6">Ready to Start Trading?</h2>
+          <p className="text-xl mb-8 opacity-90">
+            Join millions of traders and start your crypto journey today!
           </p>
           <a
             href="https://backpack.exchange/join/meme"
-            className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-12 rounded-full transition-colors duration-200 text-lg"
+            onClick={() => handleButtonClick('main_cta', 'https://backpack.exchange/join/meme')}
+            className="inline-block bg-white hover:bg-gray-100 text-purple-600 font-bold py-4 px-12 rounded-full text-lg transition-colors duration-200"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => handleButtonClick('main_cta', 'https://backpack.exchange/join/meme')}
           >
-            {t('getStartedButton')}
+            {t('registerButton')}
           </a>
         </div>
 
+        {/* Footer */}
         <div className="text-center">
-          <p className="text-gray-500 text-sm">
-            {t('alreadyAccount')}{" "}
-            <a href="https://backpack.exchange/join/meme" className="text-black hover:underline font-semibold">
-              {t('signIn')}
-            </a>
-          </p>
-          
-          {/* Disclaimer */}
           <div className="mt-8 pt-8 border-t border-gray-200">
             <p className="text-gray-400 text-xs leading-relaxed max-w-4xl mx-auto">
               {t('disclaimer')}
