@@ -126,6 +126,11 @@ const translations: Translations = {
     'zh-cn': '登录Backpack',
     'zh-tw': '登錄Backpack'
   },
+  disclaimer: {
+    en: 'All website content is AI-generated. Backpack promotions mentioned are not guaranteed to be real or effective, and do not constitute investment advice. Virtual currency investment requires caution - please do your own research.',
+    'zh-cn': '所有网站内容由AI生成，页面提及的Backpack优惠不保证真实有效，不构成投资建议，虚拟货币投资需谨慎，请自己做好研究。',
+    'zh-tw': '所有網站內容由AI生成，頁面提及的Backpack優惠不保證真實有效，不構成投資建議，虛擬貨幣投資需謹慎，請自己做好研究。'
+  },
   // SEO Meta Tags
   seoTitle: {
     en: 'Backpack Exchange - Register & Trade Crypto with 10% Referral Bonus',
@@ -154,8 +159,36 @@ const translations: Translations = {
   }
 };
 
+// Function to detect user's preferred language
+const detectUserLanguage = (): Language => {
+  if (typeof window === 'undefined') return 'en';
+  
+  const userLanguage = navigator.language || navigator.languages?.[0] || 'en';
+  const langCode = userLanguage.toLowerCase();
+  
+  // Match simplified Chinese
+  if (langCode.includes('zh-cn') || langCode.includes('zh-hans') || langCode === 'zh') {
+    return 'zh-cn';
+  }
+  
+  // Match traditional Chinese
+  if (langCode.includes('zh-tw') || langCode.includes('zh-hant') || 
+      langCode.includes('zh-hk') || langCode.includes('zh-mo')) {
+    return 'zh-tw';
+  }
+  
+  // Match English
+  if (langCode.includes('en')) {
+    return 'en';
+  }
+  
+  // Default to English for all other languages
+  return 'en';
+};
+
 export default function Home() {
   const [language, setLanguage] = useState<Language>('en');
+  const [isLanguageDetected, setIsLanguageDetected] = useState(false);
 
   const t = useCallback((key: string) => {
     return translations[key]?.[language] || translations[key]?.en || key;
@@ -186,6 +219,15 @@ export default function Home() {
       event_category: 'conversion'
     });
   };
+
+  // Detect user language on initial load
+  useEffect(() => {
+    if (!isLanguageDetected) {
+      const detectedLanguage = detectUserLanguage();
+      setLanguage(detectedLanguage);
+      setIsLanguageDetected(true);
+    }
+  }, [isLanguageDetected]);
 
   // Update document title and meta tags when language changes
   useEffect(() => {
@@ -433,6 +475,13 @@ export default function Home() {
               {t('signIn')}
             </a>
           </p>
+          
+          {/* Disclaimer */}
+          <div className="mt-8 pt-8 border-t border-gray-200">
+            <p className="text-gray-400 text-xs leading-relaxed max-w-4xl mx-auto">
+              {t('disclaimer')}
+            </p>
+          </div>
         </div>
       </div>
     </div>
