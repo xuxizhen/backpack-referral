@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 
 type Language = 'en' | 'zh-cn' | 'zh-tw';
@@ -8,7 +8,7 @@ type Language = 'en' | 'zh-cn' | 'zh-tw';
 // Google Analytics type definition
 declare global {
   interface Window {
-    gtag: (command: string, targetId: string, config?: any) => void;
+    gtag: (command: string, targetId: string, config?: Record<string, unknown>) => void;
   }
 }
 
@@ -157,10 +157,12 @@ const translations: Translations = {
 export default function Home() {
   const [language, setLanguage] = useState<Language>('en');
 
-  const t = (key: string) => translations[key]?.[language] || translations[key]?.en || key;
+  const t = useCallback((key: string) => {
+    return translations[key]?.[language] || translations[key]?.en || key;
+  }, [language]);
 
   // Google Analytics event tracking
-  const trackEvent = (eventName: string, parameters?: any) => {
+  const trackEvent = (eventName: string, parameters?: Record<string, unknown>) => {
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', eventName, parameters);
     }
