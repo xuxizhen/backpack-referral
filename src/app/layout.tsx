@@ -13,8 +13,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Join Backpack - The Crypto Trading Platform",
-  description: "Join Backpack exchange and start trading crypto with the community. Choose your community - meme traders, Chinese users, or gaming enthusiasts.",
+  title: "Backpack Exchange - Register & Trade Crypto with 10% Referral Bonus",
+  description: "Join Backpack crypto exchange and get exclusive newbie rewards plus up to 10% referral commission. Trade meme coins, access Chinese support, and join gaming communities. Register now for zero fees!",
+  keywords: "Backpack exchange, crypto trading, meme coins, referral bonus, cryptocurrency, Bitcoin, Ethereum, trading platform, crypto exchange, blockchain",
+  authors: [{ name: "Backpack Exchange" }],
+  robots: "index, follow",
+  openGraph: {
+    title: "Backpack Exchange - Register & Trade Crypto with 10% Referral Bonus",
+    description: "Join Backpack crypto exchange and get exclusive newbie rewards plus up to 10% referral commission. Trade meme coins, access Chinese support, and join gaming communities.",
+    url: "https://backpack-referral.vercel.app/",
+    siteName: "Backpack Exchange Referral",
+    images: [
+      {
+        url: "https://backpack-referral.vercel.app/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Backpack Exchange Referral"
+      }
+    ],
+    locale: "en_US",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Backpack Exchange - Register & Trade Crypto with 10% Referral Bonus",
+    description: "Join Backpack crypto exchange and get exclusive newbie rewards plus up to 10% referral commission.",
+    images: ["https://backpack-referral.vercel.app/og-image.jpg"]
+  }
 };
 
 export default function RootLayout({

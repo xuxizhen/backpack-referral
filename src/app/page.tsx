@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 type Language = 'en' | 'zh-cn' | 'zh-tw';
@@ -119,6 +119,22 @@ const translations: Translations = {
     'zh-cn': '登录Backpack',
     'zh-tw': '登錄Backpack'
   },
+  // SEO Meta Tags
+  seoTitle: {
+    en: 'Backpack Exchange - Register & Trade Crypto with 10% Referral Bonus',
+    'zh-cn': 'Backpack交易所 - 注册交易加密货币，获得10%推荐返佣',
+    'zh-tw': 'Backpack交易所 - 註冊交易加密貨幣，獲得10%推薦返佣'
+  },
+  seoDescription: {
+    en: 'Join Backpack crypto exchange and get exclusive newbie rewards plus up to 10% referral commission. Trade meme coins, access Chinese support, and join gaming communities. Register now for zero fees!',
+    'zh-cn': '加入Backpack加密货币交易所，获得独家新手奖励和高达10%推荐返佣。交易meme币，享受中文支持，加入游戏社区。立即注册享受零手续费！',
+    'zh-tw': '加入Backpack加密貨幣交易所，獲得獨家新手獎勵和高達10%推薦返佣。交易meme幣，享受中文支援，加入遊戲社群。立即註冊享受零手續費！'
+  },
+  seoKeywords: {
+    en: 'Backpack exchange, crypto trading, meme coins, referral bonus, cryptocurrency, Bitcoin, Ethereum, trading platform, crypto exchange, blockchain',
+    'zh-cn': 'Backpack交易所, 加密货币交易, meme币, 推荐返佣, 数字货币, 比特币, 以太坊, 交易平台, 加密交易所, 区块链',
+    'zh-tw': 'Backpack交易所, 加密貨幣交易, meme幣, 推薦返佣, 數位貨幣, 比特幣, 以太坊, 交易平台, 加密交易所, 區塊鏈'
+  }
   exclusiveBonus: {
     en: '🎁 Exclusive Bonus: Up to 10% Referral Commission',
     'zh-cn': '🎁 专属福利：最高10%返佣奖励',
@@ -136,8 +152,52 @@ export default function Home() {
 
   const t = (key: string) => translations[key]?.[language] || translations[key]?.en || key;
 
+  // Update document title and meta tags when language changes
+  useEffect(() => {
+    document.title = t('seoTitle');
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', t('seoDescription'));
+    }
+    
+    // Update meta keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', t('seoKeywords'));
+    
+    // Update language attribute
+    document.documentElement.setAttribute('lang', language);
+  }, [language, t]);
+
   return (
     <div className="min-h-screen bg-white text-black">
+      {/* Structured Data for AI/Search Engines */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Backpack Exchange Referral",
+          "url": "https://backpack-referral.vercel.app/",
+          "description": t('seoDescription'),
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://backpack.exchange/join/meme",
+            "query-input": "required name=search_term_string"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Backpack Exchange",
+            "url": "https://backpack.exchange"
+          }
+        })
+      }} />
+      
       <div className="container mx-auto px-4 py-16">
         {/* Language Switcher */}
         <div className="flex justify-end mb-8">
@@ -216,10 +276,10 @@ export default function Home() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
-          <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+          <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col">
             <div className="text-5xl mb-6">🚀</div>
             <h3 className="text-2xl font-bold text-black mb-4">{t('memeTitle')}</h3>
-            <p className="text-gray-600 mb-6 text-sm">
+            <p className="text-gray-600 mb-6 text-sm flex-grow">
               {t('memeDescription')}
             </p>
             <div className="mb-6">
@@ -231,7 +291,7 @@ export default function Home() {
             </div>
             <a
               href="https://backpack.exchange/join/meme"
-              className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-full transition-colors duration-200 text-sm"
+              className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -239,10 +299,10 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+          <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col">
             <div className="text-5xl mb-6">🌏</div>
             <h3 className="text-2xl font-bold text-black mb-4">{t('chineseTitle')}</h3>
-            <p className="text-gray-600 mb-6 text-sm">
+            <p className="text-gray-600 mb-6 text-sm flex-grow">
               {t('chineseDescription')}
             </p>
             <div className="mb-6">
@@ -254,7 +314,7 @@ export default function Home() {
             </div>
             <a
               href="https://backpack.exchange/join/zh-cn"
-              className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-full transition-colors duration-200 text-sm"
+              className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -262,10 +322,10 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+          <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col">
             <div className="text-5xl mb-6">🎮</div>
             <h3 className="text-2xl font-bold text-black mb-4">{t('gamingTitle')}</h3>
-            <p className="text-gray-600 mb-6 text-sm">
+            <p className="text-gray-600 mb-6 text-sm flex-grow">
               {t('gamingDescription')}
             </p>
             <div className="mb-6">
@@ -277,7 +337,7 @@ export default function Home() {
             </div>
             <a
               href="https://backpack.exchange/join/lol"
-              className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-full transition-colors duration-200 text-sm"
+              className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
               target="_blank"
               rel="noopener noreferrer"
             >
