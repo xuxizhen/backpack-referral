@@ -55,9 +55,9 @@ const translations: Translations = {
     'zh-tw': '加入meme幣革命！交易$PEPE、$DOGE、$SHIB，發現下一個100倍寶石。閃電般的執行、即時提醒和獨家meme幣發行。'
   },
   memeButton: {
-    en: 'Start Trading Memes Now →',
-    'zh-cn': '立即开始交易Meme币 →',
-    'zh-tw': '立即開始交易Meme幣 →'
+    en: 'Register & Trade Now →',
+    'zh-cn': '立即注册交易 →',
+    'zh-tw': '立即註冊交易 →'
   },
   chineseTitle: {
     en: 'Chinese Community',
@@ -70,9 +70,9 @@ const translations: Translations = {
     'zh-tw': '專為華人用戶打造的加密貨幣交易平台！中文客服、人民幣入金、簡體界面。安全合規，銀行級別保障，讓您的數字資產交易更安心。'
   },
   chineseButton: {
-    en: 'Join Chinese Community →',
-    'zh-cn': '立即开始交易 →',
-    'zh-tw': '立即開始交易 →'
+    en: 'Register & Trade Now →',
+    'zh-cn': '立即注册交易 →',
+    'zh-tw': '立即註冊交易 →'
   },
   gamingTitle: {
     en: 'Gaming Community',
@@ -85,9 +85,9 @@ const translations: Translations = {
     'zh-tw': '提升你的加密遊戲！交易遊戲代幣、NFT和元宇宙資產。從$AXS到$SAND，在一個地方找到所有遊戲代幣，配備專業級工具。'
   },
   gamingButton: {
-    en: 'Join Gaming Hub →',
-    'zh-cn': '加入游戏中心 →',
-    'zh-tw': '加入遊戲中心 →'
+    en: 'Register & Trade Now →',
+    'zh-cn': '立即注册交易 →',
+    'zh-tw': '立即註冊交易 →'
   },
   whyTitle: {
     en: 'Why 5M+ Traders Choose Backpack',
@@ -105,9 +105,9 @@ const translations: Translations = {
     'zh-tw': '加入已經發現Backpack優勢的數百萬交易者。不要錯過下一個大機會！'
   },
   getStartedButton: {
-    en: 'Get Started Free →',
-    'zh-cn': '免费开始 →',
-    'zh-tw': '免費開始 →'
+    en: 'Register & Trade Now →',
+    'zh-cn': '立即注册交易 →',
+    'zh-tw': '立即註冊交易 →'
   },
   alreadyAccount: {
     en: 'Already have an account?',
@@ -118,6 +118,16 @@ const translations: Translations = {
     en: 'Sign in to Backpack',
     'zh-cn': '登录Backpack',
     'zh-tw': '登錄Backpack'
+  },
+  exclusiveBonus: {
+    en: '🎁 Exclusive Bonus: Up to 10% Referral Commission',
+    'zh-cn': '🎁 专属福利：最高10%返佣奖励',
+    'zh-tw': '🎁 專屬福利：最高10%返佣獎勵'
+  },
+  bonusDetails: {
+    en: '• Register through this page to get exclusive newbie rewards\n• Earn up to 10% commission on referrals\n• Additional trading bonuses for active users\n• VIP customer support access',
+    'zh-cn': '• 通过此页面注册获得独家新手奖励\n• 推荐返佣最高可达10%\n• 活跃用户额外交易奖励\n• VIP客户支持通道',
+    'zh-tw': '• 透過此頁面註冊獲得獨家新手獎勵\n• 推薦返佣最高可達10%\n• 活躍用戶額外交易獎勵\n• VIP客戶支援通道'
   }
 };
 
@@ -187,6 +197,22 @@ export default function Home() {
               {t('trustText')}
             </p>
           </div>
+          
+          {/* Exclusive Bonus Section */}
+          <div className="bg-gradient-to-r from-yellow-100 to-orange-100 border-2 border-yellow-300 rounded-2xl p-8 mb-12 max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6 text-center text-orange-800">{t('exclusiveBonus')}</h2>
+            <p className="text-gray-700 mb-4 whitespace-pre-line text-center">
+              {t('bonusDetails')}
+            </p>
+            <div className="text-center">
+              <p className="text-lg font-bold text-orange-700 mb-2">
+                {language === 'en' ? '🚀 Register Now to Unlock All Benefits!' : language === 'zh-cn' ? '🚀 立即注册解锁所有福利！' : '🚀 立即註冊解鎖所有福利！'}
+              </p>
+              <p className="text-sm text-gray-600">
+                {language === 'en' ? 'Limited time offer - Don\'t miss out!' : language === 'zh-cn' ? '限时优惠 - 不要错过！' : '限時優惠 - 不要錯過！'}
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
@@ -199,6 +225,9 @@ export default function Home() {
             <div className="mb-6">
               <p className="text-xs text-gray-500 mb-2">🔥 Hot Right Now:</p>
               <p className="text-sm font-semibold">$BONK +127% • $WIF +89% • $POPCAT +156%</p>
+              <p className="text-xs text-green-600 font-semibold mt-2">
+                {language === 'en' ? '💰 +10% Referral Bonus' : language === 'zh-cn' ? '💰 +10%推荐返佣' : '💰 +10%推薦返佣'}
+              </p>
             </div>
             <a
               href="https://backpack.exchange/join/meme"
@@ -219,6 +248,9 @@ export default function Home() {
             <div className="mb-6">
               <p className="text-xs text-gray-500 mb-2">🎯 {language === 'en' ? 'Exclusive Benefits:' : '专属优势:'}</p>
               <p className="text-sm font-semibold">{language === 'en' ? 'Chinese Support • Fast Deposits • Low Fees • 24/7 Service' : '中文支持 • 快速入金 • 低手续费 • 7x24客服'}</p>
+              <p className="text-xs text-green-600 font-semibold mt-2">
+                {language === 'en' ? '💰 +10% Referral Bonus' : language === 'zh-cn' ? '💰 +10%推荐返佣' : '💰 +10%推薦返佣'}
+              </p>
             </div>
             <a
               href="https://backpack.exchange/join/zh-cn"
@@ -239,6 +271,9 @@ export default function Home() {
             <div className="mb-6">
               <p className="text-xs text-gray-500 mb-2">🎯 {language === 'en' ? 'Gaming Tokens:' : '游戏代币:'}</p>
               <p className="text-sm font-semibold">$RONIN • $IMX • $GALA • $ENJ • $MANA</p>
+              <p className="text-xs text-green-600 font-semibold mt-2">
+                {language === 'en' ? '💰 +10% Referral Bonus' : language === 'zh-cn' ? '💰 +10%推荐返佣' : '💰 +10%推薦返佣'}
+              </p>
             </div>
             <a
               href="https://backpack.exchange/join/lol"
