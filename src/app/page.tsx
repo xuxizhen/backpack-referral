@@ -469,29 +469,21 @@ export default function Home() {
       <div className="container mx-auto px-4 py-16">
         {/* Language Switcher */}
         <div className="flex justify-end mb-8">
-          <div className="flex flex-wrap gap-2">
-            {[
-              { code: 'en', name: 'English' },
-              { code: 'zh-cn', name: '简体中文' },
-              { code: 'zh-tw', name: '繁體中文' },
-              { code: 'fr', name: 'Français' },
-              { code: 'pt', name: 'Português' },
-              { code: 'it', name: 'Italiano' },
-              { code: 'de', name: 'Deutsch' },
-              { code: 'ja', name: '日本語' },
-              { code: 'ko', name: '한국어' }
-            ].map((lang) => (
-              <button
-                key={lang.code}
-                onClick={() => handleLanguageChange(lang.code as Language)}
-                className={`px-2 py-1 rounded text-xs ${
-                  language === lang.code ? 'bg-black text-white' : 'bg-gray-200 text-black'
-                }`}
-              >
-                {lang.name}
-              </button>
-            ))}
-          </div>
+          <select
+            value={language}
+            onChange={(e) => handleLanguageChange(e.target.value as Language)}
+            className="px-4 py-2 rounded-lg border border-gray-300 bg-white text-black text-sm font-medium focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+          >
+            <option value="en">🇺🇸 English</option>
+            <option value="zh-cn">🇨🇳 简体中文</option>
+            <option value="zh-tw">🇹🇼 繁體中文</option>
+            <option value="fr">🇫🇷 Français</option>
+            <option value="pt">🇵🇹 Português</option>
+            <option value="it">🇮🇹 Italiano</option>
+            <option value="de">🇩🇪 Deutsch</option>
+            <option value="ja">🇯🇵 日本語</option>
+            <option value="ko">🇰🇷 한국어</option>
+          </select>
         </div>
 
         {/* Header */}
@@ -559,7 +551,7 @@ export default function Home() {
         </div>
 
         {/* Hot Activities Section */}
-        <div className="mb-16">
+        <div className="mb-16 max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-10">{t('hotActivities')}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -621,8 +613,8 @@ export default function Home() {
         </div>
 
         {/* Points Program Details */}
-        <div className="mb-16">
-          <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-8 max-w-4xl mx-auto">
+        <div className="mb-16 max-w-6xl mx-auto">
+          <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-8">
             <h2 className="text-3xl font-bold text-center mb-6">🏆 Backpack Points Program</h2>
             <p className="text-gray-700 text-center mb-6">
               {t('pointsDetails')}
@@ -724,7 +716,7 @@ export default function Home() {
 
 
         {/* Why Choose Backpack */}
-        <div className="bg-black text-white rounded-2xl p-12 mb-16 max-w-5xl mx-auto">
+        <div className="bg-black text-white rounded-2xl p-12 mb-16 max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8">{t('whyTitle')}</h2>
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
@@ -751,7 +743,7 @@ export default function Home() {
         </div>
 
         {/* Main CTA */}
-        <div className="text-center bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-2xl p-12 mb-16">
+        <div className="text-center bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-2xl p-12 mb-16 max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-6">{t('readyTitle')}</h2>
           <p className="text-xl mb-8 opacity-90">
             {t('readyDescription')}
