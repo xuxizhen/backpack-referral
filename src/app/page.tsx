@@ -134,7 +134,7 @@ const translations: Translations = {
     en: 'Backpack exchange, crypto trading, meme coins, referral bonus, cryptocurrency, Bitcoin, Ethereum, trading platform, crypto exchange, blockchain',
     'zh-cn': 'Backpack交易所, 加密货币交易, meme币, 推荐返佣, 数字货币, 比特币, 以太坊, 交易平台, 加密交易所, 区块链',
     'zh-tw': 'Backpack交易所, 加密貨幣交易, meme幣, 推薦返佣, 數位貨幣, 比特幣, 以太坊, 交易平台, 加密交易所, 區塊鏈'
-  }
+  },
   exclusiveBonus: {
     en: '🎁 Exclusive Bonus: Up to 10% Referral Commission',
     'zh-cn': '🎁 专属福利：最高10%返佣奖励',
