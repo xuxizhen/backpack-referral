@@ -1,6 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-black">
@@ -19,7 +16,7 @@ export default function Home() {
           </p>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
             Experience the future of crypto trading with Backpack - the fastest, most intuitive exchange platform. 
-            Join millions of traders worldwide and discover why we're the #1 choice for crypto enthusiasts.
+            Join millions of traders worldwide and discover why we&apos;re the #1 choice for crypto enthusiasts.
           </p>
           <div className="bg-gray-50 rounded-2xl p-8 mb-12 max-w-4xl mx-auto">
             <h2 className="text-2xl font-bold mb-6">🎉 Limited Time Offer - Get Started Today!</h2>
@@ -129,8 +126,8 @@ export default function Home() {
         <div className="text-center bg-gray-50 rounded-2xl p-8 mb-12">
           <h3 className="text-2xl font-bold mb-4">Ready to Start Your Crypto Journey?</h3>
           <p className="text-gray-600 mb-6">
-            Join millions of traders who've already discovered the Backpack advantage. 
-            Don't miss out on the next big opportunity!
+            Join millions of traders who&apos;ve already discovered the Backpack advantage. 
+            Don&apos;t miss out on the next big opportunity!
           </p>
           <a
             href="https://backpack.exchange/join/meme"
