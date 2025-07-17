@@ -65,9 +65,9 @@ const translations: Translations = {
     'zh-tw': '中文社群'
   },
   chineseDescription: {
-    en: 'Crypto trading platform built for Chinese users! Chinese customer service, RMB deposits, simplified interface. Safe and compliant, bank-level security for worry-free digital asset trading.',
-    'zh-cn': '专为华人用户打造的加密货币交易平台！中文客服、人民币入金、简体界面。安全合规，银行级别保障，让您的数字资产交易更安心。',
-    'zh-tw': '專為華人用戶打造的加密貨幣交易平台！中文客服、人民幣入金、簡體界面。安全合規，銀行級別保障，讓您的數字資產交易更安心。'
+    en: 'Crypto trading platform built for Chinese users! Chinese customer service, USD/fiat deposits, simplified interface. Compliant and secure, mainland China KYC support, Hong Kong bank card USD deposits.',
+    'zh-cn': '专为华人用户打造的加密货币交易平台！中文客服、美元法币出入金、简体界面。合规安全，大陆KYC合法通过，香港地区银行卡美金法币出入金。',
+    'zh-tw': '專為華人用戶打造的加密貨幣交易平台！中文客服、美元法幣出入金、簡體界面。合規安全，大陸KYC合法通過，香港地區銀行卡美金法幣出入金。'
   },
   chineseButton: {
     en: 'Register & Trade Now →',
@@ -307,7 +307,7 @@ export default function Home() {
             </p>
             <div className="mb-6">
               <p className="text-xs text-gray-500 mb-2">🎯 {language === 'en' ? 'Exclusive Benefits:' : '专属优势:'}</p>
-              <p className="text-sm font-semibold">{language === 'en' ? 'Chinese Support • Fast Deposits • Low Fees • 24/7 Service' : '中文支持 • 快速入金 • 低手续费 • 7x24客服'}</p>
+              <p className="text-sm font-semibold">{language === 'en' ? 'Chinese Support • USD Deposits • Mainland KYC • HK Bank Cards' : language === 'zh-cn' ? '中文支持 • 美元出入金 • 大陆KYC • 香港银行卡' : '中文支援 • 美元出入金 • 大陸KYC • 香港銀行卡'}</p>
               <p className="text-xs text-green-600 font-semibold mt-2">
                 {language === 'en' ? '💰 +10% Referral Bonus' : language === 'zh-cn' ? '💰 +10%推荐返佣' : '💰 +10%推薦返佣'}
               </p>
