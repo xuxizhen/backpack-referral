@@ -203,27 +203,27 @@ const translations: Translations = {
     ja: 'ミームコイン革命に参加しよう！$PEPE、$DOGE、$SHIBを取引し、次の100倍の宝石を発見。超高速実行、リアルタイムアラート、独占ミームコインローンチ。',
     ko: '밈 코인 혁명에 참여하세요! $PEPE, $DOGE, $SHIB을 거래하고 다음 100배 보석을 발견하세요. 초고속 실행, 실시간 알림, 독점 밈 코인 출시.'
   },
-  chineseTitle: {
-    en: 'Chinese Community',
+  languageCommunityTitle: {
+    en: 'English Community',
     'zh-cn': '中文社区',
     'zh-tw': '中文社群',
-    fr: 'Communauté Chinoise',
-    pt: 'Comunidade Chinesa',
-    it: 'Comunità Cinese',
-    de: 'Chinesische Gemeinschaft',
-    ja: '中国コミュニティ',
-    ko: '중국 커뮤니티'
+    fr: 'Communauté Française',
+    pt: 'Comunidade Portuguesa',
+    it: 'Comunità Italiana',
+    de: 'Deutsche Gemeinschaft',
+    ja: '日本コミュニティ',
+    ko: '한국 커뮤니티'
   },
-  chineseDescription: {
-    en: 'Crypto trading platform built for Chinese users! Chinese customer service, USD/fiat deposits, simplified interface. Compliant and secure, mainland China KYC support, Hong Kong bank card USD deposits.',
+  languageCommunityDescription: {
+    en: 'Global crypto trading platform with native English support! 24/7 English customer service, instant USD deposits, intuitive interface. Fully regulated in major English-speaking markets with bank-grade security.',
     'zh-cn': '专为华人用户打造的加密货币交易平台！中文客服、美元法币出入金、简体界面。合规安全，大陆KYC合法通过，香港地区银行卡美金法币出入金。',
-    'zh-tw': '專為華人用戶打造的加密貨幣交易平台！中文客服、美元法幣出入金、簡體界面。合規安全，大陸KYC合法通過，香港地區銀行卡美金法幣出入金。',
-    fr: 'Plateforme de trading crypto conçue pour les utilisateurs chinois ! Service client chinois, dépôts USD/fiat, interface simplifiée. Conforme et sécurisé, support KYC Chine continentale, dépôts USD par carte bancaire Hong Kong.',
-    pt: 'Plataforma de trading crypto construída para usuários chineses! Atendimento ao cliente chinês, depósitos USD/fiat, interface simplificada. Conforme e seguro, suporte KYC China continental, depósitos USD com cartão bancário Hong Kong.',
-    it: 'Piattaforma di trading crypto costruita per utenti cinesi! Assistenza clienti cinese, depositi USD/fiat, interfaccia semplificata. Conforme e sicuro, supporto KYC Cina continentale, depositi USD con carta bancaria Hong Kong.',
-    de: 'Krypto-Trading-Plattform für chinesische Nutzer! Chinesischer Kundensupport, USD/Fiat-Einzahlungen, vereinfachte Oberfläche. Konform und sicher, Festland-China-KYC-Unterstützung, Hong Kong Bankkarten-USD-Einzahlungen.',
-    ja: '中国ユーザー向けに構築された暗号通貨取引プラットフォーム！中国語カスタマーサービス、USD/法定通貨入金、簡素化されたインターフェース。準拠でセキュア、中国本土KYCサポート、香港銀行カードUSD入金。',
-    ko: '중국 사용자를 위해 구축된 암호화폐 거래 플랫폼! 중국어 고객 서비스, USD/법정화폐 입금, 간소화된 인터페이스. 규정 준수 및 보안, 중국 본토 KYC 지원, 홍콩 은행 카드 USD 입금.'
+    'zh-tw': '專為華人用戶打造的加密貨幣交易平台！中文客服、美元法幣出入金、繁體界面。合規安全，台灣KYC支援，香港地區銀行卡美金法幣出入金。',
+    fr: 'Plateforme de trading crypto avec support français natif ! Service client 24/7 en français, dépôts EUR/USD instantanés, interface intuitive. Entièrement réglementée dans l\'UE avec sécurité de niveau bancaire.',
+    pt: 'Plataforma de trading crypto com suporte nativo em português! Atendimento 24/7 em português, depósitos BRL/USD instantâneos, interface intuitiva. Totalmente regulamentada no Brasil com segurança de nível bancário.',
+    it: 'Piattaforma di trading crypto con supporto italiano nativo! Assistenza clienti 24/7 in italiano, depositi EUR/USD istantanei, interfaccia intuitiva. Completamente regolamentata nell\'UE con sicurezza di livello bancario.',
+    de: 'Krypto-Trading-Plattform mit deutschem Support! 24/7 deutscher Kundensupport, sofortige EUR/USD-Einzahlungen, intuitive Oberfläche. Vollständig reguliert in der EU mit bankähnlicher Sicherheit.',
+    ja: '日本語ネイティブサポートの暗号通貨取引プラットフォーム！24/7日本語カスタマーサービス、JPY/USD即時入金、直感的なインターフェース。日本で完全規制対応、銀行レベルのセキュリティ。',
+    ko: '한국어 네이티브 지원 암호화폐 거래 플랫폼! 24/7 한국어 고객 서비스, KRW/USD 즉시 입금, 직관적인 인터페이스. 한국에서 완전 규제 준수, 은행급 보안.'
   },
   gamingTitle: {
     en: 'Gaming Community',
@@ -667,13 +667,13 @@ export default function Home() {
 
           <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col">
             <div className="text-5xl mb-6">🌏</div>
-            <h3 className="text-2xl font-bold text-black mb-4">{t('chineseTitle')}</h3>
+            <h3 className="text-2xl font-bold text-black mb-4">{t('languageCommunityTitle')}</h3>
             <p className="text-gray-600 mb-6 text-sm flex-grow">
-              {t('chineseDescription')}
+              {t('languageCommunityDescription')}
             </p>
             <div className="mb-6">
               <p className="text-xs text-gray-500 mb-2">🎯 Exclusive Benefits:</p>
-              <p className="text-sm font-semibold">Chinese Support • USD Deposits • Mainland KYC • HK Bank Cards</p>
+              <p className="text-sm font-semibold">{language === 'en' ? 'English Support • USD Deposits • Global KYC • Bank Cards' : language === 'zh-cn' ? 'Chinese Support • USD Deposits • Mainland KYC • HK Bank Cards' : language === 'zh-tw' ? 'Chinese Support • USD Deposits • Taiwan KYC • HK Bank Cards' : language === 'fr' ? 'French Support • EUR Deposits • EU KYC • SEPA Transfer' : language === 'pt' ? 'Portuguese Support • BRL Deposits • Brazil KYC • PIX Transfer' : language === 'it' ? 'Italian Support • EUR Deposits • EU KYC • SEPA Transfer' : language === 'de' ? 'German Support • EUR Deposits • EU KYC • SEPA Transfer' : language === 'ja' ? 'Japanese Support • JPY Deposits • Japan KYC • Bank Transfer' : 'Korean Support • KRW Deposits • Korea KYC • Bank Transfer'}</p>
               <p className="text-xs text-green-600 font-semibold mt-2">
                 💰 +10% Referral Bonus
               </p>
@@ -683,7 +683,7 @@ export default function Home() {
               className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => handleButtonClick('chinese', 'https://backpack.exchange/join/zh-cn')}
+              onClick={() => handleButtonClick('language_community', 'https://backpack.exchange/join/zh-cn')}
             >
               {t('registerButton')}
             </a>
