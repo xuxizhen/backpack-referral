@@ -584,9 +584,15 @@ export default function Home() {
               {t('exclusiveBonusDetails')}
             </p>
             <div className="text-center">
-              <p className="text-lg font-bold text-orange-700 mb-2">
+              <a
+                href="https://backpack.exchange/join/meme"
+                onClick={() => handleButtonClick('exclusive_bonus_action', 'https://backpack.exchange/join/meme')}
+                className="inline-block text-lg font-bold text-orange-700 mb-2 hover:text-orange-600 transition-colors duration-200 cursor-pointer hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {t('exclusiveBonusAction')}
-              </p>
+              </a>
               <p className="text-sm text-gray-600">
                 {t('exclusiveBonusNote')}
               </p>
