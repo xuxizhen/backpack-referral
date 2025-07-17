@@ -539,7 +539,7 @@ export default function Home() {
                 🚀 Register Now to Unlock All Benefits!
               </p>
               <p className="text-sm text-gray-600">
-                Limited time offer - Don't miss out!
+                Limited time offer - Don&apos;t miss out!
               </p>
             </div>
           </div>
