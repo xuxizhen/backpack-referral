@@ -346,6 +346,50 @@ const translations: Translations = {
     ja: 'Backpackにサインイン',
     ko: 'Backpack에 로그인'
   },
+  exclusiveBonusTitle: {
+    en: '🎁 Exclusive Bonus: Up to 10% Referral Commission',
+    'zh-cn': '🎁 独家奖励：高达10%推荐佣金',
+    'zh-tw': '🎁 獨家獎勵：高達10%推薦佣金',
+    fr: '🎁 Bonus Exclusif : Jusqu’à 10% de Commission de Parrainage',
+    pt: '🎁 Bônus Exclusivo: Até 10% de Comissão de Indicação',
+    it: '🎁 Bonus Esclusivo: Fino al 10% di Commissione sui Referral',
+    de: '🎁 Exklusiver Bonus: Bis zu 10% Empfehlungsprovision',
+    ja: '🎁 限定ボーナス：最大 10% 紹介コミッション',
+    ko: '🎁 독점 보너스: 최대 10% 추천 커미션'
+  },
+  exclusiveBonusDetails: {
+    en: '• Register through this page to get exclusive newbie rewards\n• Earn up to 10% commission on referrals\n• Additional trading bonuses for active users\n• VIP customer support access',
+    'zh-cn': '• 通过此页面注册获得新手独家奖励\n• 推荐用户可获得高达10%佣金\n• 活跃用户额外交易奖励\n• VIP客服支持权益',
+    'zh-tw': '• 透過此頁面註冊獲得新手獨家獎勵\n• 推薦用戶可獲得高達10%佣金\n• 活躍用戶額外交易獎勵\n• VIP客服支援權益',
+    fr: '• Inscrivez-vous via cette page pour obtenir des récompenses exclusives pour débutants\n• Gagnez jusqu’à 10% de commission sur les parrainages\n• Bonus de trading supplémentaires pour les utilisateurs actifs\n• Accès au support client VIP',
+    pt: '• Registre-se através desta página para obter recompensas exclusivas para iniciantes\n• Ganhe até 10% de comissão em indicações\n• Bônus de negociação adicionais para usuários ativos\n• Acesso ao suporte ao cliente VIP',
+    it: '• Registrati tramite questa pagina per ottenere ricompense esclusive per principianti\n• Guadagna fino al 10% di commissione sui referral\n• Bonus di trading aggiuntivi per utenti attivi\n• Accesso al supporto clienti VIP',
+    de: '• Registrieren Sie sich über diese Seite, um exklusive Anfängerbelohnungen zu erhalten\n• Verdienen Sie bis zu 10% Provision für Empfehlungen\n• Zusätzliche Trading-Boni für aktive Nutzer\n• VIP-Kundensupport-Zugang',
+    ja: '• このページから登録して初心者限定特典を取得\n• 紹介で最大 10% のコミッション獲得\n• アクティブユーザー向け追加トレーディングボーナス\n• VIPカスタマーサポートアクセス',
+    ko: '• 이 페이지를 통해 등록하여 신규 사용자 독점 보상 획득\n• 추천으로 최대 10% 커미션 획득\n• 활성 사용자 추가 거래 보너스\n• VIP 고객 지원 액세스'
+  },
+  exclusiveBonusAction: {
+    en: '🚀 Register Now to Unlock All Benefits!',
+    'zh-cn': '🚀 立即注册解锁所有福利！',
+    'zh-tw': '🚀 立即註冊解鎖所有福利！',
+    fr: '🚀 Inscrivez-vous Maintenant pour Débloquer Tous les Avantages !',
+    pt: '🚀 Registre-se Agora para Desbloquear Todos os Benefícios!',
+    it: '🚀 Registrati Ora per Sbloccare Tutti i Vantaggi!',
+    de: '🚀 Jetzt Registrieren, um Alle Vorteile Freizuschalten!',
+    ja: '🚀 今すぐ登録してすべての特典をアンロック！',
+    ko: '🚀 지금 등록하여 모든 혜택을 얻으세요!'
+  },
+  exclusiveBonusNote: {
+    en: 'Limited time offer - Don’t miss out!',
+    'zh-cn': '限时优惠 - 不要错过！',
+    'zh-tw': '限時優惠 - 不要錯過！',
+    fr: 'Offre à durée limitée - Ne manquez pas !',
+    pt: 'Oferta por tempo limitado - Não perca!',
+    it: 'Offerta a tempo limitato - Non perdere!',
+    de: 'Zeitlich begrenztes Angebot - Nicht verpassen!',
+    ja: '期間限定オファー - お見逃しなく！',
+    ko: '기간 한정 제안 - 놓치지 마세요!'
+  },
   disclaimer: {
     en: 'All website content is AI-generated. Backpack promotions mentioned are not guaranteed to be real or effective, and do not constitute investment advice. Virtual currency investment requires caution - please do your own research.',
     'zh-cn': '所有网站内容由AI生成，页面提及的Backpack优惠不保证真实有效，不构成投资建议，虚拟货币投资需谨慎，请自己做好研究。',
@@ -523,7 +567,7 @@ export default function Home() {
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
             {t('description')}
           </p>
-          <div className="bg-gray-50 rounded-2xl p-8 mb-12 max-w-4xl mx-auto">
+          <div className="bg-gray-50 rounded-2xl p-8 mb-12 max-w-6xl mx-auto">
             <h2 className="text-2xl font-bold mb-6">{t('limitedOffer')}</h2>
             <p className="text-gray-700 mb-4 whitespace-pre-line">
               {t('offerDetails')}
@@ -534,17 +578,17 @@ export default function Home() {
           </div>
           
           {/* Exclusive Bonus Section */}
-          <div className="bg-gradient-to-r from-yellow-100 to-orange-100 border-2 border-yellow-300 rounded-2xl p-8 mb-12 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6 text-center text-orange-800">🎁 Exclusive Bonus: Up to 10% Referral Commission</h2>
+          <div className="bg-gradient-to-r from-yellow-100 to-orange-100 border-2 border-yellow-300 rounded-2xl p-8 mb-12 max-w-6xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6 text-center text-orange-800">{t('exclusiveBonusTitle')}</h2>
             <p className="text-gray-700 mb-4 whitespace-pre-line text-center">
-              • Register through this page to get exclusive newbie rewards\n• Earn up to 10% commission on referrals\n• Additional trading bonuses for active users\n• VIP customer support access
+              {t('exclusiveBonusDetails')}
             </p>
             <div className="text-center">
               <p className="text-lg font-bold text-orange-700 mb-2">
-                🚀 Register Now to Unlock All Benefits!
+                {t('exclusiveBonusAction')}
               </p>
               <p className="text-sm text-gray-600">
-                Limited time offer - Don&apos;t miss out!
+                {t('exclusiveBonusNote')}
               </p>
             </div>
           </div>
