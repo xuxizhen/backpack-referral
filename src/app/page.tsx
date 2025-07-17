@@ -511,6 +511,19 @@ export default function Home() {
           <p className="text-2xl md:text-3xl font-semibold text-black mb-8">
             {t('subtitle')}
           </p>
+          
+          {/* Header CTA Button */}
+          <div className="text-center mb-8">
+            <a
+              href="https://backpack.exchange/join/meme"
+              onClick={() => handleButtonClick('header_cta', 'https://backpack.exchange/join/meme')}
+              className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-12 rounded-full text-xl transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('registerButton')}
+            </a>
+          </div>
         </div>
 
         {/* Hero Description */}
@@ -709,26 +722,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Trading Features */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-10">{t('tradingFeatures')}</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8">
-              <div className="text-4xl mb-4">💰</div>
-              <h3 className="text-xl font-bold mb-4">{t('lowFees')}</h3>
-              <p className="text-gray-600">
-                Trade with the lowest fees in the industry. More profit for you!
-              </p>
-            </div>
-            <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8">
-              <div className="text-4xl mb-4">⚡</div>
-              <h3 className="text-xl font-bold mb-4">{t('fastExecution')}</h3>
-              <p className="text-gray-600">
-                Lightning-fast order execution for competitive trading.
-              </p>
-            </div>
-          </div>
-        </div>
 
         {/* Why Choose Backpack */}
         <div className="bg-black text-white rounded-2xl p-12 mb-16 max-w-5xl mx-auto">
