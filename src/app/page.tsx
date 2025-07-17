@@ -5,6 +5,13 @@ import Image from 'next/image';
 
 type Language = 'en' | 'zh-cn' | 'zh-tw';
 
+// Google Analytics type definition
+declare global {
+  interface Window {
+    gtag: (command: string, targetId: string, config?: any) => void;
+  }
+}
+
 interface Translations {
   [key: string]: {
     en: string;
@@ -152,6 +159,32 @@ export default function Home() {
 
   const t = (key: string) => translations[key]?.[language] || translations[key]?.en || key;
 
+  // Google Analytics event tracking
+  const trackEvent = (eventName: string, parameters?: any) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', eventName, parameters);
+    }
+  };
+
+  // Track language changes
+  const handleLanguageChange = (newLanguage: Language) => {
+    setLanguage(newLanguage);
+    trackEvent('language_change', {
+      language: newLanguage,
+      event_category: 'user_interaction'
+    });
+  };
+
+  // Track button clicks
+  const handleButtonClick = (community: string, url: string) => {
+    trackEvent('register_button_click', {
+      community: community,
+      url: url,
+      language: language,
+      event_category: 'conversion'
+    });
+  };
+
   // Update document title and meta tags when language changes
   useEffect(() => {
     document.title = t('seoTitle');
@@ -203,7 +236,7 @@ export default function Home() {
         <div className="flex justify-end mb-8">
           <div className="flex space-x-2">
             <button
-              onClick={() => setLanguage('en')}
+              onClick={() => handleLanguageChange('en')}
               className={`px-3 py-1 rounded text-sm ${
                 language === 'en' ? 'bg-black text-white' : 'bg-gray-200 text-black'
               }`}
@@ -211,7 +244,7 @@ export default function Home() {
               English
             </button>
             <button
-              onClick={() => setLanguage('zh-cn')}
+              onClick={() => handleLanguageChange('zh-cn')}
               className={`px-3 py-1 rounded text-sm ${
                 language === 'zh-cn' ? 'bg-black text-white' : 'bg-gray-200 text-black'
               }`}
@@ -219,7 +252,7 @@ export default function Home() {
               简体中文
             </button>
             <button
-              onClick={() => setLanguage('zh-tw')}
+              onClick={() => handleLanguageChange('zh-tw')}
               className={`px-3 py-1 rounded text-sm ${
                 language === 'zh-tw' ? 'bg-black text-white' : 'bg-gray-200 text-black'
               }`}
@@ -294,6 +327,7 @@ export default function Home() {
               className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => handleButtonClick('meme', 'https://backpack.exchange/join/meme')}
             >
               {t('memeButton')}
             </a>
@@ -317,6 +351,7 @@ export default function Home() {
               className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => handleButtonClick('chinese', 'https://backpack.exchange/join/zh-cn')}
             >
               {t('chineseButton')}
             </a>
@@ -340,6 +375,7 @@ export default function Home() {
               className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => handleButtonClick('gaming', 'https://backpack.exchange/join/lol')}
             >
               {t('gamingButton')}
             </a>
@@ -382,6 +418,7 @@ export default function Home() {
             className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-12 rounded-full transition-colors duration-200 text-lg"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => handleButtonClick('main_cta', 'https://backpack.exchange/join/meme')}
           >
             {t('getStartedButton')}
           </a>
