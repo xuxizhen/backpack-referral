@@ -71,16 +71,104 @@ const translations: Translations = {
     ja: '⚡ トレーディング機能',
     ko: '⚡ 거래 기능'
   },
+  uniTonCrvPerps: {
+    en: 'UNI, TON & CRV Perps Markets Now Live - New perpetual markets launched for enhanced trading opportunities.',
+    'zh-cn': 'UNI、TON和CRV永续合约市场现已上线 - 新的永续合约市场为您提供更多交易机会。',
+    'zh-tw': 'UNI、TON和CRV永續合約市場現已上線 - 新的永續合約市場為您提供更多交易機會。',
+    fr: 'Marchés Perps UNI, TON et CRV maintenant en direct - Nouveaux marchés perpétuels lancés pour des opportunités de trading améliorées.',
+    pt: 'Mercados Perps UNI, TON e CRV agora ao vivo - Novos mercados perpétuos lançados para oportunidades de trading aprimoradas.',
+    it: 'Mercati Perps UNI, TON e CRV ora live - Nuovi mercati perpetui lanciati per opportunità di trading migliorate.',
+    de: 'UNI, TON & CRV Perps Märkte jetzt live - Neue Perpetual-Märkte für verbesserte Trading-Möglichkeiten.',
+    ja: 'UNI、TON、CRV Perps市場が開始 - 取引機会向上のための新しい永続契約市場が開設。',
+    ko: 'UNI, TON & CRV Perps 마켓이 개시 - 향상된 거래 기회를 위한 새로운 영구 계약 마켓 출시.'
+  },
+  dogeListing: {
+    en: 'DOGE Listing - DOGE now available to trade, lend, and earn rewards with special launch bonuses.',
+    'zh-cn': 'DOGE上线 - DOGE现可交易、借贷并获得奖励，享受特别上线奖励。',
+    'zh-tw': 'DOGE上線 - DOGE現可交易、借貸並獲得獎勵，享受特別上線獎勵。',
+    fr: 'Listing DOGE - DOGE maintenant disponible pour trader, prêter et gagner des récompenses avec des bonus de lancement spéciaux.',
+    pt: 'Listagem DOGE - DOGE agora disponível para negociar, emprestar e ganhar recompensas com bônus especiais de lançamento.',
+    it: 'Listing DOGE - DOGE ora disponibile per fare trading, prestare e guadagnare ricompense con bonus speciali di lancio.',
+    de: 'DOGE-Listing - DOGE jetzt verfügbar zum Handeln, Verleihen und Belohnungen verdienen mit speziellen Launch-Boni.',
+    ja: 'DOGE上場 - DOGEの取引、貸出、報酬獲得が可能になり、特別ローンチボーナス付き。',
+    ko: 'DOGE 상장 - DOGE를 거래, 대출하고 특별 출시 보너스와 함께 보상을 받을 수 있습니다.'
+  },
+  seiAirdrop: {
+    en: 'SEI Airdrop - Over 1 million SEI tokens airdropped on Backpack with exclusive trading rewards.',
+    'zh-cn': 'SEI空投 - 超过100万SEI代币在Backpack空投，附带独家交易奖励。',
+    'zh-tw': 'SEI空投 - 超過100萬SEI代幣在Backpack空投，附帶獨家交易獎勵。',
+    fr: 'Airdrop SEI - Plus de 1 million de tokens SEI largués sur Backpack avec des récompenses de trading exclusives.',
+    pt: 'Airdrop SEI - Mais de 1 milhão de tokens SEI lançados no Backpack com recompensas de trading exclusivas.',
+    it: 'Airdrop SEI - Oltre 1 milione di token SEI lanciati su Backpack con ricompense di trading esclusive.',
+    de: 'SEI Airdrop - Über 1 Million SEI-Token auf Backpack mit exklusiven Trading-Belohnungen.',
+    ja: 'SEI エアドロップ - Backpackで100万以上のSEIトークンエアドロップ、限定取引報酬付き。',
+    ko: 'SEI 에어드롭 - Backpack에서 100만 개 이상의 SEI 토큰 에어드롭, 독점 거래 보상 포함.'
+  },
+  seiNewUser: {
+    en: 'SEI New User Campaign - 300 $SEI tokens available for new users with additional trading bonuses.',
+    'zh-cn': 'SEI新用户活动 - 新用户可获得300个$SEI代币，还有额外交易奖励。',
+    'zh-tw': 'SEI新用戶活動 - 新用戶可獲得300個$SEI代幣，還有額外交易獎勵。',
+    fr: 'Campagne Nouveaux Utilisateurs SEI - 300 tokens $SEI disponibles pour les nouveaux utilisateurs avec des bonus de trading supplémentaires.',
+    pt: 'Campanha de Novos Usuários SEI - 300 tokens $SEI disponíveis para novos usuários com bônus de trading adicionais.',
+    it: 'Campagna Nuovi Utenti SEI - 300 token $SEI disponibili per nuovi utenti con bonus di trading aggiuntivi.',
+    de: 'SEI Neue Benutzer-Kampagne - 300 $SEI-Token für neue Benutzer mit zusätzlichen Trading-Boni verfügbar.',
+    ja: 'SEI 新規ユーザーキャンペーン - 新規ユーザーに300 $SEIトークン、追加取引ボーナス付き。',
+    ko: 'SEI 신규 사용자 캠페인 - 신규 사용자에게 300 $SEI 토큰과 추가 거래 보너스 제공.'
+  },
+  backpackAchievement: {
+    en: 'Backpack Achievement Campaign - Rewards campaign for active users with milestone achievements.',
+    'zh-cn': 'Backpack成就活动 - 活跃用户奖励活动，设有里程碑成就奖励。',
+    'zh-tw': 'Backpack成就活動 - 活躍用戶獎勵活動，設有里程碑成就獎勵。',
+    fr: 'Campagne de Réalisations Backpack - Campagne de récompenses pour les utilisateurs actifs avec des achievements jalons.',
+    pt: 'Campanha de Conquistas Backpack - Campanha de recompensas para usuários ativos com conquistas de marcos.',
+    it: 'Campagna Achievement Backpack - Campagna ricompense per utenti attivi con achievement di milestone.',
+    de: 'Backpack Achievement-Kampagne - Belohnungskampagne für aktive Nutzer mit Meilenstein-Erfolgen.',
+    ja: 'Backpack アチーブメントキャンペーン - アクティブユーザー向けのマイルストーン達成報酬キャンペーン。',
+    ko: 'Backpack 성취 캠페인 - 마일스톤 달성과 함께 활성 사용자를 위한 보상 캠페인.'
+  },
+  esTokenCampaign: {
+    en: 'ES Token New User Campaign - 250 ES tokens for new Backpack users with exclusive benefits.',
+    'zh-cn': 'ES代币新用户活动 - 新Backpack用户可获得250个ES代币，享受独家福利。',
+    'zh-tw': 'ES代幣新用戶活動 - 新Backpack用戶可獲得250個ES代幣，享受獨家福利。',
+    fr: 'Campagne Nouveaux Utilisateurs Token ES - 250 tokens ES pour les nouveaux utilisateurs Backpack avec des avantages exclusifs.',
+    pt: 'Campanha de Novos Usuários Token ES - 250 tokens ES para novos usuários Backpack com benefícios exclusivos.',
+    it: 'Campagna Nuovi Utenti Token ES - 250 token ES per nuovi utenti Backpack con vantaggi esclusivi.',
+    de: 'ES Token Neue Benutzer-Kampagne - 250 ES-Token für neue Backpack-Nutzer mit exklusiven Vorteilen.',
+    ja: 'ESトークン新規ユーザーキャンペーン - 新規Backpackユーザーに250 ESトークン、限定特典付き。',
+    ko: 'ES 토큰 신규 사용자 캠페인 - 독점 혜택과 함께 신규 Backpack 사용자에게 250 ES 토큰 제공.'
+  },
+  eclipseAirdrop: {
+    en: 'Eclipse (ES) Airdrop - Airdrop and trading campaign for ES tokens with bonus rewards.',
+    'zh-cn': 'Eclipse (ES) 空投 - ES代币空投和交易活动，附带奖励福利。',
+    'zh-tw': 'Eclipse (ES) 空投 - ES代幣空投和交易活動，附帶獎勵福利。',
+    fr: 'Airdrop Eclipse (ES) - Campagne d\'airdrop et de trading pour les tokens ES avec des récompenses bonus.',
+    pt: 'Airdrop Eclipse (ES) - Campanha de airdrop e trading para tokens ES com recompensas bônus.',
+    it: 'Airdrop Eclipse (ES) - Campagna di airdrop e trading per token ES con ricompense bonus.',
+    de: 'Eclipse (ES) Airdrop - Airdrop- und Trading-Kampagne für ES-Token mit Bonus-Belohnungen.',
+    ja: 'Eclipse (ES) エアドロップ - ESトークンのエアドロップ・取引キャンペーン、ボーナス報酬付き。',
+    ko: 'Eclipse (ES) 에어드롭 - 보너스 보상과 함께 ES 토큰 에어드롭 및 거래 캠페인.'
+  },
+  pumpListing: {
+    en: '$PUMP Listing - $PUMP token now live for trading with special launch promotions.',
+    'zh-cn': '$PUMP上线 - $PUMP代币现已开放交易，享受特别上线促销。',
+    'zh-tw': '$PUMP上線 - $PUMP代幣現已開放交易，享受特別上線促銷。',
+    fr: 'Listing $PUMP - Token $PUMP maintenant en direct pour le trading avec des promotions de lancement spéciales.',
+    pt: 'Listagem $PUMP - Token $PUMP agora ao vivo para trading com promoções especiais de lançamento.',
+    it: 'Listing $PUMP - Token $PUMP ora live per il trading con promozioni speciali di lancio.',
+    de: '$PUMP-Listing - $PUMP-Token jetzt live für Trading mit speziellen Launch-Promotionen.',
+    ja: '$PUMP 上場 - $PUMPトークンが取引開始、特別ローンチプロモーション付き。',
+    ko: '$PUMP 상장 - 특별 출시 프로모션과 함께 $PUMP 토큰 거래 시작.'
+  },
   pointsProgram: {
-    en: 'Backpack Points Season 2 is LIVE! Earn points for every trade and unlock exclusive rewards.',
-    'zh-cn': 'Backpack积分第二季正式上线！每笔交易都能获得积分，解锁独家奖励。',
-    'zh-tw': 'Backpack積分第二季正式上線！每筆交易都能獲得積分，解鎖獨家獎勵。',
-    fr: 'La Saison 2 des Points Backpack est EN DIRECT ! Gagnez des points pour chaque trade et débloquez des récompenses exclusives.',
-    pt: 'A Temporada 2 dos Pontos Backpack está AO VIVO! Ganhe pontos para cada negociação e desbloqueie recompensas exclusivas.',
-    it: 'La Stagione 2 dei Punti Backpack è LIVE! Guadagna punti per ogni trade e sblocca ricompense esclusive.',
-    de: 'Backpack Points Season 2 ist LIVE! Verdiene Punkte für jeden Trade und schalte exklusive Belohnungen frei.',
-    ja: 'Backpackポイントシーズン2が開始！取引ごとにポイントを獲得し、限定報酬をアンロック。',
-    ko: 'Backpack 포인트 시즌 2가 시작됐습니다! 모든 거래에서 포인트를 획득하고 독점 보상을 잠금해제하세요.'
+    en: 'Backpack Points Season 2 - New season of trading points launched with enhanced rewards system.',
+    'zh-cn': 'Backpack积分第二季 - 新一季交易积分启动，增强奖励系统。',
+    'zh-tw': 'Backpack積分第二季 - 新一季交易積分啟動，增強獎勵系統。',
+    fr: 'Points Backpack Saison 2 - Nouvelle saison de points de trading lancée avec un système de récompenses amélioré.',
+    pt: 'Pontos Backpack Temporada 2 - Nova temporada de pontos de trading lançada com sistema de recompensas aprimorado.',
+    it: 'Punti Backpack Stagione 2 - Nuova stagione di punti trading lanciata con sistema ricompense migliorato.',
+    de: 'Backpack Points Season 2 - Neue Saison von Trading-Punkten mit verbessertem Belohnungssystem gestartet.',
+    ja: 'Backpackポイントシーズン2 - 強化された報酬システムで新シーズンの取引ポイント開始。',
+    ko: 'Backpack 포인트 시즌 2 - 향상된 보상 시스템으로 새로운 거래 포인트 시즌 시작.'
   },
   eclipseAirdrop: {
     en: 'Eclipse ES Airdrop LIVE on Backpack - Trade Eclipse tokens and earn exclusive rewards!',
@@ -606,45 +694,75 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                title: "Backpack Points Season 2",
-                content: t('pointsProgram'),
-                icon: "🎯",
-                gradient: "from-purple-500 to-pink-500"
+                title: "UNI, TON & CRV Perps",
+                content: t('uniTonCrvPerps'),
+                icon: "📈",
+                gradient: "from-blue-500 to-cyan-500",
+                date: "August 7, 2025"
               },
               {
-                title: "Eclipse ES Airdrop",
+                title: "DOGE Listing",
+                content: t('dogeListing'),
+                icon: "🐕",
+                gradient: "from-yellow-500 to-orange-500",
+                date: "August 1, 2025"
+              },
+              {
+                title: "SEI Airdrop",
+                content: t('seiAirdrop'),
+                icon: "🎁",
+                gradient: "from-purple-500 to-pink-500",
+                date: "July 31, 2025"
+              },
+              {
+                title: "SEI New User Campaign",
+                content: t('seiNewUser'),
+                icon: "🆕",
+                gradient: "from-green-500 to-emerald-500",
+                date: "July 30, 2025"
+              },
+              {
+                title: "Backpack Achievement Campaign",
+                content: t('backpackAchievement'),
+                icon: "🏆",
+                gradient: "from-indigo-500 to-purple-500",
+                date: "July 17, 2025"
+              },
+              {
+                title: "ES Token Campaign",
+                content: t('esTokenCampaign'),
+                icon: "🎯",
+                gradient: "from-red-500 to-pink-500",
+                date: "July 16, 2025"
+              },
+              {
+                title: "Eclipse (ES) Airdrop",
                 content: t('eclipseAirdrop'),
                 icon: "🌟",
-                gradient: "from-blue-500 to-cyan-500"
+                gradient: "from-cyan-500 to-blue-500",
+                date: "July 16, 2025"
               },
               {
-                title: "Pump.fun Trading",
-                content: t('pumpTrading'),
+                title: "$PUMP Listing",
+                content: t('pumpListing'),
                 icon: "🚀",
-                gradient: "from-green-500 to-emerald-500"
+                gradient: "from-orange-500 to-red-500",
+                date: "July 14, 2025"
               },
               {
-                title: "Fragmetric Frenzy",
-                content: t('fragmetricCampaign'),
-                icon: "💎",
-                gradient: "from-yellow-500 to-orange-500"
-              },
-              {
-                title: "New User Campaign",
-                content: t('newUserCampaign'),
-                icon: "🎁",
-                gradient: "from-red-500 to-pink-500"
-              },
-              {
-                title: "Legacy Drop",
-                content: t('legacyDrop'),
-                icon: "👑",
-                gradient: "from-indigo-500 to-purple-500"
+                title: "Backpack Points Season 2",
+                content: t('pointsProgram'),
+                icon: "🎖️",
+                gradient: "from-purple-600 to-indigo-600",
+                date: "July 3, 2025"
               }
             ].map((activity, index) => (
               <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-100">
-                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r ${activity.gradient} text-white text-2xl mb-4`}>
-                  {activity.icon}
+                <div className="flex justify-between items-start mb-3">
+                  <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r ${activity.gradient} text-white text-2xl`}>
+                    {activity.icon}
+                  </div>
+                  <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">{activity.date}</span>
                 </div>
                 <h3 className="text-lg font-bold mb-3">{activity.title}</h3>
                 <p className="text-gray-600 text-sm mb-4">{activity.content}</p>
