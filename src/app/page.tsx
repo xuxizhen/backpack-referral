@@ -170,17 +170,6 @@ const translations: Translations = {
     ja: 'Backpackポイントシーズン2 - 強化された報酬システムで新シーズンの取引ポイント開始。',
     ko: 'Backpack 포인트 시즌 2 - 향상된 보상 시스템으로 새로운 거래 포인트 시즌 시작.'
   },
-  eclipseAirdrop: {
-    en: 'Eclipse ES Airdrop LIVE on Backpack - Trade Eclipse tokens and earn exclusive rewards!',
-    'zh-cn': 'Eclipse ES空投在Backpack上线 - 交易Eclipse代币并获得独家奖励！',
-    'zh-tw': 'Eclipse ES空投在Backpack上線 - 交易Eclipse代幣並獲得獨家獎勵！',
-    fr: 'Eclipse ES Airdrop EN DIRECT sur Backpack - Tradez les tokens Eclipse et gagnez des récompenses exclusives !',
-    pt: 'Eclipse ES Airdrop AO VIVO no Backpack - Negocie tokens Eclipse e ganhe recompensas exclusivas!',
-    it: 'Eclipse ES Airdrop LIVE su Backpack - Fai trading di token Eclipse e guadagna ricompense esclusive!',
-    de: 'Eclipse ES Airdrop LIVE auf Backpack - Handle Eclipse-Token und verdiene exklusive Belohnungen!',
-    ja: 'Eclipse ES エアドロップがBackpackで開始 - Eclipseトークンを取引して限定報酬を獲得！',
-    ko: 'Eclipse ES 에어드롭이 Backpack에서 진행 중 - Eclipse 토큰을 거래하고 독점 보상을 획득하세요!'
-  },
   pumpTrading: {
     en: 'Pump.fun tokens are now LIVE for trading on Backpack! Discover the next viral meme coin.',
     'zh-cn': 'Pump.fun代币现已在Backpack上线交易！发现下一个病毒式meme币。',
