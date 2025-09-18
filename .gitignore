@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# Ignore session continuation files
+2025-*-this-session-is-being-continued-from-a-previous-*.txt
+*-this-session-is-being-continued-from-a-previous-*.txt
+
+# Ignore temporary files
+*.tmp
+*.temp
+server.log
+server.pid
