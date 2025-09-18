@@ -1,0 +1,19 @@
+
+> backpack-referral@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.4.1 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.31.206:3000
+
+ ✓ Starting...
+ ✓ Ready in 838ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.7s
+ GET / 200 in 2881ms
+ GET / 200 in 125ms
+ ✓ Compiled /_not-found/page in 217ms
+ GET /serviceWorker.js 404 in 283ms
+ GET /serviceWorker.js 404 in 62ms
+ ✓ Compiled in 161ms
+[?25h

@@ -490,26 +490,26 @@ const translations: Translations = {
     ko: 'Backpack에 로그인'
   },
   exclusiveBonusTitle: {
-    en: '🎁 Exclusive Bonus: Up to 10% Referral Commission',
-    'zh-cn': '🎁 独家奖励：高达10%推荐佣金',
-    'zh-tw': '🎁 獨家獎勵：高達10%推薦佣金',
-    fr: '🎁 Bonus Exclusif : Jusqu’à 10% de Commission de Parrainage',
-    pt: '🎁 Bônus Exclusivo: Até 10% de Comissão de Indicação',
-    it: '🎁 Bonus Esclusivo: Fino al 10% di Commissione sui Referral',
-    de: '🎁 Exklusiver Bonus: Bis zu 10% Empfehlungsprovision',
-    ja: '🎁 限定ボーナス：最大 10% 紹介コミッション',
-    ko: '🎁 독점 보너스: 최대 10% 추천 커미션'
+    en: '🎁 Exclusive Bonus: 20% Referral Commission',
+    'zh-cn': '🎁 独家奖励：20%推荐佣金',
+    'zh-tw': '🎁 獨家獎勵：20%推薦佣金',
+    fr: '🎁 Bonus Exclusif : 20% de Commission de Parrainage',
+    pt: '🎁 Bônus Exclusivo: Até 20% de Comissão de Indicação',
+    it: '🎁 Bonus Esclusivo: Fino al 20% di Commissione sui Referral',
+    de: '🎁 Exklusiver Bonus: Bis zu 20% Empfehlungsprovision',
+    ja: '🎁 限定ボーナス：20% 紹介コミッション',
+    ko: '🎁 독점 보너스: 20% 추천 커미션'
   },
   exclusiveBonusDetails: {
-    en: '• Register through this page to get exclusive newbie rewards\n• Earn up to 10% commission on referrals\n• Additional trading bonuses for active users\n• VIP customer support access',
-    'zh-cn': '• 通过此页面注册获得新手独家奖励\n• 推荐用户可获得高达10%佣金\n• 活跃用户额外交易奖励\n• VIP客服支持权益',
-    'zh-tw': '• 透過此頁面註冊獲得新手獨家獎勵\n• 推薦用戶可獲得高達10%佣金\n• 活躍用戶額外交易獎勵\n• VIP客服支援權益',
-    fr: '• Inscrivez-vous via cette page pour obtenir des récompenses exclusives pour débutants\n• Gagnez jusqu’à 10% de commission sur les parrainages\n• Bonus de trading supplémentaires pour les utilisateurs actifs\n• Accès au support client VIP',
-    pt: '• Registre-se através desta página para obter recompensas exclusivas para iniciantes\n• Ganhe até 10% de comissão em indicações\n• Bônus de negociação adicionais para usuários ativos\n• Acesso ao suporte ao cliente VIP',
-    it: '• Registrati tramite questa pagina per ottenere ricompense esclusive per principianti\n• Guadagna fino al 10% di commissione sui referral\n• Bonus di trading aggiuntivi per utenti attivi\n• Accesso al supporto clienti VIP',
-    de: '• Registrieren Sie sich über diese Seite, um exklusive Anfängerbelohnungen zu erhalten\n• Verdienen Sie bis zu 10% Provision für Empfehlungen\n• Zusätzliche Trading-Boni für aktive Nutzer\n• VIP-Kundensupport-Zugang',
-    ja: '• このページから登録して初心者限定特典を取得\n• 紹介で最大 10% のコミッション獲得\n• アクティブユーザー向け追加トレーディングボーナス\n• VIPカスタマーサポートアクセス',
-    ko: '• 이 페이지를 통해 등록하여 신규 사용자 독점 보상 획득\n• 추천으로 최대 10% 커미션 획득\n• 활성 사용자 추가 거래 보너스\n• VIP 고객 지원 액세스'
+    en: '• Register through this page to get exclusive newbie rewards\n• Earn 20% commission on referrals\n• Additional trading bonuses for active users\n• VIP customer support access',
+    'zh-cn': '• 通过此页面注册获得新手独家奖励\n• 推荐用户可获得20%佣金\n• 活跃用户额外交易奖励\n• VIP客服支持权益',
+    'zh-tw': '• 透過此頁面註冊獲得新手獨家獎勵\n• 推薦用戶可獲得20%佣金\n• 活躍用戶額外交易獎勵\n• VIP客服支援權益',
+    fr: '• Inscrivez-vous via cette page pour obtenir des récompenses exclusives pour débutants\n• Gagnez 20% de commission sur les parrainages\n• Bonus de trading supplémentaires pour les utilisateurs actifs\n• Accès au support client VIP',
+    pt: '• Registre-se através desta página para obter recompensas exclusivas para iniciantes\n• Ganhe 20% de comissão em indicações\n• Bônus de negociação adicionais para usuários ativos\n• Acesso ao suporte ao cliente VIP',
+    it: '• Registrati tramite questa pagina per ottenere ricompense esclusive per principianti\n• Guadagna 20% di commissione sui referral\n• Bonus di trading aggiuntivi per utenti attivi\n• Accesso al supporto clienti VIP',
+    de: '• Registrieren Sie sich über diese Seite, um exklusive Anfängerbelohnungen zu erhalten\n• Verdienen Sie 20% Provision für Empfehlungen\n• Zusätzliche Trading-Boni für aktive Nutzer\n• VIP-Kundensupport-Zugang',
+    ja: '• このページから登録して初心者限定特典を取得\n• 紹介で20% のコミッション獲得\n• アクティブユーザー向け追加トレーディングボーナス\n• VIPカスタマーサポートアクセス',
+    ko: '• 이 페이지를 통해 등록하여 신규 사용자 독점 보상 획득\n• 추천으로 20% 커미션 획득\n• 활성 사용자 추가 거래 보너스\n• VIP 고객 지원 액세스'
   },
   exclusiveBonusAction: {
     en: '🚀 Register Now to Unlock All Benefits!',
