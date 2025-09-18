@@ -413,15 +413,15 @@ const translations: Translations = {
     ko: '🎉 기간 한정 제안 - 오늘 시작하세요!'
   },
   offerDetails: {
-    en: '• Zero trading fees for your first 30 days\n• Instant deposits and withdrawals\n• Access to exclusive token launches\n• 24/7 premium customer support',
-    'zh-cn': '• 前30天零交易费用\n• 即时存取款\n• 独家代币发行\n• 24/7高级客户支持',
-    'zh-tw': '• 前30天零交易費用\n• 即時存取款\n• 獨家代幣發行\n• 24/7高級客戶支援',
-    fr: '• Frais de trading zéro pour vos 30 premiers jours\n• Dépôts et retraits instantanés\n• Accès aux lancements de tokens exclusifs\n• Support client premium 24/7',
-    pt: '• Taxas de negociação zero para seus primeiros 30 dias\n• Depósitos e saques instantâneos\n• Acesso a lançamentos exclusivos de tokens\n• Suporte ao cliente premium 24/7',
-    it: '• Commissioni di trading zero per i tuoi primi 30 giorni\n• Depositi e prelievi istantanei\n• Accesso a lanci di token esclusivi\n• Supporto clienti premium 24/7',
-    de: '• Null Handelsgebühren für deine ersten 30 Tage\n• Sofortige Ein- und Auszahlungen\n• Zugang zu exklusiven Token-Launches\n• 24/7 Premium-Kundensupport',
-    ja: '• 最初の30日間取引手数料ゼロ\n• 即座の入出金\n• 独占トークンローンチへのアクセス\n• 24/7プレミアムカスタマーサポート',
-    ko: '• 첫 30일간 거래 수수료 제로\n• 즉시 입출금\n• 독점 토큰 출시 액세스\n• 24/7 프리미엄 고객 지원'
+    en: '• Exclusive 20% referral commission\n• Instant deposits and withdrawals\n• Access to exclusive token launches\n• 24/7 premium customer support',
+    'zh-cn': '• 独家20%推荐佣金\n• 即时存取款\n• 独家代币发行\n• 24/7高级客户支持',
+    'zh-tw': '• 獨家20%推薦佣金\n• 即時存取款\n• 獨家代幣發行\n• 24/7高級客戶支援',
+    fr: '• Commission de parrainage exclusive de 20%\n• Dépôts et retraits instantanés\n• Accès aux lancements de tokens exclusifs\n• Support client premium 24/7',
+    pt: '• Comissão de indicação exclusiva de 20%\n• Depósitos e saques instantâneos\n• Acesso a lançamentos exclusivos de tokens\n• Suporte ao cliente premium 24/7',
+    it: '• Commissione di referral esclusiva del 20%\n• Depositi e prelievi istantanei\n• Accesso a lanci di token esclusivi\n• Supporto clienti premium 24/7',
+    de: '• Exklusive 20% Empfehlungsprovision\n• Sofortige Ein- und Auszahlungen\n• Zugang zu exklusiven Token-Launches\n• 24/7 Premium-Kundensupport',
+    ja: '• 独占20%紹介コミッション\n• 即座の入出金\n• 独占トークンローンチへのアクセス\n• 24/7プレミアムカスタマーサポート',
+    ko: '• 독점 20% 추천 커미션\n• 즉시 입출금\n• 독점 토큰 출시 액세스\n• 24/7 프리미엄 고객 지원'
   },
   trustText: {
     en: 'Join over 5 million traders who trust Backpack for their crypto journey',
