@@ -71,38 +71,104 @@ const translations: Translations = {
     ja: '⚡ トレーディング機能',
     ko: '⚡ 거래 기능'
   },
-  uniTonCrvPerps: {
-    en: 'UNI, TON & CRV Perps Markets Now Live - New perpetual markets launched for enhanced trading opportunities.',
-    'zh-cn': 'UNI、TON和CRV永续合约市场现已上线 - 新的永续合约市场为您提供更多交易机会。',
-    'zh-tw': 'UNI、TON和CRV永續合約市場現已上線 - 新的永續合約市場為您提供更多交易機會。',
-    fr: 'Marchés Perps UNI, TON et CRV maintenant en direct - Nouveaux marchés perpétuels lancés pour des opportunités de trading améliorées.',
-    pt: 'Mercados Perps UNI, TON e CRV agora ao vivo - Novos mercados perpétuos lançados para oportunidades de trading aprimoradas.',
-    it: 'Mercati Perps UNI, TON e CRV ora live - Nuovi mercati perpetui lanciati per opportunità di trading migliorate.',
-    de: 'UNI, TON & CRV Perps Märkte jetzt live - Neue Perpetual-Märkte für verbesserte Trading-Möglichkeiten.',
-    ja: 'UNI、TON、CRV Perps市場が開始 - 取引機会向上のための新しい永続契約市場が開設。',
-    ko: 'UNI, TON & CRV Perps 마켓이 개시 - 향상된 거래 기회를 위한 새로운 영구 계약 마켓 출시.'
+  cashClimb: {
+    en: 'Backpack Cash Climb Week 2 - Earn up to $32,000 in this competitive trading event.',
+    'zh-cn': 'Backpack现金攀登第二周 - 在这场竞争性交易活动中赢取高达32,000美元。',
+    'zh-tw': 'Backpack現金攀登第二週 - 在這場競爭性交易活動中贏取高達32,000美元。',
+    fr: 'Backpack Cash Climb Semaine 2 - Gagnez jusqu\'à 32 000 $ dans cet événement de trading compétitif.',
+    pt: 'Backpack Cash Climb Semana 2 - Ganhe até $32,000 neste evento de trading competitivo.',
+    it: 'Backpack Cash Climb Settimana 2 - Guadagna fino a $32,000 in questo evento di trading competitivo.',
+    de: 'Backpack Cash Climb Woche 2 - Verdienen Sie bis zu $32,000 in diesem wettbewerbsorientierten Trading-Event.',
+    ja: 'Backpack キャッシュクライム第2週 - この競争的取引イベントで最大32,000ドルを獲得。',
+    ko: 'Backpack 캐시 클라임 2주차 - 이 경쟁적 거래 이벤트에서 최대 $32,000을 획득하세요.'
   },
-  dogeListing: {
-    en: 'DOGE Listing - DOGE now available to trade, lend, and earn rewards with special launch bonuses.',
-    'zh-cn': 'DOGE上线 - DOGE现可交易、借贷并获得奖励，享受特别上线奖励。',
-    'zh-tw': 'DOGE上線 - DOGE現可交易、借貸並獲得獎勵，享受特別上線獎勵。',
-    fr: 'Listing DOGE - DOGE maintenant disponible pour trader, prêter et gagner des récompenses avec des bonus de lancement spéciaux.',
-    pt: 'Listagem DOGE - DOGE agora disponível para negociar, emprestar e ganhar recompensas com bônus especiais de lançamento.',
-    it: 'Listing DOGE - DOGE ora disponibile per fare trading, prestare e guadagnare ricompense con bonus speciali di lancio.',
-    de: 'DOGE-Listing - DOGE jetzt verfügbar zum Handeln, Verleihen und Belohnungen verdienen mit speziellen Launch-Boni.',
-    ja: 'DOGE上場 - DOGEの取引、貸出、報酬獲得が可能になり、特別ローンチボーナス付き。',
-    ko: 'DOGE 상장 - DOGE를 거래, 대출하고 특별 출시 보너스와 함께 보상을 받을 수 있습니다.'
+  usdt0Listing: {
+    en: 'USDT0 Support Live on Backpack - New stablecoin token now available for trading.',
+    'zh-cn': 'USDT0在Backpack上线 - 新的稳定币代币现可交易。',
+    'zh-tw': 'USDT0在Backpack上線 - 新的穩定幣代幣現可交易。',
+    fr: 'Support USDT0 en direct sur Backpack - Nouveau token stablecoin maintenant disponible pour le trading.',
+    pt: 'Suporte USDT0 ao vivo no Backpack - Novo token stablecoin agora disponível para negociação.',
+    it: 'Supporto USDT0 live su Backpack - Nuovo token stablecoin ora disponibile per il trading.',
+    de: 'USDT0-Unterstützung live auf Backpack - Neuer Stablecoin-Token jetzt zum Trading verfügbar.',
+    ja: 'USDT0サポートがBackpackで開始 - 新しいステーブルコイントークンが取引可能に。',
+    ko: 'USDT0 지원이 Backpack에 출시 - 새로운 스테이블코인 토큰이 거래 가능합니다.'
   },
-  seiAirdrop: {
-    en: 'SEI Airdrop - Over 1 million SEI tokens airdropped on Backpack with exclusive trading rewards.',
-    'zh-cn': 'SEI空投 - 超过100万SEI代币在Backpack空投，附带独家交易奖励。',
-    'zh-tw': 'SEI空投 - 超過100萬SEI代幣在Backpack空投，附帶獨家交易獎勵。',
-    fr: 'Airdrop SEI - Plus de 1 million de tokens SEI largués sur Backpack avec des récompenses de trading exclusives.',
-    pt: 'Airdrop SEI - Mais de 1 milhão de tokens SEI lançados no Backpack com recompensas de trading exclusivas.',
-    it: 'Airdrop SEI - Oltre 1 milione di token SEI lanciati su Backpack con ricompense di trading esclusive.',
-    de: 'SEI Airdrop - Über 1 Million SEI-Token auf Backpack mit exklusiven Trading-Belohnungen.',
-    ja: 'SEI エアドロップ - Backpackで100万以上のSEIトークンエアドロップ、限定取引報酬付き。',
-    ko: 'SEI 에어드롭 - Backpack에서 100만 개 이상의 SEI 토큰 에어드롭, 독점 거래 보상 포함.'
+  pointsSeason3: {
+    en: 'Backpack Points Season 3 - New competitive trading season with enhanced rewards system.',
+    'zh-cn': 'Backpack积分第三季 - 新的竞争性交易季节，增强奖励系统。',
+    'zh-tw': 'Backpack積分第三季 - 新的競爭性交易季節，增強獎勵系統。',
+    fr: 'Points Backpack Saison 3 - Nouvelle saison de trading compétitive avec système de récompenses amélioré.',
+    pt: 'Pontos Backpack Temporada 3 - Nova temporada de trading competitiva com sistema de recompensas aprimorado.',
+    it: 'Punti Backpack Stagione 3 - Nuova stagione di trading competitiva con sistema ricompense migliorato.',
+    de: 'Backpack Points Season 3 - Neue wettbewerbsorientierte Trading-Saison mit verbessertem Belohnungssystem.',
+    ja: 'Backpackポイントシーズン3 - 強化された報酬システムを持つ新しい競争的取引シーズン。',
+    ko: 'Backpack 포인트 시즌 3 - 향상된 보상 시스템으로 새로운 경쟁적 거래 시즌.'
+  },
+  lineaPerps: {
+    en: 'Linea Perps Trading - New perpetual trading markets launched with competitive features.',
+    'zh-cn': 'Linea永续交易 - 推出具有竞争性功能的新永续交易市场。',
+    'zh-tw': 'Linea永續交易 - 推出具有競爭性功能的新永續交易市場。',
+    fr: 'Trading Linea Perps - Nouveaux marchés de trading perpétuels lancés avec des fonctionnalités compétitives.',
+    pt: 'Trading Linea Perps - Novos mercados de trading perpétuos lançados com recursos competitivos.',
+    it: 'Trading Linea Perps - Nuovi mercati di trading perpetui lanciati con funzionalità competitive.',
+    de: 'Linea Perps Trading - Neue Perpetual-Trading-Märkte mit wettbewerbsfähigen Funktionen gestartet.',
+    ja: 'Linea Perps取引 - 競争力のある機能を持つ新しい永続取引市場が開始。',
+    ko: 'Linea Perps 거래 - 경쟁력 있는 기능으로 새로운 영구 거래 마켓 출시.'
+  },
+  xrpListing: {
+    en: 'XRP Spot Trading Launch - XRP now available for spot trading with full liquidity support.',
+    'zh-cn': 'XRP现货交易启动 - XRP现可进行现货交易，提供完整流动性支持。',
+    'zh-tw': 'XRP現貨交易啟動 - XRP現可進行現貨交易，提供完整流動性支援。',
+    fr: 'Lancement du Trading Spot XRP - XRP maintenant disponible pour le trading spot avec support de liquidité complète.',
+    pt: 'Lançamento do Trading Spot XRP - XRP agora disponível para trading spot com suporte completo de liquidez.',
+    it: 'Lancio Trading Spot XRP - XRP ora disponibile per trading spot con supporto completo di liquidità.',
+    de: 'XRP Spot Trading Launch - XRP jetzt verfügbar für Spot-Trading mit vollständiger Liquiditätsunterstützung.',
+    ja: 'XRP スポット取引開始 - XRPが完全な流動性サポートでスポット取引が可能に。',
+    ko: 'XRP 현물 거래 출시 - XRP가 완전한 유동성 지원으로 현물 거래 가능.'
+  },
+  swtchListing: {
+    en: 'Switchboard ($SWTCH) Listing - Achievements Campaign Live With Massive Prize Pool.',
+    'zh-cn': 'Switchboard ($SWTCH) 上线 - 成就活动进行中，奖池丰厚。',
+    'zh-tw': 'Switchboard ($SWTCH) 上線 - 成就活動進行中，獎池豐厚。',
+    fr: 'Listing Switchboard ($SWTCH) - Campagne d\'Achievements en direct avec un pool de prix massif.',
+    pt: 'Listagem Switchboard ($SWTCH) - Campanha de Conquistas ao vivo com pool de prêmios massivo.',
+    it: 'Listing Switchboard ($SWTCH) - Campagna Achievement live con pool premi massiccio.',
+    de: 'Switchboard ($SWTCH) Listing - Achievement-Kampagne live mit massivem Preispool.',
+    ja: 'Switchboard ($SWTCH) 上場 - 大規模賞金プールでアチーブメントキャンペーン開催中。',
+    ko: 'Switchboard ($SWTCH) 상장 - 대규모 상금 풀로 성취 캠페인 진행 중.'
+  },
+  swtchAirdrop: {
+    en: '$SWTCH Airdrop - A Massive Airdrop for Backpack Badge Holders with exclusive rewards.',
+    'zh-cn': '$SWTCH空投 - Backpack徽章持有者的大规模空投，独享奖励。',
+    'zh-tw': '$SWTCH空投 - Backpack徽章持有者的大規模空投，獨享獎勵。',
+    fr: 'Airdrop $SWTCH - Un Airdrop Massif pour les détenteurs de badges Backpack avec récompenses exclusives.',
+    pt: 'Airdrop $SWTCH - Um Airdrop Massivo para portadores de badges Backpack com recompensas exclusivas.',
+    it: 'Airdrop $SWTCH - Un Airdrop Massiccio per i possessori di badge Backpack con ricompense esclusive.',
+    de: '$SWTCH Airdrop - Ein massiver Airdrop für Backpack Badge-Inhaber mit exklusiven Belohnungen.',
+    ja: '$SWTCH エアドロップ - Backpackバッジ保有者向けの大規模エアドロップ、限定報酬付き。',
+    ko: '$SWTCH 에어드롭 - 독점 보상과 함께 Backpack 뱃지 보유자를 위한 대규모 에어드롭.'
+  },
+  backpackEu: {
+    en: 'Backpack EU Launch - Regulated Crypto Derivatives, Live Across Europe with full compliance.',
+    'zh-cn': 'Backpack欧洲启动 - 受监管的加密衍生品，在欧洲全面合规上线。',
+    'zh-tw': 'Backpack歐洲啟動 - 受監管的加密衍生品，在歐洲全面合規上線。',
+    fr: 'Lancement Backpack EU - Dérivés Crypto Réglementés, En Direct à travers l\'Europe avec conformité complète.',
+    pt: 'Lançamento Backpack EU - Derivativos Cripto Regulamentados, Ao Vivo por toda a Europa com conformidade total.',
+    it: 'Lancio Backpack EU - Derivati Crypto Regolamentati, Live in tutta Europa con piena conformità.',
+    de: 'Backpack EU Launch - Regulierte Krypto-Derivate, Live in ganz Europa mit vollständiger Compliance.',
+    ja: 'Backpack EU ローンチ - 規制された暗号デリバティブ、ヨーロッパ全域で完全コンプライアンス対応でライブ。',
+    ko: 'Backpack EU 출시 - 규제된 암호화폐 파생상품, 완전한 준수로 유럽 전역에서 라이브.'
+  },
+  wldPerps: {
+    en: 'WLD, kSHIB & PYTH Perps Markets - Trade & Earn Rewards in new perpetual markets.',
+    'zh-cn': 'WLD、kSHIB和PYTH永续市场 - 在新永续市场中交易并获得奖励。',
+    'zh-tw': 'WLD、kSHIB和PYTH永續市場 - 在新永續市場中交易並獲得獎勵。',
+    fr: 'Marchés Perps WLD, kSHIB & PYTH - Tradez et Gagnez des Récompenses dans les nouveaux marchés perpétuels.',
+    pt: 'Mercados Perps WLD, kSHIB & PYTH - Negocie e Ganhe Recompensas nos novos mercados perpétuos.',
+    it: 'Mercati Perps WLD, kSHIB & PYTH - Fai Trading e Guadagna Ricompense nei nuovi mercati perpetui.',
+    de: 'WLD, kSHIB & PYTH Perps Märkte - Handeln und Belohnungen in neuen Perpetual-Märkten verdienen.',
+    ja: 'WLD、kSHIB、PYTH Perps市場 - 新しい永続市場で取引して報酬を獲得。',
+    ko: 'WLD, kSHIB & PYTH Perps 마켓 - 새로운 영구 마켓에서 거래하고 보상을 획득하세요.'
   },
   seiNewUser: {
     en: 'SEI New User Campaign - 300 $SEI tokens available for new users with additional trading bonuses.',
@@ -683,67 +749,67 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                title: "UNI, TON & CRV Perps",
-                content: t('uniTonCrvPerps'),
-                icon: "📈",
+                title: "Backpack Cash Climb Week 2",
+                content: t('cashClimb'),
+                icon: "💰",
+                gradient: "from-green-500 to-emerald-500",
+                date: "September 18, 2025"
+              },
+              {
+                title: "USDT0 Support Live",
+                content: t('usdt0Listing'),
+                icon: "💵",
                 gradient: "from-blue-500 to-cyan-500",
-                date: "August 7, 2025"
+                date: "September 15, 2025"
               },
               {
-                title: "DOGE Listing",
-                content: t('dogeListing'),
-                icon: "🐕",
+                title: "Backpack Points Season 3",
+                content: t('pointsSeason3'),
+                icon: "🏅",
+                gradient: "from-purple-600 to-indigo-600",
+                date: "September 11, 2025"
+              },
+              {
+                title: "Linea Perps Trading",
+                content: t('lineaPerps'),
+                icon: "📈",
+                gradient: "from-indigo-500 to-purple-500",
+                date: "September 10, 2025"
+              },
+              {
+                title: "XRP Spot Trading Launch",
+                content: t('xrpListing'),
+                icon: "⚡",
                 gradient: "from-yellow-500 to-orange-500",
-                date: "August 1, 2025"
+                date: "September 10, 2025"
               },
               {
-                title: "SEI Airdrop",
-                content: t('seiAirdrop'),
+                title: "Switchboard ($SWTCH) Listing",
+                content: t('swtchListing'),
+                icon: "🏆",
+                gradient: "from-red-500 to-pink-500",
+                date: "September 9, 2025"
+              },
+              {
+                title: "$SWTCH Airdrop",
+                content: t('swtchAirdrop'),
                 icon: "🎁",
                 gradient: "from-purple-500 to-pink-500",
-                date: "July 31, 2025"
+                date: "September 9, 2025"
               },
               {
-                title: "SEI New User Campaign",
-                content: t('seiNewUser'),
-                icon: "🆕",
-                gradient: "from-green-500 to-emerald-500",
-                date: "July 30, 2025"
-              },
-              {
-                title: "Backpack Achievement Campaign",
-                content: t('backpackAchievement'),
-                icon: "🏆",
-                gradient: "from-indigo-500 to-purple-500",
-                date: "July 17, 2025"
-              },
-              {
-                title: "ES Token Campaign",
-                content: t('esTokenCampaign'),
-                icon: "🎯",
-                gradient: "from-red-500 to-pink-500",
-                date: "July 16, 2025"
-              },
-              {
-                title: "Eclipse (ES) Airdrop",
-                content: t('eclipseAirdrop'),
-                icon: "🌟",
+                title: "Backpack EU Launch",
+                content: t('backpackEu'),
+                icon: "🇪🇺",
                 gradient: "from-cyan-500 to-blue-500",
-                date: "July 16, 2025"
+                date: "September 8, 2025"
               },
               {
-                title: "$PUMP Listing",
-                content: t('pumpListing'),
+                title: "WLD, kSHIB & PYTH Perps",
+                content: t('wldPerps'),
                 icon: "🚀",
                 gradient: "from-orange-500 to-red-500",
-                date: "July 14, 2025"
-              },
-              {
-                title: "Backpack Points Season 2",
-                content: t('pointsProgram'),
-                icon: "🎖️",
-                gradient: "from-purple-600 to-indigo-600",
-                date: "July 3, 2025"
+                date: "September 3, 2025"
               }
             ].map((activity, index) => (
               <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-100">
@@ -808,7 +874,7 @@ export default function Home() {
               <p className="text-xs text-gray-500 mb-2">🔥 Hot Right Now:</p>
               <p className="text-sm font-semibold">$BONK +127% • $WIF +89% • $POPCAT +156%</p>
               <p className="text-xs text-green-600 font-semibold mt-2">
-                💰 +10% Referral Bonus
+                💰 +20% Referral Bonus
               </p>
             </div>
             <a
@@ -832,7 +898,7 @@ export default function Home() {
               <p className="text-xs text-gray-500 mb-2">🎯 Exclusive Benefits:</p>
               <p className="text-sm font-semibold">{language === 'en' ? 'English Support • USD Deposits • Global KYC • Bank Cards' : language === 'zh-cn' ? 'Chinese Support • USD Deposits • Mainland KYC • HK Bank Cards' : language === 'zh-tw' ? 'Chinese Support • USD Deposits • Taiwan KYC • HK Bank Cards' : language === 'fr' ? 'French Support • EUR Deposits • EU KYC • SEPA Transfer' : language === 'pt' ? 'Portuguese Support • BRL Deposits • Brazil KYC • PIX Transfer' : language === 'it' ? 'Italian Support • EUR Deposits • EU KYC • SEPA Transfer' : language === 'de' ? 'German Support • EUR Deposits • EU KYC • SEPA Transfer' : language === 'ja' ? 'Japanese Support • JPY Deposits • Japan KYC • Bank Transfer' : 'Korean Support • KRW Deposits • Korea KYC • Bank Transfer'}</p>
               <p className="text-xs text-green-600 font-semibold mt-2">
-                💰 +10% Referral Bonus
+                💰 +20% Referral Bonus
               </p>
             </div>
             <a
@@ -856,7 +922,7 @@ export default function Home() {
               <p className="text-xs text-gray-500 mb-2">🎯 Gaming Tokens:</p>
               <p className="text-sm font-semibold">$RONIN • $IMX • $GALA • $ENJ • $MANA</p>
               <p className="text-xs text-green-600 font-semibold mt-2">
-                💰 +10% Referral Bonus
+                💰 +20% Referral Bonus
               </p>
             </div>
             <a
