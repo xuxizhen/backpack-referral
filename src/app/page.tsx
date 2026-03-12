@@ -39,290 +39,378 @@ const translations: Translations = {
     ko: 'Backpack'
   },
   subtitle: {
-    en: 'The crypto trading platform built for the community',
-    'zh-cn': '为社区打造的加密货币交易平台',
-    'zh-tw': '為社群打造的加密貨幣交易平台',
-    fr: 'La plateforme de trading crypto conçue pour la communauté',
-    pt: 'A plataforma de negociação de criptomoedas construída para a comunidade',
-    it: 'La piattaforma di trading crypto costruita per la comunità',
-    de: 'Die Krypto-Handelsplattform für die Community',
-    ja: 'コミュニティのために構築された暗号通貨取引プラットフォーム',
-    ko: '커뮤니티를 위해 구축된 암호화폐 거래 플랫폼'
+    en: 'The Regulated Crypto Exchange Built for the Future',
+    'zh-cn': '面向未来的合规加密货币交易所',
+    'zh-tw': '面向未來的合規加密貨幣交易所',
+    fr: "L'exchange crypto réglementé conçu pour l'avenir",
+    pt: 'A exchange de criptomoedas regulamentada construída para o futuro',
+    it: "L'exchange crypto regolamentato costruito per il futuro",
+    de: 'Die regulierte Krypto-Börse für die Zukunft',
+    ja: '未来のために構築された規制準拠の暗号通貨取引所',
+    ko: '미래를 위해 구축된 규제 준수 암호화폐 거래소'
+  },
+  heroDescription: {
+    en: 'Licensed by Dubai VARA, acquired FTX EU (MiFID II), zero security breaches. Trade spot, futures, lending, and prediction markets — all with unified cross-margin.',
+    'zh-cn': '持有迪拜VARA牌照，收购FTX EU（MiFID II合规），零安全事故。现货、合约、借贷、预测市场一站式交易，统一跨保证金账户。',
+    'zh-tw': '持有迪拜VARA牌照，收購FTX EU（MiFID II合規），零安全事故。現貨、合約、借貸、預測市場一站式交易，統一跨保證金帳戶。',
+    fr: 'Licencié par Dubai VARA, acquisition de FTX EU (MiFID II), zéro faille de sécurité. Trading spot, futures, prêt et marchés de prédiction — le tout avec marge croisée unifiée.',
+    pt: 'Licenciado pela VARA de Dubai, adquiriu FTX EU (MiFID II), zero violações de segurança. Negocie spot, futuros, empréstimos e mercados de previsão — tudo com margem cruzada unificada.',
+    it: 'Licenziato da Dubai VARA, acquisita FTX EU (MiFID II), zero violazioni di sicurezza. Trading spot, futures, prestiti e mercati predittivi — tutto con margine incrociato unificato.',
+    de: 'Von Dubai VARA lizenziert, FTX EU übernommen (MiFID II), keine Sicherheitsverstöße. Handel mit Spot, Futures, Lending und Prognosemärkten — alles mit einheitlicher Cross-Margin.',
+    ja: 'ドバイVARAライセンス取得、FTX EU買収（MiFID II）、セキュリティ侵害ゼロ。スポット、先物、レンディング、予測市場を統合クロスマージンで取引。',
+    ko: '두바이 VARA 라이선스, FTX EU 인수(MiFID II), 보안 침해 제로. 현물, 선물, 대출, 예측 시장을 통합 교차 마진으로 거래.'
+  },
+  registerButton: {
+    en: 'Register & Get 20% Bonus →',
+    'zh-cn': '立即注册 享20%返佣 →',
+    'zh-tw': '立即註冊 享20%返佣 →',
+    fr: "S'inscrire & Obtenir 20% de Bonus →",
+    pt: 'Registrar & Ganhar 20% de Bônus →',
+    it: 'Registrati & Ottieni il 20% di Bonus →',
+    de: 'Registrieren & 20% Bonus erhalten →',
+    ja: '今すぐ登録して20%ボーナス →',
+    ko: '가입하고 20% 보너스 받기 →'
+  },
+  trustBadge1: {
+    en: 'Dubai VARA Licensed',
+    'zh-cn': '迪拜VARA持牌',
+    'zh-tw': '迪拜VARA持牌',
+    fr: 'Licence Dubai VARA',
+    pt: 'Licença Dubai VARA',
+    it: 'Licenza Dubai VARA',
+    de: 'Dubai VARA Lizenz',
+    ja: 'ドバイVARAライセンス',
+    ko: '두바이 VARA 라이선스'
+  },
+  trustBadge2: {
+    en: 'EU MiFID II Regulated',
+    'zh-cn': '欧盟MiFID II监管',
+    'zh-tw': '歐盟MiFID II監管',
+    fr: 'Réglementé UE MiFID II',
+    pt: 'Regulado UE MiFID II',
+    it: 'Regolamentato UE MiFID II',
+    de: 'EU MiFID II Reguliert',
+    ja: 'EU MiFID II規制準拠',
+    ko: 'EU MiFID II 규제'
+  },
+  trustBadge3: {
+    en: 'Zero Security Breaches',
+    'zh-cn': '零安全事故',
+    'zh-tw': '零安全事故',
+    fr: 'Zéro Faille de Sécurité',
+    pt: 'Zero Violações de Segurança',
+    it: 'Zero Violazioni di Sicurezza',
+    de: 'Keine Sicherheitsverstöße',
+    ja: 'セキュリティ侵害ゼロ',
+    ko: '보안 침해 제로'
+  },
+  trustBadge4: {
+    en: '5M+ Global Traders',
+    'zh-cn': '500万+全球交易者',
+    'zh-tw': '500萬+全球交易者',
+    fr: '5M+ Traders Mondiaux',
+    pt: '5M+ Traders Globais',
+    it: '5M+ Trader Globali',
+    de: '5M+ Globale Trader',
+    ja: '500万+グローバルトレーダー',
+    ko: '500만+ 글로벌 트레이더'
   },
   hotActivities: {
-    en: '🔥 Hot Activities & Campaigns',
-    'zh-cn': '🔥 热门活动与奖励',
-    'zh-tw': '🔥 熱門活動與獎勵',
-    fr: '🔥 Activités et Campagnes Populaires',
-    pt: '🔥 Atividades e Campanhas Populares',
-    it: '🔥 Attività e Campagne Popolari',
-    de: '🔥 Beliebte Aktivitäten & Kampagnen',
-    ja: '🔥 人気のアクティビティ＆キャンペーン',
-    ko: '🔥 인기 활동 및 캠페인'
+    en: 'Latest Activities & Campaigns',
+    'zh-cn': '最新活动与动态',
+    'zh-tw': '最新活動與動態',
+    fr: 'Dernières Activités et Campagnes',
+    pt: 'Últimas Atividades e Campanhas',
+    it: 'Ultime Attività e Campagne',
+    de: 'Neueste Aktivitäten und Kampagnen',
+    ja: '最新のアクティビティとキャンペーン',
+    ko: '최신 활동 및 캠페인'
   },
-  tradingFeatures: {
-    en: '⚡ Trading Features',
-    'zh-cn': '⚡ 交易功能',
-    'zh-tw': '⚡ 交易功能',
-    fr: '⚡ Fonctionnalités de Trading',
-    pt: '⚡ Recursos de Negociação',
-    it: '⚡ Funzionalità di Trading',
-    de: '⚡ Trading-Funktionen',
-    ja: '⚡ トレーディング機能',
-    ko: '⚡ 거래 기능'
+  activity1: {
+    en: 'Backpack Wallet now offers zero fees on all swaps and bridges across every supported network. Trade freely without hidden costs.',
+    'zh-cn': 'Backpack钱包现已支持所有网络的零手续费兑换和跨链桥接。自由交易，无隐藏费用。',
+    'zh-tw': 'Backpack錢包現已支持所有網路的零手續費兌換和跨鏈橋接。自由交易，無隱藏費用。',
+    fr: 'Le portefeuille Backpack offre désormais zéro frais sur tous les échanges et ponts sur chaque réseau supporté.',
+    pt: 'A carteira Backpack agora oferece zero taxas em todas as trocas e pontes em todas as redes suportadas.',
+    it: 'Il wallet Backpack ora offre zero commissioni su tutti gli swap e bridge su ogni rete supportata.',
+    de: 'Die Backpack Wallet bietet jetzt keine Gebühren für alle Swaps und Bridges über alle unterstützten Netzwerke.',
+    ja: 'Backpackウォレットは全サポートネットワークでスワップとブリッジの手数料がゼロになりました。',
+    ko: 'Backpack 지갑은 이제 모든 지원 네트워크에서 스왑 및 브리지 수수료가 무료입니다.'
   },
-  cashClimb: {
-    en: 'Backpack Cash Climb Week 2 - Earn up to $32,000 in this competitive trading event.',
-    'zh-cn': 'Backpack现金攀登第二周 - 在这场竞争性交易活动中赢取高达32,000美元。',
-    'zh-tw': 'Backpack現金攀登第二週 - 在這場競爭性交易活動中贏取高達32,000美元。',
-    fr: 'Backpack Cash Climb Semaine 2 - Gagnez jusqu\'à 32 000 $ dans cet événement de trading compétitif.',
-    pt: 'Backpack Cash Climb Semana 2 - Ganhe até $32,000 neste evento de trading competitivo.',
-    it: 'Backpack Cash Climb Settimana 2 - Guadagna fino a $32,000 in questo evento di trading competitivo.',
-    de: 'Backpack Cash Climb Woche 2 - Verdienen Sie bis zu $32,000 in diesem wettbewerbsorientierten Trading-Event.',
-    ja: 'Backpack キャッシュクライム第2週 - この競争的取引イベントで最大32,000ドルを獲得。',
-    ko: 'Backpack 캐시 클라임 2주차 - 이 경쟁적 거래 이벤트에서 최대 $32,000을 획득하세요.'
+  activity2: {
+    en: 'Backpack IPO: Token holders get early access before shares hit the public market. A groundbreaking opportunity for the community.',
+    'zh-cn': 'Backpack IPO：代币持有者可在股票公开上市前优先认购。社区的突破性机遇。',
+    'zh-tw': 'Backpack IPO：代幣持有者可在股票公開上市前優先認購。社群的突破性機遇。',
+    fr: "IPO Backpack : Les détenteurs de tokens obtiennent un accès anticipé avant la mise sur le marché public.",
+    pt: 'IPO Backpack: Detentores de tokens têm acesso antecipado antes das ações chegarem ao mercado público.',
+    it: 'IPO Backpack: I possessori di token ottengono accesso anticipato prima che le azioni entrino nel mercato pubblico.',
+    de: 'Backpack IPO: Token-Inhaber erhalten Frühzugang bevor Aktien den öffentlichen Markt erreichen.',
+    ja: 'Backpack IPO：トークン保有者は株式が公開市場に出る前に早期アクセスが可能。',
+    ko: 'Backpack IPO: 토큰 보유자는 주식이 공개 시장에 출시되기 전에 우선 접근할 수 있습니다.'
   },
-  usdt0Listing: {
-    en: 'USDT0 Support Live on Backpack - New stablecoin token now available for trading.',
-    'zh-cn': 'USDT0在Backpack上线 - 新的稳定币代币现可交易。',
-    'zh-tw': 'USDT0在Backpack上線 - 新的穩定幣代幣現可交易。',
-    fr: 'Support USDT0 en direct sur Backpack - Nouveau token stablecoin maintenant disponible pour le trading.',
-    pt: 'Suporte USDT0 ao vivo no Backpack - Novo token stablecoin agora disponível para negociação.',
-    it: 'Supporto USDT0 live su Backpack - Nuovo token stablecoin ora disponibile per il trading.',
-    de: 'USDT0-Unterstützung live auf Backpack - Neuer Stablecoin-Token jetzt zum Trading verfügbar.',
-    ja: 'USDT0サポートがBackpackで開始 - 新しいステーブルコイントークンが取引可能に。',
-    ko: 'USDT0 지원이 Backpack에 출시 - 새로운 스테이블코인 토큰이 거래 가능합니다.'
+  activity3: {
+    en: 'Backpack welcomes Mark Wetjen, former CFTC Commissioner, as President of Backpack US, strengthening regulatory leadership.',
+    'zh-cn': 'Backpack任命前CFTC委员Mark Wetjen为Backpack US总裁，加强合规领导力。',
+    'zh-tw': 'Backpack任命前CFTC委員Mark Wetjen為Backpack US總裁，加強合規領導力。',
+    fr: 'Backpack accueille Mark Wetjen, ancien commissaire CFTC, comme président de Backpack US.',
+    pt: 'Backpack dá as boas-vindas a Mark Wetjen, ex-comissário da CFTC, como Presidente da Backpack US.',
+    it: 'Backpack dà il benvenuto a Mark Wetjen, ex commissario CFTC, come Presidente di Backpack US.',
+    de: 'Backpack begrüßt Mark Wetjen, ehemaliger CFTC-Kommissar, als Präsident von Backpack US.',
+    ja: 'Backpackは元CFTC委員のMark WetjenをBackpack US社長に迎え、規制リーダーシップを強化。',
+    ko: 'Backpack은 전 CFTC 위원 Mark Wetjen을 Backpack US 사장으로 영입하여 규제 리더십을 강화합니다.'
   },
-  pointsSeason3: {
-    en: 'Backpack Points Season 3 - New competitive trading season with enhanced rewards system.',
-    'zh-cn': 'Backpack积分第三季 - 新的竞争性交易季节，增强奖励系统。',
-    'zh-tw': 'Backpack積分第三季 - 新的競爭性交易季節，增強獎勵系統。',
-    fr: 'Points Backpack Saison 3 - Nouvelle saison de trading compétitive avec système de récompenses amélioré.',
-    pt: 'Pontos Backpack Temporada 3 - Nova temporada de trading competitiva com sistema de recompensas aprimorado.',
-    it: 'Punti Backpack Stagione 3 - Nuova stagione di trading competitiva con sistema ricompense migliorato.',
-    de: 'Backpack Points Season 3 - Neue wettbewerbsorientierte Trading-Saison mit verbessertem Belohnungssystem.',
-    ja: 'Backpackポイントシーズン3 - 強化された報酬システムを持つ新しい競争的取引シーズン。',
-    ko: 'Backpack 포인트 시즌 3 - 향상된 보상 시스템으로 새로운 경쟁적 거래 시즌.'
+  activity4: {
+    en: 'IPOs Onchain waitlist is now open. Be among the first to access tokenized IPO opportunities directly on the blockchain.',
+    'zh-cn': '链上IPO等候名单已开放。成为首批直接在区块链上参与代币化IPO机会的用户。',
+    'zh-tw': '鏈上IPO等候名單已開放。成為首批直接在區塊鏈上參與代幣化IPO機會的用戶。',
+    fr: "La liste d'attente IPO Onchain est ouverte. Soyez parmi les premiers à accéder aux IPO tokenisées sur la blockchain.",
+    pt: 'A lista de espera de IPOs Onchain está aberta. Seja um dos primeiros a acessar oportunidades de IPO tokenizadas na blockchain.',
+    it: "La lista d'attesa IPO Onchain è aperta. Sii tra i primi ad accedere alle IPO tokenizzate direttamente sulla blockchain.",
+    de: 'Die Warteliste für IPOs Onchain ist jetzt geöffnet. Seien Sie unter den Ersten, die tokenisierte IPO-Möglichkeiten auf der Blockchain nutzen.',
+    ja: 'IPOs Onchainウェイトリストが開始。ブロックチェーン上のトークン化IPO機会にいち早くアクセス。',
+    ko: 'IPO Onchain 대기자 명단이 열렸습니다. 블록체인에서 토큰화된 IPO 기회에 가장 먼저 접근하세요.'
   },
-  lineaPerps: {
-    en: 'Linea Perps Trading - New perpetual trading markets launched with competitive features.',
-    'zh-cn': 'Linea永续交易 - 推出具有竞争性功能的新永续交易市场。',
-    'zh-tw': 'Linea永續交易 - 推出具有競爭性功能的新永續交易市場。',
-    fr: 'Trading Linea Perps - Nouveaux marchés de trading perpétuels lancés avec des fonctionnalités compétitives.',
-    pt: 'Trading Linea Perps - Novos mercados de trading perpétuos lançados com recursos competitivos.',
-    it: 'Trading Linea Perps - Nuovi mercati di trading perpetui lanciati con funzionalità competitive.',
-    de: 'Linea Perps Trading - Neue Perpetual-Trading-Märkte mit wettbewerbsfähigen Funktionen gestartet.',
-    ja: 'Linea Perps取引 - 競争力のある機能を持つ新しい永続取引市場が開始。',
-    ko: 'Linea Perps 거래 - 경쟁력 있는 기능으로 새로운 영구 거래 마켓 출시.'
+  activity5: {
+    en: 'The new Lend page is live! Enhanced DeFi lending interface with better rates, easier management, and more supported assets.',
+    'zh-cn': '全新借贷页面已上线！升级版DeFi借贷界面，更优利率、更便捷管理、更多支持资产。',
+    'zh-tw': '全新借貸頁面已上線！升級版DeFi借貸介面，更優利率、更便捷管理、更多支援資產。',
+    fr: 'La nouvelle page Lend est en ligne ! Interface DeFi améliorée avec de meilleurs taux et plus de actifs supportés.',
+    pt: 'A nova página Lend está no ar! Interface DeFi aprimorada com melhores taxas e mais ativos suportados.',
+    it: 'La nuova pagina Lend è live! Interfaccia DeFi migliorata con tassi migliori e più asset supportati.',
+    de: 'Die neue Lend-Seite ist live! Verbesserte DeFi-Lending-Oberfläche mit besseren Raten und mehr unterstützten Assets.',
+    ja: '新しいLendページが公開！改良されたDeFiレンディングインターフェース、より良いレート、より簡単な管理。',
+    ko: '새로운 Lend 페이지가 오픈했습니다! 더 나은 이율, 쉬운 관리, 더 많은 지원 자산을 갖춘 DeFi 대출 인터페이스.'
   },
-  xrpListing: {
-    en: 'XRP Spot Trading Launch - XRP now available for spot trading with full liquidity support.',
-    'zh-cn': 'XRP现货交易启动 - XRP现可进行现货交易，提供完整流动性支持。',
-    'zh-tw': 'XRP現貨交易啟動 - XRP現可進行現貨交易，提供完整流動性支援。',
-    fr: 'Lancement du Trading Spot XRP - XRP maintenant disponible pour le trading spot avec support de liquidité complète.',
-    pt: 'Lançamento do Trading Spot XRP - XRP agora disponível para trading spot com suporte completo de liquidez.',
-    it: 'Lancio Trading Spot XRP - XRP ora disponibile per trading spot con supporto completo di liquidità.',
-    de: 'XRP Spot Trading Launch - XRP jetzt verfügbar für Spot-Trading mit vollständiger Liquiditätsunterstützung.',
-    ja: 'XRP スポット取引開始 - XRPが完全な流動性サポートでスポット取引が可能に。',
-    ko: 'XRP 현물 거래 출시 - XRP가 완전한 유동성 지원으로 현물 거래 가능.'
+  activity6: {
+    en: 'Backpack Tokenomics explained: Deep dive into token distribution, utility, staking rewards, and the economic model driving the ecosystem.',
+    'zh-cn': 'Backpack代币经济学详解：深入了解代币分配、实用性、质押奖励及驱动生态系统的经济模型。',
+    'zh-tw': 'Backpack代幣經濟學詳解：深入了解代幣分配、實用性、質押獎勵及驅動生態系統的經濟模型。',
+    fr: 'Tokenomics Backpack expliquée : Distribution de tokens, utilité, récompenses de staking et modèle économique.',
+    pt: 'Tokenomics da Backpack explicada: Distribuição de tokens, utilidade, recompensas de staking e modelo econômico.',
+    it: 'Tokenomics di Backpack spiegata: Distribuzione token, utilità, ricompense staking e modello economico.',
+    de: 'Backpack Tokenomics erklärt: Token-Verteilung, Nutzen, Staking-Belohnungen und das Wirtschaftsmodell.',
+    ja: 'Backpackトケノミクス解説：トークン配布、ユーティリティ、ステーキング報酬、エコシステムの経済モデル。',
+    ko: 'Backpack 토크노믹스 설명: 토큰 분배, 유틸리티, 스테이킹 보상 및 생태계를 이끄는 경제 모델.'
   },
-  swtchListing: {
-    en: 'Switchboard ($SWTCH) Listing - Achievements Campaign Live With Massive Prize Pool.',
-    'zh-cn': 'Switchboard ($SWTCH) 上线 - 成就活动进行中，奖池丰厚。',
-    'zh-tw': 'Switchboard ($SWTCH) 上線 - 成就活動進行中，獎池豐厚。',
-    fr: 'Listing Switchboard ($SWTCH) - Campagne d\'Achievements en direct avec un pool de prix massif.',
-    pt: 'Listagem Switchboard ($SWTCH) - Campanha de Conquistas ao vivo com pool de prêmios massivo.',
-    it: 'Listing Switchboard ($SWTCH) - Campagna Achievement live con pool premi massiccio.',
-    de: 'Switchboard ($SWTCH) Listing - Achievement-Kampagne live mit massivem Preispool.',
-    ja: 'Switchboard ($SWTCH) 上場 - 大規模賞金プールでアチーブメントキャンペーン開催中。',
-    ko: 'Switchboard ($SWTCH) 상장 - 대규모 상금 풀로 성취 캠페인 진행 중.'
+  activity7: {
+    en: 'New perpetual futures listed: XMR-PERP, CC-PERP, and STRK-PERP. Expand your trading strategies with more derivatives options.',
+    'zh-cn': '新永续合约上线：XMR-PERP、CC-PERP和STRK-PERP。更多衍生品选择，扩展你的交易策略。',
+    'zh-tw': '新永續合約上線：XMR-PERP、CC-PERP和STRK-PERP。更多衍生品選擇，擴展你的交易策略。',
+    fr: 'Nouveaux contrats perpétuels : XMR-PERP, CC-PERP et STRK-PERP. Élargissez vos stratégies de trading.',
+    pt: 'Novos futuros perpétuos listados: XMR-PERP, CC-PERP e STRK-PERP. Expanda suas estratégias de negociação.',
+    it: 'Nuovi futures perpetui: XMR-PERP, CC-PERP e STRK-PERP. Espandi le tue strategie di trading con più derivati.',
+    de: 'Neue Perpetual Futures gelistet: XMR-PERP, CC-PERP und STRK-PERP. Erweitern Sie Ihre Trading-Strategien.',
+    ja: '新しい永続先物上場：XMR-PERP、CC-PERP、STRK-PERP。より多くのデリバティブでトレーディング戦略を拡大。',
+    ko: '새로운 무기한 선물 상장: XMR-PERP, CC-PERP, STRK-PERP. 더 많은 파생상품 옵션으로 거래 전략을 확장하세요.'
   },
-  swtchAirdrop: {
-    en: '$SWTCH Airdrop - A Massive Airdrop for Backpack Badge Holders with exclusive rewards.',
-    'zh-cn': '$SWTCH空投 - Backpack徽章持有者的大规模空投，独享奖励。',
-    'zh-tw': '$SWTCH空投 - Backpack徽章持有者的大規模空投，獨享獎勵。',
-    fr: 'Airdrop $SWTCH - Un Airdrop Massif pour les détenteurs de badges Backpack avec récompenses exclusives.',
-    pt: 'Airdrop $SWTCH - Um Airdrop Massivo para portadores de badges Backpack com recompensas exclusivas.',
-    it: 'Airdrop $SWTCH - Un Airdrop Massiccio per i possessori di badge Backpack con ricompense esclusive.',
-    de: '$SWTCH Airdrop - Ein massiver Airdrop für Backpack Badge-Inhaber mit exklusiven Belohnungen.',
-    ja: '$SWTCH エアドロップ - Backpackバッジ保有者向けの大規模エアドロップ、限定報酬付き。',
-    ko: '$SWTCH 에어드롭 - 독점 보상과 함께 Backpack 뱃지 보유자를 위한 대규모 에어드롭.'
+  activity8: {
+    en: 'PAXG Spot trading is live! Trade tokenized gold on Backpack Exchange — a regulated digital gold exposure with instant settlement.',
+    'zh-cn': 'PAXG现货交易已开放！在Backpack交易所交易代币化黄金——合规的数字黄金敞口，即时结算。',
+    'zh-tw': 'PAXG現貨交易已開放！在Backpack交易所交易代幣化黃金——合規的數字黃金敞口，即時結算。',
+    fr: 'PAXG Spot est en direct ! Tradez de l\'or tokenisé sur Backpack Exchange avec règlement instantané.',
+    pt: 'PAXG Spot está ao vivo! Negocie ouro tokenizado na Backpack Exchange com liquidação instantânea.',
+    it: 'PAXG Spot è live! Fai trading di oro tokenizzato su Backpack Exchange con regolamento istantaneo.',
+    de: 'PAXG Spot-Trading ist live! Handeln Sie tokenisiertes Gold auf Backpack Exchange mit sofortiger Abwicklung.',
+    ja: 'PAXGスポット取引開始！Backpack Exchangeでトークン化ゴールドを即時決済で取引。',
+    ko: 'PAXG 현물 거래가 시작되었습니다! Backpack Exchange에서 토큰화된 금을 즉시 결제로 거래하세요.'
   },
-  backpackEu: {
-    en: 'Backpack EU Launch - Regulated Crypto Derivatives, Live Across Europe with full compliance.',
-    'zh-cn': 'Backpack欧洲启动 - 受监管的加密衍生品，在欧洲全面合规上线。',
-    'zh-tw': 'Backpack歐洲啟動 - 受監管的加密衍生品，在歐洲全面合規上線。',
-    fr: 'Lancement Backpack EU - Dérivés Crypto Réglementés, En Direct à travers l\'Europe avec conformité complète.',
-    pt: 'Lançamento Backpack EU - Derivativos Cripto Regulamentados, Ao Vivo por toda a Europa com conformidade total.',
-    it: 'Lancio Backpack EU - Derivati Crypto Regolamentati, Live in tutta Europa con piena conformità.',
-    de: 'Backpack EU Launch - Regulierte Krypto-Derivate, Live in ganz Europa mit vollständiger Compliance.',
-    ja: 'Backpack EU ローンチ - 規制された暗号デリバティブ、ヨーロッパ全域で完全コンプライアンス対応でライブ。',
-    ko: 'Backpack EU 출시 - 규제된 암호화폐 파생상품, 완전한 준수로 유럽 전역에서 라이브.'
+  activity9: {
+    en: 'ZAMA-PERP is now listed on Backpack Exchange. Trade the latest perpetual futures contract with competitive fees and deep liquidity.',
+    'zh-cn': 'ZAMA-PERP已在Backpack交易所上线。以有竞争力的费率和深度流动性交易最新永续合约。',
+    'zh-tw': 'ZAMA-PERP已在Backpack交易所上線。以有競爭力的費率和深度流動性交易最新永續合約。',
+    fr: 'ZAMA-PERP est maintenant listé sur Backpack Exchange. Tradez avec des frais compétitifs et une liquidité profonde.',
+    pt: 'ZAMA-PERP agora está listado na Backpack Exchange. Negocie com taxas competitivas e liquidez profunda.',
+    it: 'ZAMA-PERP è ora listato su Backpack Exchange. Fai trading con commissioni competitive e liquidità profonda.',
+    de: 'ZAMA-PERP ist jetzt auf Backpack Exchange gelistet. Handeln Sie mit wettbewerbsfähigen Gebühren und tiefer Liquidität.',
+    ja: 'ZAMA-PERPがBackpack Exchangeに上場。競争力のある手数料と深い流動性で最新の永続先物を取引。',
+    ko: 'ZAMA-PERP가 Backpack Exchange에 상장되었습니다. 경쟁력 있는 수수료와 깊은 유동성으로 거래하세요.'
   },
-  wldPerps: {
-    en: 'WLD, kSHIB & PYTH Perps Markets - Trade & Earn Rewards in new perpetual markets.',
-    'zh-cn': 'WLD、kSHIB和PYTH永续市场 - 在新永续市场中交易并获得奖励。',
-    'zh-tw': 'WLD、kSHIB和PYTH永續市場 - 在新永續市場中交易並獲得獎勵。',
-    fr: 'Marchés Perps WLD, kSHIB & PYTH - Tradez et Gagnez des Récompenses dans les nouveaux marchés perpétuels.',
-    pt: 'Mercados Perps WLD, kSHIB & PYTH - Negocie e Ganhe Recompensas nos novos mercados perpétuos.',
-    it: 'Mercati Perps WLD, kSHIB & PYTH - Fai Trading e Guadagna Ricompense nei nuovi mercati perpetui.',
-    de: 'WLD, kSHIB & PYTH Perps Märkte - Handeln und Belohnungen in neuen Perpetual-Märkten verdienen.',
-    ja: 'WLD、kSHIB、PYTH Perps市場 - 新しい永続市場で取引して報酬を獲得。',
-    ko: 'WLD, kSHIB & PYTH Perps 마켓 - 새로운 영구 마켓에서 거래하고 보상을 획득하세요.'
+  learnMore: {
+    en: 'Learn More →',
+    'zh-cn': '了解更多 →',
+    'zh-tw': '了解更多 →',
+    fr: 'En Savoir Plus →',
+    pt: 'Saiba Mais →',
+    it: 'Scopri di Più →',
+    de: 'Mehr Erfahren →',
+    ja: '詳しく見る →',
+    ko: '자세히 보기 →'
   },
-  seiNewUser: {
-    en: 'SEI New User Campaign - 300 $SEI tokens available for new users with additional trading bonuses.',
-    'zh-cn': 'SEI新用户活动 - 新用户可获得300个$SEI代币，还有额外交易奖励。',
-    'zh-tw': 'SEI新用戶活動 - 新用戶可獲得300個$SEI代幣，還有額外交易獎勵。',
-    fr: 'Campagne Nouveaux Utilisateurs SEI - 300 tokens $SEI disponibles pour les nouveaux utilisateurs avec des bonus de trading supplémentaires.',
-    pt: 'Campanha de Novos Usuários SEI - 300 tokens $SEI disponíveis para novos usuários com bônus de trading adicionais.',
-    it: 'Campagna Nuovi Utenti SEI - 300 token $SEI disponibili per nuovi utenti con bonus di trading aggiuntivi.',
-    de: 'SEI Neue Benutzer-Kampagne - 300 $SEI-Token für neue Benutzer mit zusätzlichen Trading-Boni verfügbar.',
-    ja: 'SEI 新規ユーザーキャンペーン - 新規ユーザーに300 $SEIトークン、追加取引ボーナス付き。',
-    ko: 'SEI 신규 사용자 캠페인 - 신규 사용자에게 300 $SEI 토큰과 추가 거래 보너스 제공.'
+  whyTitle: {
+    en: 'Why Choose Backpack Exchange',
+    'zh-cn': '为什么选择Backpack交易所',
+    'zh-tw': '為什麼選擇Backpack交易所',
+    fr: 'Pourquoi Choisir Backpack Exchange',
+    pt: 'Por que Escolher a Backpack Exchange',
+    it: 'Perché Scegliere Backpack Exchange',
+    de: 'Warum Backpack Exchange Wählen',
+    ja: 'なぜBackpack Exchangeを選ぶのか',
+    ko: 'Backpack Exchange를 선택하는 이유'
   },
-  backpackAchievement: {
-    en: 'Backpack Achievement Campaign - Rewards campaign for active users with milestone achievements.',
-    'zh-cn': 'Backpack成就活动 - 活跃用户奖励活动，设有里程碑成就奖励。',
-    'zh-tw': 'Backpack成就活動 - 活躍用戶獎勵活動，設有里程碑成就獎勵。',
-    fr: 'Campagne de Réalisations Backpack - Campagne de récompenses pour les utilisateurs actifs avec des achievements jalons.',
-    pt: 'Campanha de Conquistas Backpack - Campanha de recompensas para usuários ativos com conquistas de marcos.',
-    it: 'Campagna Achievement Backpack - Campagna ricompense per utenti attivi con achievement di milestone.',
-    de: 'Backpack Achievement-Kampagne - Belohnungskampagne für aktive Nutzer mit Meilenstein-Erfolgen.',
-    ja: 'Backpack アチーブメントキャンペーン - アクティブユーザー向けのマイルストーン達成報酬キャンペーン。',
-    ko: 'Backpack 성취 캠페인 - 마일스톤 달성과 함께 활성 사용자를 위한 보상 캠페인.'
+  why1Title: {
+    en: 'Globally Regulated',
+    'zh-cn': '全球合规监管',
+    'zh-tw': '全球合規監管',
+    fr: 'Réglementé Mondialement',
+    pt: 'Regulamentado Globalmente',
+    it: 'Regolamentato Globalmente',
+    de: 'Global Reguliert',
+    ja: 'グローバル規制準拠',
+    ko: '글로벌 규제 준수'
   },
-  esTokenCampaign: {
-    en: 'ES Token New User Campaign - 250 ES tokens for new Backpack users with exclusive benefits.',
-    'zh-cn': 'ES代币新用户活动 - 新Backpack用户可获得250个ES代币，享受独家福利。',
-    'zh-tw': 'ES代幣新用戶活動 - 新Backpack用戶可獲得250個ES代幣，享受獨家福利。',
-    fr: 'Campagne Nouveaux Utilisateurs Token ES - 250 tokens ES pour les nouveaux utilisateurs Backpack avec des avantages exclusifs.',
-    pt: 'Campanha de Novos Usuários Token ES - 250 tokens ES para novos usuários Backpack com benefícios exclusivos.',
-    it: 'Campagna Nuovi Utenti Token ES - 250 token ES per nuovi utenti Backpack con vantaggi esclusivi.',
-    de: 'ES Token Neue Benutzer-Kampagne - 250 ES-Token für neue Backpack-Nutzer mit exklusiven Vorteilen.',
-    ja: 'ESトークン新規ユーザーキャンペーン - 新規Backpackユーザーに250 ESトークン、限定特典付き。',
-    ko: 'ES 토큰 신규 사용자 캠페인 - 독점 혜택과 함께 신규 Backpack 사용자에게 250 ES 토큰 제공.'
+  why1Desc: {
+    en: 'VARA licensed in Dubai, MiFID II regulated via FTX EU acquisition. One of the most compliant crypto exchanges worldwide.',
+    'zh-cn': '持有迪拜VARA牌照，通过收购FTX EU获得MiFID II监管资质。全球最合规的加密交易所之一。',
+    'zh-tw': '持有迪拜VARA牌照，通過收購FTX EU獲得MiFID II監管資質。全球最合規的加密交易所之一。',
+    fr: 'Licence VARA à Dubaï, réglementé MiFID II via acquisition de FTX EU. Un des exchanges crypto les plus conformes.',
+    pt: 'Licenciado VARA em Dubai, regulamentado MiFID II via aquisição da FTX EU. Um dos exchanges mais conformes.',
+    it: 'Licenza VARA a Dubai, regolamentato MiFID II tramite acquisizione FTX EU. Uno degli exchange più conformi.',
+    de: 'VARA-lizenziert in Dubai, MiFID II reguliert durch FTX EU Übernahme. Einer der konformsten Krypto-Exchanges.',
+    ja: 'ドバイVARAライセンス、FTX EU買収によるMiFID II規制。世界で最もコンプライアンスの高い取引所の一つ。',
+    ko: '두바이 VARA 라이선스, FTX EU 인수를 통한 MiFID II 규제. 세계에서 가장 규제를 준수하는 거래소 중 하나.'
   },
-  eclipseAirdrop: {
-    en: 'Eclipse (ES) Airdrop - Airdrop and trading campaign for ES tokens with bonus rewards.',
-    'zh-cn': 'Eclipse (ES) 空投 - ES代币空投和交易活动，附带奖励福利。',
-    'zh-tw': 'Eclipse (ES) 空投 - ES代幣空投和交易活動，附帶獎勵福利。',
-    fr: 'Airdrop Eclipse (ES) - Campagne d\'airdrop et de trading pour les tokens ES avec des récompenses bonus.',
-    pt: 'Airdrop Eclipse (ES) - Campanha de airdrop e trading para tokens ES com recompensas bônus.',
-    it: 'Airdrop Eclipse (ES) - Campagna di airdrop e trading per token ES con ricompense bonus.',
-    de: 'Eclipse (ES) Airdrop - Airdrop- und Trading-Kampagne für ES-Token mit Bonus-Belohnungen.',
-    ja: 'Eclipse (ES) エアドロップ - ESトークンのエアドロップ・取引キャンペーン、ボーナス報酬付き。',
-    ko: 'Eclipse (ES) 에어드롭 - 보너스 보상과 함께 ES 토큰 에어드롭 및 거래 캠페인.'
+  why2Title: {
+    en: 'Unified Cross-Margin',
+    'zh-cn': '统一跨保证金',
+    'zh-tw': '統一跨保證金',
+    fr: 'Marge Croisée Unifiée',
+    pt: 'Margem Cruzada Unificada',
+    it: 'Margine Incrociato Unificato',
+    de: 'Einheitliche Cross-Margin',
+    ja: '統合クロスマージン',
+    ko: '통합 교차 마진'
   },
-  pumpListing: {
-    en: '$PUMP Listing - $PUMP token now live for trading with special launch promotions.',
-    'zh-cn': '$PUMP上线 - $PUMP代币现已开放交易，享受特别上线促销。',
-    'zh-tw': '$PUMP上線 - $PUMP代幣現已開放交易，享受特別上線促銷。',
-    fr: 'Listing $PUMP - Token $PUMP maintenant en direct pour le trading avec des promotions de lancement spéciales.',
-    pt: 'Listagem $PUMP - Token $PUMP agora ao vivo para trading com promoções especiais de lançamento.',
-    it: 'Listing $PUMP - Token $PUMP ora live per il trading con promozioni speciali di lancio.',
-    de: '$PUMP-Listing - $PUMP-Token jetzt live für Trading mit speziellen Launch-Promotionen.',
-    ja: '$PUMP 上場 - $PUMPトークンが取引開始、特別ローンチプロモーション付き。',
-    ko: '$PUMP 상장 - 특별 출시 프로모션과 함께 $PUMP 토큰 거래 시작.'
+  why2Desc: {
+    en: 'One account for spot, futures, lending, borrowing, and prediction markets. No need to transfer funds between wallets — maximize capital efficiency.',
+    'zh-cn': '一个账户即可交易现货、合约、借贷和预测市场。无需在钱包间转移资金，最大化资金效率。',
+    'zh-tw': '一個帳戶即可交易現貨、合約、借貸和預測市場。無需在錢包間轉移資金，最大化資金效率。',
+    fr: "Un seul compte pour spot, futures, prêt, emprunt et marchés de prédiction. Maximisez l'efficacité du capital.",
+    pt: 'Uma conta para spot, futuros, empréstimos e mercados de previsão. Maximize a eficiência do capital.',
+    it: 'Un account per spot, futures, prestiti e mercati predittivi. Massimizza l\'efficienza del capitale.',
+    de: 'Ein Konto für Spot, Futures, Lending, Borrowing und Prognosemärkte. Maximale Kapitaleffizienz.',
+    ja: 'スポット、先物、レンディング、予測市場を一つのアカウントで。資金移動不要、資本効率を最大化。',
+    ko: '현물, 선물, 대출, 예측 시장을 하나의 계정으로. 지갑 간 자금 이동 없이 자본 효율성 극대화.'
   },
-  pointsProgram: {
-    en: 'Backpack Points Season 2 - New season of trading points launched with enhanced rewards system.',
-    'zh-cn': 'Backpack积分第二季 - 新一季交易积分启动，增强奖励系统。',
-    'zh-tw': 'Backpack積分第二季 - 新一季交易積分啟動，增強獎勵系統。',
-    fr: 'Points Backpack Saison 2 - Nouvelle saison de points de trading lancée avec un système de récompenses amélioré.',
-    pt: 'Pontos Backpack Temporada 2 - Nova temporada de pontos de trading lançada com sistema de recompensas aprimorado.',
-    it: 'Punti Backpack Stagione 2 - Nuova stagione di punti trading lanciata con sistema ricompense migliorato.',
-    de: 'Backpack Points Season 2 - Neue Saison von Trading-Punkten mit verbessertem Belohnungssystem gestartet.',
-    ja: 'Backpackポイントシーズン2 - 強化された報酬システムで新シーズンの取引ポイント開始。',
-    ko: 'Backpack 포인트 시즌 2 - 향상된 보상 시스템으로 새로운 거래 포인트 시즌 시작.'
+  why3Title: {
+    en: 'Industry-Low Fees',
+    'zh-cn': '业界最低费率',
+    'zh-tw': '業界最低費率',
+    fr: 'Frais les Plus Bas',
+    pt: 'Taxas Mais Baixas',
+    it: 'Commissioni Più Basse',
+    de: 'Niedrigste Gebühren',
+    ja: '業界最低手数料',
+    ko: '업계 최저 수수료'
   },
-  pumpTrading: {
-    en: 'Pump.fun tokens are now LIVE for trading on Backpack! Discover the next viral meme coin.',
-    'zh-cn': 'Pump.fun代币现已在Backpack上线交易！发现下一个病毒式meme币。',
-    'zh-tw': 'Pump.fun代幣現已在Backpack上線交易！發現下一個病毒式meme幣。',
-    fr: 'Les tokens Pump.fun sont maintenant EN DIRECT pour le trading sur Backpack ! Découvrez la prochaine meme coin virale.',
-    pt: 'Os tokens Pump.fun estão agora AO VIVO para negociação no Backpack! Descubra a próxima meme coin viral.',
-    it: 'I token Pump.fun sono ora LIVE per il trading su Backpack! Scopri la prossima meme coin virale.',
-    de: 'Pump.fun-Token sind jetzt LIVE für den Handel auf Backpack! Entdecke die nächste virale Meme-Münze.',
-    ja: 'Pump.funトークンがBackpackで取引開始！次のバイラルミームコインを発見しよう。',
-    ko: 'Pump.fun 토큰이 이제 Backpack에서 거래 가능합니다! 다음 바이럴 밈 코인을 발견하세요.'
+  why3Desc: {
+    en: '0.02% maker / 0.06% taker fees. Rated 8.75/10 for fees by independent reviewers. Keep more of your profits on every trade.',
+    'zh-cn': '0.02%挂单/0.06%吃单费用。独立评测机构费用评分8.75/10。每笔交易保留更多利润。',
+    'zh-tw': '0.02%掛單/0.06%吃單費用。獨立評測機構費用評分8.75/10。每筆交易保留更多利潤。',
+    fr: '0.02% maker / 0.06% taker. Noté 8.75/10 pour les frais. Gardez plus de profits sur chaque trade.',
+    pt: '0.02% maker / 0.06% taker. Avaliado 8.75/10 em taxas. Mantenha mais lucros em cada trade.',
+    it: '0.02% maker / 0.06% taker. Valutato 8.75/10 per le commissioni. Mantieni più profitti su ogni trade.',
+    de: '0.02% Maker / 0.06% Taker Gebühren. 8.75/10 Bewertung für Gebühren. Behalten Sie mehr Gewinn bei jedem Trade.',
+    ja: '0.02%メイカー/0.06%テイカー手数料。独立レビュー8.75/10の評価。毎回の取引でより多くの利益を維持。',
+    ko: '0.02% 메이커 / 0.06% 테이커 수수료. 독립 리뷰어로부터 수수료 8.75/10 평가. 매 거래에서 더 많은 수익 유지.'
   },
-  fragmetricCampaign: {
-    en: 'Fragmetric Frenzy Airdrop Campaign - Participate in trading campaigns and win big!',
-    'zh-cn': 'Fragmetric Frenzy空投活动 - 参与交易活动，赢取大奖！',
-    'zh-tw': 'Fragmetric Frenzy空投活動 - 參與交易活動，贏取大獎！',
-    fr: 'Campagne Airdrop Fragmetric Frenzy - Participez aux campagnes de trading et gagnez gros !',
-    pt: 'Campanha Airdrop Fragmetric Frenzy - Participe das campanhas de negociação e ganhe muito!',
-    it: 'Campagna Airdrop Fragmetric Frenzy - Partecipa alle campagne di trading e vinci alla grande!',
-    de: 'Fragmetric Frenzy Airdrop-Kampagne - Nimm an Trading-Kampagnen teil und gewinne groß!',
-    ja: 'Fragmetric Frenzy エアドロップキャンペーン - トレーディングキャンペーンに参加して大きく勝利しよう！',
-    ko: 'Fragmetric Frenzy 에어드롭 캠페인 - 거래 캠페인에 참여하고 큰 상금을 획득하세요!'
+  why4Title: {
+    en: 'Prediction Markets',
+    'zh-cn': '预测市场',
+    'zh-tw': '預測市場',
+    fr: 'Marchés de Prédiction',
+    pt: 'Mercados de Previsão',
+    it: 'Mercati Predittivi',
+    de: 'Prognosemärkte',
+    ja: '予測市場',
+    ko: '예측 시장'
   },
-  newUserCampaign: {
-    en: 'New User Campaign - Get up to $200 in trading rewards for new signups!',
-    'zh-cn': '新用户活动 - 新注册用户可获得高达200美元的交易奖励！',
-    'zh-tw': '新用戶活動 - 新註冊用戶可獲得高達200美元的交易獎勵！',
-    fr: 'Campagne Nouveaux Utilisateurs - Obtenez jusqu\'à 200$ en récompenses de trading pour les nouvelles inscriptions !',
-    pt: 'Campanha de Novos Usuários - Ganhe até $200 em recompensas de negociação para novas inscrições!',
-    it: 'Campagna Nuovi Utenti - Ottieni fino a $200 in ricompense di trading per le nuove iscrizioni!',
-    de: 'Neue Benutzer-Kampagne - Erhalte bis zu $200 in Trading-Belohnungen für neue Anmeldungen!',
-    ja: '新規ユーザーキャンペーン - 新規登録で最大200ドルのトレーディング報酬を獲得！',
-    ko: '신규 사용자 캠페인 - 신규 가입자에게 최대 $200의 거래 보상을 제공합니다!'
+  why4Desc: {
+    en: 'First exchange to offer cross-margined prediction markets. Bet on crypto & financial outcomes while hedging with futures — all in one portfolio.',
+    'zh-cn': '首家提供跨保证金预测市场的交易所。在一个投资组合中对加密和金融结果下注，同时用合约对冲。',
+    'zh-tw': '首家提供跨保證金預測市場的交易所。在一個投資組合中對加密和金融結果下注，同時用合約對沖。',
+    fr: "Premier exchange à offrir des marchés de prédiction en marge croisée. Pariez et couvrez-vous dans un même portefeuille.",
+    pt: 'Primeira exchange a oferecer mercados de previsão com margem cruzada. Aposte e proteja-se em um só portfólio.',
+    it: 'Primo exchange a offrire mercati predittivi con margine incrociato. Scommetti e copri il rischio in un unico portafoglio.',
+    de: 'Erster Exchange mit Cross-Margin-Prognosemärkten. Wetten und Hedging in einem Portfolio.',
+    ja: '初のクロスマージン予測市場を提供する取引所。先物でヘッジしながら暗号・金融の結果に賭ける。',
+    ko: '최초로 교차 마진 예측 시장을 제공하는 거래소. 하나의 포트폴리오에서 암호화폐 및 금융 결과에 베팅하고 선물로 헤지.'
   },
-  lowFees: {
-    en: '0.02% Maker Fees - Industry-leading low trading fees',
-    'zh-cn': '0.02%挂单费用 - 行业领先的低交易费用',
-    'zh-tw': '0.02%掛單費用 - 行業領先的低交易費用',
-    fr: '0.02% de Frais Maker - Frais de trading bas leaders de l\'industrie',
-    pt: '0.02% de Taxas Maker - Taxas de negociação baixas líderes da indústria',
-    it: '0.02% di Commissioni Maker - Commissioni di trading basse leader del settore',
-    de: '0.02% Maker-Gebühren - Branchenführende niedrige Handelsgebühren',
-    ja: '0.02%メイカー手数料 - 業界トップクラスの低取引手数料',
-    ko: '0.02% 메이커 수수료 - 업계 최고 수준의 낮은 거래 수수료'
+  why5Title: {
+    en: 'Fort Knox Security',
+    'zh-cn': '银行级安全',
+    'zh-tw': '銀行級安全',
+    fr: 'Sécurité Fort Knox',
+    pt: 'Segurança Fort Knox',
+    it: 'Sicurezza Fort Knox',
+    de: 'Fort Knox Sicherheit',
+    ja: '最高水準のセキュリティ',
+    ko: 'Fort Knox 보안'
   },
-  fastExecution: {
-    en: 'Sub-millisecond execution speed for professional traders',
-    'zh-cn': '专业交易者的亚毫秒执行速度',
-    'zh-tw': '專業交易者的亞毫秒執行速度',
-    fr: 'Vitesse d\'exécution inférieure à la milliseconde pour les traders professionnels',
-    pt: 'Velocidade de execução sub-milissegundo para traders profissionais',
-    it: 'Velocità di esecuzione sub-millisecondi per trader professionali',
-    de: 'Sub-Millisekunden-Ausführungsgeschwindigkeit für professionelle Trader',
-    ja: 'プロトレーダー向けのミリ秒未満の実行速度',
-    ko: '프로 트레이더를 위한 밀리초 미만의 실행 속도'
+  why5Desc: {
+    en: 'Cold storage, 2FA, hardware wallet integration. Zero hacks since 2022 launch. Your assets are protected with institutional-grade security infrastructure.',
+    'zh-cn': '冷存储、双重认证、硬件钱包集成。自2022年上线以来零黑客攻击。机构级安全基础设施保护您的资产。',
+    'zh-tw': '冷儲存、雙重認證、硬體錢包整合。自2022年上線以來零駭客攻擊。機構級安全基礎設施保護您的資產。',
+    fr: "Stockage à froid, 2FA, intégration wallet hardware. Zéro hack depuis 2022. Sécurité de niveau institutionnel.",
+    pt: 'Armazenamento a frio, 2FA, integração com carteira hardware. Zero hacks desde 2022. Segurança institucional.',
+    it: 'Cold storage, 2FA, integrazione hardware wallet. Zero hack dal 2022. Sicurezza di livello istituzionale.',
+    de: 'Cold Storage, 2FA, Hardware-Wallet-Integration. Null Hacks seit 2022. Institutionelle Sicherheitsinfrastruktur.',
+    ja: 'コールドストレージ、2FA、ハードウェアウォレット統合。2022年のローンチ以来ハッキングゼロ。機関投資家レベルのセキュリティ。',
+    ko: '콜드 스토리지, 2FA, 하드웨어 지갑 통합. 2022년 출시 이후 해킹 제로. 기관급 보안 인프라로 자산 보호.'
   },
-  legacyDrop: {
-    en: 'Legacy Drop - Rewarding historical users since late 2023 with exclusive points allocation',
-    'zh-cn': 'Legacy空投 - 为2023年底以来的历史用户提供独家积分分配奖励',
-    'zh-tw': 'Legacy空投 - 為2023年底以來的歷史用戶提供獨家積分分配獎勵',
-    fr: 'Legacy Drop - Récompenser les utilisateurs historiques depuis fin 2023 avec une allocation de points exclusive',
-    pt: 'Legacy Drop - Recompensando usuários históricos desde o final de 2023 com alocação exclusiva de pontos',
-    it: 'Legacy Drop - Ricompensare gli utenti storici dalla fine del 2023 con allocazione esclusiva di punti',
-    de: 'Legacy Drop - Belohnung historischer Nutzer seit Ende 2023 mit exklusiver Punkteverteilung',
-    ja: 'Legacy Drop - 2023年末からの歴史的ユーザーに独占的なポイント配分で報酬',
-    ko: 'Legacy Drop - 2023년 말부터의 역사적 사용자에게 독점적인 포인트 할당으로 보상'
+  why6Title: {
+    en: 'IPOs Onchain',
+    'zh-cn': '链上IPO',
+    'zh-tw': '鏈上IPO',
+    fr: 'IPO Onchain',
+    pt: 'IPOs Onchain',
+    it: 'IPO Onchain',
+    de: 'IPOs Onchain',
+    ja: 'IPOs Onchain',
+    ko: 'IPOs Onchain'
   },
-  description: {
-    en: 'Experience the future of crypto trading with Backpack - the fastest, most intuitive exchange platform. Join millions of traders worldwide and discover why we\'re the #1 choice for crypto enthusiasts.',
-    'zh-cn': '体验Backpack加密货币交易的未来 - 最快速、最直观的交易平台。加入全球数百万交易者，发现为什么我们是加密货币爱好者的首选。',
-    'zh-tw': '體驗Backpack加密貨幣交易的未來 - 最快速、最直觀的交易平台。加入全球數百萬交易者，發現為什麼我們是加密貨幣愛好者的首選。',
-    fr: 'Découvrez l\'avenir du trading crypto avec Backpack - la plateforme d\'échange la plus rapide et intuitive. Rejoignez des millions de traders dans le monde et découvrez pourquoi nous sommes le choix n°1 des passionnés de crypto.',
-    pt: 'Experimente o futuro do trading de criptomoedas com Backpack - a plataforma de câmbio mais rápida e intuitiva. Junte-se a milhões de traders mundialmente e descubra por que somos a escolha nº1 dos entusiastas de cripto.',
-    it: 'Sperimenta il futuro del trading crypto con Backpack - la piattaforma di scambio più veloce e intuitiva. Unisciti a milioni di trader in tutto il mondo e scopri perché siamo la scelta n°1 degli appassionati di crypto.',
-    de: 'Erlebe die Zukunft des Krypto-Handels mit Backpack - der schnellsten, intuitivsten Handelsplattform. Schließe dich Millionen von Tradern weltweit an und entdecke, warum wir die Nr. 1 Wahl für Krypto-Enthusiasten sind.',
-    ja: 'Backpackで暗号通貨取引の未来を体験 - 最速で最も直感的な取引プラットフォーム。世界中の何百万ものトレーダーに参加し、なぜ私たちが暗号通貨愛好家の第一選択なのかを発見してください。',
-    ko: 'Backpack으로 암호화폐 거래의 미래를 경험하세요 - 가장 빠르고 직관적인 거래 플랫폼. 전 세계 수백만 명의 트레이더와 함께하고 우리가 암호화폐 애호가들의 1위 선택인 이유를 발견하세요.'
+  why6Desc: {
+    en: 'Access tokenized IPO opportunities directly on the blockchain. A world-first innovation bringing traditional finance milestones to crypto-native users.',
+    'zh-cn': '直接在区块链上参与代币化IPO机会。将传统金融里程碑带给加密原生用户的全球首创。',
+    'zh-tw': '直接在區塊鏈上參與代幣化IPO機會。將傳統金融里程碑帶給加密原生用戶的全球首創。',
+    fr: "Accédez aux IPO tokenisées directement sur la blockchain. Une innovation mondiale reliant finance traditionnelle et crypto.",
+    pt: 'Acesse IPOs tokenizadas diretamente na blockchain. Uma inovação mundial trazendo marcos financeiros tradicionais para usuários crypto.',
+    it: "Accedi alle IPO tokenizzate direttamente sulla blockchain. Un'innovazione mondiale che porta la finanza tradizionale agli utenti crypto.",
+    de: 'Zugang zu tokenisierten IPOs direkt auf der Blockchain. Eine weltweite Innovation für Krypto-Native.',
+    ja: 'ブロックチェーン上で直接トークン化IPO機会にアクセス。伝統的金融をクリプトネイティブユーザーに届ける世界初のイノベーション。',
+    ko: '블록체인에서 직접 토큰화된 IPO 기회에 접근. 전통 금융의 마일스톤을 크립토 네이티브 사용자에게 제공하는 세계 최초 혁신.'
+  },
+  pointsTitle: {
+    en: 'Backpack Points Program',
+    'zh-cn': 'Backpack积分计划',
+    'zh-tw': 'Backpack積分計劃',
+    fr: 'Programme de Points Backpack',
+    pt: 'Programa de Pontos Backpack',
+    it: 'Programma Punti Backpack',
+    de: 'Backpack Punkteprogramm',
+    ja: 'Backpackポイントプログラム',
+    ko: 'Backpack 포인트 프로그램'
   },
   pointsDetails: {
-    en: 'Points are distributed weekly every Friday at 02:00 UTC based on your trading activity. Earn your way through Bronze, Silver, Gold, Platinum, Diamond, and Challenger ranks each season.',
-    'zh-cn': '积分根据您的交易活动每周五02:00 UTC分发。在每个赛季中通过青铜、白银、黄金、铂金、钻石和挑战者等级获得积分。',
-    'zh-tw': '積分根據您的交易活動每週五02:00 UTC分發。在每個賽季中通過青銅、白銀、黃金、鉑金、鑽石和挑戰者等級獲得積分。',
-    fr: 'Les points sont distribués chaque vendredi à 02:00 UTC en fonction de votre activité de trading. Progressez à travers les rangs Bronze, Argent, Or, Platine, Diamant et Challenger chaque saison.',
-    pt: 'Os pontos são distribuídos semanalmente toda sexta-feira às 02:00 UTC com base na sua atividade de negociação. Avance através dos ranks Bronze, Prata, Ouro, Platina, Diamante e Challenger a cada temporada.',
-    it: 'I punti vengono distribuiti settimanalmente ogni venerdì alle 02:00 UTC in base alla tua attività di trading. Avanza attraverso i ranghi Bronzo, Argento, Oro, Platino, Diamante e Challenger ogni stagione.',
-    de: 'Punkte werden wöchentlich jeden Freitag um 02:00 UTC basierend auf deiner Trading-Aktivität verteilt. Arbeite dich durch Bronze-, Silber-, Gold-, Platin-, Diamant- und Challenger-Ränge in jeder Saison.',
-    ja: 'ポイントは取引活動に基づいて毎週金曜日02:00 UTCに配布されます。各シーズンでブロンズ、シルバー、ゴールド、プラチナ、ダイヤモンド、チャレンジャーのランクを進んでください。',
-    ko: '포인트는 거래 활동을 기반으로 매주 금요일 02:00 UTC에 배포됩니다. 각 시즌에서 브론즈, 실버, 골드, 플래티넘, 다이아몬드, 챌린저 랭크를 통해 진행하세요.'
+    en: 'Earn points weekly every Friday at 02:00 UTC based on trading activity. Progress through Bronze, Silver, Gold, Platinum, Diamond, and Challenger ranks. Register now to start earning from Season 3!',
+    'zh-cn': '根据交易活动每周五02:00 UTC获得积分。从青铜、白银、黄金、铂金、钻石到挑战者逐级晋升。立即注册，开始第三季积分之旅！',
+    'zh-tw': '根據交易活動每週五02:00 UTC獲得積分。從青銅、白銀、黃金、鉑金、鑽石到挑戰者逐級晉升。立即註冊，開始第三季積分之旅！',
+    fr: 'Gagnez des points chaque vendredi à 02:00 UTC. Progressez de Bronze à Challenger. Inscrivez-vous pour la Saison 3 !',
+    pt: 'Ganhe pontos toda sexta às 02:00 UTC. Progrida de Bronze a Challenger. Registre-se para a Temporada 3!',
+    it: 'Guadagna punti ogni venerdì alle 02:00 UTC. Progredisci da Bronzo a Challenger. Registrati per la Stagione 3!',
+    de: 'Verdiene Punkte jeden Freitag um 02:00 UTC. Steige von Bronze bis Challenger auf. Registriere dich für Season 3!',
+    ja: '毎週金曜02:00 UTCにポイント獲得。ブロンズからチャレンジャーまで昇格。シーズン3に今すぐ登録！',
+    ko: '매주 금요일 02:00 UTC에 포인트 획득. 브론즈에서 챌린저까지 승급. 시즌 3에 지금 등록하세요!'
+  },
+  communityTitle: {
+    en: 'Join Your Community',
+    'zh-cn': '加入你的社区',
+    'zh-tw': '加入你的社群',
+    fr: 'Rejoignez Votre Communauté',
+    pt: 'Junte-se à Sua Comunidade',
+    it: 'Unisciti alla Tua Comunità',
+    de: 'Tritt Deiner Community Bei',
+    ja: 'あなたのコミュニティに参加',
+    ko: '커뮤니티에 참여하세요'
   },
   memeTitle: {
     en: 'Meme Coin Masters',
@@ -336,15 +424,15 @@ const translations: Translations = {
     ko: '밈 코인 마스터'
   },
   memeDescription: {
-    en: 'Join the meme coin revolution! Trade $PEPE, $DOGE, $SHIB and discover the next 100x gem. Lightning-fast execution, real-time alerts, and exclusive meme coin launches.',
-    'zh-cn': '加入meme币革命！交易$PEPE、$DOGE、$SHIB，发现下一个100倍宝石。闪电般的执行、实时提醒和独家meme币发行。',
-    'zh-tw': '加入meme幣革命！交易$PEPE、$DOGE、$SHIB，發現下一個100倍寶石。閃電般的執行、即時提醒和獨家meme幣發行。',
-    fr: 'Rejoignez la révolution des meme coins ! Tradez $PEPE, $DOGE, $SHIB et découvrez le prochain joyau 100x. Exécution ultra-rapide, alertes en temps réel et lancements exclusifs de meme coins.',
-    pt: 'Junte-se à revolução das meme coins! Negocie $PEPE, $DOGE, $SHIB e descubra a próxima joia 100x. Execução ultra-rápida, alertas em tempo real e lançamentos exclusivos de meme coins.',
-    it: 'Unisciti alla rivoluzione delle meme coin! Fai trading di $PEPE, $DOGE, $SHIB e scopri la prossima gemma 100x. Esecuzione ultra-veloce, avvisi in tempo reale e lanci esclusivi di meme coin.',
-    de: 'Schließe dich der Meme-Coin-Revolution an! Handle $PEPE, $DOGE, $SHIB und entdecke den nächsten 100x-Edelstein. Blitzschnelle Ausführung, Echtzeit-Benachrichtigungen und exklusive Meme-Coin-Launches.',
-    ja: 'ミームコイン革命に参加しよう！$PEPE、$DOGE、$SHIBを取引し、次の100倍の宝石を発見。超高速実行、リアルタイムアラート、独占ミームコインローンチ。',
-    ko: '밈 코인 혁명에 참여하세요! $PEPE, $DOGE, $SHIB을 거래하고 다음 100배 보석을 발견하세요. 초고속 실행, 실시간 알림, 독점 밈 코인 출시.'
+    en: 'Trade $PEPE, $DOGE, $SHIB and discover the next 100x gem. Lightning-fast execution and exclusive meme coin launches.',
+    'zh-cn': '交易$PEPE、$DOGE、$SHIB，发现下一个100倍宝石。闪电般的执行和独家meme币发行。',
+    'zh-tw': '交易$PEPE、$DOGE、$SHIB，發現下一個100倍寶石。閃電般的執行和獨家meme幣發行。',
+    fr: 'Tradez $PEPE, $DOGE, $SHIB et découvrez le prochain joyau 100x.',
+    pt: 'Negocie $PEPE, $DOGE, $SHIB e descubra a próxima joia 100x.',
+    it: 'Fai trading di $PEPE, $DOGE, $SHIB e scopri la prossima gemma 100x.',
+    de: 'Handle $PEPE, $DOGE, $SHIB und entdecke den nächsten 100x-Edelstein.',
+    ja: '$PEPE、$DOGE、$SHIBを取引し、次の100倍の宝石を発見。',
+    ko: '$PEPE, $DOGE, $SHIB을 거래하고 다음 100배 보석을 발견하세요.'
   },
   languageCommunityTitle: {
     en: 'English Community',
@@ -358,15 +446,15 @@ const translations: Translations = {
     ko: '한국 커뮤니티'
   },
   languageCommunityDescription: {
-    en: 'Global crypto trading platform with native English support! 24/7 English customer service, instant USD deposits, intuitive interface. Fully regulated in major English-speaking markets with bank-grade security.',
-    'zh-cn': '专为华人用户打造的加密货币交易平台！中文客服、美元法币出入金、简体界面。合规安全，大陆KYC合法通过，香港地区银行卡美金法币出入金。',
-    'zh-tw': '專為華人用戶打造的加密貨幣交易平台！中文客服、美元法幣出入金、繁體界面。合規安全，台灣KYC支援，香港地區銀行卡美金法幣出入金。',
-    fr: 'Plateforme de trading crypto avec support français natif ! Service client 24/7 en français, dépôts EUR/USD instantanés, interface intuitive. Entièrement réglementée dans l\'UE avec sécurité de niveau bancaire.',
-    pt: 'Plataforma de trading crypto com suporte nativo em português! Atendimento 24/7 em português, depósitos BRL/USD instantâneos, interface intuitiva. Totalmente regulamentada no Brasil com segurança de nível bancário.',
-    it: 'Piattaforma di trading crypto con supporto italiano nativo! Assistenza clienti 24/7 in italiano, depositi EUR/USD istantanei, interfaccia intuitiva. Completamente regolamentata nell\'UE con sicurezza di livello bancario.',
-    de: 'Krypto-Trading-Plattform mit deutschem Support! 24/7 deutscher Kundensupport, sofortige EUR/USD-Einzahlungen, intuitive Oberfläche. Vollständig reguliert in der EU mit bankähnlicher Sicherheit.',
-    ja: '日本語ネイティブサポートの暗号通貨取引プラットフォーム！24/7日本語カスタマーサービス、JPY/USD即時入金、直感的なインターフェース。日本で完全規制対応、銀行レベルのセキュリティ。',
-    ko: '한국어 네이티브 지원 암호화폐 거래 플랫폼! 24/7 한국어 고객 서비스, KRW/USD 즉시 입금, 직관적인 인터페이스. 한국에서 완전 규제 준수, 은행급 보안.'
+    en: 'Full English support with USD deposits, intuitive interface, and 24/7 customer service.',
+    'zh-cn': '中文客服、美元法币出入金、简体界面，合规安全，支持大陆KYC。',
+    'zh-tw': '中文客服、美元法幣出入金、繁體介面，合規安全，支援台灣KYC。',
+    fr: 'Support français complet, dépôts EUR, interface intuitive, service 24/7.',
+    pt: 'Suporte completo em português, depósitos BRL, interface intuitiva, serviço 24/7.',
+    it: 'Supporto italiano completo, depositi EUR, interfaccia intuitiva, servizio 24/7.',
+    de: 'Voller deutscher Support, EUR-Einzahlungen, intuitive Oberfläche, 24/7 Service.',
+    ja: '日本語フルサポート、JPY入金、直感的なインターフェース、24/7カスタマーサービス。',
+    ko: '한국어 지원, KRW 입금, 직관적인 인터페이스, 24/7 고객 서비스.'
   },
   gamingTitle: {
     en: 'Gaming Community',
@@ -380,92 +468,37 @@ const translations: Translations = {
     ko: '게이밍 커뮤니티'
   },
   gamingDescription: {
-    en: 'Level up your crypto game! Trade gaming tokens, NFTs, and metaverse assets. From $AXS to $SAND, find all gaming tokens in one place with pro-level tools.',
-    'zh-cn': '提升你的加密游戏！交易游戏代币、NFT和元宇宙资产。从$AXS到$SAND，在一个地方找到所有游戏代币，配备专业级工具。',
-    'zh-tw': '提升你的加密遊戲！交易遊戲代幣、NFT和元宇宙資產。從$AXS到$SAND，在一個地方找到所有遊戲代幣，配備專業級工具。',
-    fr: 'Améliorez votre jeu crypto ! Tradez des tokens gaming, NFT et actifs métavers. De $AXS à $SAND, trouvez tous les tokens gaming en un endroit avec des outils de niveau professionnel.',
-    pt: 'Suba de nível no seu jogo crypto! Negocie tokens de jogos, NFTs e ativos do metaverso. De $AXS a $SAND, encontre todos os tokens de jogos em um lugar com ferramentas de nível profissional.',
-    it: 'Migliora il tuo gioco crypto! Fai trading di token gaming, NFT e asset del metaverso. Da $AXS a $SAND, trova tutti i token gaming in un posto con strumenti di livello professionale.',
-    de: 'Verbessere dein Krypto-Spiel! Handle Gaming-Token, NFTs und Metaverse-Assets. Von $AXS bis $SAND, finde alle Gaming-Token an einem Ort mit professionellen Tools.',
-    ja: 'あなたの暗号ゲームをレベルアップ！ゲーミングトークン、NFT、メタバースアセットを取引。$AXSから$SANDまで、プロレベルのツールで全てのゲーミングトークンを一箇所で見つけよう。',
-    ko: '암호화폐 게임을 레벨업하세요! 게이밍 토큰, NFT, 메타버스 자산을 거래하세요. $AXS부터 $SAND까지, 프로 수준의 도구로 모든 게이밍 토큰을 한 곳에서 찾으세요.'
-  },
-  registerButton: {
-    en: 'Register & Trade Now →',
-    'zh-cn': '立即注册交易 →',
-    'zh-tw': '立即註冊交易 →',
-    fr: 'S\'inscrire et Trader Maintenant →',
-    pt: 'Registrar e Negociar Agora →',
-    it: 'Registrati e Fai Trading Ora →',
-    de: 'Jetzt Registrieren & Handeln →',
-    ja: '今すぐ登録して取引 →',
-    ko: '지금 등록하고 거래하기 →'
-  },
-  limitedOffer: {
-    en: '🎉 Limited Time Offer - Get Started Today!',
-    'zh-cn': '🎉 限时优惠 - 立即开始！',
-    'zh-tw': '🎉 限時優惠 - 立即開始！',
-    fr: '🎉 Offre à Durée Limitée - Commencez Aujourd\'hui !',
-    pt: '🎉 Oferta por Tempo Limitado - Comece Hoje!',
-    it: '🎉 Offerta a Tempo Limitato - Inizia Oggi!',
-    de: '🎉 Zeitlich Begrenztes Angebot - Beginne Heute!',
-    ja: '🎉 期間限定オファー - 今日から始めよう！',
-    ko: '🎉 기간 한정 제안 - 오늘 시작하세요!'
-  },
-  offerDetails: {
-    en: '• Exclusive 20% referral commission\n• Instant deposits and withdrawals\n• Access to exclusive token launches\n• 24/7 premium customer support',
-    'zh-cn': '• 独家20%推荐佣金\n• 即时存取款\n• 独家代币发行\n• 24/7高级客户支持',
-    'zh-tw': '• 獨家20%推薦佣金\n• 即時存取款\n• 獨家代幣發行\n• 24/7高級客戶支援',
-    fr: '• Commission de parrainage exclusive de 20%\n• Dépôts et retraits instantanés\n• Accès aux lancements de tokens exclusifs\n• Support client premium 24/7',
-    pt: '• Comissão de indicação exclusiva de 20%\n• Depósitos e saques instantâneos\n• Acesso a lançamentos exclusivos de tokens\n• Suporte ao cliente premium 24/7',
-    it: '• Commissione di referral esclusiva del 20%\n• Depositi e prelievi istantanei\n• Accesso a lanci di token esclusivi\n• Supporto clienti premium 24/7',
-    de: '• Exklusive 20% Empfehlungsprovision\n• Sofortige Ein- und Auszahlungen\n• Zugang zu exklusiven Token-Launches\n• 24/7 Premium-Kundensupport',
-    ja: '• 独占20%紹介コミッション\n• 即座の入出金\n• 独占トークンローンチへのアクセス\n• 24/7プレミアムカスタマーサポート',
-    ko: '• 독점 20% 추천 커미션\n• 즉시 입출금\n• 독점 토큰 출시 액세스\n• 24/7 프리미엄 고객 지원'
-  },
-  trustText: {
-    en: 'Join over 5 million traders who trust Backpack for their crypto journey',
-    'zh-cn': '加入超过500万信任Backpack的交易者',
-    'zh-tw': '加入超過500萬信任Backpack的交易者',
-    fr: 'Rejoignez plus de 5 millions de traders qui font confiance à Backpack pour leur parcours crypto',
-    pt: 'Junte-se a mais de 5 milhões de traders que confiam no Backpack para sua jornada cripto',
-    it: 'Unisciti a oltre 5 milioni di trader che si fidano di Backpack per il loro viaggio crypto',
-    de: 'Schließe dich über 5 Millionen Tradern an, die Backpack für ihre Krypto-Reise vertrauen',
-    ja: 'Backpackを信頼する500万人以上のトレーダーに参加しよう',
-    ko: 'Backpack을 신뢰하는 500만 명 이상의 트레이더와 함께하세요'
-  },
-  whyTitle: {
-    en: 'Why 5M+ Traders Choose Backpack',
-    'zh-cn': '为什么500万+交易者选择Backpack',
-    'zh-tw': '為什麼500萬+交易者選擇Backpack',
-    fr: 'Pourquoi 5M+ Traders Choisissent Backpack',
-    pt: 'Por que 5M+ Traders Escolhem Backpack',
-    it: 'Perché 5M+ Trader Scelgono Backpack',
-    de: 'Warum 5M+ Trader Backpack Wählen',
-    ja: 'なぜ500万+のトレーダーがBackpackを選ぶのか',
-    ko: '왜 500만+ 트레이더가 Backpack을 선택하는가'
+    en: 'Trade gaming tokens, NFTs, and metaverse assets. From $AXS to $SAND, all in one place with pro tools.',
+    'zh-cn': '交易游戏代币、NFT和元宇宙资产。从$AXS到$SAND，专业工具一站式服务。',
+    'zh-tw': '交易遊戲代幣、NFT和元宇宙資產。從$AXS到$SAND，專業工具一站式服務。',
+    fr: 'Tradez des tokens gaming, NFTs et actifs métavers avec des outils professionnels.',
+    pt: 'Negocie tokens de jogos, NFTs e ativos do metaverso com ferramentas profissionais.',
+    it: 'Fai trading di token gaming, NFT e asset del metaverso con strumenti professionali.',
+    de: 'Handle Gaming-Token, NFTs und Metaverse-Assets mit professionellen Tools.',
+    ja: 'ゲーミングトークン、NFT、メタバースアセットをプロツールで取引。',
+    ko: '게이밍 토큰, NFT, 메타버스 자산을 프로 도구로 거래하세요.'
   },
   readyTitle: {
-    en: 'Ready to Start Your Crypto Journey?',
-    'zh-cn': '准备好开始您的加密之旅了吗？',
-    'zh-tw': '準備好開始您的加密之旅了嗎？',
-    fr: 'Prêt à Commencer Votre Voyage Crypto ?',
-    pt: 'Pronto para Começar Sua Jornada Cripto?',
-    it: 'Pronto per Iniziare il Tuo Viaggio Crypto?',
-    de: 'Bereit, Deine Krypto-Reise zu Beginnen?',
-    ja: '暗号通貨の旅を始める準備はできていますか？',
-    ko: '암호화폐 여정을 시작할 준비가 되셨나요?'
+    en: 'Start Trading on Backpack Today',
+    'zh-cn': '立即开始在Backpack交易',
+    'zh-tw': '立即開始在Backpack交易',
+    fr: 'Commencez à Trader sur Backpack',
+    pt: 'Comece a Negociar no Backpack Hoje',
+    it: 'Inizia a Fare Trading su Backpack Oggi',
+    de: 'Beginne Heute auf Backpack zu Handeln',
+    ja: '今日からBackpackで取引を始めよう',
+    ko: '오늘 Backpack에서 거래를 시작하세요'
   },
   readyDescription: {
-    en: 'Join millions of traders who\'ve already discovered the Backpack advantage. Don\'t miss out on the next big opportunity!',
-    'zh-cn': '加入已经发现Backpack优势的数百万交易者。不要错过下一个大机会！',
-    'zh-tw': '加入已經發現Backpack優勢的數百萬交易者。不要錯過下一個大機會！',
-    fr: 'Rejoignez des millions de traders qui ont déjà découvert l\'avantage Backpack. Ne manquez pas la prochaine grande opportunité !',
-    pt: 'Junte-se a milhões de traders que já descobriram a vantagem Backpack. Não perca a próxima grande oportunidade!',
-    it: 'Unisciti a milioni di trader che hanno già scoperto il vantaggio Backpack. Non perdere la prossima grande opportunità!',
-    de: 'Schließe dich Millionen von Tradern an, die bereits den Backpack-Vorteil entdeckt haben. Verpasse nicht die nächste große Gelegenheit!',
-    ja: 'すでにBackpackの利点を発見した何百万ものトレーダーに参加しよう。次の大きな機会を逃すな！',
-    ko: '이미 Backpack의 장점을 발견한 수백만 명의 트레이더와 함께하세요. 다음 큰 기회를 놓치지 마세요!'
+    en: 'Register through our referral link to receive an exclusive 20% trading fee commission. Join 5M+ traders on one of the most regulated crypto exchanges in the world.',
+    'zh-cn': '通过我们的邀请链接注册，享受独家20%交易手续费返佣。加入500万+交易者，体验全球最合规的加密交易所之一。',
+    'zh-tw': '透過我們的邀請連結註冊，享受獨家20%交易手續費返佣。加入500萬+交易者，體驗全球最合規的加密交易所之一。',
+    fr: "Inscrivez-vous via notre lien de parrainage pour recevoir 20% de commission exclusive. Rejoignez 5M+ traders.",
+    pt: 'Registre-se pelo nosso link de referência para receber 20% de comissão exclusiva. Junte-se a 5M+ traders.',
+    it: 'Registrati tramite il nostro link referral per ricevere il 20% di commissione esclusiva. Unisciti a 5M+ trader.',
+    de: 'Registriere dich über unseren Empfehlungslink für exklusive 20% Provision. Schließe dich 5M+ Tradern an.',
+    ja: '紹介リンクから登録して20%の独占取引手数料コミッションを受け取ろう。500万+トレーダーと共に取引。',
+    ko: '추천 링크로 가입하여 독점 20% 거래 수수료 커미션을 받으세요. 500만+ 트레이더와 함께하세요.'
   },
   alreadyAccount: {
     en: 'Already have an account?',
@@ -489,78 +522,28 @@ const translations: Translations = {
     ja: 'Backpackにサインイン',
     ko: 'Backpack에 로그인'
   },
-  exclusiveBonusTitle: {
-    en: '🎁 Exclusive Bonus: 20% Referral Commission',
-    'zh-cn': '🎁 独家奖励：20%推荐佣金',
-    'zh-tw': '🎁 獨家獎勵：20%推薦佣金',
-    fr: '🎁 Bonus Exclusif : 20% de Commission de Parrainage',
-    pt: '🎁 Bônus Exclusivo: Até 20% de Comissão de Indicação',
-    it: '🎁 Bonus Esclusivo: Fino al 20% di Commissione sui Referral',
-    de: '🎁 Exklusiver Bonus: Bis zu 20% Empfehlungsprovision',
-    ja: '🎁 限定ボーナス：20% 紹介コミッション',
-    ko: '🎁 독점 보너스: 20% 추천 커미션'
-  },
-  exclusiveBonusDetails: {
-    en: '• Register through this page to get exclusive newbie rewards\n• Earn 20% commission on referrals\n• Additional trading bonuses for active users\n• VIP customer support access',
-    'zh-cn': '• 通过此页面注册获得新手独家奖励\n• 推荐用户可获得20%佣金\n• 活跃用户额外交易奖励\n• VIP客服支持权益',
-    'zh-tw': '• 透過此頁面註冊獲得新手獨家獎勵\n• 推薦用戶可獲得20%佣金\n• 活躍用戶額外交易獎勵\n• VIP客服支援權益',
-    fr: '• Inscrivez-vous via cette page pour obtenir des récompenses exclusives pour débutants\n• Gagnez 20% de commission sur les parrainages\n• Bonus de trading supplémentaires pour les utilisateurs actifs\n• Accès au support client VIP',
-    pt: '• Registre-se através desta página para obter recompensas exclusivas para iniciantes\n• Ganhe 20% de comissão em indicações\n• Bônus de negociação adicionais para usuários ativos\n• Acesso ao suporte ao cliente VIP',
-    it: '• Registrati tramite questa pagina per ottenere ricompense esclusive per principianti\n• Guadagna 20% di commissione sui referral\n• Bonus di trading aggiuntivi per utenti attivi\n• Accesso al supporto clienti VIP',
-    de: '• Registrieren Sie sich über diese Seite, um exklusive Anfängerbelohnungen zu erhalten\n• Verdienen Sie 20% Provision für Empfehlungen\n• Zusätzliche Trading-Boni für aktive Nutzer\n• VIP-Kundensupport-Zugang',
-    ja: '• このページから登録して初心者限定特典を取得\n• 紹介で20% のコミッション獲得\n• アクティブユーザー向け追加トレーディングボーナス\n• VIPカスタマーサポートアクセス',
-    ko: '• 이 페이지를 통해 등록하여 신규 사용자 독점 보상 획득\n• 추천으로 20% 커미션 획득\n• 활성 사용자 추가 거래 보너스\n• VIP 고객 지원 액세스'
-  },
-  exclusiveBonusAction: {
-    en: '🚀 Register Now to Unlock All Benefits!',
-    'zh-cn': '🚀 立即注册解锁所有福利！',
-    'zh-tw': '🚀 立即註冊解鎖所有福利！',
-    fr: '🚀 Inscrivez-vous Maintenant pour Débloquer Tous les Avantages !',
-    pt: '🚀 Registre-se Agora para Desbloquear Todos os Benefícios!',
-    it: '🚀 Registrati Ora per Sbloccare Tutti i Vantaggi!',
-    de: '🚀 Jetzt Registrieren, um Alle Vorteile Freizuschalten!',
-    ja: '🚀 今すぐ登録してすべての特典をアンロック！',
-    ko: '🚀 지금 등록하여 모든 혜택을 얻으세요!'
-  },
-  exclusiveBonusNote: {
-    en: 'Limited time offer - Don’t miss out!',
-    'zh-cn': '限时优惠 - 不要错过！',
-    'zh-tw': '限時優惠 - 不要錯過！',
-    fr: 'Offre à durée limitée - Ne manquez pas !',
-    pt: 'Oferta por tempo limitado - Não perca!',
-    it: 'Offerta a tempo limitato - Non perdere!',
-    de: 'Zeitlich begrenztes Angebot - Nicht verpassen!',
-    ja: '期間限定オファー - お見逃しなく！',
-    ko: '기간 한정 제안 - 놓치지 마세요!'
-  },
   disclaimer: {
     en: 'All website content is AI-generated. Backpack promotions mentioned are not guaranteed to be real or effective, and do not constitute investment advice. Virtual currency investment requires caution - please do your own research.',
     'zh-cn': '所有网站内容由AI生成，页面提及的Backpack优惠不保证真实有效，不构成投资建议，虚拟货币投资需谨慎，请自己做好研究。',
     'zh-tw': '所有網站內容由AI生成，頁面提及的Backpack優惠不保證真實有效，不構成投資建議，虛擬貨幣投資需謹慎，請自己做好研究。',
-    fr: 'Tout le contenu du site Web est généré par l\'IA. Les promotions Backpack mentionnées ne sont pas garanties d\'être réelles ou efficaces, et ne constituent pas des conseils d\'investissement. L\'investissement en crypto-monnaies nécessite de la prudence - veuillez faire vos propres recherches.',
-    pt: 'Todo o conteúdo do site é gerado por IA. As promoções Backpack mencionadas não têm garantia de serem reais ou eficazes, e não constituem conselho de investimento. O investimento em criptomoedas requer cautela - faça sua própria pesquisa.',
-    it: 'Tutto il contenuto del sito web è generato dall\'IA. Le promozioni Backpack menzionate non sono garantite per essere reali o efficaci, e non costituiscono consigli di investimento. L\'investimento in criptovalute richiede cautela - fai le tue ricerche.',
-    de: 'Alle Website-Inhalte sind KI-generiert. Die erwähnten Backpack-Promotionen sind nicht garantiert real oder wirksam und stellen keine Anlageberatung dar. Kryptowährungs-Investitionen erfordern Vorsicht - bitte recherchieren Sie selbst.',
-    ja: 'すべてのウェブサイトコンテンツはAI生成です。記載されているBackpackのプロモーションは真実性や有効性が保証されておらず、投資アドバイスを構成するものではありません。暗号通貨投資には注意が必要です - 自分で調査してください。',
-    ko: '모든 웹사이트 콘텐츠는 AI에 의해 생성되었습니다. 언급된 Backpack 프로모션은 실제이거나 효과적임이 보장되지 않으며 투자 조언을 구성하지 않습니다. 암호화폐 투자에는 주의가 필요합니다 - 스스로 조사하십시오.'
+    fr: "Tout le contenu du site est généré par l'IA. Les promotions Backpack mentionnées ne sont pas garanties et ne constituent pas des conseils d'investissement.",
+    pt: 'Todo o conteúdo do site é gerado por IA. As promoções Backpack mencionadas não são garantidas e não constituem conselho de investimento.',
+    it: "Tutto il contenuto del sito è generato dall'IA. Le promozioni Backpack menzionate non sono garantite e non costituiscono consigli di investimento.",
+    de: 'Alle Website-Inhalte sind KI-generiert. Die erwähnten Backpack-Promotionen sind nicht garantiert und stellen keine Anlageberatung dar.',
+    ja: 'すべてのウェブサイトコンテンツはAI生成です。記載されているBackpackのプロモーションは保証されておらず、投資アドバイスを構成するものではありません。',
+    ko: '모든 웹사이트 콘텐츠는 AI에 의해 생성되었습니다. 언급된 Backpack 프로모션은 보장되지 않으며 투자 조언을 구성하지 않습니다.'
   }
 };
 
 // Function to detect user's preferred language
 const detectUserLanguage = (): Language => {
   if (typeof window === 'undefined') return 'en';
-  
+
   const userLanguage = navigator.language || navigator.languages?.[0] || 'en';
   const langCode = userLanguage.toLowerCase();
-  
-  // Match specific languages
-  if (langCode.includes('zh-cn') || langCode.includes('zh-hans') || langCode === 'zh') {
-    return 'zh-cn';
-  }
-  if (langCode.includes('zh-tw') || langCode.includes('zh-hant') || 
-      langCode.includes('zh-hk') || langCode.includes('zh-mo')) {
-    return 'zh-tw';
-  }
+
+  if (langCode.includes('zh-cn') || langCode.includes('zh-hans') || langCode === 'zh') return 'zh-cn';
+  if (langCode.includes('zh-tw') || langCode.includes('zh-hant') || langCode.includes('zh-hk') || langCode.includes('zh-mo')) return 'zh-tw';
   if (langCode.includes('fr')) return 'fr';
   if (langCode.includes('pt')) return 'pt';
   if (langCode.includes('it')) return 'it';
@@ -568,8 +551,7 @@ const detectUserLanguage = (): Language => {
   if (langCode.includes('ja')) return 'ja';
   if (langCode.includes('ko')) return 'ko';
   if (langCode.includes('en')) return 'en';
-  
-  // Default to English for all other languages
+
   return 'en';
 };
 
@@ -581,33 +563,21 @@ export default function Home() {
     return translations[key]?.[language] || translations[key]?.en || key;
   }, [language]);
 
-  // Google Analytics event tracking
   const trackEvent = (eventName: string, parameters?: Record<string, unknown>) => {
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', eventName, parameters);
     }
   };
 
-  // Track language changes
   const handleLanguageChange = (newLanguage: Language) => {
     setLanguage(newLanguage);
-    trackEvent('language_change', {
-      language: newLanguage,
-      event_category: 'user_interaction'
-    });
+    trackEvent('language_change', { language: newLanguage, event_category: 'user_interaction' });
   };
 
-  // Track button clicks
   const handleButtonClick = (community: string, url: string) => {
-    trackEvent('register_button_click', {
-      community: community,
-      url: url,
-      language: language,
-      event_category: 'conversion'
-    });
+    trackEvent('register_button_click', { community, url, language, event_category: 'conversion' });
   };
 
-  // Detect user language on initial load
   useEffect(() => {
     if (!isLanguageDetected) {
       const detectedLanguage = detectUserLanguage();
@@ -616,23 +586,93 @@ export default function Home() {
     }
   }, [isLanguageDetected]);
 
-  // Update document title and meta tags when language changes
   useEffect(() => {
     document.title = `Backpack Exchange - ${t('subtitle')}`;
-    
-    // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', t('subtitle'));
     }
-    
-    // Update language attribute
     document.documentElement.setAttribute('lang', language);
   }, [language, t]);
 
+  const activities = [
+    {
+      title: "Wallet: Zero-Fee Swaps & Bridges",
+      content: t('activity1'),
+      icon: "💸",
+      gradient: "from-green-500 to-emerald-500",
+      date: "Mar 10, 2026",
+      url: "https://learn.backpack.exchange/blog/backpack-wallet-zero-fees-swaps-bridges"
+    },
+    {
+      title: "IPO: Token Holders Early Access",
+      content: t('activity2'),
+      icon: "🏦",
+      gradient: "from-blue-600 to-indigo-600",
+      date: "Mar 9, 2026",
+      url: "https://learn.backpack.exchange/blog/backpack-ipo-token-holders-get-early-access-before-shares-hit-the-market"
+    },
+    {
+      title: "Mark Wetjen Joins as US President",
+      content: t('activity3'),
+      icon: "👔",
+      gradient: "from-gray-700 to-gray-500",
+      date: "Mar 5, 2026",
+      url: "https://learn.backpack.exchange/blog/mark-wetjen-president-backpack-us"
+    },
+    {
+      title: "IPOs Onchain Waitlist Open",
+      content: t('activity4'),
+      icon: "🚀",
+      gradient: "from-purple-600 to-pink-500",
+      date: "Mar 4, 2026",
+      url: "https://learn.backpack.exchange/blog/ipos-onchain-waitlist"
+    },
+    {
+      title: "New Lend Page Live",
+      content: t('activity5'),
+      icon: "💰",
+      gradient: "from-yellow-500 to-orange-500",
+      date: "Feb 18, 2026",
+      url: "https://learn.backpack.exchange/blog/new-lend-page-live-defi-backpak-exchange"
+    },
+    {
+      title: "Backpack Tokenomics Explained",
+      content: t('activity6'),
+      icon: "📊",
+      gradient: "from-indigo-500 to-purple-500",
+      date: "Feb 9, 2026",
+      url: "https://learn.backpack.exchange/blog/backpack-tokenomics"
+    },
+    {
+      title: "XMR, CC & STRK Perps Listed",
+      content: t('activity7'),
+      icon: "📈",
+      gradient: "from-cyan-500 to-blue-500",
+      date: "Feb 5, 2026",
+      url: "https://learn.backpack.exchange/blog/xmr-cc-strk-perp-listing"
+    },
+    {
+      title: "PAXG Spot Trading Live",
+      content: t('activity8'),
+      icon: "🥇",
+      gradient: "from-yellow-600 to-amber-500",
+      date: "Feb 5, 2026",
+      url: "https://learn.backpack.exchange/blog/backpack-exchange-lists-paxg-spot"
+    },
+    {
+      title: "ZAMA-PERP Listed",
+      content: t('activity9'),
+      icon: "⚡",
+      gradient: "from-red-500 to-pink-500",
+      date: "Feb 2, 2026",
+      url: "https://learn.backpack.exchange/blog/zama-perp-listed"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white text-black">
-      {/* Structured Data for AI/Search Engines */}
+      {/* Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{
         __html: JSON.stringify({
           "@context": "https://schema.org",
@@ -652,10 +692,10 @@ export default function Home() {
           }
         })
       }} />
-      
-      <div className="container mx-auto px-4 py-16">
+
+      <div className="container mx-auto px-4 py-12">
         {/* Language Switcher */}
-        <div className="flex justify-end mb-8">
+        <div className="flex justify-end mb-6">
           <select
             value={language}
             onChange={(e) => handleLanguageChange(e.target.value as Language)}
@@ -673,146 +713,82 @@ export default function Home() {
           </select>
         </div>
 
-        {/* Header */}
+        {/* Hero Section */}
         <div className="text-center mb-16">
-          <div className="flex justify-center items-center mb-8">
+          <div className="flex justify-center items-center mb-6">
             <Image
               src="https://cdn.prod.website-files.com/66830ad123bea7f626bcf58f/670f68cdb73b3a75c01956b9_Group%20427324273.svg"
               alt="Backpack Logo"
-              width={80}
-              height={80}
+              width={72}
+              height={72}
               className="mr-4"
             />
             <h1 className="text-5xl md:text-7xl font-bold text-black">
               {t('title')}
             </h1>
           </div>
-          <p className="text-2xl md:text-3xl font-semibold text-black mb-8">
+          <p className="text-2xl md:text-3xl font-semibold text-black mb-4">
             {t('subtitle')}
           </p>
-          
-          {/* Header CTA Button */}
-          <div className="text-center mb-8">
-            <a
-              href="https://backpack.exchange/join/meme"
-              onClick={() => handleButtonClick('header_cta', 'https://backpack.exchange/join/meme')}
-              className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-12 rounded-full text-xl transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t('registerButton')}
-            </a>
-          </div>
-        </div>
-
-        {/* Hero Description */}
-        <div className="text-center mb-16">
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
-            {t('description')}
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+            {t('heroDescription')}
           </p>
-          <div className="bg-gray-50 rounded-2xl p-8 mb-12 max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">{t('limitedOffer')}</h2>
-            <p className="text-gray-700 mb-4 whitespace-pre-line">
-              {t('offerDetails')}
-            </p>
-            <p className="text-sm text-gray-500">
-              {t('trustText')}
-            </p>
+
+          {/* Trust Badges */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {[
+              { key: 'trustBadge1', icon: '🏛️' },
+              { key: 'trustBadge2', icon: '🇪🇺' },
+              { key: 'trustBadge3', icon: '🛡️' },
+              { key: 'trustBadge4', icon: '👥' }
+            ].map((badge) => (
+              <span key={badge.key} className="inline-flex items-center gap-1.5 bg-gray-100 text-gray-700 text-sm font-medium px-4 py-2 rounded-full">
+                {badge.icon} {t(badge.key)}
+              </span>
+            ))}
           </div>
-          
-          {/* Exclusive Bonus Section */}
-          <div className="bg-gradient-to-r from-yellow-100 to-orange-100 border-2 border-yellow-300 rounded-2xl p-8 mb-12 max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6 text-center text-orange-800">{t('exclusiveBonusTitle')}</h2>
-            <p className="text-gray-700 mb-4 whitespace-pre-line text-center">
-              {t('exclusiveBonusDetails')}
-            </p>
-            <div className="text-center">
-              <a
-                href="https://backpack.exchange/join/meme"
-                onClick={() => handleButtonClick('exclusive_bonus_action', 'https://backpack.exchange/join/meme')}
-                className="inline-block text-lg font-bold text-orange-700 mb-2 hover:text-orange-600 transition-colors duration-200 cursor-pointer hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t('exclusiveBonusAction')}
-              </a>
-              <p className="text-sm text-gray-600">
-                {t('exclusiveBonusNote')}
-              </p>
-            </div>
+
+          {/* Main CTA */}
+          <a
+            href="https://backpack.exchange/join/meme"
+            onClick={() => handleButtonClick('hero_cta', 'https://backpack.exchange/join/meme')}
+            className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-12 rounded-full text-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t('registerButton')}
+          </a>
+        </div>
+
+        {/* Why Choose Backpack - Enhanced */}
+        <div className="mb-16 max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-10">{t('whyTitle')}</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { titleKey: 'why1Title', descKey: 'why1Desc', icon: '🏛️', gradient: 'from-blue-500 to-indigo-500' },
+              { titleKey: 'why2Title', descKey: 'why2Desc', icon: '🔗', gradient: 'from-purple-500 to-pink-500' },
+              { titleKey: 'why3Title', descKey: 'why3Desc', icon: '💎', gradient: 'from-green-500 to-emerald-500' },
+              { titleKey: 'why4Title', descKey: 'why4Desc', icon: '🔮', gradient: 'from-orange-500 to-red-500' },
+              { titleKey: 'why5Title', descKey: 'why5Desc', icon: '🔒', gradient: 'from-gray-600 to-gray-400' },
+              { titleKey: 'why6Title', descKey: 'why6Desc', icon: '🚀', gradient: 'from-cyan-500 to-blue-500' }
+            ].map((item, index) => (
+              <div key={index} className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r ${item.gradient} text-white text-2xl mb-4`}>
+                  {item.icon}
+                </div>
+                <h3 className="text-lg font-bold mb-2">{t(item.titleKey)}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{t(item.descKey)}</p>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Hot Activities Section */}
+        {/* Hot Activities Section - Updated */}
         <div className="mb-16 max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-10">{t('hotActivities')}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Backpack Cash Climb Week 2",
-                content: t('cashClimb'),
-                icon: "💰",
-                gradient: "from-green-500 to-emerald-500",
-                date: "September 18, 2025"
-              },
-              {
-                title: "USDT0 Support Live",
-                content: t('usdt0Listing'),
-                icon: "💵",
-                gradient: "from-blue-500 to-cyan-500",
-                date: "September 15, 2025"
-              },
-              {
-                title: "Backpack Points Season 3",
-                content: t('pointsSeason3'),
-                icon: "🏅",
-                gradient: "from-purple-600 to-indigo-600",
-                date: "September 11, 2025"
-              },
-              {
-                title: "Linea Perps Trading",
-                content: t('lineaPerps'),
-                icon: "📈",
-                gradient: "from-indigo-500 to-purple-500",
-                date: "September 10, 2025"
-              },
-              {
-                title: "XRP Spot Trading Launch",
-                content: t('xrpListing'),
-                icon: "⚡",
-                gradient: "from-yellow-500 to-orange-500",
-                date: "September 10, 2025"
-              },
-              {
-                title: "Switchboard ($SWTCH) Listing",
-                content: t('swtchListing'),
-                icon: "🏆",
-                gradient: "from-red-500 to-pink-500",
-                date: "September 9, 2025"
-              },
-              {
-                title: "$SWTCH Airdrop",
-                content: t('swtchAirdrop'),
-                icon: "🎁",
-                gradient: "from-purple-500 to-pink-500",
-                date: "September 9, 2025"
-              },
-              {
-                title: "Backpack EU Launch",
-                content: t('backpackEu'),
-                icon: "🇪🇺",
-                gradient: "from-cyan-500 to-blue-500",
-                date: "September 8, 2025"
-              },
-              {
-                title: "WLD, kSHIB & PYTH Perps",
-                content: t('wldPerps'),
-                icon: "🚀",
-                gradient: "from-orange-500 to-red-500",
-                date: "September 3, 2025"
-              }
-            ].map((activity, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-100">
+            {activities.map((activity, index) => (
+              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
                 <div className="flex justify-between items-start mb-3">
                   <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r ${activity.gradient} text-white text-2xl`}>
                     {activity.icon}
@@ -822,27 +798,27 @@ export default function Home() {
                 <h3 className="text-lg font-bold mb-3">{activity.title}</h3>
                 <p className="text-gray-600 text-sm mb-4">{activity.content}</p>
                 <a
-                  href="https://backpack.exchange/join/meme"
-                  onClick={() => handleButtonClick(`activity_${index}`, 'https://backpack.exchange/join/meme')}
-                  className="inline-block bg-black hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded-full text-sm transition-colors duration-200"
+                  href={activity.url}
+                  onClick={() => handleButtonClick(`activity_${index}`, activity.url)}
+                  className="inline-block text-black hover:text-gray-600 font-semibold text-sm transition-colors duration-200"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {t('registerButton')}
+                  {t('learnMore')}
                 </a>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Points Program Details */}
+        {/* Points Program */}
         <div className="mb-16 max-w-6xl mx-auto">
           <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-8">
-            <h2 className="text-3xl font-bold text-center mb-6">🏆 Backpack Points Program</h2>
+            <h2 className="text-3xl font-bold text-center mb-6">🏆 {t('pointsTitle')}</h2>
             <p className="text-gray-700 text-center mb-6">
               {t('pointsDetails')}
             </p>
-            <div className="grid md:grid-cols-6 gap-4 text-center">
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-4 text-center mb-6">
               {[
                 { rank: 'Bronze', color: 'from-orange-600 to-orange-400', emoji: '🥉' },
                 { rank: 'Silver', color: 'from-gray-400 to-gray-300', emoji: '🥈' },
@@ -852,123 +828,85 @@ export default function Home() {
                 { rank: 'Challenger', color: 'from-red-500 to-pink-400', emoji: '👑' }
               ].map((tier, index) => (
                 <div key={index} className="text-center">
-                  <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${tier.color} flex items-center justify-center text-2xl mx-auto mb-2`}>
+                  <div className={`w-14 h-14 rounded-full bg-gradient-to-r ${tier.color} flex items-center justify-center text-2xl mx-auto mb-2`}>
                     {tier.emoji}
                   </div>
                   <p className="text-sm font-semibold">{tier.rank}</p>
                 </div>
               ))}
             </div>
+            <div className="text-center">
+              <a
+                href="https://backpack.exchange/join/meme"
+                onClick={() => handleButtonClick('points_cta', 'https://backpack.exchange/join/meme')}
+                className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full text-sm transition-colors duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('registerButton')}
+              </a>
+            </div>
           </div>
         </div>
 
         {/* Community Sections */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
-          <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col">
-            <div className="text-5xl mb-6">🚀</div>
-            <h3 className="text-2xl font-bold text-black mb-4">{t('memeTitle')}</h3>
-            <p className="text-gray-600 mb-6 text-sm flex-grow">
-              {t('memeDescription')}
-            </p>
-            <div className="mb-6">
-              <p className="text-xs text-gray-500 mb-2">🔥 Hot Right Now:</p>
-              <p className="text-sm font-semibold">$BONK +127% • $WIF +89% • $POPCAT +156%</p>
-              <p className="text-xs text-green-600 font-semibold mt-2">
-                💰 +20% Referral Bonus
-              </p>
+        <div className="mb-16 max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-10">{t('communityTitle')}</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col">
+              <div className="text-5xl mb-6">🚀</div>
+              <h3 className="text-2xl font-bold text-black mb-4">{t('memeTitle')}</h3>
+              <p className="text-gray-600 mb-6 text-sm flex-grow">{t('memeDescription')}</p>
+              <p className="text-xs text-green-600 font-semibold mb-4">+20% Referral Bonus</p>
+              <a
+                href="https://backpack.exchange/join/meme"
+                className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => handleButtonClick('meme', 'https://backpack.exchange/join/meme')}
+              >
+                {t('registerButton')}
+              </a>
             </div>
-            <a
-              href="https://backpack.exchange/join/meme"
-              className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => handleButtonClick('meme', 'https://backpack.exchange/join/meme')}
-            >
-              {t('registerButton')}
-            </a>
-          </div>
 
-          <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col">
-            <div className="text-5xl mb-6">🌏</div>
-            <h3 className="text-2xl font-bold text-black mb-4">{t('languageCommunityTitle')}</h3>
-            <p className="text-gray-600 mb-6 text-sm flex-grow">
-              {t('languageCommunityDescription')}
-            </p>
-            <div className="mb-6">
-              <p className="text-xs text-gray-500 mb-2">🎯 Exclusive Benefits:</p>
-              <p className="text-sm font-semibold">{language === 'en' ? 'English Support • USD Deposits • Global KYC • Bank Cards' : language === 'zh-cn' ? 'Chinese Support • USD Deposits • Mainland KYC • HK Bank Cards' : language === 'zh-tw' ? 'Chinese Support • USD Deposits • Taiwan KYC • HK Bank Cards' : language === 'fr' ? 'French Support • EUR Deposits • EU KYC • SEPA Transfer' : language === 'pt' ? 'Portuguese Support • BRL Deposits • Brazil KYC • PIX Transfer' : language === 'it' ? 'Italian Support • EUR Deposits • EU KYC • SEPA Transfer' : language === 'de' ? 'German Support • EUR Deposits • EU KYC • SEPA Transfer' : language === 'ja' ? 'Japanese Support • JPY Deposits • Japan KYC • Bank Transfer' : 'Korean Support • KRW Deposits • Korea KYC • Bank Transfer'}</p>
-              <p className="text-xs text-green-600 font-semibold mt-2">
-                💰 +20% Referral Bonus
-              </p>
+            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col">
+              <div className="text-5xl mb-6">🌏</div>
+              <h3 className="text-2xl font-bold text-black mb-4">{t('languageCommunityTitle')}</h3>
+              <p className="text-gray-600 mb-6 text-sm flex-grow">{t('languageCommunityDescription')}</p>
+              <p className="text-xs text-green-600 font-semibold mb-4">+20% Referral Bonus</p>
+              <a
+                href="https://backpack.exchange/join/zh-cn"
+                className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => handleButtonClick('language_community', 'https://backpack.exchange/join/zh-cn')}
+              >
+                {t('registerButton')}
+              </a>
             </div>
-            <a
-              href="https://backpack.exchange/join/zh-cn"
-              className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => handleButtonClick('language_community', 'https://backpack.exchange/join/zh-cn')}
-            >
-              {t('registerButton')}
-            </a>
-          </div>
 
-          <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col">
-            <div className="text-5xl mb-6">🎮</div>
-            <h3 className="text-2xl font-bold text-black mb-4">{t('gamingTitle')}</h3>
-            <p className="text-gray-600 mb-6 text-sm flex-grow">
-              {t('gamingDescription')}
-            </p>
-            <div className="mb-6">
-              <p className="text-xs text-gray-500 mb-2">🎯 Gaming Tokens:</p>
-              <p className="text-sm font-semibold">$RONIN • $IMX • $GALA • $ENJ • $MANA</p>
-              <p className="text-xs text-green-600 font-semibold mt-2">
-                💰 +20% Referral Bonus
-              </p>
-            </div>
-            <a
-              href="https://backpack.exchange/join/lol"
-              className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => handleButtonClick('gaming', 'https://backpack.exchange/join/lol')}
-            >
-              {t('registerButton')}
-            </a>
-          </div>
-        </div>
-
-
-        {/* Why Choose Backpack */}
-        <div className="bg-black text-white rounded-2xl p-12 mb-16 max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">{t('whyTitle')}</h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-3xl mb-3">⚡</div>
-              <h4 className="text-lg font-semibold mb-2">Lightning Speed</h4>
-              <p className="text-gray-300 text-sm">Sub-millisecond execution</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl mb-3">🔒</div>
-              <h4 className="text-lg font-semibold mb-2">Fort Knox Security</h4>
-              <p className="text-gray-300 text-sm">$2B+ assets protected</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl mb-3">💎</div>
-              <h4 className="text-lg font-semibold mb-2">Lowest Fees</h4>
-              <p className="text-gray-300 text-sm">0.02% maker fee</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl mb-3">🌟</div>
-              <h4 className="text-lg font-semibold mb-2">24/7 Support</h4>
-              <p className="text-gray-300 text-sm">Always here for you</p>
+            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col">
+              <div className="text-5xl mb-6">🎮</div>
+              <h3 className="text-2xl font-bold text-black mb-4">{t('gamingTitle')}</h3>
+              <p className="text-gray-600 mb-6 text-sm flex-grow">{t('gamingDescription')}</p>
+              <p className="text-xs text-green-600 font-semibold mb-4">+20% Referral Bonus</p>
+              <a
+                href="https://backpack.exchange/join/lol"
+                className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => handleButtonClick('gaming', 'https://backpack.exchange/join/lol')}
+              >
+                {t('registerButton')}
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Main CTA */}
+        {/* Final CTA */}
         <div className="text-center bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-2xl p-12 mb-16 max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6">{t('readyTitle')}</h2>
-          <p className="text-xl mb-8 opacity-90">
+          <h2 className="text-4xl font-bold mb-4">{t('readyTitle')}</h2>
+          <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
             {t('readyDescription')}
           </p>
           <a
@@ -990,8 +928,6 @@ export default function Home() {
               {t('signIn')}
             </a>
           </p>
-          
-          {/* Disclaimer */}
           <div className="mt-8 pt-8 border-t border-gray-200">
             <p className="text-gray-400 text-xs leading-relaxed max-w-4xl mx-auto">
               {t('disclaimer')}
