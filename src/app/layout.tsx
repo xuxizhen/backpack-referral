@@ -14,19 +14,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Backpack Exchange - Register & Trade Crypto with 10% Referral Bonus",
-  description: "Join Backpack crypto exchange and get exclusive newbie rewards plus up to 10% referral commission. Trade meme coins, access Chinese support, and join gaming communities. Register now for zero fees!",
+  title: "Backpack Exchange - Register & Trade Crypto with 20% Referral Bonus",
+  description: "Join Backpack crypto exchange and get exclusive newbie rewards plus up to 20% referral commission. Trade meme coins, access Chinese support, and join gaming communities. Register now!",
   keywords: "Backpack exchange, crypto trading, meme coins, referral bonus, cryptocurrency, Bitcoin, Ethereum, trading platform, crypto exchange, blockchain",
   authors: [{ name: "Backpack Exchange" }],
   robots: "index, follow",
+  metadataBase: new URL("https://www.backpackref.com"),
+  alternates: {
+    canonical: "https://www.backpackref.com",
+  },
   openGraph: {
-    title: "Backpack Exchange - Register & Trade Crypto with 10% Referral Bonus",
-    description: "Join Backpack crypto exchange and get exclusive newbie rewards plus up to 10% referral commission. Trade meme coins, access Chinese support, and join gaming communities.",
-    url: "https://backpack-referral.vercel.app/",
+    title: "Backpack Exchange - Register & Trade Crypto with 20% Referral Bonus",
+    description: "Join Backpack crypto exchange and get exclusive newbie rewards plus up to 20% referral commission. Trade meme coins, access Chinese support, and join gaming communities.",
+    url: "https://www.backpackref.com/",
     siteName: "Backpack Exchange Referral",
     images: [
       {
-        url: "https://backpack-referral.vercel.app/og-image.jpg",
+        url: "https://www.backpackref.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Backpack Exchange Referral"
@@ -37,9 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Backpack Exchange - Register & Trade Crypto with 10% Referral Bonus",
-    description: "Join Backpack crypto exchange and get exclusive newbie rewards plus up to 10% referral commission.",
-    images: ["https://backpack-referral.vercel.app/og-image.jpg"]
+    title: "Backpack Exchange - Register & Trade Crypto with 20% Referral Bonus",
+    description: "Join Backpack crypto exchange and get exclusive newbie rewards plus up to 20% referral commission.",
+    images: ["https://www.backpackref.com/og-image.jpg"]
   }
 };
 
