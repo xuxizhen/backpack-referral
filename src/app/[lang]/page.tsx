@@ -30,76 +30,76 @@ export default function HomePage({ params }: { params: Promise<{ lang: string }>
 
   const activities = [
     {
-      title: "Wallet: Zero-Fee Swaps & Bridges",
+      titleKey: "activity1Title",
       content: t('activity1'),
+      icon: "🚀",
+      gradient: "from-indigo-600 to-blue-500",
+      date: "Jun 4-10, 2026 UTC",
+      url: "https://learn.backpack.exchange/blog/path-to-liftoff-spacex-shares"
+    },
+    {
+      titleKey: "activity2Title",
+      content: t('activity2'),
+      icon: "🏛️",
+      gradient: "from-gray-800 to-slate-600",
+      date: "Jun 2, 2026",
+      url: "https://learn.backpack.exchange/blog/introducing-backpack-securities"
+    },
+    {
+      titleKey: "activity3Title",
+      content: t('activity3'),
+      icon: "🪙",
+      gradient: "from-emerald-600 to-teal-500",
+      date: "Mar 23, 2026",
+      url: "https://learn.backpack.exchange/blog/backpack-token-bp-launch"
+    },
+    {
+      titleKey: "activity4Title",
+      content: t('activity4'),
+      icon: "📊",
+      gradient: "from-purple-600 to-pink-500",
+      date: "May 22, 2026",
+      url: "https://learn.backpack.exchange/articles/backpack-tokenomics"
+    },
+    {
+      titleKey: "activity5Title",
+      content: t('activity5'),
+      icon: "🔒",
+      gradient: "from-yellow-500 to-orange-500",
+      date: "Mar 23, 2026",
+      url: "https://learn.backpack.exchange/articles/how-to-stake-bp"
+    },
+    {
+      titleKey: "activity6Title",
+      content: t('activity6'),
+      icon: "🤖",
+      gradient: "from-cyan-600 to-blue-500",
+      date: "Apr 14, 2026",
+      url: "https://learn.backpack.exchange/blog/grid-bot-v2-major-upgrade-to-automated-trading-on-backpack"
+    },
+    {
+      titleKey: "activity7Title",
+      content: t('activity7'),
       icon: "💸",
       gradient: "from-green-500 to-emerald-500",
       date: "Mar 10, 2026",
       url: "https://learn.backpack.exchange/blog/backpack-wallet-zero-fees-swaps-bridges"
     },
     {
-      title: "IPO: Token Holders Early Access",
-      content: t('activity2'),
-      icon: "🏦",
-      gradient: "from-blue-600 to-indigo-600",
-      date: "Mar 9, 2026",
-      url: "https://learn.backpack.exchange/blog/backpack-ipo-token-holders-get-early-access-before-shares-hit-the-market"
-    },
-    {
-      title: "Mark Wetjen Joins as US President",
-      content: t('activity3'),
-      icon: "👔",
-      gradient: "from-gray-700 to-gray-500",
-      date: "Mar 5, 2026",
-      url: "https://learn.backpack.exchange/blog/mark-wetjen-president-backpack-us"
-    },
-    {
-      title: "IPOs Onchain Waitlist Open",
-      content: t('activity4'),
-      icon: "🚀",
-      gradient: "from-purple-600 to-pink-500",
-      date: "Mar 4, 2026",
-      url: "https://learn.backpack.exchange/blog/ipos-onchain-waitlist"
-    },
-    {
-      title: "New Lend Page Live",
-      content: t('activity5'),
-      icon: "💰",
-      gradient: "from-yellow-500 to-orange-500",
-      date: "Feb 18, 2026",
-      url: "https://learn.backpack.exchange/blog/new-lend-page-live-defi-backpak-exchange"
-    },
-    {
-      title: "Backpack Tokenomics Explained",
-      content: t('activity6'),
-      icon: "📊",
-      gradient: "from-indigo-500 to-purple-500",
-      date: "Feb 9, 2026",
-      url: "https://learn.backpack.exchange/blog/backpack-tokenomics"
-    },
-    {
-      title: "XMR, CC & STRK Perps Listed",
-      content: t('activity7'),
-      icon: "📈",
-      gradient: "from-cyan-500 to-blue-500",
-      date: "Feb 5, 2026",
-      url: "https://learn.backpack.exchange/blog/xmr-cc-strk-perp-listing"
-    },
-    {
-      title: "PAXG Spot Trading Live",
+      titleKey: "activity8Title",
       content: t('activity8'),
-      icon: "🥇",
-      gradient: "from-yellow-600 to-amber-500",
-      date: "Feb 5, 2026",
-      url: "https://learn.backpack.exchange/blog/backpack-exchange-lists-paxg-spot"
+      icon: "💰",
+      gradient: "from-amber-600 to-yellow-500",
+      date: "Apr 30, 2026",
+      url: "https://learn.backpack.exchange/blog/btc-yield-boost"
     },
     {
-      title: "ZAMA-PERP Listed",
+      titleKey: "activity9Title",
       content: t('activity9'),
-      icon: "⚡",
+      icon: "📈",
       gradient: "from-red-500 to-pink-500",
-      date: "Feb 2, 2026",
-      url: "https://learn.backpack.exchange/blog/zama-perp-listed"
+      date: "May 28, 2026",
+      url: "https://learn.backpack.exchange/blog/trading-trail-week-3"
     }
   ];
 
@@ -164,6 +164,17 @@ export default function HomePage({ params }: { params: Promise<{ lang: string }>
 
           {/* Main CTA */}
           <CTA lang={lang} />
+          <p className="text-sm text-gray-500 mt-4">
+            {t('inviteHint')}{' '}
+            <a
+              href="https://x.com/mikexuusa"
+              className="text-black font-semibold hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('footerXLinkText')}
+            </a>
+          </p>
         </div>
 
         {/* Why Choose Backpack */}
@@ -201,7 +212,7 @@ export default function HomePage({ params }: { params: Promise<{ lang: string }>
                   </div>
                   <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">{activity.date}</span>
                 </div>
-                <h3 className="text-lg font-bold mb-3">{activity.title}</h3>
+                <h3 className="text-lg font-bold mb-3">{t(activity.titleKey)}</h3>
                 <p className="text-gray-600 text-sm mb-4">{activity.content}</p>
                 <a
                   href={activity.url}
@@ -217,39 +228,50 @@ export default function HomePage({ params }: { params: Promise<{ lang: string }>
           </div>
         </div>
 
-        {/* Points Program */}
+        {/* BP Staking Benefits */}
         <div className="mb-16 max-w-6xl mx-auto">
-          <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-8">
-            <h2 className="text-3xl font-bold text-center mb-6">🏆 {t('pointsTitle')}</h2>
-            <p className="text-gray-700 text-center mb-6">
-              {t('pointsDetails')}
-            </p>
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-4 text-center mb-6">
+          <div className="bg-gradient-to-r from-slate-950 to-black text-white rounded-2xl p-8">
+            <div className="text-center max-w-3xl mx-auto mb-8">
+              <p className="text-sm font-semibold text-emerald-300 mb-2">{t('bpProgramEyebrow')}</p>
+              <h2 className="text-3xl font-bold mb-4">{t('bpProgramTitle')}</h2>
+              <p className="text-gray-300">{t('bpProgramDetails')}</p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
               {[
-                { rank: 'Bronze', color: 'from-orange-600 to-orange-400', emoji: '🥉' },
-                { rank: 'Silver', color: 'from-gray-400 to-gray-300', emoji: '🥈' },
-                { rank: 'Gold', color: 'from-yellow-500 to-yellow-300', emoji: '🥇' },
-                { rank: 'Platinum', color: 'from-blue-400 to-blue-300', emoji: '💎' },
-                { rank: 'Diamond', color: 'from-purple-500 to-purple-400', emoji: '💠' },
-                { rank: 'Challenger', color: 'from-red-500 to-pink-400', emoji: '👑' }
-              ].map((tier, index) => (
-                <div key={index} className="text-center">
-                  <div className={`w-14 h-14 rounded-full bg-gradient-to-r ${tier.color} flex items-center justify-center text-2xl mx-auto mb-2`}>
-                    {tier.emoji}
-                  </div>
-                  <p className="text-sm font-semibold">{tier.rank}</p>
+                { key: 'bpBenefit1', icon: '💸' },
+                { key: 'bpBenefit2', icon: '🏦' },
+                { key: 'bpBenefit3', icon: '📈' },
+                { key: 'bpBenefit4', icon: '⚡' },
+                { key: 'bpBenefit5', icon: '💳' },
+                { key: 'bpBenefit6', icon: '🛡️' }
+              ].map((benefit) => (
+                <div key={benefit.key} className="bg-white/10 border border-white/10 rounded-xl p-5">
+                  <div className="text-2xl mb-3">{benefit.icon}</div>
+                  <p className="text-sm leading-relaxed text-gray-200">{t(benefit.key)}</p>
                 </div>
               ))}
             </div>
-            <div className="text-center">
+            <p className="text-xs text-gray-400 text-center max-w-3xl mx-auto mb-6">
+              {t('bpProgramDisclaimer')}
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-3">
               <a
                 href="https://backpack.exchange/join/meme"
-                onClick={() => handleButtonClick('points_cta', 'https://backpack.exchange/join/meme')}
-                className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full text-sm transition-colors duration-200"
+                onClick={() => handleButtonClick('bp_program_referral', 'https://backpack.exchange/join/meme')}
+                className="inline-block bg-white hover:bg-gray-100 text-black font-bold py-3 px-8 rounded-full text-sm transition-colors duration-200 text-center"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {t('registerButton')}
+              </a>
+              <a
+                href="https://learn.backpack.exchange/articles/how-to-stake-bp"
+                onClick={() => handleButtonClick('bp_staking_learn', 'https://learn.backpack.exchange/articles/how-to-stake-bp')}
+                className="inline-block bg-transparent hover:bg-white/10 text-white border border-white/30 font-bold py-3 px-8 rounded-full text-sm transition-colors duration-200 text-center"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('bpLearnMore')}
               </a>
             </div>
           </div>
@@ -263,7 +285,7 @@ export default function HomePage({ params }: { params: Promise<{ lang: string }>
               <div className="text-5xl mb-6">🚀</div>
               <h3 className="text-2xl font-bold text-black mb-4">{t('memeTitle')}</h3>
               <p className="text-gray-600 mb-6 text-sm flex-grow">{t('memeDescription')}</p>
-              <p className="text-xs text-green-600 font-semibold mb-4">+20% Referral Bonus</p>
+              <p className="text-xs text-green-600 font-semibold mb-4">{t('referralBenefitLabel')}</p>
               <a
                 href="https://backpack.exchange/join/meme"
                 className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
@@ -279,13 +301,13 @@ export default function HomePage({ params }: { params: Promise<{ lang: string }>
               <div className="text-5xl mb-6">🌏</div>
               <h3 className="text-2xl font-bold text-black mb-4">{t('languageCommunityTitle')}</h3>
               <p className="text-gray-600 mb-6 text-sm flex-grow">{t('languageCommunityDescription')}</p>
-              <p className="text-xs text-green-600 font-semibold mb-4">+20% Referral Bonus</p>
+              <p className="text-xs text-green-600 font-semibold mb-4">{t('referralBenefitLabel')}</p>
               <a
-                href="https://backpack.exchange/join/zh-cn"
+                href="https://backpack.exchange/join/meme"
                 className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => handleButtonClick('language_community', 'https://backpack.exchange/join/zh-cn')}
+                onClick={() => handleButtonClick('language_community', 'https://backpack.exchange/join/meme')}
               >
                 {t('registerButton')}
               </a>
@@ -295,13 +317,13 @@ export default function HomePage({ params }: { params: Promise<{ lang: string }>
               <div className="text-5xl mb-6">🎮</div>
               <h3 className="text-2xl font-bold text-black mb-4">{t('gamingTitle')}</h3>
               <p className="text-gray-600 mb-6 text-sm flex-grow">{t('gamingDescription')}</p>
-              <p className="text-xs text-green-600 font-semibold mb-4">+20% Referral Bonus</p>
+              <p className="text-xs text-green-600 font-semibold mb-4">{t('referralBenefitLabel')}</p>
               <a
-                href="https://backpack.exchange/join/lol"
+                href="https://backpack.exchange/join/meme"
                 className="inline-block bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full transition-colors duration-200 text-sm mt-auto"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => handleButtonClick('gaming', 'https://backpack.exchange/join/lol')}
+                onClick={() => handleButtonClick('gaming', 'https://backpack.exchange/join/meme')}
               >
                 {t('registerButton')}
               </a>
@@ -316,10 +338,35 @@ export default function HomePage({ params }: { params: Promise<{ lang: string }>
             {t('readyDescription')}
           </p>
           <CTA lang={lang} variant="secondary" />
+          <p className="text-sm mt-5 opacity-90">
+            {t('inviteHint')}{' '}
+            <a
+              href="https://x.com/mikexuusa"
+              className="font-semibold underline decoration-white/60 underline-offset-4 hover:decoration-white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('footerXLinkText')}
+            </a>
+          </p>
         </div>
 
         {/* Footer */}
         <div className="text-center">
+          <div className="mb-6">
+            <p className="font-semibold text-black">{t('footerContactTitle')}</p>
+            <p className="text-gray-500 text-sm mt-1">
+              {t('footerContactText')}{' '}
+              <a
+                href="https://x.com/mikexuusa"
+                className="text-black hover:underline font-semibold"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('footerXLinkText')}
+              </a>
+            </p>
+          </div>
           <p className="text-gray-500 text-sm">
             {t('alreadyAccount')}{" "}
             <a href="https://backpack.exchange/join/meme" className="text-black hover:underline font-semibold">

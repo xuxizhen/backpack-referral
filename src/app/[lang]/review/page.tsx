@@ -55,7 +55,7 @@ export default async function ReviewPage({ params }: { params: Promise<{ lang: s
           <div className="bg-gray-50 rounded-2xl p-6">
             <p className="text-gray-700 leading-relaxed mb-4">{t('reviewFeaturesDesc', lang)}</p>
             <div className="grid md:grid-cols-2 gap-3">
-              {['Spot Trading', 'Perpetual Futures', 'DeFi Lending', 'Prediction Markets', 'Unified Cross-Margin', 'Zero-Fee Wallet Swaps'].map((feature) => (
+              {['Spot Trading', 'Perpetual Futures', 'DeFi Lending', 'BP/USD Trading', 'BP Staking Benefits', 'Backpack Securities Beta'].map((feature) => (
                 <div key={feature} className="flex items-center gap-2 bg-white rounded-lg p-3 border border-gray-200">
                   <span className="text-green-500">✓</span>
                   <span className="text-sm font-medium">{feature}</span>
@@ -75,8 +75,8 @@ export default async function ReviewPage({ params }: { params: Promise<{ lang: s
                   { en: 'Dubai VARA + MiFID II licensed', 'zh-cn': '迪拜VARA + MiFID II持牌', 'zh-tw': '迪拜VARA + MiFID II持牌', fr: 'Licence Dubai VARA + MiFID II', pt: 'Licença Dubai VARA + MiFID II', it: 'Licenza Dubai VARA + MiFID II', de: 'Dubai VARA + MiFID II Lizenz', ja: 'ドバイVARA + MiFID IIライセンス', ko: '두바이 VARA + MiFID II 라이선스' },
                   { en: 'Ultra-low fees (0.02% maker)', 'zh-cn': '超低费用（0.02%挂单）', 'zh-tw': '超低費用（0.02%掛單）', fr: 'Frais ultra-bas (0.02% maker)', pt: 'Taxas ultra-baixas (0.02% maker)', it: 'Commissioni ultra-basse (0.02% maker)', de: 'Ultra-niedrige Gebühren (0.02% Maker)', ja: '超低手数料（0.02%メイカー）', ko: '초저수수료 (0.02% 메이커)' },
                   { en: 'Zero security breaches since 2022', 'zh-cn': '自2022年以来零安全事故', 'zh-tw': '自2022年以來零安全事故', fr: 'Zéro faille de sécurité depuis 2022', pt: 'Zero violações de segurança desde 2022', it: 'Zero violazioni dal 2022', de: 'Keine Sicherheitsverstöße seit 2022', ja: '2022年以降セキュリティ侵害ゼロ', ko: '2022년 이후 보안 침해 제로' },
-                  { en: 'Unified cross-margin system', 'zh-cn': '统一跨保证金系统', 'zh-tw': '統一跨保證金系統', fr: 'Système de marge croisée unifiée', pt: 'Sistema de margem cruzada unificada', it: 'Sistema di margine incrociato unificato', de: 'Einheitliches Cross-Margin-System', ja: '統合クロスマージンシステム', ko: '통합 교차 마진 시스템' },
-                  { en: 'Prediction markets + IPOs Onchain', 'zh-cn': '预测市场 + 链上IPO', 'zh-tw': '預測市場 + 鏈上IPO', fr: 'Marchés de prédiction + IPO Onchain', pt: 'Mercados de previsão + IPOs Onchain', it: 'Mercati predittivi + IPO Onchain', de: 'Prognosemärkte + IPOs Onchain', ja: '予測市場 + IPOs Onchain', ko: '예측 시장 + IPOs Onchain' },
+                  { en: 'BP token trading + staking benefits', 'zh-cn': 'BP 交易 + 质押权益', 'zh-tw': 'BP 交易 + 質押權益', fr: 'Trading BP + avantages staking', pt: 'Trading BP + benefícios de staking', it: 'Trading BP + vantaggi staking', de: 'BP Trading + Staking Vorteile', ja: 'BP取引 + ステーキング特典', ko: 'BP 거래 + 스테이킹 혜택' },
+                  { en: 'Backpack Securities beta roadmap', 'zh-cn': 'Backpack Securities 股票内测路线', 'zh-tw': 'Backpack Securities 股票內測路線', fr: 'Roadmap bêta Backpack Securities', pt: 'Roadmap beta Backpack Securities', it: 'Roadmap beta Backpack Securities', de: 'Backpack Securities Beta-Roadmap', ja: 'Backpack Securitiesベータロードマップ', ko: 'Backpack Securities 베타 로드맵' },
                 ].map((item, i) => (
                   <li key={i} className="text-sm text-gray-700">• {item[lang]}</li>
                 ))}

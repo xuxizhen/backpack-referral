@@ -7,21 +7,12 @@ A modern, multi-language referral website for Backpack cryptocurrency exchange, 
 **Production**: [https://www.backpackref.com/](https://www.backpackref.com/)  
 **Vercel**: [https://backpack-referral.vercel.app/](https://backpack-referral.vercel.app/)
 
-## 🎯 Community Targeting
+## 🎯 Referral Entry
 
-This website features three specialized referral tracks:
+This website now uses one primary referral link across all community cards:
 
-- **🚀 Meme Coin Masters** → [backpack.exchange/join/meme](https://backpack.exchange/join/meme)
-  - Target: Meme coin traders, DeFi enthusiasts, high-volume day traders
-  - Features: Real-time trending tokens, pump.fun integration, 100x potential alerts
-
-- **🌏 Chinese Community** → [backpack.exchange/join/zh-cn](https://backpack.exchange/join/zh-cn)
-  - Target: Chinese-speaking users globally (Mainland, Taiwan, Hong Kong, Singapore)
-  - Features: Chinese customer support, USD fiat on/off ramps, mainland KYC support
-
-- **🎮 Gaming Community** → [backpack.exchange/join/lol](https://backpack.exchange/join/lol)
-  - Target: Gamers, NFT traders, metaverse investors, esports enthusiasts
-  - Features: Gaming token listings, NFT marketplace integration, play-to-earn support
+- **Main Referral Link** → [backpack.exchange/join/meme](https://backpack.exchange/join/meme)
+- **X Contact** → [@mikexuusa](https://x.com/mikexuusa) for Backpack Securities beta invite information
 
 ## ✨ Key Features
 
@@ -30,13 +21,12 @@ This website features three specialized referral tracks:
 - **Languages**: English, 简体中文, 繁體中文, Français, Português, Italiano, Deutsch, 日本語, 한국어
 - **Elegant dropdown** with flag emojis for easy switching
 
-### 🔥 Hot Activities & Campaigns
-- **Backpack Points Season 2** - Weekly point distribution system
-- **Eclipse ES Airdrop** - Latest token launch campaigns  
-- **Pump.fun Trading** - Viral meme coin discovery
-- **Fragmetric Frenzy** - Trading competition rewards
-- **New User Campaigns** - Up to $200 welcome bonuses
-- **Legacy Drop** - Historical user rewards program
+### 🔥 Official Updates & Campaigns
+- **BP Staking Benefits** - Trading fee tiers, wire perks, Equity Exchange access, and product access subject to official terms
+- **Backpack Securities** - Stocks and ETFs beta access through regulated securities infrastructure
+- **Path to Liftoff** - Official SpaceX shares campaign running June 4-10, 2026 UTC
+- **BP Token** - BP/USD spot trading, Solana token details, staking, and tokenomics
+- **Wallet & Trading Tools** - Zero-fee wallet swaps/bridges and Grid Bot V2 automated trading updates
 
 ### 📊 Advanced Analytics
 - **Google Analytics 4** integration with custom event tracking
@@ -50,7 +40,7 @@ This website features three specialized referral tracks:
 - **Professional color scheme** matching Backpack branding
 
 ### ⚡ Performance & SEO
-- **Next.js 15** with App Router for optimal performance
+- **Next.js 16** with App Router for optimal performance
 - **Dynamic meta tags** and structured data
 - **Sitemap & robots.txt** for search engine optimization
 - **Custom domain** with SSL certificate
@@ -60,7 +50,7 @@ This website features three specialized referral tracks:
 
 | Technology | Purpose | Version |
 |------------|---------|---------|
-| **Next.js** | React framework | 15.0+ |
+| **Next.js** | React framework | 16.0+ |
 | **TypeScript** | Type safety | Latest |
 | **Tailwind CSS** | Styling | Latest |
 | **Google Analytics** | User tracking | GA4 |
@@ -96,7 +86,6 @@ npm run dev      # Development server
 npm run build    # Production build
 npm run start    # Production server
 npm run lint     # ESLint check
-npm run export   # Static export
 ```
 
 ## 📁 Project Structure
@@ -112,8 +101,8 @@ backpack-referral/
 │   ├── sitemap.xml         # SEO sitemap
 │   ├── robots.txt          # Crawler directives
 │   └── favicon.ico         # Backpack favicon
-├── next.config.js          # Next.js configuration
-├── tailwind.config.js      # Tailwind CSS config
+├── next.config.ts          # Next.js configuration
+├── postcss.config.mjs      # Tailwind CSS / PostCSS config
 └── package.json            # Dependencies
 ```
 
@@ -179,8 +168,6 @@ npm run build
 # Start production server
 npm start
 
-# Or export static files
-npm run export
 ```
 
 ## 🤝 Contributing
