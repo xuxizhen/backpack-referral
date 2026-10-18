@@ -1,35 +1,19 @@
-'use client';
-
-import { usePathname, useRouter } from 'next/navigation';
-import { Language, supportedLanguages, languageNames, languageFlags } from '@/lib/i18n';
-
-interface LanguageSwitcherProps {
-  currentLang: Language;
-}
-
-export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps) {
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLang = e.target.value as Language;
-    // Replace the current language segment in the path
-    const segments = pathname.split('/');
-    segments[1] = newLang;
-    router.push(segments.join('/'));
-  };
-
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import type { Lang } from "@/lib/site";
+export default function LanguageSwitcher({ lang }: { lang: Lang }) {
+  const path = usePathname();
   return (
-    <select
-      value={currentLang}
-      onChange={handleChange}
-      className="px-4 py-2 rounded-lg border border-gray-300 bg-white text-black text-sm font-medium focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+    <Link
+      className="language"
+      href={path.replace(
+        /^\/(en|zh-cn)(?=\/|$)/,
+        lang === "en" ? "/zh-cn" : "/en",
+      )}
+      hrefLang={lang === "en" ? "zh-Hans" : "en"}
     >
-      {supportedLanguages.map((lang) => (
-        <option key={lang} value={lang}>
-          {languageFlags[lang]} {languageNames[lang]}
-        </option>
-      ))}
-    </select>
+      {lang === "en" ? "简体中文" : "English"}
+    </Link>
   );
 }

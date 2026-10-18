@@ -1,0 +1,77 @@
+[
+  {
+    "id": "unpack-real-stocks-week-3",
+    "kind": "campaign",
+    "publishedAt": "2026-10-14",
+    "checkedAt": "2026-10-18",
+    "startsAt": "2026-10-14T00:00:00Z",
+    "endsAt": "2026-10-20T23:59:00Z",
+    "source": "https://learn.backpack.exchange/blog/unpack-real-stocks-week-3",
+    "title": [
+      "Unpack Real Stocks · Week 3",
+      "Unpack Real Stocks 美股盲盒 · 第三周"
+    ],
+    "summary": [
+      "Opt in before trading. The first mystery box requires $10,000 of eligible volume. Rewards vary; $1,000 is the rare maximum, not a guaranteed payout.",
+      "交易前需先报名，首个盲盒门槛为 10,000 美元有效成交额。奖励随机，1,000 美元是罕见最高奖励，不是保底。"
+    ],
+    "details": [
+      "Runs October 14–20 UTC. KYC and a $100 account balance at close are required. Crypto spot and perpetuals count; stock spot, USDT/USDC, converts, API and liquidation volume do not. Market makers are excluded. Boxes open October 22–29. Reward value and regional eligibility follow official terms. Activity eligibility is separate from affiliate fee sharing: Equity Perps do not receive our 20% fee benefit.",
+      "活动期为 UTC 10 月 14–20 日。需完成 KYC，结束时账户至少有 100 美元。加密现货及永续计入；股票现货、USDT/USDC、闪兑、API 与强平成交不计入。做市商不适用。盲盒开放时间 10 月 22–29 日。奖励价值、地区资格以官方条款为准。活动资格与返佣资格不同：Equity Perps 不享有本站 20% 手续费权益。"
+    ]
+  },
+  {
+    "id": "backpack-ai-search",
+    "kind": "product",
+    "publishedAt": "2026-10-16",
+    "checkedAt": "2026-10-18",
+    "source": "https://learn.backpack.exchange/articles/backpack-ai-search",
+    "title": [
+      "AI Search: find markets in your own words",
+      "AI Search：用自然语言发现市场"
+    ],
+    "summary": [
+      "Backpack’s new guide explains natural-language search across stocks, crypto, perpetuals and Earn, with follow-up filters and saved watchlists.",
+      "官方新指南介绍如何用自然语言搜索股票、加密资产、永续与 Earn，并通过追问筛选和保存自选列表。"
+    ],
+    "details": [
+      "Open the search bar after signing in and select AI Search. Inspect the interpreted filters, refine the query and save a watchlist or screener. Search matches are not buy recommendations or return predictions. The source displays October 16 as its publication date; access depends on the official product interface.",
+      "登录后打开搜索栏，选择 AI Search。检查系统理解的筛选条件，继续追问，并可保存自选列表或筛选器。搜索匹配不是买入建议或收益预测。来源页面显示发布日期为 10 月 16 日，实际访问以官方产品界面为准。"
+    ]
+  },
+  {
+    "id": "tokenized-uvxy",
+    "kind": "listing",
+    "publishedAt": "2026-10-17",
+    "checkedAt": "2026-10-18",
+    "source": "https://learn.backpack.exchange/blog/tokenized-proshares-ultra-vix-short-term-futures-etf-uvxy",
+    "title": [
+      "Backpack announces tokenized UVXY on Solana",
+      "Backpack 公布 Solana 上的代币化 UVXY"
+    ],
+    "summary": [
+      "The October 17 announcement adds a tokenized volatility-linked product. It is a leveraged ETF exposure, not a cash-like holding.",
+      "10 月 17 日官方公布新增波动率相关代币化产品。这是杠杆 ETF 敞口，不是现金类资产。"
+    ],
+    "details": [
+      "The underlying fund targets 1.5 times the daily move of a short-term VIX futures index, not 1.5 times the VIX itself. Daily rebalancing can cause longer-term performance to diverge. Verify the issuer, contract address and redemption eligibility using the official announcement before considering the product.",
+      "底层基金追求短期 VIX 期货指数单日变动的 1.5 倍，并非 VIX 本身的 1.5 倍；每日再平衡可能导致长期表现偏离。考虑该产品前，需通过官方公告核对发行方、合约地址和赎回资格。"
+    ]
+  },
+  {
+    "id": "stock-limit-orders",
+    "kind": "product",
+    "publishedAt": "2026-10-14",
+    "checkedAt": "2026-10-18",
+    "source": "https://docs.backpack.exchange/#changelog",
+    "title": ["Stock limit orders added to the API", "股票限价单加入官方 API"],
+    "summary": [
+      "The October 14 API changelog documents stock limit orders and cancellation support.",
+      "10 月 14 日 API 更新日志记录了股票限价单及撤单支持。"
+    ],
+    "details": [
+      "The documented stock RFQ limit flow supports expiry of up to ten minutes. Partial fills settle and the unfilled remainder is cancelled. This is an API feature announcement, not evidence that API volume qualifies for a promotional campaign.",
+      "文档中的股票 RFQ 限价流程支持最长十分钟有效期，部分成交结算后未成交部分取消。这是 API 功能公告，不代表 API 成交量符合任何活动奖励条件。"
+    ]
+  }
+]

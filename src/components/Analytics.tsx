@@ -1,0 +1,100 @@
+"use client";
+import Script from "next/script";
+import { useSyncExternalStore, useState } from "react";
+import { pick, type Lang } from "@/lib/site";
+export const GA_ID = "G-CE9L7SLBFL";
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+function readConsent() {
+  try {
+    return localStorage.getItem("feelens-analytics");
+  } catch {
+    return null;
+  }
+}
+function subscribe(callback: () => void) {
+  window.addEventListener("storage", callback);
+  window.addEventListener("feelens-consent", callback);
+  return () => {
+    window.removeEventListener("storage", callback);
+    window.removeEventListener("feelens-consent", callback);
+  };
+}
+export default function Analytics({ lang }: { lang: Lang }) {
+  const choice = useSyncExternalStore(subscribe, readConsent, () => "loading");
+  const [open, setOpen] = useState(false);
+  function choose(value: string) {
+    try {
+      localStorage.setItem("feelens-analytics", value);
+    } catch {}
+    if (value === "denied") {
+      window.gtag?.("consent", "update", { analytics_storage: "denied" });
+      Object.defineProperty(window, `ga-disable-${GA_ID}`, {
+        value: true,
+        writable: true,
+        configurable: true,
+      });
+      document.cookie.split(";").forEach((c) => {
+        const name = c.trim().split("=")[0];
+        if (name.startsWith("_ga")) {
+          for (const domain of [
+            "",
+            location.hostname,
+            "." + location.hostname.split(".").slice(-2).join("."),
+          ])
+            document.cookie = `${name}=; Max-Age=0; Path=/;${domain ? " Domain=" + domain + ";" : ""}`;
+        }
+      });
+    } else {
+      Object.defineProperty(window, `ga-disable-${GA_ID}`, {
+        value: false,
+        writable: true,
+        configurable: true,
+      });
+      window.gtag?.("consent", "update", { analytics_storage: "granted" });
+    }
+    window.dispatchEvent(new Event("feelens-consent"));
+    setOpen(false);
+  }
+  return (
+    <>
+      {choice === "granted" && (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+            strategy="afterInteractive"
+          />
+          <Script id="ga-init">{`window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments)};gtag('consent','default',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});gtag('js',new Date());gtag('config','${GA_ID}');`}</Script>
+        </>
+      )}
+      <button className="text-button" onClick={() => setOpen(true)}>
+        {pick(lang, "Analytics preferences", "统计偏好")}
+      </button>
+      {(choice === null || open) && (
+        <aside
+          className="consent"
+          aria-label={pick(lang, "Analytics preferences", "统计偏好")}
+        >
+          <p>
+            {pick(
+              lang,
+              "Allow optional analytics to help improve these guides? Calculations stay in your browser.",
+              "允许可选访问统计以改善指南吗？计算数据仅保留在浏览器中。",
+            )}
+          </p>
+          <div>
+            <button onClick={() => choose("denied")}>
+              {pick(lang, "No thanks", "不允许")}
+            </button>
+            <button className="button" onClick={() => choose("granted")}>
+              {pick(lang, "Allow analytics", "允许统计")}
+            </button>
+          </div>
+        </aside>
+      )}
+    </>
+  );
+}
