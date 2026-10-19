@@ -36,3 +36,7 @@
 ## 首次核查记录
 
 2026-10-18：导入 Unpack Real Stocks Week 3、AI Search、代币化 UVXY 和股票 API 限价单。公开 X 读取返回 403，采用官方 News/Learn/API 原文。后台 join/meme 的佣金比例未独立核实；比例由运营者提供，页面明确要求用户核对官方显示。
+
+## 2026-10-19 周检
+
+官方 News、Learn、首页及 Commission Sharing 未发现影响现有内容的新变化；Week 3 活动仍在窗口内，条款无变化。API changelog 当前包含 2026-10-16 更新：股票限价单有效期由十分钟改为最长 24 小时，已同步双语条目及动态页 sitemap 日期。来源：https://docs.backpack.exchange/#changelog 。官方 X 公开读取仍不可用，以官网交叉验证。工作区初始干净，远端与本地一致。

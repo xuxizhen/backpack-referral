@@ -61,17 +61,17 @@
   {
     "id": "stock-limit-orders",
     "kind": "product",
-    "publishedAt": "2026-10-14",
-    "checkedAt": "2026-10-18",
+    "publishedAt": "2026-10-16",
+    "checkedAt": "2026-10-19",
     "source": "https://docs.backpack.exchange/#changelog",
-    "title": ["Stock limit orders added to the API", "股票限价单加入官方 API"],
+    "title": ["Stock API limit orders now support 24-hour expiry", "股票 API 限价单有效期延长至 24 小时"],
     "summary": [
-      "The October 14 API changelog documents stock limit orders and cancellation support.",
-      "10 月 14 日 API 更新日志记录了股票限价单及撤单支持。"
+      "The October 16 API changelog extends stock limit order expiry from ten minutes to 24 hours.",
+      "10 月 16 日 API 更新日志将股票限价单最长有效期从十分钟延长至 24 小时。"
     ],
     "details": [
-      "The documented stock RFQ limit flow supports expiry of up to ten minutes. Partial fills settle and the unfilled remainder is cancelled. This is an API feature announcement, not evidence that API volume qualifies for a promotional campaign.",
-      "文档中的股票 RFQ 限价流程支持最长十分钟有效期，部分成交结算后未成交部分取消。这是 API 功能公告，不代表 API 成交量符合任何活动奖励条件。"
+      "Stock RFQ limit orders were introduced on October 14. The October 16 update allows orderExpiryTime up to 24 hours ahead, replacing the original ten-minute limit. Partial fills settle and the unfilled remainder is cancelled. This is an API feature announcement, not evidence that API volume qualifies for a promotional campaign.",
+      "股票 RFQ 限价单于 10 月 14 日加入；10 月 16 日更新允许 orderExpiryTime 最长设为 24 小时后，替代原先十分钟的限制。部分成交结算后未成交部分取消。这是 API 功能公告，不代表 API 成交量符合任何活动奖励条件。"
     ]
   }
 ]
