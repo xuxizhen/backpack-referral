@@ -1,45 +1,50 @@
 # FeeLens
 
-Independent trading-cost guides, official Backpack updates, and a transparent affiliate offer. Created and operated by [Mike Xu](https://x.com/mikexuusa).
+Exchange products, trading fees and referral comparisons for **Backpack, OKX and Binance**. Created and operated by [Mike Xu](https://x.com/mikexuusa).
 
-Current domain: https://www.backpackref.com · Repository retained for continuity.
+Production: https://www.feelens.net · Repository: xuxizhen/backpack-referral.
 
-## Run
+## Development and verification
 
-Node.js 20.9+ (tested with 22). Install with `npm ci`.
+Node.js 20.9+; tested with Node 22. Install with `npm ci`.
 
-- `npm run dev` — development
-- `npm run build` — production build
-- `npm start` — production server
+- `npm run dev` — development server
+- `npm run build` — production build and TypeScript checks
+- `npm start -- --port 3101` — preview production build
+- `npm test` — calculations, campaign boundaries and eight-language content validation
 - `npm run lint` — ESLint
-- `npm test` — fee calculations, campaign expiry and content validation
-- `PLAYWRIGHT_PATH=/path/to/playwright node tests/browser.cjs` — browser checks against http://localhost:3100 (start with `npm start -- --port 3100`). Uses installed Chrome; override with PLAYWRIGHT_CHANNEL. TEST_BASE_URL is optional.
+- `node tests/routes.cjs` — HTTP/SEO checks of all 168 indexable routes against localhost:3101; override TEST_BASE_URL when needed
 
-## Content and architecture
+Use the Codex in-app browser to verify responsive layouts, native language selection, calculator interactions and analytics preferences. Persian requires both a right-to-left document and correct visual order; URLs, exchange codes and numeric inputs retain LTR isolation.
 
-- `src/lib/articles.ts`: bilingual editorial and disclosure pages.
-- `src/content/updates.json`: sourced official news and timed campaigns.
-- `src/lib/updates.ts`: campaign status, homepage selection and expiry.
-- `src/lib/site.ts`: shared referral link, domain, author metadata and sources.
-- `src/components/Calculator.tsx`: local-only illustrative fee worksheet.
-- `src/components/Analytics.tsx`: GA4 opt-in, persisted consent and withdrawal.
-- `docs/rebuild-plan.md`: positioning and migration plan.
-- `docs/content-operations.md`: official-source monitoring and publishing process.
+## Content
 
-English and Simplified Chinese each have 16 pages. Existing article paths remain available. Legacy French, Portuguese, Italian, German, Japanese and Korean routes permanently redirect to their English equivalents; Traditional Chinese redirects to Simplified Chinese. No unsupported translated pages remain indexed.
+- `src/content/messages.json`: complete UI and policy copy for en, zh-cn, fr, pt, ko, ja, ru and fa.
+- `src/content/exchanges.json`: localized product, fee and referral descriptions.
+- `src/lib/exchanges.ts`: exchange identifiers, exact referral destinations and official sources.
+- `src/content/updates.json`: official news, source dates, UTC campaign windows, exchange identity and eight-language copy. The original English/Chinese arrays remain compatible with archived data.
+- `src/lib/updates.ts`: deterministic campaign status and expiry.
+- `src/components/FeeComparison.tsx`: client-side cost worksheet. No presumed exchange rate or unverified rebate is prefilled.
+- `docs/content-operations.md`: source verification, weekly monitoring and publishing rules.
 
-The Next.js locale layout emits the document language. Article metadata supplies canonical and hreflang. Sitemap and robots are generated from live routes; the Open Graph image and favicon use the independent FeeLens identity. Home and news pages revalidate every five minutes for campaign expiry. This does not automatically fetch new announcements; content updates require the monitoring/editorial workflow.
+Each locale includes the homepage, exchange directory, three exchange profiles, referral directory, three referral pages, comparison overview, three pair comparisons, news and policy pages. Legacy Backpack article URLs permanently redirect to the relevant profiles or comparisons. Traditional Chinese redirects to Simplified Chinese; discontinued Italian/German paths redirect to English. The other requested language routes render actual translations.
 
-## Offer
+## Commercial terms
 
-The operator reports an approved Backpack Affiliate relationship: 40% total commission, 20 percentage points shared with referred users and 20 retained. The existing link is https://backpack.exchange/join/meme. Its private dashboard configuration was not independently inspected; readers must check their official offer before registering or trading. Equity Perps are excluded from commission sharing. A campaign can have different eligible products than the affiliate offer.
+Backpack: the operator states a 40% affiliate commission split into 20 percentage points for the user and 20 for the operator. The private dashboard was not independently inspected; the site says to verify displayed settings. Equity Perps are excluded.
+
+OKX: invitation X45LZTTE. No fixed reward or cashback percentage verified.
+
+Binance: user-supplied links on bsmkweb.cc, primary BNBBABA and alternative JH5SZIO4. Official ownership and final destination remain unverified; this is disclosed next to the links. Do not label these as verified official links or promise a “super rebate” percentage. BNB fee discounts are distinct from referral cashback.
+
+## Publishing and SEO
+
+Canonical domain is explicitly https://www.feelens.net. Both Backpackref hosts, the Vercel alias and feelens.net redirect to it. The domain was verified on Vercel before migration. Canonical/hreflang, sitemap, robots, social previews and article structured data follow the eight-language route map. Old domain environment variables no longer override the canonical host or create redirect loops.
+
+Main-branch pushes deploy via the existing Vercel integration. Check GitHub deployment status and the live canonical site after pushing. Search Console/Bing change-of-address or sitemap submission requires the appropriate verified webmaster account and remains separate from publishing code.
+
+Weekly automation: Monday 10:00 Asia/Shanghai, all three exchanges, official sources only, eight-language updates, automatic validated GitHub push, quiet when unchanged.
 
 ## Analytics
 
-GA4 property `G-CE9L7SLBFL` loads only after consent. `affiliate_click` records the exchange, page and language; it is not a registration or trading conversion. No calculator inputs are submitted. Compare website clicks with actual registration/KYC/trading/commission data in the affiliate dashboard. The footer permits consent withdrawal.
-
-## Deployment and domains
-
-Pushes to the repository default branch can deploy through the existing Vercel Git integration. Verify the deployment status before calling an update live. NEXT_PUBLIC_SITE_URL defaults to https://www.backpackref.com; set it consistently at build time if migrating. The known Vercel alias and apex domain redirect to the canonical host. Do not configure the canonical URL as one of those redirecting aliases. A new domain has not been purchased or verified.
-
-A rebrand does not guarantee removal or prevention of browser security warnings. Search Console/Bing reviews and domain migration are separate operational tasks.
+GA4 `G-CE9L7SLBFL` loads only after opt-in. Affiliate events record exchange, page and language, never calculator inputs. Consent can be withdrawn in the footer. Website clicks are not evidence of registrations or trading conversions.

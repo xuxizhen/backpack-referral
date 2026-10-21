@@ -1,7 +1,7 @@
 "use client";
 import Script from "next/script";
 import { useSyncExternalStore, useState } from "react";
-import { pick, type Lang } from "@/lib/site";
+import { t, type Lang } from "@/lib/i18n";
 export const GA_ID = "G-CE9L7SLBFL";
 declare global {
   interface Window {
@@ -71,26 +71,15 @@ export default function Analytics({ lang }: { lang: Lang }) {
         </>
       )}
       <button className="text-button" onClick={() => setOpen(true)}>
-        {pick(lang, "Analytics preferences", "统计偏好")}
+        {t(lang, "analytics")}
       </button>
       {(choice === null || open) && (
-        <aside
-          className="consent"
-          aria-label={pick(lang, "Analytics preferences", "统计偏好")}
-        >
-          <p>
-            {pick(
-              lang,
-              "Allow optional analytics to help improve these guides? Calculations stay in your browser.",
-              "允许可选访问统计以改善指南吗？计算数据仅保留在浏览器中。",
-            )}
-          </p>
+        <aside className="consent" aria-label={t(lang, "analytics")}>
+          <p>{t(lang, "consent")}</p>
           <div>
-            <button onClick={() => choose("denied")}>
-              {pick(lang, "No thanks", "不允许")}
-            </button>
+            <button onClick={() => choose("denied")}>{t(lang, "deny")}</button>
             <button className="button" onClick={() => choose("granted")}>
-              {pick(lang, "Allow analytics", "允许统计")}
+              {t(lang, "allow")}
             </button>
           </div>
         </aside>

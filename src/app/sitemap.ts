@@ -1,19 +1,37 @@
 import type { MetadataRoute } from "next";
-import { updates } from "@/lib/updates";
-import { articles } from "@/lib/articles";
-import { langs, siteUrl, updated } from "@/lib/site";
+import { langs, locale } from "@/lib/i18n";
+import { siteUrl, updated } from "@/lib/site";
+import { exchangeIds, pairs } from "@/lib/exchanges";
 export default function sitemap(): MetadataRoute.Sitemap {
+  const slugs = [
+    "",
+    "exchanges",
+    "compare",
+    "referrals",
+    "updates",
+    "about",
+    "contact",
+    "affiliate-disclosure",
+    "editorial-policy",
+    "privacy",
+    "terms",
+    "risk-disclosure",
+    ...exchangeIds.map((id) => `exchanges/${id}`),
+    ...exchangeIds.map((id) => `referrals/${id}`),
+    ...Object.keys(pairs).map((id) => `compare/${id}`),
+  ];
   return langs.flatMap((lang) =>
-    ["", "updates", ...Object.keys(articles)].map((slug) => ({
+    slugs.map((slug) => ({
       url: `${siteUrl}/${lang}${slug ? "/" + slug : ""}`,
-      lastModified: slug === "" || slug === "updates"
-        ? updates.reduce((latest, item) => item.checkedAt > latest ? item.checkedAt : latest, updated)
-        : updated,
+      lastModified: updated,
       alternates: {
-        languages: {
-          en: `${siteUrl}/en${slug ? "/" + slug : ""}`,
-          "zh-Hans": `${siteUrl}/zh-cn${slug ? "/" + slug : ""}`,
-        },
+        languages: Object.fromEntries([
+          ...langs.map((l) => [
+            locale[l].html,
+            `${siteUrl}/${l}${slug ? "/" + slug : ""}`,
+          ]),
+          ["x-default", `${siteUrl}/en${slug ? "/" + slug : ""}`],
+        ]),
       },
     })),
   );

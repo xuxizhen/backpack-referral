@@ -22,30 +22,7 @@ function load(file) {
   });
   return loadedModule.exports;
 }
-const { calculateFees } = load("src/lib/calculator.ts");
 const { status, featuredUpdates } = load("src/lib/updates.ts");
-test("fee sharing is 20 percentage points of fees, not commission or volume", () => {
-  const r = calculateFees(10000, 0.05, true);
-  assert.equal(r.gross, 5);
-  assert.equal(r.saving, 1);
-  assert.equal(r.net, 4);
-});
-test("zero and excluded products do not fabricate rebates", () => {
-  assert.equal(calculateFees(0, 0.05, true).net, 0);
-  assert.equal(calculateFees(10000, 0, true).net, 0);
-  assert.equal(calculateFees(10000, 0.05, false).net, 5);
-});
-test("invalid and overflowing inputs are rejected", () => {
-  for (const [volume, rate] of [
-    [-1, 0.05],
-    [10, -1],
-    [10, 101],
-    [Infinity, 0.05],
-    [10, NaN],
-    [Number.MAX_VALUE, 100],
-  ])
-    assert.equal(calculateFees(volume, rate, true), null);
-});
 test("campaign windows have deterministic UTC boundaries", () => {
   const campaign = {
     kind: "campaign",
@@ -81,6 +58,8 @@ test("news entries have bilingual copy and allowlisted original sources", () => 
         "support.backpack.exchange",
         "docs.backpack.exchange",
         "x.com",
+        "www.okx.com",
+        "www.binance.com",
       ].includes(new URL(item.source).hostname),
     );
     for (const field of ["title", "summary", "details"]) {

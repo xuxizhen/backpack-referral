@@ -18,7 +18,40 @@
     "details": [
       "Runs October 14–20 UTC. KYC and a $100 account balance at close are required. Crypto spot and perpetuals count; stock spot, USDT/USDC, converts, API and liquidation volume do not. Market makers are excluded. Boxes open October 22–29. Reward value and regional eligibility follow official terms. Activity eligibility is separate from affiliate fee sharing: Equity Perps do not receive our 20% fee benefit.",
       "活动期为 UTC 10 月 14–20 日。需完成 KYC，结束时账户至少有 100 美元。加密现货及永续计入；股票现货、USDT/USDC、闪兑、API 与强平成交不计入。做市商不适用。盲盒开放时间 10 月 22–29 日。奖励价值、地区资格以官方条款为准。活动资格与返佣资格不同：Equity Perps 不享有本站 20% 手续费权益。"
-    ]
+    ],
+    "exchange": "backpack",
+    "translations": {
+      "fr": {
+        "title": "Unpack Real Stocks · Semaine 3",
+        "summary": "Inscription avant trading ; premier coffret à 10 000 $ de volume éligible. Le maximum rare de 1 000 $ n’est pas garanti.",
+        "details": "Du 14 au 20 octobre UTC. KYC et solde final de 100 $ requis. Comptant crypto et perpétuels comptent ; actions au comptant, USDT/USDC, conversions, API et liquidations sont exclus, ainsi que les teneurs de marché. Ouverture des coffrets du 22 au 29 octobre. Valeur et régions selon les règles officielles. Les Equity Perps sont exclus du partage affilié de 20 %, indépendamment de l’éligibilité à la campagne."
+      },
+      "pt": {
+        "title": "Unpack Real Stocks · Semana 3",
+        "summary": "Inscreva-se antes de operar. A primeira caixa exige US$ 10.000 de volume elegível. US$ 1.000 é o máximo raro, não uma recompensa garantida.",
+        "details": "De 14 a 20 de outubro UTC. Exige KYC e saldo de US$ 100 no encerramento. Spot cripto e perpétuos contam; ações spot, USDT/USDC, conversões, API e liquidações não. Formadores de mercado são excluídos. Caixas abrem de 22 a 29 de outubro. Valor e regiões seguem os termos oficiais. Equity Perps não recebem o benefício afiliado de 20%, independentemente da campanha."
+      },
+      "ko": {
+        "title": "Unpack Real Stocks · 3주 차",
+        "summary": "거래 전에 참여 신청이 필요합니다. 첫 상자는 적격 거래량 $10,000부터이며 $1,000은 드문 최대 보상으로 보장되지 않습니다.",
+        "details": "UTC 10월 14~20일. KYC와 종료 시 $100 잔액이 필요합니다. 암호화폐 현물·무기한은 포함되지만 주식 현물, USDT/USDC, 전환, API, 청산 거래량 및 마켓메이커는 제외됩니다. 상자는 10월 22~29일 열 수 있습니다. 보상 가치와 지역 자격은 공식 조건을 따릅니다. 이벤트 자격과 별개로 Equity Perps에는 제휴 20% 혜택이 적용되지 않습니다."
+      },
+      "ja": {
+        "title": "Unpack Real Stocks · 第3週",
+        "summary": "取引前に参加登録が必要です。最初のボックスには対象取引高10,000ドルが必要。1,000ドルはまれな最高額で保証ではありません。",
+        "details": "UTC 10月14〜20日。KYCと終了時100ドルの残高が必要です。暗号資産の現物・無期限は対象、株式現物、USDT/USDC、変換、API、清算取引高とマーケットメーカーは対象外です。開封は10月22〜29日。価値と対象地域は公式条件に従います。活動参加資格とは別に、Equity Perpsには紹介20%還元は適用されません。"
+      },
+      "ru": {
+        "title": "Unpack Real Stocks · Неделя 3",
+        "summary": "Регистрация до торговли. Первая коробка требует оборота $10 000. $1 000 — редкий максимум, а не гарантированная награда.",
+        "details": "14–20 октября UTC. Нужны KYC и баланс $100 на момент окончания. Учитываются криптоспот и бессрочные контракты; спотовые акции, USDT/USDC, конвертации, API, ликвидации и маркетмейкеры исключены. Коробки открываются 22–29 октября. Стоимость и регионы — по официальным условиям. Equity Perps не получают партнёрские 20%, независимо от правил акции."
+      },
+      "fa": {
+        "title": "Unpack Real Stocks · هفته سوم",
+        "summary": "پیش از معامله ثبت‌نام کنید. اولین جعبه به ۱۰٬۰۰۰ دلار حجم واجد شرایط نیاز دارد. ۱٬۰۰۰ دلار حداکثر نادر است، نه پاداش تضمینی.",
+        "details": "۱۴ تا ۲۰ اکتبر UTC. احراز هویت و موجودی ۱۰۰ دلار در پایان لازم است. اسپات رمزارز و قرارداد دائمی محاسبه می‌شوند؛ سهام اسپات، USDT/USDC، تبدیل، API، لیکوئیدشدن و بازارسازها مستثنا هستند. بازکردن جعبه‌ها ۲۲ تا ۲۹ اکتبر است. ارزش و مناطق تابع شرایط رسمی‌اند. جدا از کمپین، Equity Perps مشمول سهم کارمزد ۲۰٪ نیست."
+      }
+    }
   },
   {
     "id": "backpack-ai-search",
@@ -37,7 +70,40 @@
     "details": [
       "Open the search bar after signing in and select AI Search. Inspect the interpreted filters, refine the query and save a watchlist or screener. Search matches are not buy recommendations or return predictions. The source displays October 16 as its publication date; access depends on the official product interface.",
       "登录后打开搜索栏，选择 AI Search。检查系统理解的筛选条件，继续追问，并可保存自选列表或筛选器。搜索匹配不是买入建议或收益预测。来源页面显示发布日期为 10 月 16 日，实际访问以官方产品界面为准。"
-    ]
+    ],
+    "exchange": "backpack",
+    "translations": {
+      "fr": {
+        "title": "AI Search : rechercher en langage naturel",
+        "summary": "Le guide Backpack présente la recherche sur actions, crypto, perpétuels et Earn, avec filtres et listes enregistrées.",
+        "details": "Après connexion, ouvrez AI Search dans la barre de recherche. Vérifiez les filtres interprétés, affinez la requête et enregistrez une liste. Les résultats ne sont ni conseils d’achat ni prévisions de rendement. Le guide est daté du 16 octobre ; l’accès dépend de l’interface officielle."
+      },
+      "pt": {
+        "title": "AI Search: pesquisa em linguagem natural",
+        "summary": "O guia Backpack apresenta buscas em ações, cripto, perpétuos e Earn, com filtros e listas salvas.",
+        "details": "Após entrar, abra AI Search na busca. Confira os filtros interpretados, refine a consulta e salve uma lista. Resultados não são recomendações de compra nem previsões de retorno. O guia está datado de 16 de outubro; o acesso depende da interface oficial."
+      },
+      "ko": {
+        "title": "AI Search: 자연어로 시장 검색",
+        "summary": "Backpack 가이드는 주식, 암호화폐, 무기한, Earn 검색과 후속 필터·관심 목록 저장을 설명합니다.",
+        "details": "로그인 후 검색창에서 AI Search를 선택하세요. 해석된 필터를 확인하고 질문을 다듬어 목록을 저장하세요. 검색 결과는 매수 권유나 수익 예측이 아닙니다. 출처 게시일은 10월 16일이며 접근 가능 여부는 공식 화면을 따릅니다."
+      },
+      "ja": {
+        "title": "AI Search：自然な言葉で市場を検索",
+        "summary": "Backpackのガイドは株式、暗号資産、無期限、Earnの検索と追加フィルター、リスト保存を紹介します。",
+        "details": "ログイン後、検索欄でAI Searchを選択します。解釈された条件を確認し、検索を絞り込み、リストを保存できます。結果は買い推奨や収益予測ではありません。出典の日付は10月16日で、利用可否は公式画面に従います。"
+      },
+      "ru": {
+        "title": "AI Search: поиск обычными словами",
+        "summary": "Руководство Backpack описывает поиск акций, криптоактивов, бессрочных контрактов и Earn с фильтрами и списками.",
+        "details": "После входа выберите AI Search в поиске. Проверьте распознанные фильтры, уточните запрос и сохраните список. Результаты не являются рекомендациями покупки или прогнозами доходности. Дата руководства — 16 октября; доступ определяется интерфейсом."
+      },
+      "fa": {
+        "title": "AI Search: جست‌وجوی بازار با زبان طبیعی",
+        "summary": "راهنمای Backpack جست‌وجو میان سهام، رمزارز، قرارداد دائمی و Earn با فیلتر و فهرست ذخیره‌شده را توضیح می‌دهد.",
+        "details": "پس از ورود، AI Search را در نوار جست‌وجو انتخاب کنید. فیلترهای تفسیرشده را بررسی، پرسش را اصلاح و فهرست را ذخیره کنید. نتیجه توصیه خرید یا پیش‌بینی سود نیست. تاریخ منبع ۱۶ اکتبر است؛ دسترسی تابع رابط رسمی است."
+      }
+    }
   },
   {
     "id": "tokenized-uvxy",
@@ -56,7 +122,40 @@
     "details": [
       "The underlying fund targets 1.5 times the daily move of a short-term VIX futures index, not 1.5 times the VIX itself. Daily rebalancing can cause longer-term performance to diverge. Verify the issuer, contract address and redemption eligibility using the official announcement before considering the product.",
       "底层基金追求短期 VIX 期货指数单日变动的 1.5 倍，并非 VIX 本身的 1.5 倍；每日再平衡可能导致长期表现偏离。考虑该产品前，需通过官方公告核对发行方、合约地址和赎回资格。"
-    ]
+    ],
+    "exchange": "backpack",
+    "translations": {
+      "fr": {
+        "title": "Backpack annonce UVXY tokenisé sur Solana",
+        "summary": "L’annonce du 17 octobre présente une exposition à un ETF à levier lié à la volatilité, pas un équivalent de trésorerie.",
+        "details": "Le fonds sous-jacent vise 1,5 fois la variation quotidienne d’un indice de contrats à terme VIX court terme, pas du VIX lui-même. Le rééquilibrage quotidien peut faire diverger la performance à long terme. Vérifiez émetteur, contrat et droit au rachat dans l’annonce officielle."
+      },
+      "pt": {
+        "title": "Backpack anuncia UVXY tokenizado na Solana",
+        "summary": "O anúncio de 17 de outubro apresenta exposição a ETF alavancado de volatilidade, não um equivalente de caixa.",
+        "details": "O fundo busca 1,5 vez a variação diária de um índice de futuros VIX de curto prazo, não do VIX em si. O rebalanceamento diário pode desviar o desempenho de longo prazo. Verifique emissor, contrato e elegibilidade de resgate no anúncio oficial."
+      },
+      "ko": {
+        "title": "Backpack, Solana 기반 토큰화 UVXY 발표",
+        "summary": "10월 17일 발표된 상품은 변동성 연계 레버리지 ETF 노출이며 현금성 자산이 아닙니다.",
+        "details": "기초 펀드는 VIX 자체가 아닌 단기 VIX 선물 지수의 일일 변동 1.5배를 추구합니다. 일일 재조정으로 장기 성과가 달라질 수 있습니다. 공식 발표에서 발행사, 계약 주소, 상환 자격을 확인하세요."
+      },
+      "ja": {
+        "title": "Backpack、Solana上のトークン化UVXYを発表",
+        "summary": "10月17日の発表はボラティリティ連動のレバレッジETFへの投資対象で、現金同等物ではありません。",
+        "details": "原資産のファンドはVIX自体ではなく短期VIX先物指数の日次変動の1.5倍を目指します。毎日の再調整により長期成績は乖離し得ます。公式発表で発行体、コントラクト、償還資格を確認してください。"
+      },
+      "ru": {
+        "title": "Backpack объявляет токенизированный UVXY на Solana",
+        "summary": "Анонс от 17 октября — экспозиция к ETF на волатильность с плечом, а не аналог денежных средств.",
+        "details": "Базовый фонд стремится к 1,5-кратному дневному изменению индекса краткосрочных фьючерсов VIX, а не самого VIX. Ежедневная ребалансировка может менять долгосрочный результат. Проверьте эмитента, адрес контракта и право погашения в официальном анонсе."
+      },
+      "fa": {
+        "title": "اعلام UVXY توکنی‌شده روی Solana توسط Backpack",
+        "summary": "اعلان ۱۷ اکتبر محصولی مرتبط با نوسان و ETF اهرمی را معرفی می‌کند؛ این دارایی معادل وجه نقد نیست.",
+        "details": "صندوق پایه ۱٫۵ برابر تغییر روزانه شاخص آتی کوتاه‌مدت VIX را هدف می‌گیرد، نه خود VIX. بازتنظیم روزانه می‌تواند عملکرد بلندمدت را متفاوت کند. ناشر، آدرس قرارداد و شرایط بازخرید را از اعلان رسمی بررسی کنید."
+      }
+    }
   },
   {
     "id": "stock-limit-orders",
@@ -64,7 +163,10 @@
     "publishedAt": "2026-10-16",
     "checkedAt": "2026-10-19",
     "source": "https://docs.backpack.exchange/#changelog",
-    "title": ["Stock API limit orders now support 24-hour expiry", "股票 API 限价单有效期延长至 24 小时"],
+    "title": [
+      "Stock API limit orders now support 24-hour expiry",
+      "股票 API 限价单有效期延长至 24 小时"
+    ],
     "summary": [
       "The October 16 API changelog extends stock limit order expiry from ten minutes to 24 hours.",
       "10 月 16 日 API 更新日志将股票限价单最长有效期从十分钟延长至 24 小时。"
@@ -72,6 +174,39 @@
     "details": [
       "Stock RFQ limit orders were introduced on October 14. The October 16 update allows orderExpiryTime up to 24 hours ahead, replacing the original ten-minute limit. Partial fills settle and the unfilled remainder is cancelled. This is an API feature announcement, not evidence that API volume qualifies for a promotional campaign.",
       "股票 RFQ 限价单于 10 月 14 日加入；10 月 16 日更新允许 orderExpiryTime 最长设为 24 小时后，替代原先十分钟的限制。部分成交结算后未成交部分取消。这是 API 功能公告，不代表 API 成交量符合任何活动奖励条件。"
-    ]
+    ],
+    "exchange": "backpack",
+    "translations": {
+      "fr": {
+        "title": "Ordres limites API sur actions : expiration à 24 heures",
+        "summary": "Le journal API du 16 octobre porte l’expiration maximale des ordres limites sur actions de dix minutes à 24 heures.",
+        "details": "Les ordres RFQ limites sur actions datent du 14 octobre. Depuis le 16, orderExpiryTime peut aller jusqu’à 24 heures. Les exécutions partielles sont réglées et le reliquat annulé. Cette fonction API ne prouve pas l’éligibilité du volume API aux campagnes."
+      },
+      "pt": {
+        "title": "Ordens limitadas de ações via API: validade de 24 horas",
+        "summary": "O changelog de 16 de outubro amplia a validade máxima de dez minutos para 24 horas.",
+        "details": "Ordens limitadas RFQ de ações surgiram em 14 de outubro. Desde o dia 16, orderExpiryTime permite até 24 horas. Execuções parciais são liquidadas e o restante cancelado. A função não comprova que volume API seja elegível para campanhas."
+      },
+      "ko": {
+        "title": "주식 API 지정가 주문 만료: 최대 24시간",
+        "summary": "10월 16일 API 변경으로 주식 지정가 주문 최대 유효기간이 10분에서 24시간으로 늘었습니다.",
+        "details": "주식 RFQ 지정가 주문은 10월 14일 도입됐습니다. 16일 업데이트로 orderExpiryTime을 최대 24시간 후로 설정할 수 있습니다. 부분 체결은 정산하고 나머지는 취소합니다. 이 API 기능이 이벤트 거래량 인정 여부를 뜻하지는 않습니다."
+      },
+      "ja": {
+        "title": "株式API指値注文の有効期限が24時間に",
+        "summary": "10月16日のAPI更新で株式指値注文の最長有効期限が10分から24時間になりました。",
+        "details": "株式RFQ指値注文は10月14日に導入。16日の更新でorderExpiryTimeを最大24時間先に設定できます。部分約定は決済し、未約定分は取消されます。このAPI機能はAPI取引高がキャンペーン対象であることを示しません。"
+      },
+      "ru": {
+        "title": "Срок лимитных API-ордеров на акции — до 24 часов",
+        "summary": "Журнал API от 16 октября увеличивает максимальный срок с десяти минут до 24 часов.",
+        "details": "Лимитные RFQ-ордера на акции появились 14 октября. С 16 октября orderExpiryTime допускает до 24 часов. Частичные исполнения рассчитываются, остаток отменяется. Функция API не подтверждает участие API-оборота в акциях."
+      },
+      "fa": {
+        "title": "اعتبار سفارش محدود سهام در API تا ۲۴ ساعت",
+        "summary": "گزارش تغییرات ۱۶ اکتبر، اعتبار سفارش محدود سهام را از ده دقیقه به ۲۴ ساعت افزایش می‌دهد.",
+        "details": "سفارش محدود RFQ سهام ۱۴ اکتبر معرفی شد. از ۱۶ اکتبر orderExpiryTime تا ۲۴ ساعت آینده قابل تنظیم است. بخش اجراشده تسویه و باقی‌مانده لغو می‌شود. این قابلیت به معنای پذیرفته‌شدن حجم API در کمپین‌ها نیست."
+      }
+    }
   }
 ]

@@ -1,0 +1,98 @@
+{
+  "backpack": {
+    "products": {
+      "en": "Spot and perpetual trading, with an exchange API and an integrated trading workflow. Equity Perps are a separate product: check availability, collateral and trading hours for the instrument you choose.",
+      "zh-cn": "提供现货、永续合约和交易 API，适合希望在同一交易流程中管理不同产品的用户。Equity Perps 属于独立产品，需要另行核对可用地区、抵押品及具体标的交易时间。",
+      "fr": "Trading au comptant et contrats perpétuels, API et parcours de trading intégré. Les Equity Perps sont un produit distinct : vérifiez la disponibilité, le collatéral et les horaires de chaque instrument.",
+      "pt": "Trading spot e perpétuos, API e fluxo integrado de negociação. Equity Perps são um produto separado: confira disponibilidade, garantias e horários do instrumento escolhido.",
+      "ko": "현물·무기한 계약, 거래 API, 통합 거래 환경을 제공합니다. Equity Perps는 별도 상품이므로 선택한 종목의 이용 가능 여부, 담보, 거래 시간을 확인하세요.",
+      "ja": "現物・無期限契約、取引API、一体化した取引環境を提供します。Equity Perpsは別の商品です。対象銘柄の利用可否、担保、取引時間を確認してください。",
+      "ru": "Спотовая торговля и бессрочные контракты, API и единый торговый интерфейс. Equity Perps — отдельный продукт: проверьте доступность, обеспечение и часы торговли выбранным инструментом.",
+      "fa": "معاملات اسپات و قراردادهای دائمی، API و محیط یکپارچه معامله ارائه می‌شود. Equity Perps محصولی جداگانه است؛ دسترسی، وثیقه و ساعات معامله ابزار انتخابی را بررسی کنید."
+    },
+    "costs": {
+      "en": "Check the current fee tier in your account and the official schedule. Staking, holdings and trading volume may affect your tier. A single public rate would not represent every account or product.",
+      "zh-cn": "请核对账户当前费率等级和官方费率表。质押、持仓及成交量可能影响等级，单一公开费率无法代表所有账户和产品。",
+      "fr": "Vérifiez votre niveau de frais et le barème officiel. Staking, avoirs et volume peuvent modifier le niveau. Un taux unique ne représente pas tous les comptes ou produits.",
+      "pt": "Confira o nível da conta e a tabela oficial. Staking, saldo e volume podem afetar o nível. Uma taxa única não representa todas as contas ou produtos.",
+      "ko": "계정 등급과 공식 수수료표를 확인하세요. 스테이킹, 보유 자산, 거래량이 등급에 영향을 줄 수 있습니다. 하나의 요율로 모든 계정과 상품을 설명할 수는 없습니다.",
+      "ja": "口座の手数料ランクと公式表を確認してください。ステーキング、保有資産、取引高がランクに影響する場合があります。単一の料率は全口座・全商品には当てはまりません。",
+      "ru": "Сверяйте уровень аккаунта с официальными тарифами. На него могут влиять стейкинг, активы и оборот. Единая ставка не описывает все аккаунты и продукты.",
+      "fa": "سطح کارمزد حساب و جدول رسمی را بررسی کنید. استیکینگ، دارایی و حجم معامله ممکن است بر سطح شما اثر بگذارند. یک نرخ واحد نماینده همه حساب‌ها و محصولات نیست."
+    },
+    "offer": {
+      "en": "Mike Xu offers a 20% share of eligible trading fees through this Backpack affiliate link. This operator-provided rate has not been independently verified in the account settings: confirm the rate displayed before trading. Equity Perps are excluded. This is fee sharing, not a deposit bonus or guaranteed return.",
+      "zh-cn": "Mike Xu 通过此 Backpack Affiliate 链接提供符合条件交易手续费的 20% 分享。该比例由运营者提供，尚未独立核实后台设置，请在交易前核对官方显示。Equity Perps 不适用。这是手续费分享，不是入金奖励或保底收益。",
+      "fr": "Mike Xu propose de partager 20 % des frais éligibles via ce lien Backpack. Ce taux fourni par l’opérateur n’a pas été vérifié indépendamment dans le compte : confirmez le taux affiché avant de trader. Les Equity Perps sont exclus. Ce n’est ni un bonus de dépôt ni un rendement garanti.",
+      "pt": "Mike Xu oferece 20% dos custos de negociação elegíveis pelo link Backpack. A taxa informada pelo operador não foi verificada nas configurações da conta: confirme o valor exibido antes de operar. Equity Perps são excluídos. Não é bônus de depósito nem rendimento garantido.",
+      "ko": "Mike Xu는 이 Backpack 제휴 링크로 적격 거래 수수료의 20%를 공유합니다. 운영자가 제공한 비율이며 계정 설정은 독립적으로 검증되지 않았으므로 거래 전에 표시된 비율을 확인하세요. Equity Perps는 제외됩니다. 입금 보너스나 수익 보장이 아닙니다.",
+      "ja": "Mike XuはこのBackpack紹介リンクで対象取引手数料の20%を共有します。運営者から提供された比率で、口座設定は独立に検証できていません。取引前に表示比率を確認してください。Equity Perpsは対象外です。入金ボーナスや利益保証ではありません。",
+      "ru": "Mike Xu предлагает возврат 20% подходящих торговых комиссий по этой ссылке Backpack. Ставка заявлена оператором, настройки аккаунта независимо не проверены: подтвердите показанную ставку до торговли. Equity Perps исключены. Это не депозитный бонус и не гарантия доходности.",
+      "fa": "Mike Xu از طریق این پیوند Backpack سهمی معادل ۲۰٪ از کارمزد معاملات واجد شرایط ارائه می‌کند. این نرخ اعلام اپراتور است و تنظیمات حساب مستقلاً تأیید نشده؛ پیش از معامله نرخ نمایش‌داده‌شده را بررسی کنید. Equity Perps مستثناست. این مزیت پاداش واریز یا سود تضمینی نیست."
+    }
+  },
+  "okx": {
+    "products": {
+      "en": "OKX combines spot, derivatives and options with trading bots and API tools. This offers different ways to place and automate orders. Product and tool availability varies by jurisdiction; automation does not remove trading risk.",
+      "zh-cn": "OKX 提供现货、衍生品、期权，以及交易机器人和 API 工具，方便使用不同下单方式或自动化策略。产品和工具因地区而异，自动化不会消除交易风险。",
+      "fr": "OKX réunit comptant, dérivés et options, avec robots et API. Plusieurs modes de passage et d’automatisation des ordres sont disponibles. L’accès dépend du pays ; l’automatisation ne supprime pas le risque.",
+      "pt": "A OKX reúne spot, derivativos e opções, além de bots e APIs para diferentes formas de executar e automatizar ordens. A disponibilidade varia por região; automação não elimina riscos.",
+      "ko": "OKX는 현물, 파생상품, 옵션과 거래 봇·API를 제공해 다양한 주문 및 자동화 방식을 지원합니다. 지역에 따라 제공 범위가 다르며 자동화가 위험을 없애지는 않습니다.",
+      "ja": "OKXは現物・デリバティブ・オプションに加え、取引ボットとAPIを提供し、多様な注文方法や自動化に対応します。利用できる機能は地域により異なり、自動化でリスクがなくなるわけではありません。",
+      "ru": "OKX объединяет спот, деривативы и опционы с торговыми ботами и API для разных способов размещения и автоматизации ордеров. Доступ зависит от региона; автоматизация не устраняет риск.",
+      "fa": "OKX اسپات، مشتقات و اختیار معامله را همراه با ربات‌ها و API برای روش‌های مختلف ثبت و خودکارسازی سفارش ارائه می‌کند. دسترسی منطقه‌ای متفاوت است و خودکارسازی ریسک را حذف نمی‌کند."
+    },
+    "costs": {
+      "en": "The public standard-pair spot table checked on October 21, 2026 shows 0.0800% maker and 0.1000% taker for regular users. This is a public snapshot, not a universal account rate. Use the logged-in trading-fee page and the Fees panel for your exact pair. OKX states that logged-out rates may differ from your account. Maker and taker fees differ, and a limit order can still execute as taker. Buy, Sell and Convert quotes can include spread.",
+      "zh-cn": "2026 年 10 月 21 日核对的公开标准交易对现货表，普通用户 Maker 为 0.0800%、Taker 为 0.1000%。这是公开页面快照，不是所有账户的统一费率。请使用登录后的交易费率页面和具体交易对的 Fees 面板。OKX 说明未登录展示可能不同于实际账户费率。Maker 与 Taker 费率不同，限价单也可能按 Taker 成交；买入、卖出和闪兑报价还可能包含价差。",
+      "fr": "Le tableau public spot des paires standard vérifié le 21 octobre 2026 indique 0,0800 % maker et 0,1000 % taker pour les utilisateurs ordinaires. Cet aperçu public ne garantit pas le tarif de chaque compte. Consultez les frais connecté et le panneau Fees de la paire. OKX précise que les taux publics peuvent différer du compte. Un ordre limite peut être taker. Les devis Buy, Sell et Convert peuvent inclure un spread.",
+      "pt": "A tabela pública spot de pares padrão, verificada em 21 de outubro de 2026, mostra 0,0800% maker e 0,1000% taker para usuários comuns. Este registro público não garante a taxa de cada conta. Consulte a página de taxas com login e o painel Fees do par. A OKX informa que taxas públicas podem diferir da conta. Uma ordem limitada pode ser taker. Cotações de compra, venda e conversão podem incluir spread.",
+      "ko": "2026년 10월 21일 확인한 일반 거래쌍의 공개 현물 표는 일반 사용자 메이커 0.0800%, 테이커 0.1000%입니다. 이는 공개 화면 기준이며 모든 계정의 요율을 보장하지 않습니다. 로그인 후 수수료 페이지와 거래쌍의 Fees 패널을 확인하세요. OKX에 따르면 비로그인 요율은 계정 요율과 다를 수 있습니다. 지정가도 테이커로 체결될 수 있으며 간편 매수·매도·전환에는 스프레드가 포함될 수 있습니다.",
+      "ja": "2026年10月21日に確認した標準ペアの公開現物表では、一般ユーザーはメイカー0.0800%、テイカー0.1000%です。公開画面の記録であり、全口座共通の料率ではありません。ログイン後の手数料ページと対象ペアのFees欄を確認してください。OKXによれば、未ログイン表示と口座料率は異なる場合があります。指値でもテイカー約定になり得ます。簡易売買・変換の見積りにはスプレッドを含む場合があります。",
+      "ru": "Публичная таблица стандартных спотовых пар, проверенная 21 октября 2026 года, показывает 0,0800% maker и 0,1000% taker для обычных пользователей. Это публичный снимок, а не единый тариф всех аккаунтов. Проверяйте тарифы после входа и панель Fees конкретной пары. По данным OKX, публичные ставки могут отличаться от ваших. Лимитный ордер тоже может быть taker. Котировки покупки, продажи и конвертации могут включать спред.",
+      "fa": "جدول عمومی اسپات جفت‌های استاندارد در ۲۱ اکتبر ۲۰۲۶ برای کاربران عادی میکر ۰٫۰۸۰۰٪ و تیکر ۰٫۱۰۰۰٪ را نشان می‌دهد. این ثبت صفحه عمومی است، نه نرخ یکسان همه حساب‌ها. پس از ورود، صفحه کارمزد و بخش Fees جفت‌ارز را بررسی کنید. طبق OKX نرخ عمومی ممکن است با حساب شما متفاوت باشد. سفارش محدود هم ممکن است تیکر شود. قیمت خرید، فروش و تبدیل ممکن است اسپرد داشته باشد."
+    },
+    "offer": {
+      "en": "Use Mike Xu’s OKX invitation code X45LZTTE. Reward amounts, identity checks, deposit or trading tasks and regional eligibility depend on the offer shown to your account. No fixed cashback rate or reward amount has been verified for this link. Check the invitation page before signing up.",
+      "zh-cn": "使用 Mike Xu 的 OKX 邀请码 X45LZTTE。奖励金额、身份认证、入金或交易任务以及地区资格，以账户显示的活动为准。此链接尚未核实固定返佣比例或奖励金额，注册前请检查邀请页面。",
+      "fr": "Utilisez le code OKX de Mike Xu : X45LZTTE. Montants, vérification d’identité, tâches de dépôt ou de trading et pays éligibles dépendent de l’offre du compte. Aucun taux de remboursement ou montant fixe n’est vérifié pour ce lien. Vérifiez la page avant inscription.",
+      "pt": "Use o código OKX de Mike Xu: X45LZTTE. Valores, verificação de identidade, tarefas de depósito ou trading e regiões elegíveis dependem da oferta da conta. Não há percentual ou recompensa fixa verificados para este link. Confira antes do cadastro.",
+      "ko": "Mike Xu의 OKX 초대 코드 X45LZTTE를 사용하세요. 보상액, 신원 확인, 입금·거래 과제, 지역 자격은 계정에 표시되는 조건에 따릅니다. 이 링크의 고정 환급률이나 보상액은 확인되지 않았습니다. 가입 전에 초대 페이지를 확인하세요.",
+      "ja": "Mike XuのOKX招待コードはX45LZTTEです。報酬額、本人確認、入金・取引条件、対象地域は口座に表示される特典に従います。このリンクの固定還元率や金額は未確認です。登録前に招待ページを確認してください。",
+      "ru": "Код приглашения Mike Xu в OKX: X45LZTTE. Награда, проверка личности, задания по депозиту или торговле и регионы зависят от предложения аккаунта. Фиксированный процент возврата или сумма для этой ссылки не подтверждены. Проверьте страницу до регистрации.",
+      "fa": "کد دعوت OKX متعلق به Mike Xu برابر X45LZTTE است. مبلغ پاداش، احراز هویت، وظایف واریز یا معامله و کشورهای مجاز تابع پیشنهاد حساب شماست. نرخ بازگشت یا مبلغ ثابت برای این پیوند تأیید نشده؛ پیش از ثبت‌نام صفحه دعوت را بررسی کنید."
+    }
+  },
+  "binance": {
+    "products": {
+      "en": "Binance brings together spot, margin and futures with tools such as trading bots, P2P and educational material. These can be useful if you want several trading workflows in one ecosystem. Products and promotions differ by country and account.",
+      "zh-cn": "Binance 集合现货、杠杆、合约，以及交易机器人、P2P 和教育内容，适合需要在同一生态中使用多种交易流程的用户。产品及推广活动因国家和账户而异。",
+      "fr": "Binance réunit comptant, marge et contrats à terme, robots, P2P et ressources pédagogiques. Cela peut convenir à plusieurs usages dans un même écosystème. Produits et promotions varient selon le pays et le compte.",
+      "pt": "A Binance reúne spot, margem, futuros, bots, P2P e conteúdo educativo. Pode ser útil para diferentes formas de operar num só ecossistema. Produtos e promoções variam por país e conta.",
+      "ko": "Binance는 현물·마진·선물, 거래 봇, P2P, 교육 자료를 제공합니다. 하나의 생태계에서 여러 거래 방식을 이용하려는 사용자에게 유용할 수 있습니다. 상품과 프로모션은 국가·계정별로 다릅니다.",
+      "ja": "Binanceは現物・マージン・先物、取引ボット、P2P、学習資料を提供します。一つの環境で複数の取引方法を使いたい場合に役立ちます。商品やキャンペーンは国と口座により異なります。",
+      "ru": "Binance объединяет спот, маржу и фьючерсы, ботов, P2P и учебные материалы. Это может быть удобно для нескольких торговых сценариев в одной экосистеме. Продукты и акции зависят от страны и аккаунта.",
+      "fa": "Binance معاملات اسپات، مارجین و آتی را با ربات، P2P و منابع آموزشی ترکیب می‌کند. برای استفاده از چند روش معامله در یک محیط می‌تواند مفید باشد. محصولات و پیشنهادها به کشور و حساب بستگی دارند."
+    },
+    "costs": {
+      "en": "The official regular-user spot table shows 0.100% maker / 0.100% taker, or 0.075% / 0.075% with the 25% BNB fee discount. This requires the applicable BNB setting and sufficient BNB. Pair-specific promotions, VIP tiers and futures have separate rates. The BNB discount is not referral cashback.",
+      "zh-cn": "官方普通用户现货费率表显示 Maker / Taker 均为 0.100%；使用 BNB 手续费 25% 折扣后均为 0.075%。需要启用适用的 BNB 抵扣设置并有足够 BNB。特定交易对活动、VIP 等级和合约另有费率。BNB 折扣不是推荐返佣。",
+      "fr": "Le barème spot standard indique 0,100 % maker / taker, ou 0,075 % avec la réduction BNB de 25 %. Il faut activer le réglage applicable et disposer de BNB. Paires promotionnelles, VIP et contrats à terme ont leurs tarifs. La réduction BNB n’est pas du cashback de parrainage.",
+      "pt": "A tabela spot padrão indica 0,100% maker/taker, ou 0,075% com desconto BNB de 25%. É necessário ativar a configuração aplicável e ter BNB suficiente. Promoções de pares, VIP e futuros têm taxas próprias. Desconto BNB não é cashback de indicação.",
+      "ko": "일반 사용자 현물 표는 메이커·테이커 각각 0.100%, BNB 25% 할인 적용 시 각각 0.075%입니다. 해당 설정과 충분한 BNB가 필요합니다. 특정 거래쌍 프로모션, VIP, 선물 요율은 별도입니다. BNB 할인은 추천 환급이 아닙니다.",
+      "ja": "一般ユーザーの公式現物表はメイカー／テイカーとも0.100%、BNBの25%割引適用時はともに0.075%です。対象設定の有効化と十分なBNBが必要です。特定ペアのキャンペーン、VIP、先物は別料率です。BNB割引は紹介還元ではありません。",
+      "ru": "Официальный спотовый тариф обычного пользователя: 0,100% maker/taker, либо 0,075% со скидкой BNB 25%. Нужны соответствующая настройка и достаточный баланс BNB. Для отдельных пар, VIP и фьючерсов действуют иные тарифы. Скидка BNB — не реферальный возврат.",
+      "fa": "جدول رسمی اسپات کاربر عادی برای میکر و تیکر ۰٫۱۰۰٪ است؛ با تخفیف ۲۵٪ BNB هر دو ۰٫۰۷۵٪ می‌شوند. تنظیم مربوط و موجودی کافی BNB لازم است. کمپین جفت‌ارز، VIP و آتی نرخ جدا دارند. تخفیف BNB بازگشت کارمزد معرفی نیست."
+    },
+    "offer": {
+      "en": "Mike Xu supplied referral code BNBBABA and alternative JH5SZIO4. These links open bsmkweb.cc, an external redirect domain. Its official ownership and final Binance destination have not been verified. No “super rebate” percentage is confirmed. Verify the destination and account terms independently before entering credentials or depositing; the official referral page is linked below.",
+      "zh-cn": "Mike Xu 提供推荐码 BNBBABA，备用码 JH5SZIO4。链接打开第三方跳转域名 bsmkweb.cc，尚未核实其官方归属及最终 Binance 去向，也未确认“超级返佣”的比例。输入账号信息或入金前，请独立核实域名与账户条款；下方附官方推荐计划页面。",
+      "fr": "Mike Xu fournit BNBBABA et le code alternatif JH5SZIO4. Les liens ouvrent le domaine de redirection externe bsmkweb.cc, dont l’appartenance officielle et la destination finale Binance ne sont pas vérifiées. Aucun taux de « super remise » n’est confirmé. Vérifiez domaine et conditions avant connexion ou dépôt ; la page officielle figure ci-dessous.",
+      "pt": "Mike Xu forneceu BNBBABA e a alternativa JH5SZIO4. Os links abrem bsmkweb.cc, domínio externo de redirecionamento cuja propriedade oficial e destino final Binance não foram verificados. Nenhum percentual de “super rebate” foi confirmado. Verifique destino e termos antes de inserir credenciais ou depositar; veja a página oficial abaixo.",
+      "ko": "Mike Xu가 제공한 코드는 BNBBABA, 대체 코드는 JH5SZIO4입니다. 링크는 외부 리디렉션 도메인 bsmkweb.cc를 엽니다. 공식 소유 여부와 최종 Binance 목적지는 검증되지 않았으며 “슈퍼 리베이트” 비율도 확인되지 않았습니다. 로그인 정보 입력이나 입금 전에 목적지와 조건을 확인하세요. 공식 추천 페이지는 아래에 있습니다.",
+      "ja": "Mike Xu提供のコードはBNBBABA、代替はJH5SZIO4です。リンクは外部転送ドメインbsmkweb.ccを開きます。公式所有と最終的なBinanceへの転送先は未確認で、「スーパー還元」の比率も未確認です。認証情報の入力や入金前に転送先と条件を確認してください。公式紹介ページは下に掲載しています。",
+      "ru": "Mike Xu предоставил код BNBBABA и альтернативу JH5SZIO4. Ссылки открывают внешний домен перенаправления bsmkweb.cc. Его официальная принадлежность и конечный адрес Binance не подтверждены. Процент «супер-возврата» также не подтверждён. Проверьте адрес и условия до ввода данных или депозита; официальная страница приведена ниже.",
+      "fa": "Mike Xu کد BNBBABA و جایگزین JH5SZIO4 را ارائه کرده است. پیوندها دامنه واسط خارجی bsmkweb.cc را باز می‌کنند. مالکیت رسمی و مقصد نهایی Binance تأیید نشده و درصد «بازگشت ویژه» نیز مشخص نیست. پیش از وارد کردن اطلاعات ورود یا واریز، مقصد و شرایط را مستقلاً بررسی کنید؛ صفحه رسمی در پایین آمده است."
+    }
+  }
+}

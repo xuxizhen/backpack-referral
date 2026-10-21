@@ -22,10 +22,10 @@ export default function Image() {
           FeeLens
         </div>
         <div style={{ fontSize: 82, maxWidth: 960, display: "flex" }}>
-          Every trade has a cost. Know yours.
+          Compare exchanges. Know your costs.
         </div>
         <div style={{ fontSize: 26, display: "flex" }}>
-          Independent fee guides & tools · Created by Mike Xu
+          Backpack · OKX · Binance | FeeLens by Mike Xu
         </div>
       </div>
     ),

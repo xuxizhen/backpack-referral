@@ -1,19 +1,25 @@
 "use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import type { Lang } from "@/lib/site";
+import { usePathname, useRouter } from "next/navigation";
+import { langs, locale, t, type Lang } from "@/lib/i18n";
 export default function LanguageSwitcher({ lang }: { lang: Lang }) {
   const path = usePathname();
+  const router = useRouter();
   return (
-    <Link
-      className="language"
-      href={path.replace(
-        /^\/(en|zh-cn)(?=\/|$)/,
-        lang === "en" ? "/zh-cn" : "/en",
-      )}
-      hrefLang={lang === "en" ? "zh-Hans" : "en"}
-    >
-      {lang === "en" ? "简体中文" : "English"}
-    </Link>
+    <label className="language-select">
+      <span className="sr-only">{t(lang, "language")}</span>
+      <select
+        aria-label={t(lang, "language")}
+        value={lang}
+        onChange={(e) =>
+          router.push(path.replace(/^\/[^/]+/, `/${e.target.value}`))
+        }
+      >
+        {langs.map((l) => (
+          <option key={l} value={l} lang={locale[l].html}>
+            {locale[l].label}
+          </option>
+        ))}
+      </select>
+    </label>
   );
 }

@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
-const siteOrigin = new URL(
-  process.env.NEXT_PUBLIC_SITE_URL || "https://www.backpackref.com",
-);
+const siteOrigin = new URL("https://www.feelens.net");
 const config: NextConfig = {
   async redirects() {
     return [
@@ -17,8 +15,14 @@ const config: NextConfig = {
         destination: `${siteOrigin.origin}/:path*`,
         permanent: true,
       },
+      ...["www.backpackref.com", "feelens.net"].map((host) => ({
+        source: "/:path*",
+        has: [{ type: "host" as const, value: host }],
+        destination: `${siteOrigin.origin}/:path*`,
+        permanent: true,
+      })),
       { source: "/", destination: "/en", permanent: true },
-      ...["zh-tw", "fr", "pt", "it", "de", "ja", "ko"].map((lang) => ({
+      ...["zh-tw", "it", "de"].map((lang) => ({
         source: `/${lang}/:path*`,
         destination: `/${lang === "zh-tw" ? "zh-cn" : "en"}/:path*`,
         permanent: true,

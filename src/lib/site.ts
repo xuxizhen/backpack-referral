@@ -1,20 +1,8 @@
 import type { Metadata } from "next";
-export type Lang = "en" | "zh-cn";
-export const langs: Lang[] = ["en", "zh-cn"];
-export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://www.backpackref.com"
-).replace(/\/$/, "");
-export const affiliateUrl = "https://backpack.exchange/join/meme";
-export const updated = "2026-10-18";
-export const sources = {
-  sharing:
-    "https://support.backpack.exchange/exchange/programs/affiliate-program/flexible-commission-sharing",
-  fees: "https://backpack.exchange/fees",
-  help: "https://support.backpack.exchange",
-};
-export function pick(lang: string, en: string, zh: string) {
-  return lang === "zh-cn" ? zh : en;
-}
+import { langs, locale, type Lang } from "./i18n";
+export { langs, type Lang } from "./i18n";
+export const siteUrl = "https://www.feelens.net";
+export const updated = "2026-10-21";
 export function isLang(lang: string): lang is Lang {
   return langs.includes(lang as Lang);
 }
@@ -32,8 +20,12 @@ export function meta(
     alternates: {
       canonical: `${siteUrl}${path}`,
       languages: {
-        en: `${siteUrl}/en${slug ? "/" + slug : ""}`,
-        "zh-Hans": `${siteUrl}/zh-cn${slug ? "/" + slug : ""}`,
+        ...Object.fromEntries(
+          langs.map((l) => [
+            locale[l].html,
+            `${siteUrl}/${l}${slug ? "/" + slug : ""}`,
+          ]),
+        ),
         "x-default": `${siteUrl}/en${slug ? "/" + slug : ""}`,
       },
     },
@@ -42,7 +34,7 @@ export function meta(
       description,
       url: `${siteUrl}${path}`,
       siteName: "FeeLens",
-      locale: lang === "en" ? "en_US" : "zh_CN",
+      locale: locale[lang].intl.replace("-", "_"),
       images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
     },
     twitter: {
