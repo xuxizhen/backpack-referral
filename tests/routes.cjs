@@ -97,11 +97,18 @@ const slugs = [
       ["review", "exchanges/backpack"],
       ["referral", "referrals/backpack"],
       ["fees", "compare"],
+      ["tutorial", "exchanges/backpack"],
+      ["safety", "risk-disclosure"],
+      ["faq", "compare"],
       ["vs-binance", "compare/backpack-vs-binance"],
     ]) {
       const r = await fetch(`${base}/${lang}/${old}`, { redirect: "manual" });
-      assert.equal(r.status, 308);
-      assert.equal(r.headers.get("location"), `/${lang}/${dest}`);
+      assert.equal(r.status, 301, `/${lang}/${old}`);
+      assert.equal(
+        r.headers.get("location"),
+        `https://www.feelens.net/${lang}/${dest}`,
+        `/${lang}/${old}`,
+      );
     }
   }
   const sitemap = await (await fetch(base + "/sitemap.xml")).text();
@@ -117,29 +124,51 @@ const slugs = [
   assert.ok(keyName, "IndexNow key file");
   const keyBody = await (await fetch(`${base}/${keyName}`)).text();
   assert.equal(keyBody, keyName.slice(0, -4));
-  for (const host of [
-    "www.backpackref.com",
-    "backpackref.com",
-    "backpack-referral.vercel.app",
-  ]) {
-    const redirected = await request(
-      host,
+  const oneHop = [
+    ["www.backpackref.com", "/de/review", "/en/exchanges/backpack"],
+    ["www.backpackref.com", "/ja/referral", "/ja/referrals/backpack"],
+    ["www.backpackref.com", "/zh-tw/fees", "/zh-cn/compare"],
+    ["www.backpackref.com", "/en", "/en"],
+    ["www.backpackref.com", "/de", "/en"],
+    ["www.backpackref.com", "/en/", "/en"],
+    [
+      "backpackref.com",
+      "/de/review?utm_source=gsc",
+      "/en/exchanges/backpack?utm_source=gsc",
+    ],
+    [
+      "www.backpackref.com",
       "/zh-cn/exchanges/backpack?utm_source=seo",
-    );
-    assert.equal(redirected.status, 301, host);
+      "/zh-cn/exchanges/backpack?utm_source=seo",
+    ],
+    ["backpack-referral.vercel.app", "/it/safety", "/en/risk-disclosure"],
+    ["www.feelens.net", "/de/review", "/en/exchanges/backpack"],
+    ["www.feelens.net", "/ja/referral?x=1", "/ja/referrals/backpack?x=1"],
+    ["www.feelens.net", "/zh-tw/fees", "/zh-cn/compare"],
+    ["www.feelens.net", "/en/review/", "/en/exchanges/backpack"],
+    ["www.feelens.net", "/", "/en"],
+    ["www.feelens.net", "/it/exchanges/okx", "/en/exchanges/okx"],
+    ["feelens.net", "/en/compare?x=1", "/en/compare?x=1"],
+  ];
+  for (const [host, requestPath, finalPath] of oneHop) {
+    const redirected = await request(host, requestPath);
+    assert.equal(redirected.status, 301, `${host} ${requestPath}`);
     assert.equal(
       redirected.location,
-      "https://www.feelens.net/zh-cn/exchanges/backpack?utm_source=seo",
-      host,
+      `https://www.feelens.net${finalPath}`,
+      `${host} ${requestPath}`,
     );
+    const finalUrl = new URL(redirected.location);
+    const landed = await fetch(base + finalUrl.pathname, {
+      redirect: "manual",
+    });
+    assert.equal(landed.status, 200, finalUrl.pathname);
   }
-  const apex = await request("feelens.net", "/en/compare?x=1");
-  assert.equal(apex.status, 308, "feelens.net");
-  assert.equal(
-    apex.location,
-    "https://www.feelens.net/en/compare?x=1",
-    "feelens.net",
-  );
+  for (const canonicalPath of ["/en", "/zh-cn/compare", "/ja/referrals/backpack"]) {
+    const canonical = await request("www.feelens.net", canonicalPath);
+    assert.equal(canonical.status, 200, canonicalPath);
+    assert.equal(canonical.location, undefined, canonicalPath);
+  }
   for (const missing of ["/xx", "/fa/exchanges/unknown", "/en/compare/unknown"])
     assert.equal((await fetch(base + missing)).status, 404, missing);
   console.log(

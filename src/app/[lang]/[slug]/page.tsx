@@ -1,17 +1,8 @@
-import { notFound, permanentRedirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { isLang, meta } from "@/lib/site";
 import { t, type MessageKey } from "@/lib/i18n";
 import { Sources } from "@/components/ExchangeContent";
 import { exchangeIds } from "@/lib/exchanges";
-const redirects: Record<string, string> = {
-  review: "exchanges/backpack",
-  referral: "referrals/backpack",
-  fees: "compare",
-  tutorial: "exchanges/backpack",
-  safety: "risk-disclosure",
-  faq: "compare",
-  "vs-binance": "compare/backpack-vs-binance",
-};
 const pages: Record<string, { title: MessageKey; body: MessageKey }> = {
   about: { title: "about", body: "aboutBody" },
   contact: { title: "contact", body: "aboutBody" },
@@ -22,9 +13,7 @@ const pages: Record<string, { title: MessageKey; body: MessageKey }> = {
   "risk-disclosure": { title: "risks", body: "riskBody" },
 };
 export function generateStaticParams() {
-  return [...Object.keys(pages), ...Object.keys(redirects)].map((slug) => ({
-    slug,
-  }));
+  return Object.keys(pages).map((slug) => ({ slug }));
 }
 export async function generateMetadata({
   params,
@@ -44,7 +33,6 @@ export default async function Page({
 }) {
   const { lang, slug } = await params;
   if (!isLang(lang)) notFound();
-  if (Object.hasOwn(redirects, slug)) permanentRedirect(`/${lang}/${redirects[slug]}`);
   const p = Object.hasOwn(pages, slug) ? pages[slug] : undefined;
   if (!p) notFound();
   return (

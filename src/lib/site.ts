@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { langs, locale, type Lang } from "./i18n";
+import { siteUrl } from "./redirects";
 export { langs, type Lang } from "./i18n";
-export const siteUrl = "https://www.feelens.net";
+export { siteUrl };
 export const updated = "2026-10-21";
 export function isLang(lang: string): lang is Lang {
   return langs.includes(lang as Lang);

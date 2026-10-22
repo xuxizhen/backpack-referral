@@ -1,4 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
+import { finalPathname } from "@/lib/redirects";
 export default function Page() {
-  redirect("/en");
+  permanentRedirect(finalPathname("/"));
 }
