@@ -6,7 +6,7 @@ const https = require("node:https");
 const path = require("node:path");
 const messages = require("../src/content/messages.json");
 const base = process.env.TEST_BASE_URL || "http://localhost:3101";
-function request(host, requestPath) {
+function request(host, requestPath, { body = false } = {}) {
   const target = new URL(base);
   const client = target.protocol === "https:" ? https : http;
   return new Promise((resolve, reject) => {
@@ -19,8 +19,15 @@ function request(host, requestPath) {
         headers: { host },
       },
       (res) => {
-        res.resume();
-        resolve({ status: res.statusCode, location: res.headers.location });
+        const chunks = [];
+        res.on("data", (chunk) => chunks.push(chunk));
+        res.on("end", () =>
+          resolve({
+            status: res.statusCode,
+            location: res.headers.location,
+            body: body ? Buffer.concat(chunks).toString("utf8") : "",
+          }),
+        );
       },
     );
     req.on("error", reject);
@@ -133,6 +140,20 @@ const slugs = [
   assert.ok(keyName, "IndexNow key file");
   const keyBody = await (await fetch(`${base}/${keyName}`)).text();
   assert.equal(keyBody, keyName.slice(0, -4));
+  const baiduName = "baidu_verify_codeva-msybyesEtM.html";
+  const baiduCode = "a14825677f91cf1ab454adaeaabfee03";
+  const baiduFile = await fetch(`${base}/${baiduName}`, { redirect: "manual" });
+  assert.equal(baiduFile.status, 200, baiduName);
+  assert.equal(baiduFile.headers.get("location"), null, baiduName);
+  const baiduBody = await baiduFile.text();
+  assert.equal(baiduBody, baiduCode);
+  assert.equal(Buffer.byteLength(baiduBody), 32);
+  const baiduHost = await request("www.feelens.net", `/${baiduName}`, {
+    body: true,
+  });
+  assert.equal(baiduHost.status, 200, `www ${baiduName}`);
+  assert.equal(baiduHost.location, undefined, `www ${baiduName}`);
+  assert.equal(baiduHost.body, baiduCode);
   const oneHop = [
     ["www.backpackref.com", "/de/review", "/en/exchanges/backpack"],
     ["www.backpackref.com", "/ja/referral", "/ja/referrals/backpack"],
