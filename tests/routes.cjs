@@ -1,7 +1,32 @@
 // HTTP contract checks; UI interactions are verified in the in-app browser.
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const http = require("node:http");
+const https = require("node:https");
+const path = require("node:path");
 const messages = require("../src/content/messages.json");
 const base = process.env.TEST_BASE_URL || "http://localhost:3101";
+function request(host, requestPath) {
+  const target = new URL(base);
+  const client = target.protocol === "https:" ? https : http;
+  return new Promise((resolve, reject) => {
+    const req = client.request(
+      {
+        hostname: target.hostname,
+        port: target.port,
+        path: requestPath,
+        method: "GET",
+        headers: { host },
+      },
+      (res) => {
+        res.resume();
+        resolve({ status: res.statusCode, location: res.headers.location });
+      },
+    );
+    req.on("error", reject);
+    req.end();
+  });
+}
 const langs = Object.keys(messages);
 const slugs = [
   "",
@@ -81,8 +106,42 @@ const slugs = [
   }
   const sitemap = await (await fetch(base + "/sitemap.xml")).text();
   assert.equal((sitemap.match(/<loc>/g) || []).length, count);
-  for (const path of ["/xx", "/fa/exchanges/unknown", "/en/compare/unknown"])
-    assert.equal((await fetch(base + path)).status, 404, path);
+  assert.ok(!sitemap.includes("backpackref.com"), "sitemap host");
+  assert.ok(sitemap.includes("https://www.feelens.net/zh-cn"), "zh-cn");
+  const robots = await (await fetch(base + "/robots.txt")).text();
+  assert.match(robots, /^Sitemap: https:\/\/www\.feelens\.net\/sitemap\.xml$/m);
+  assert.ok(!robots.includes("backpackref.com"), "robots host");
+  const keyName = fs
+    .readdirSync(path.join(__dirname, "../public"))
+    .find((name) => /^[a-zA-Z0-9-]{8,128}\.txt$/.test(name));
+  assert.ok(keyName, "IndexNow key file");
+  const keyBody = await (await fetch(`${base}/${keyName}`)).text();
+  assert.equal(keyBody, keyName.slice(0, -4));
+  for (const host of [
+    "www.backpackref.com",
+    "backpackref.com",
+    "backpack-referral.vercel.app",
+  ]) {
+    const redirected = await request(
+      host,
+      "/zh-cn/exchanges/backpack?utm_source=seo",
+    );
+    assert.equal(redirected.status, 301, host);
+    assert.equal(
+      redirected.location,
+      "https://www.feelens.net/zh-cn/exchanges/backpack?utm_source=seo",
+      host,
+    );
+  }
+  const apex = await request("feelens.net", "/en/compare?x=1");
+  assert.equal(apex.status, 308, "feelens.net");
+  assert.equal(
+    apex.location,
+    "https://www.feelens.net/en/compare?x=1",
+    "feelens.net",
+  );
+  for (const missing of ["/xx", "/fa/exchanges/unknown", "/en/compare/unknown"])
+    assert.equal((await fetch(base + missing)).status, 404, missing);
   console.log(
     `Verified ${count} localized pages, canonical/hreflang, referral codes, legacy redirects, sitemap and 404s.`,
   );

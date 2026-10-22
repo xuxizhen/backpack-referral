@@ -2,6 +2,8 @@
 
 2026-10-18 · 基于「分析返佣网站流量与安全标记」及运营者补充。
 
+状态（2026-10-22）：站点地址已是 https://www.feelens.net。下文是迁移前的方案记录；其中「继续使用 www.backpackref.com」已过时，不代表现在的规范网址。仓库名 backpack-referral、交易所 Backpack 以及 backpack.exchange 的官方链接仍然保留。
+
 ## 定位与范围
 
 FeeLens（费用透镜）是 Mike Xu 运营的独立交易费用与使用指南。第一期聚焦 Backpack，不推广 Toobit；未来按交易所组织内容。品牌名为本次工作名，域名及商标可用性未核验。继续使用 www.backpackref.com，购买新域名后再统一迁移。
