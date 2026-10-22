@@ -107,7 +107,7 @@ test("robots disallow /go and the sitemap omits those redirects", () => {
   assert.ok(urls.every((url) => !url.includes("/go")));
   const news = entries.filter((entry) => entry.url.endsWith("/updates"));
   assert.equal(news.length, 8);
-  assert.ok(news.every((entry) => entry.lastModified === "2026-10-17"));
+  assert.ok(news.every((entry) => entry.lastModified === "2026-10-22"));
   assert.ok(
     entries
       .filter((entry) => !entry.url.endsWith("/updates"))
@@ -352,7 +352,8 @@ test("updates renders every exchange once items exist and filters on the server"
       searchParams: Promise.resolve({ exchange: "okx" }),
     }),
   );
-  assert.match(filtered, /No updates for this exchange yet/);
+  assert.match(filtered, /OKX lists AXISUSDT perpetual futures/);
+  assert.doesNotMatch(filtered, /No updates for this exchange yet/);
   assert.doesNotMatch(filtered, /Unpack Real Stocks/);
   assert.doesNotMatch(filtered, /ItemList/);
   assert.match(filtered, /href="\/go\/okx"/);

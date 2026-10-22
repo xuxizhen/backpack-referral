@@ -70,16 +70,34 @@ test("news entries are unique, dated and sourced from allowlisted hosts", () => 
       item.sourceUrl,
     );
   }
+  const idsInOrder = Array.from(updates, (item) => String(item.id));
+  for (const id of [
+    "tokenized-uvxy",
+    "backpack-ai-search",
+    "stock-limit-orders",
+    "unpack-real-stocks-week-3",
+  ]) {
+    assert.ok(idsInOrder.includes(id), id);
+  }
+  assert.equal(idsInOrder.length, 28);
+  assert.equal(String(newestUpdateDate()), "2026-10-22");
+  assert.equal(idsInOrder[0], "binance-2026-10-22-stock-options");
+  const dates = Array.from(updates, (item) => String(item.date));
+  for (let i = 1; i < dates.length; i++) {
+    assert.ok(dates[i - 1] >= dates[i], dates[i]);
+  }
   assert.equal(
-    JSON.stringify(Array.from(updates, (item) => item.id)),
-    JSON.stringify([
-      "tokenized-uvxy",
-      "backpack-ai-search",
-      "stock-limit-orders",
-      "unpack-real-stocks-week-3",
-    ]),
+    updates.filter((item) => String(item.exchange) === "binance").length,
+    8,
   );
-  assert.equal(String(newestUpdateDate()), "2026-10-17");
+  assert.equal(
+    updates.filter((item) => String(item.exchange) === "okx").length,
+    8,
+  );
+  assert.equal(
+    updates.filter((item) => String(item.id).includes("ai-search")).length,
+    2,
+  );
 });
 
 test("exchange filters keep newest-first order and ignore unknown values", () => {
@@ -126,9 +144,9 @@ test("exchange filters keep newest-first order and ignore unknown values", () =>
     JSON.stringify(Array.from(selectUpdates(fixture, "nope"), (item) => item.id)),
     JSON.stringify(["new-binance", "mid-backpack", "old-okx"]),
   );
-  assert.equal(selectUpdates(updates, "binance").length, 0);
-  assert.equal(selectUpdates(updates, "okx").length, 0);
-  assert.equal(selectUpdates(updates, "backpack").length, updates.length);
+  assert.equal(selectUpdates(updates, "binance").length, 8);
+  assert.equal(selectUpdates(updates, "okx").length, 8);
+  assert.equal(selectUpdates(updates, "backpack").length, 12);
   assert.equal(String(updateCopy(fixture[1], "zh-cn").title), "币安产品");
   assert.equal(String(updateCopy(fixture[1], "fr").title), "Binance product");
   assert.equal(String(updateCopy(fixture[1], "ja").summary), "Binance summary");

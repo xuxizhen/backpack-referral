@@ -187,7 +187,7 @@ const slugs = [
   assert.ok(!sitemap.includes("/go/"), "sitemap excludes /go");
   assert.match(
     sitemap,
-    /<loc>https:\/\/www\.feelens\.net\/zh-cn\/updates<\/loc>(?:(?!<loc>)[\s\S])*?<lastmod>2026-10-17<\/lastmod>/,
+    /<loc>https:\/\/www\.feelens\.net\/zh-cn\/updates<\/loc>(?:(?!<loc>)[\s\S])*?<lastmod>2026-10-22<\/lastmod>/,
   );
   const filteredUpdates = await fetch(
     base + "/en/updates?exchange=binance",
@@ -200,7 +200,8 @@ const slugs = [
       'rel="canonical" href="https://www.feelens.net/en/updates"',
     ),
   );
-  assert.ok(filteredHtml.includes("No updates for this exchange yet."));
+  assert.ok(filteredHtml.includes("Binance stock options"));
+  assert.ok(!filteredHtml.includes("No updates for this exchange yet."));
   assert.ok(!filteredHtml.includes("Unpack Real Stocks"));
   const backpackUpdates = await fetch(base + "/zh-cn/updates?exchange=backpack");
   const backpackHtml = await backpackUpdates.text();
