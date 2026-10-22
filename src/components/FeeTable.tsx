@@ -2,23 +2,7 @@ import { exchanges } from "@/lib/exchanges";
 import { feeSnapshotOrder, feeSnapshots, type FeePair } from "@/lib/fees";
 import { t, type Lang } from "@/lib/i18n";
 
-function Cell({
-  pair,
-  side,
-  empty,
-}: {
-  pair: FeePair | null;
-  side: keyof FeePair;
-  empty: string;
-}) {
-  if (!pair) {
-    return (
-      <td>
-        <span aria-hidden="true">—</span>
-        <span className="sr-only">{empty}</span>
-      </td>
-    );
-  }
+function Cell({ pair, side }: { pair: FeePair; side: keyof FeePair }) {
   return (
     <td>
       <bdi dir="ltr">{pair[side]}</bdi>
@@ -27,7 +11,6 @@ function Cell({
 }
 
 export default function FeeTable({ lang }: { lang: Lang }) {
-  const empty = t(lang, "notListed");
   return (
     <section className="fee-snapshot-section" id="fees">
       <h2>{t(lang, "feeTable")}</h2>
@@ -70,19 +53,38 @@ export default function FeeTable({ lang }: { lang: Lang }) {
                       </span>
                     ) : null}
                   </th>
-                  <Cell pair={row.spot} side="maker" empty={empty} />
-                  <Cell pair={row.spot} side="taker" empty={empty} />
-                  <Cell pair={row.futures} side="maker" empty={empty} />
-                  <Cell pair={row.futures} side="taker" empty={empty} />
+                  <Cell pair={row.spot} side="maker" />
+                  <Cell pair={row.spot} side="taker" />
+                  <Cell pair={row.futures} side="maker" />
+                  <Cell pair={row.futures} side="taker" />
                   <td>
                     <time dateTime={row.checked}>{row.checked}</time>
-                    <a
-                      href={row.source}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {t(lang, "official")} ↗
-                    </a>
+                    {row.futuresSource === row.source ? (
+                      <a
+                        href={row.source}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {t(lang, "official")} ↗
+                      </a>
+                    ) : (
+                      <>
+                        <a
+                          href={row.source}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {t(lang, "spot")} ↗
+                        </a>
+                        <a
+                          href={row.futuresSource}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {t(lang, "futures")} ↗
+                        </a>
+                      </>
+                    )}
                   </td>
                 </tr>
               );

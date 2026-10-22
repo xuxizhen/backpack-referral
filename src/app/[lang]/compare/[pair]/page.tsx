@@ -4,6 +4,7 @@ import { t } from "@/lib/i18n";
 import { pairs, exchanges, type PairId } from "@/lib/exchanges";
 import { FeeMatrix, Sources } from "@/components/ExchangeContent";
 import FeeComparison from "@/components/FeeComparison";
+import { InviteCards } from "@/components/InviteCard";
 export function generateStaticParams() {
   return Object.keys(pairs).map((pair) => ({ pair }));
 }
@@ -40,6 +41,7 @@ export default async function Page({
         </h1>
         <p className="lede">{t(lang, "pairIntro")}</p>
       </header>
+      <InviteCards lang={lang} placement="compare_detail" ids={ids} />
       <div className="comparison-profiles">
         {ids.map((id) => (
           <section key={id}>
@@ -49,6 +51,7 @@ export default async function Page({
         ))}
       </div>
       <FeeMatrix lang={lang} ids={ids} />
+      <InviteCards lang={lang} placement="compare_detail" ids={ids} />
       <p>{t(lang, "method")}</p>
       <p>{t(lang, "matrixNote")}</p>
       <FeeComparison lang={lang} />

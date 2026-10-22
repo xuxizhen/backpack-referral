@@ -6,6 +6,9 @@ export const placements = [
   "mobile_sticky",
   "referral_page",
   "exchange_page",
+  "compare_page",
+  "compare_detail",
+  "updates_page",
 ] as const;
 export type Placement = (typeof placements)[number];
 export const invites: Record<InviteId, { code: string; url: string }> = {

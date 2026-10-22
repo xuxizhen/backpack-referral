@@ -82,13 +82,19 @@ export function InviteCard({
 export function InviteCards({
   lang,
   placement,
+  ids = inviteOrder,
 }: {
   lang: Lang;
   placement: Placement;
+  ids?: readonly InviteId[];
 }) {
   return (
-    <div className="invite-grid">
-      {inviteOrder.map((id) => (
+    <div
+      className={
+        ids.length === 2 ? "invite-grid invite-grid-pair" : "invite-grid"
+      }
+    >
+      {ids.map((id) => (
         <InviteCard
           key={id}
           lang={lang}

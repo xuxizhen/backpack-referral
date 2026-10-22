@@ -101,11 +101,18 @@ test("robots disallow /go and the sitemap omits those redirects", () => {
   const robots = load("src/app/robots.ts").default();
   const rules = Array.isArray(robots.rules) ? robots.rules : [robots.rules];
   assert.ok(rules.some((rule) => rule.disallow.includes("/go")));
-  const urls = load("src/app/sitemap.ts")
-    .default()
-    .map((entry) => entry.url);
+  const entries = load("src/app/sitemap.ts").default();
+  const urls = entries.map((entry) => entry.url);
   assert.ok(urls.length > 0);
   assert.ok(urls.every((url) => !url.includes("/go")));
+  const news = entries.filter((entry) => entry.url.endsWith("/updates"));
+  assert.equal(news.length, 8);
+  assert.ok(news.every((entry) => entry.lastModified === "2026-10-22"));
+  assert.ok(
+    entries
+      .filter((entry) => !entry.url.endsWith("/updates"))
+      .every((entry) => entry.lastModified === "2026-10-22"),
+  );
 });
 
 test("english and simplified chinese homepages show the three invite CTAs", async () => {
@@ -126,24 +133,46 @@ test("english and simplified chinese homepages show the three invite CTAs", asyn
     for (const code of ["meme", "BNBBABA", "X45LZTTE"])
       assert.match(html, new RegExp(`>${code}<`), `${lang} ${code}`);
     assert.match(html, /affiliate-disclosure/);
+    assert.match(html, /0\.0200%/);
+    assert.match(html, /0\.0500%/);
+    assert.match(html, /https:\/\/www\.binance\.com\/en\/fee\/futureFee/);
+    assert.equal((html.match(/2026-10-22/g) || []).length >= 3, true, lang);
+    assert.doesNotMatch(html, /notListed|已核来源未列出/);
   }
 });
 
-test("published fee rows reuse checked Binance and OKX rates and add Backpack Tier 1", () => {
+test("published fee rows use the 2026-10-22 base tier for spot and futures", () => {
   const { feeSnapshots } = load("src/lib/fees.ts");
   const exchanges = require("../src/content/exchanges.json");
+  const messages = require("../src/content/messages.json");
   assert.deepEqual(feeSnapshots.backpack.spot, { maker: "0.08%", taker: "0.10%" });
   assert.deepEqual(feeSnapshots.backpack.futures, { maker: "0.02%", taker: "0.05%" });
   assert.equal(feeSnapshots.backpack.checked, "2026-10-22");
   assert.equal(feeSnapshots.backpack.tier, "Tier 1");
+  assert.equal(feeSnapshots.backpack.source, feeSnapshots.backpack.futuresSource);
   assert.match(exchanges.okx.costs.en, /0\.0800%/);
-  assert.match(exchanges.okx.costs.en, /0\.1000%/);
+  assert.match(exchanges.okx.costs.en, /0\.0200%/);
+  assert.match(exchanges.okx.costs["zh-cn"], /0\.0200%/);
   assert.deepEqual(feeSnapshots.okx.spot, { maker: "0.0800%", taker: "0.1000%" });
-  assert.equal(feeSnapshots.okx.futures, null);
+  assert.deepEqual(feeSnapshots.okx.futures, { maker: "0.0200%", taker: "0.0500%" });
+  assert.equal(feeSnapshots.okx.checked, "2026-10-22");
+  assert.equal(feeSnapshots.okx.source, "https://www.okx.com/fees");
   assert.match(exchanges.binance.costs.en, /0\.100%/);
+  assert.match(exchanges.binance.costs.en, /0\.0200%/);
   assert.match(exchanges.binance.costs.en, /0\.075%/);
+  assert.match(exchanges.binance.costs["zh-cn"], /0\.0200%/);
   assert.deepEqual(feeSnapshots.binance.spot, { maker: "0.100%", taker: "0.100%" });
-  assert.equal(feeSnapshots.binance.futures, null);
+  assert.deepEqual(feeSnapshots.binance.futures, { maker: "0.0200%", taker: "0.0500%" });
+  assert.equal(feeSnapshots.binance.checked, "2026-10-22");
+  assert.equal(feeSnapshots.binance.source, "https://www.binance.com/en/fee/trading");
+  assert.equal(
+    feeSnapshots.binance.futuresSource,
+    "https://www.binance.com/en/fee/futureFee",
+  );
+  for (const lang of Object.keys(messages)) {
+    assert.match(messages[lang].feeTableNote, /BNB|토큰|トークン|токен|توکن|jeton|token/i);
+    assert.doesNotMatch(messages[lang].feeTableNote, /blank|空栏|空欄|branco|비어|Пустая|خالی/);
+  }
 });
 
 test("the retired Binance backup code is gone and invite URLs live in one file", () => {
@@ -200,4 +229,132 @@ test("referral clicks are not sent before consent or without gtag", () => {
   assert.doesNotThrow(() => trackReferral("okx", "referral_page", "en"));
   delete global.localStorage;
   delete global.window;
+});
+
+test("compare pages expose /go register links for the exchanges on the page", async () => {
+  const index = load("src/app/[lang]/compare/page.tsx").default;
+  const indexHtml = renderToStaticMarkup(
+    await index({ params: Promise.resolve({ lang: "zh-cn" }) }),
+  );
+  for (const id of ["backpack", "binance", "okx"]) {
+    const links = indexHtml.match(new RegExp(`href="/go/${id}"`, "g")) || [];
+    assert.ok(links.length >= 2, `compare index ${id}`);
+    assert.match(indexHtml, /data-placement="compare_page"/);
+    assert.match(indexHtml, /rel="sponsored nofollow noopener"/);
+  }
+  assert.match(indexHtml, /0\.0200%/);
+  assert.match(indexHtml, /0\.0500%/);
+  assert.match(indexHtml, /https:\/\/www\.binance\.com\/en\/fee\/futureFee/);
+  const pairPage = load("src/app/[lang]/compare/[pair]/page.tsx").default;
+  const cases = {
+    "backpack-vs-binance": ["backpack", "binance"],
+    "backpack-vs-okx": ["backpack", "okx"],
+    "okx-vs-binance": ["okx", "binance"],
+  };
+  for (const [pair, ids] of Object.entries(cases)) {
+    const html = renderToStaticMarkup(
+      await pairPage({ params: Promise.resolve({ lang: "en", pair }) }),
+    );
+    for (const id of ids) {
+      const links = html.match(new RegExp(`href="/go/${id}"`, "g")) || [];
+      assert.equal(links.length, 2, `${pair} ${id}`);
+    }
+    const absent = ["backpack", "binance", "okx"].filter((id) => !ids.includes(id));
+    for (const id of absent) assert.equal(html.includes(`/go/${id}`), false, pair);
+    assert.equal((html.match(/data-placement="compare_detail"/g) || []).length, 4);
+  }
+});
+
+test("updates renders every exchange once items exist and filters on the server", async () => {
+  const { selectUpdates } = load("src/lib/updates.ts");
+  const Updates = load("src/components/Updates.tsx").default;
+  const fixture = [
+    {
+      id: "binance-fees",
+      exchange: "binance",
+      date: "2026-10-01",
+      category: "fees",
+      title: { en: "Binance fee note", zh: "币安费率说明" },
+      summary: { en: "Binance summary", zh: "币安摘要" },
+      sourceUrl: "https://www.binance.com/en/fee/trading",
+    },
+    {
+      id: "okx-product",
+      exchange: "okx",
+      date: "2026-10-02",
+      category: "product",
+      title: { en: "OKX product note", zh: "欧易产品说明" },
+      summary: { en: "OKX summary", zh: "欧易摘要" },
+      sourceUrl: "https://www.okx.com/fees",
+    },
+    {
+      id: "backpack-listing",
+      exchange: "backpack",
+      date: "2026-10-03",
+      category: "listing",
+      title: { en: "Backpack listing note", zh: "背包上新说明" },
+      summary: { en: "Backpack summary", zh: "背包摘要" },
+      sourceUrl: "https://learn.backpack.exchange/blog/example",
+    },
+  ];
+  const allHtml = renderToStaticMarkup(
+    Updates({
+      lang: "zh-cn",
+      exchange: "all",
+      items: selectUpdates(fixture, "all"),
+    }),
+  );
+  assert.match(allHtml, /背包上新说明/);
+  assert.match(allHtml, /欧易产品说明/);
+  assert.match(allHtml, /币安费率说明/);
+  assert.match(allHtml, /2026-10-03/);
+  assert.ok(allHtml.indexOf("2026-10-03") < allHtml.indexOf("2026-10-01"));
+  assert.match(allHtml, /rel="nofollow noopener"/);
+  assert.match(allHtml, /target="_blank"/);
+  assert.match(allHtml, /href="\/zh-cn\/updates\?exchange=binance"/);
+  const binanceHtml = renderToStaticMarkup(
+    Updates({
+      lang: "en",
+      exchange: "binance",
+      items: selectUpdates(fixture, "binance"),
+    }),
+  );
+  assert.match(binanceHtml, /Binance fee note/);
+  assert.doesNotMatch(binanceHtml, /OKX product note/);
+  assert.doesNotMatch(binanceHtml, /Backpack listing note/);
+  assert.match(binanceHtml, /aria-current="page"/);
+  const french = renderToStaticMarkup(
+    Updates({
+      lang: "fr",
+      exchange: "all",
+      items: selectUpdates(fixture, "all"),
+    }),
+  );
+  assert.match(french, /Binance fee note/);
+  assert.doesNotMatch(french, /币安费率说明/);
+
+  const page = load("src/app/[lang]/updates/page.tsx").default;
+  const live = renderToStaticMarkup(
+    await page({
+      params: Promise.resolve({ lang: "zh-cn" }),
+      searchParams: Promise.resolve({}),
+    }),
+  );
+  assert.match(live, /Unpack Real Stocks 美股盲盒/);
+  assert.match(live, /AI Search：用自然语言发现市场/);
+  assert.match(live, /href="\/go\/backpack"/);
+  assert.match(live, /data-placement="updates_page"/);
+  assert.match(live, /"@type":"ItemList"/);
+  assert.match(live, /"@type":"NewsArticle"/);
+  const filtered = renderToStaticMarkup(
+    await page({
+      params: Promise.resolve({ lang: "en" }),
+      searchParams: Promise.resolve({ exchange: "okx" }),
+    }),
+  );
+  assert.match(filtered, /OKX lists AXISUSDT perpetual futures/);
+  assert.doesNotMatch(filtered, /No updates for this exchange yet/);
+  assert.doesNotMatch(filtered, /Unpack Real Stocks/);
+  assert.doesNotMatch(filtered, /ItemList/);
+  assert.match(filtered, /href="\/go\/okx"/);
 });

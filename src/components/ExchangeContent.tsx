@@ -37,9 +37,11 @@ export function ExchangeCards({ lang }: { lang: Lang }) {
 export function FeeMatrix({
   lang,
   ids = exchangeIds,
+  placement,
 }: {
   lang: Lang;
   ids: readonly ExchangeId[];
+  placement?: Placement;
 }) {
   return (
     <div className="matrix-scroll">
@@ -50,6 +52,7 @@ export function FeeMatrix({
             <th scope="col">{t(lang, "exchanges")}</th>
             <th scope="col">{t(lang, "costs")}</th>
             <th scope="col">{t(lang, "offers")}</th>
+            {placement ? <th scope="col">{t(lang, "register")}</th> : null}
           </tr>
         </thead>
         <tbody>
@@ -76,6 +79,11 @@ export function FeeMatrix({
                   {t(lang, "offers")} ↗
                 </Link>
               </td>
+              {placement ? (
+                <td className="matrix-register">
+                  <ExchangeLink lang={lang} id={id} placement={placement} />
+                </td>
+              ) : null}
             </tr>
           ))}
         </tbody>

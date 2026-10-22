@@ -11,7 +11,7 @@ Node.js 20.9+; tested with Node 22. Install with `npm ci`.
 - `npm run dev` — development server
 - `npm run build` — production build and TypeScript checks
 - `npm start -- --port 3101` — preview production build
-- `npm test` — calculations, campaign boundaries and eight-language content validation
+- `npm test` — calculations, news feed filters and eight-language content validation
 - `npm run lint` — ESLint
 - `node tests/routes.cjs` — HTTP/SEO checks of all 168 indexable routes against localhost:3101; override TEST_BASE_URL when needed
 
@@ -23,8 +23,8 @@ Use the Codex in-app browser to verify responsive layouts, native language selec
 - `src/content/exchanges.json`: localized product, fee and referral descriptions.
 - `src/lib/invites.ts`: the only place invite codes and destination URLs are set. `/go/backpack`, `/go/binance` and `/go/okx` redirect there.
 - `src/lib/exchanges.ts`: exchange identifiers, referral destinations (from `invites.ts`) and official sources.
-- `src/content/updates.json`: official news, source dates, UTC campaign windows, exchange identity and eight-language copy. The original English/Chinese arrays remain compatible with archived data.
-- `src/lib/updates.ts`: deterministic campaign status and expiry.
+- `src/data/updates.ts`: the news feed. Append `{ id, exchange, date, category, title: {en, zh}, summary: {en, zh}, sourceUrl }`. Other locales show the English text.
+- `src/lib/updates.ts`: newest-first sort and exchange filters. Sitemap `lastmod` for `/updates` is the newest item date.
 - `src/components/FeeComparison.tsx`: client-side cost worksheet. No presumed exchange rate or unverified rebate is prefilled.
 - `docs/content-operations.md`: source verification, weekly monitoring and publishing rules.
 

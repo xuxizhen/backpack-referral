@@ -5,11 +5,12 @@ export type ExchangeId = (typeof exchangeIds)[number];
 export const exchanges = {
   backpack: {
     name: "Backpack",
-    checked: "2026-10-20",
+    checked: "2026-10-22",
     mark: "B",
     color: "#e85247",
     url: invites.backpack.url,
     fee: "https://backpack.exchange/fees",
+    futuresFee: "https://backpack.exchange/fees",
     sources: [
       "https://backpack.exchange",
       "https://backpack.exchange/fees",
@@ -19,11 +20,12 @@ export const exchanges = {
   },
   okx: {
     name: "OKX",
-    checked: "2026-10-21",
+    checked: "2026-10-22",
     mark: "OK",
     color: "#172c48",
     url: invites.okx.url,
     fee: "https://www.okx.com/fees",
+    futuresFee: "https://www.okx.com/fees",
     sources: [
       "https://www.okx.com/zh-hans/fees",
       "https://www.okx.com/help/trading-fee-rules-faq",
@@ -33,13 +35,15 @@ export const exchanges = {
   },
   binance: {
     name: "Binance",
-    checked: "2026-10-20",
+    checked: "2026-10-22",
     mark: "◇",
     color: "#9a7000",
     url: invites.binance.url,
     fee: "https://www.binance.com/en/fee/trading",
+    futuresFee: "https://www.binance.com/en/fee/futureFee",
     sources: [
       "https://www.binance.com/en/fee/trading",
+      "https://www.binance.com/en/fee/futureFee",
       "https://www.binance.com/en/support/faq/detail/115000583311",
       "https://www.binance.com/zh-CN/activity/referral?stopRedirectToActivity=true",
     ],
