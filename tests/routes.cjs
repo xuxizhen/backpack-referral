@@ -77,6 +77,15 @@ const slugs = [
         path,
       );
       assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1, path);
+      const head = html.slice(
+        html.indexOf("<head"),
+        html.indexOf("</head>") + "</head>".length,
+      );
+      assert.match(
+        head,
+        /<meta[^>]*name="baidu-site-verification"[^>]*content="codeva-msybyesEtM"[^>]*>/,
+        path,
+      );
       assert.ok(
         !html.includes(
           "An independent guide by Mike Xu. Affiliate relationship disclosed. Not the Backpack website.",

@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: "FeeLens — Independent trading fee guides",
   description: "Independent exchange guides and fee tools by Mike Xu.",
   icons: { icon: "/icon.svg" },
+  verification: {
+    other: {
+      "baidu-site-verification": "codeva-msybyesEtM",
+    },
+  },
 };
 export default function RootLayout({
   children,
