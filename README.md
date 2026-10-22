@@ -39,9 +39,9 @@ Binance: user-supplied links on bsmkweb.cc, primary BNBBABA and alternative JH5S
 
 ## Publishing and SEO
 
-Canonical domain is explicitly https://www.feelens.net. `next.config.ts` sends `backpackref.com`, `www.backpackref.com` and `backpack-referral.vercel.app` to that origin with a path-preserving 301 when the request reaches Next.js. The apex `feelens.net` redirect remains a permanent redirect to `www`. Canonical/hreflang, sitemap, robots, social previews and article structured data follow the eight-language route map. Old domain environment variables no longer override the canonical host or create redirect loops.
+Canonical domain is explicitly https://www.feelens.net. `src/lib/redirects.ts` resolves the final URL, and `src/proxy.ts` returns one 301 to that URL. Old hosts (`backpackref.com`, `www.backpackref.com`, `backpack-referral.vercel.app`, and apex `feelens.net`) and retired paths (`/review`, `/fees`, `/referral`, `/zh-tw`, `/it`, `/de`, and the other legacy slugs) land on the page that returns 200, with the query string preserved. Canonical paths such as `/en` and `/zh-cn/exchanges/backpack` stay in place. Canonical/hreflang, sitemap, robots, social previews and article structured data follow the eight-language route map.
 
-The Vercel project can answer for a hostname before Next.js. If `https://backpackref.com` still returns 307 to `www.backpackref.com`, that hop is the Domains setting, not this config. Point that domain at `www.feelens.net` with a 301 in the Vercel dashboard; do not replace it with a DNS-only forwarder that drops the path.
+The Vercel project can answer for a hostname before Next.js. If `https://backpackref.com` returns 307 to `www.backpackref.com` instead of reaching this proxy, that hop is the Domains setting. Point the apex at this project, or 301 it straight to `https://www.feelens.net` with the path intact.
 
 After a production deploy, submit the canonical sitemap to IndexNow (one request reaches Bing, Yandex, Seznam, Naver and the other participants):
 
