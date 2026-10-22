@@ -1,4 +1,5 @@
 import content from "@/content/exchanges.json";
+import { invites } from "@/lib/invites";
 export const exchangeIds = ["backpack", "okx", "binance"] as const;
 export type ExchangeId = (typeof exchangeIds)[number];
 export const exchanges = {
@@ -7,7 +8,7 @@ export const exchanges = {
     checked: "2026-10-20",
     mark: "B",
     color: "#e85247",
-    url: "https://backpack.exchange/join/meme",
+    url: invites.backpack.url,
     fee: "https://backpack.exchange/fees",
     sources: [
       "https://backpack.exchange",
@@ -21,7 +22,7 @@ export const exchanges = {
     checked: "2026-10-21",
     mark: "OK",
     color: "#172c48",
-    url: "https://okx.com/join/X45LZTTE",
+    url: invites.okx.url,
     fee: "https://www.okx.com/fees",
     sources: [
       "https://www.okx.com/zh-hans/fees",
@@ -35,7 +36,7 @@ export const exchanges = {
     checked: "2026-10-20",
     mark: "◇",
     color: "#9a7000",
-    url: "https://www.bsmkweb.cc/register?ref=BNBBABA",
+    url: invites.binance.url,
     fee: "https://www.binance.com/en/fee/trading",
     sources: [
       "https://www.binance.com/en/fee/trading",
@@ -51,7 +52,6 @@ export const pairs = {
   "okx-vs-binance": ["okx", "binance"],
 } as const;
 export type PairId = keyof typeof pairs;
-export const alternateBinance = "https://www.bsmkweb.cc/register?ref=JH5SZIO4";
 export function isExchange(value: string): value is ExchangeId {
   return exchangeIds.includes(value as ExchangeId);
 }

@@ -6,9 +6,8 @@ export default function LanguageSwitcher({ lang }: { lang: Lang }) {
   const router = useRouter();
   return (
     <label className="language-select">
-      <span className="sr-only">{t(lang, "language")}</span>
       <select
-        aria-label={t(lang, "language")}
+        aria-label={`${t(lang, "language")}: ${locale[lang].label}`}
         value={lang}
         onChange={(e) =>
           router.push(path.replace(/^\/[^/]+/, `/${e.target.value}`))

@@ -3,6 +3,7 @@ import { isLang, meta } from "@/lib/site";
 import { t } from "@/lib/i18n";
 import { exchangeIds, exchanges, isExchange } from "@/lib/exchanges";
 import { Offer, Sources } from "@/components/ExchangeContent";
+import { InviteCard } from "@/components/InviteCard";
 export function generateStaticParams() {
   return exchangeIds.map((exchange) => ({ exchange }));
 }
@@ -36,7 +37,15 @@ export default async function Page({
         </h1>
         <p className="lede">{t(lang, "matrixNote")}</p>
       </header>
-      <Offer lang={lang} id={exchange} />
+      <InviteCard
+        lang={lang}
+        id={exchange}
+        placement="referral_page"
+        detailHref={`/${lang}/exchanges/${exchange}`}
+        detailLabel={t(lang, "guide")}
+        single
+      />
+      <Offer lang={lang} id={exchange} placement="referral_page" />
       <Sources lang={lang} ids={[exchange]} />
     </main>
   );

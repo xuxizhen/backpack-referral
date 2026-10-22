@@ -29,7 +29,7 @@ export default async function Page({
       </header>
       <div className="offers-list">
         {exchangeIds.map((id) => (
-          <Offer lang={lang} id={id} key={id} />
+          <Offer lang={lang} id={id} key={id} placement="referral_page" />
         ))}
       </div>
     </main>

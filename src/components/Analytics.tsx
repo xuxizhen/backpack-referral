@@ -74,7 +74,7 @@ export default function Analytics({ lang }: { lang: Lang }) {
         {t(lang, "analytics")}
       </button>
       {(choice === null || open) && (
-        <aside className="consent" aria-label={t(lang, "analytics")}>
+        <aside className="consent">
           <p>{t(lang, "consent")}</p>
           <div>
             <button onClick={() => choose("denied")}>{t(lang, "deny")}</button>
