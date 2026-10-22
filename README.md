@@ -39,9 +39,20 @@ Binance: user-supplied links on bsmkweb.cc, primary BNBBABA and alternative JH5S
 
 ## Publishing and SEO
 
-Canonical domain is explicitly https://www.feelens.net. Both Backpackref hosts, the Vercel alias and feelens.net redirect to it. The domain was verified on Vercel before migration. Canonical/hreflang, sitemap, robots, social previews and article structured data follow the eight-language route map. Old domain environment variables no longer override the canonical host or create redirect loops.
+Canonical domain is explicitly https://www.feelens.net. `next.config.ts` sends `backpackref.com`, `www.backpackref.com` and `backpack-referral.vercel.app` to that origin with a path-preserving 301 when the request reaches Next.js. The apex `feelens.net` redirect remains a permanent redirect to `www`. Canonical/hreflang, sitemap, robots, social previews and article structured data follow the eight-language route map. Old domain environment variables no longer override the canonical host or create redirect loops.
 
-Main-branch pushes deploy via the existing Vercel integration. Check GitHub deployment status and the live canonical site after pushing. Search Console/Bing change-of-address or sitemap submission requires the appropriate verified webmaster account and remains separate from publishing code.
+The Vercel project can answer for a hostname before Next.js. If `https://backpackref.com` still returns 307 to `www.backpackref.com`, that hop is the Domains setting, not this config. Point that domain at `www.feelens.net` with a 301 in the Vercel dashboard; do not replace it with a DNS-only forwarder that drops the path.
+
+After a production deploy, submit the canonical sitemap to IndexNow (one request reaches Bing, Yandex, Seznam, Naver and the other participants):
+
+```bash
+npm run indexnow
+npm run indexnow -- --dry-run
+```
+
+The ownership key file is `public/<key>.txt`, served at `https://www.feelens.net/<key>.txt`. The file contents are the key and nothing else. `--dry-run` prints the sitemap URLs without submitting them.
+
+Main-branch pushes deploy via the existing Vercel integration. Check GitHub deployment status and the live canonical site after pushing. Search Console change-of-address and sitemap submission require the verified webmaster account and remain separate from publishing code and from IndexNow.
 
 Weekly automation: Monday 10:00 Asia/Shanghai, all three exchanges, official sources only, eight-language updates, automatic validated GitHub push, quiet when unchanged.
 

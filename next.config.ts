@@ -1,26 +1,25 @@
 import type { NextConfig } from "next";
 const siteOrigin = new URL("https://www.feelens.net");
+const legacyHosts = [
+  "backpack-referral.vercel.app",
+  "backpackref.com",
+  "www.backpackref.com",
+];
 const config: NextConfig = {
   async redirects() {
     return [
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "backpack-referral.vercel.app" }],
-        destination: `${siteOrigin.origin}/:path*`,
-        permanent: true,
-      },
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "backpackref.com" }],
-        destination: `${siteOrigin.origin}/:path*`,
-        permanent: true,
-      },
-      ...["www.backpackref.com", "feelens.net"].map((host) => ({
+      ...legacyHosts.map((host) => ({
         source: "/:path*",
         has: [{ type: "host" as const, value: host }],
         destination: `${siteOrigin.origin}/:path*`,
-        permanent: true,
+        statusCode: 301,
       })),
+      {
+        source: "/:path*",
+        has: [{ type: "host" as const, value: "feelens.net" }],
+        destination: `${siteOrigin.origin}/:path*`,
+        permanent: true,
+      },
       { source: "/", destination: "/en", permanent: true },
       ...["zh-tw", "it", "de"].map((lang) => ({
         source: `/${lang}/:path*`,
