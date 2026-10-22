@@ -4,6 +4,7 @@ import { isLang, meta, siteUrl } from "@/lib/site";
 import { t, locale } from "@/lib/i18n";
 import { exchangeIds, exchanges, isExchange } from "@/lib/exchanges";
 import { Offer, Sources } from "@/components/ExchangeContent";
+import { InviteCard } from "@/components/InviteCard";
 export function generateStaticParams() {
   return exchangeIds.map((exchange) => ({ exchange }));
 }
@@ -59,6 +60,14 @@ export default async function Page({
         <h1>{e.name}</h1>
         <p className="lede">{e.products[lang]}</p>
       </header>
+      <InviteCard
+        lang={lang}
+        id={exchange}
+        placement="exchange_page"
+        detailHref={`/${lang}/referrals/${exchange}`}
+        detailLabel={t(lang, "offers")}
+        single
+      />
       <div className="profile-grid">
         <article>
           <h2>{t(lang, "costs")}</h2>
@@ -71,7 +80,7 @@ export default async function Page({
           <p>{t(lang, "eligibility")}</p>
           <Link href={`/${lang}/compare`}>{t(lang, "compare")} ↗</Link>
         </article>
-        <Offer lang={lang} id={exchange} />
+        <Offer lang={lang} id={exchange} placement="exchange_page" />
       </div>
       <Sources lang={lang} ids={[exchange]} />
     </main>

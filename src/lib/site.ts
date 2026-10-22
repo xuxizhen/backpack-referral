@@ -3,7 +3,7 @@ import { langs, locale, type Lang } from "./i18n";
 import { siteUrl } from "./redirects";
 export { langs, type Lang } from "./i18n";
 export { siteUrl };
-export const updated = "2026-10-21";
+export const updated = "2026-10-22";
 export function isLang(lang: string): lang is Lang {
   return langs.includes(lang as Lang);
 }

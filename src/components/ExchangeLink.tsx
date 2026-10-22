@@ -1,36 +1,28 @@
-"use client";
-import { exchanges, alternateBinance, type ExchangeId } from "@/lib/exchanges";
+import { exchanges, type ExchangeId } from "@/lib/exchanges";
+import { goPath, type Placement } from "@/lib/invites";
 import { t, type Lang } from "@/lib/i18n";
+
 export default function ExchangeLink({
   lang,
   id,
-  alternate = false,
+  placement,
 }: {
   lang: Lang;
   id: ExchangeId;
-  alternate?: boolean;
+  placement: Placement;
 }) {
-  const href =
-    alternate && id === "binance" ? alternateBinance : exchanges[id].url;
   return (
     <a
-      className={alternate ? "plain-link" : "button"}
-      href={href}
+      className="button"
+      href={goPath(id)}
       target="_blank"
-      rel="sponsored noopener noreferrer"
-      onClick={() => {
-        try {
-          if (localStorage.getItem("feelens-analytics") === "granted")
-            window.gtag?.("event", "affiliate_click", {
-              exchange: id,
-              placement: location.pathname,
-              language: lang,
-            });
-        } catch {}
-      }}
+      rel="sponsored nofollow noopener"
+      data-exchange={id}
+      data-placement={placement}
+      data-language={lang}
     >
-      {t(lang, alternate ? "alternate" : "visit")} ↗{" "}
-      <span className="sr-only">{exchanges[id].name}</span>
+      {t(lang, "register")} <span aria-hidden="true">↗</span>
+      <span className="sr-only"> {exchanges[id].name}</span>
     </a>
   );
 }

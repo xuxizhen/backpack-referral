@@ -85,12 +85,31 @@ const slugs = [
       );
       if (slug === "referrals/okx")
         assert.ok(html.includes("https://okx.com/join/X45LZTTE"), path);
-      if (slug === "referrals/binance")
-        for (const code of ["BNBBABA", "JH5SZIO4"])
+      if (slug === "referrals/binance") {
+        assert.ok(
+          html.includes("https://www.bsmkweb.cc/register?ref=BNBBABA"),
+          path,
+        );
+        assert.ok(!html.includes("JH5SZIO4"), path);
+        assert.ok(html.includes('href="/go/binance"'), path);
+        assert.ok(
+          html.includes(
+            "https://www.binance.com/zh-CN/activity/referral?stopRedirectToActivity=true",
+          ),
+          path,
+        );
+      }
+      if (slug === "" && (lang === "en" || lang === "zh-cn")) {
+        for (const id of ["backpack", "binance", "okx"]) {
+          assert.ok(html.includes(`href="/go/${id}"`), `${path} /go/${id}`);
           assert.ok(
-            html.includes(`https://www.bsmkweb.cc/register?ref=${code}`),
-            path,
+            html.includes(`data-placement="home_hero"`),
+            `${path} placement`,
           );
+        }
+        for (const code of ["meme", "BNBBABA", "X45LZTTE"])
+          assert.ok(html.includes(`>${code}<`), `${path} ${code}`);
+      }
       count++;
     }
     for (const [old, dest] of [
@@ -118,6 +137,19 @@ const slugs = [
   const robots = await (await fetch(base + "/robots.txt")).text();
   assert.match(robots, /^Sitemap: https:\/\/www\.feelens\.net\/sitemap\.xml$/m);
   assert.ok(!robots.includes("backpackref.com"), "robots host");
+  assert.match(robots, /Disallow:\s*\/go\/?/);
+  assert.ok(!sitemap.includes("/go/"), "sitemap excludes /go");
+  for (const [id, location] of [
+    ["backpack", "https://backpack.exchange/join/meme"],
+    ["binance", "https://www.bsmkweb.cc/register?ref=BNBBABA"],
+    ["okx", "https://okx.com/join/X45LZTTE"],
+  ]) {
+    const redirected = await fetch(`${base}/go/${id}`, { redirect: "manual" });
+    assert.equal(redirected.status, 307, id);
+    assert.equal(redirected.headers.get("location"), location, id);
+    assert.match(redirected.headers.get("x-robots-tag") || "", /noindex/i, id);
+  }
+  assert.equal((await fetch(`${base}/go/unknown`)).status, 404);
   const keyName = fs
     .readdirSync(path.join(__dirname, "../public"))
     .find((name) => /^[a-zA-Z0-9-]{8,128}\.txt$/.test(name));

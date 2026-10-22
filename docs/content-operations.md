@@ -48,7 +48,8 @@
 - `src/content/exchanges.json`：三家介绍、费用与推荐权益，按 en/zh-cn/fr/pt/ko/ja/ru/fa 维护。
 - `src/content/messages.json`：八语 UI 和编辑说明；波斯语页面必须 `lang=fa dir=rtl`，网址与代码使用 bdi 或 LTR。
 - `src/content/updates.json`：历史 en/zh-cn 数组保留，其他六语置于 translations。新增内容必须同时提供八语。exchange 标明所属交易所，组件显示不可写死。
-- `src/lib/exchanges.ts`：固定推荐入口和官方来源。OKX 使用 X45LZTTE，用户给的 Ef6h7R 页面仅作研究参考，不作本站 CTA。Binance 主码 BNBBABA、备选 JH5SZIO4。
+- `src/lib/invites.ts`：邀请码和注册链接只在这里修改。站内按钮走 `/go/backpack`、`/go/binance`、`/go/okx`。
+- `src/lib/exchanges.ts`：交易所标识和官方来源。OKX 使用 X45LZTTE，用户给的 Ef6h7R 页面仅作研究参考，不作本站 CTA。Binance 只保留 BNBBABA。
 - 费用计算器不预填平台费率，用户输入已确认折扣后的实际有效费率。不得把 Backpack 20% 套到其他交易所。
 
 ### 新增一手来源及核查结果
@@ -62,7 +63,7 @@
 - https://www.binance.com/en/support/faq/detail/115000583311 ：页面更新 2026-02-06；BNB 抵扣需要启用和足够余额，现货/杠杆最高 25%，不能与推荐返佣混同，不能默认优惠叠加。
 - https://www.binance.com/zh-CN/activity/referral?stopRedirectToActivity=true ：公开页面未获得该推荐码固定返佣条款，未确认“超级返佣”比例。
 - https://www.okx.com/zh-hant/referral?shortCode=Ef6h7R&utm_source=email ：公开读取受限，不编写未核实奖励。
-- 用户 Binance 链接 bsmkweb.cc 初始 302 到 bsappwv.cc/jsredirect/register?ref=BNBBABA，然后返回脚本跳转页；未确认最终 Binance 域名或该域名官方归属。没有执行下载脚本。页面清楚披露未验证状态，必须后续核实，不能标作已验证官方链接。
+- 用户 Binance 链接 bsmkweb.cc 初始 302 到 bsappwv.cc/jsredirect/register?ref=BNBBABA，然后返回脚本跳转页。2026-10-22 起页面改为中性表述：此链接打开 Binance 的注册页面，并保留官方推荐计划链接。不确认固定返佣比例，也不把该链接标成已核实的官方域名。备用推荐码已从站点移除。
 
 官方动态优先看 Backpack Learn/Support/Docs，OKX 官网公告与 Help，Binance Support 公告；不要将 Binance Square 用户帖子当官方来源。官方 X 账号必须从官网确认后才能作为来源。来源不可访问时记录限制，不补造内容。现有 Backpack 活动保留原核对日期，翻译更新不等于重新核验活动。
 

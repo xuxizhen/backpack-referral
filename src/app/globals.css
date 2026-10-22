@@ -354,9 +354,9 @@ button {
   float: right;
 }
 .calc-note {
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.6;
-  color: var(--muted);
+  color: #3a4c63;
   margin: 18px 0 0;
 }
 .section-intro {
@@ -651,8 +651,8 @@ button {
   display: flex;
   gap: 24px;
   align-items: center;
-  font-size: 10px;
-  color: var(--muted);
+  font-size: 13px;
+  color: #3a4c63;
 }
 .footer-bottom p {
   max-width: 650px;
@@ -666,9 +666,10 @@ button {
   padding: 0;
   border: none;
   background: none;
-  font-size: 11px;
+  font-size: 13px;
   text-decoration: underline;
   white-space: nowrap;
+  color: #172c48;
 }
 .consent {
   position: fixed;
@@ -902,7 +903,7 @@ html[lang="zh-Hans"] .article-header h1 {
     padding-right: 22px;
   }
   .independent {
-    font-size: 10px;
+    font-size: 12px;
   }
   .nav {
     min-height: 74px;
@@ -1136,7 +1137,7 @@ html[lang="zh-Hans"] .article-header h1 {
     margin-bottom: 30px;
   }
   .article-meta {
-    font-size: 10px;
+    font-size: 13px;
     gap: 8px;
   }
   .article-meta > span:last-child {
@@ -1205,8 +1206,8 @@ html[lang="zh-Hans"] .article-header h1 {
 }
 .update-item small {
   display: block;
-  font-size: 10px;
-  color: var(--muted);
+  font-size: 13px;
+  color: #3a4c63;
   margin-top: 5px;
 }
 .status-active {
@@ -1290,7 +1291,7 @@ html[lang="zh-Hans"] .article-header h1 {
 .hero-author {
   font-size: 13px;
   margin-top: 28px;
-  color: #68778c;
+  color: #3a4c63;
 }
 .hero-author a {
   color: #172c48;
@@ -1414,7 +1415,7 @@ html[lang="zh-Hans"] .article-header h1 {
   align-items: center;
 }
 .exchange-card-links a:last-child {
-  color: #68778c;
+  color: #3a4c63;
 }
 .pair-links {
   display: grid;
@@ -1433,7 +1434,7 @@ html[lang="zh-Hans"] .article-header h1 {
 }
 .pair-links small {
   font-weight: 400;
-  color: #8290a3;
+  color: #3a4c63;
   padding: 0 6px;
 }
 .comparison-calculator {
@@ -1501,7 +1502,7 @@ html[lang="zh-Hans"] .article-header h1 {
 .calculator-row small {
   display: block;
   font-size: 11px;
-  color: #64748b;
+  color: #3a4c63;
 }
 .calculator-row output {
   display: block;
@@ -1597,7 +1598,7 @@ html[lang="zh-Hans"] .article-header h1 {
   display: block;
   overflow-wrap: anywhere;
   text-align: start;
-  color: #697b93;
+  color: #3a4c63;
 }
 .offers-list {
   display: grid;
@@ -1753,4 +1754,209 @@ html[lang="zh-Hans"] .article-header h1 {
   .section-intro {
     align-items: start;
   }
+}
+
+.invite-hero {
+  padding-block: 42px 12px;
+}
+.invite-hero h1 {
+  font-size: clamp(34px, 4.2vw, 54px);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  max-width: 16em;
+  margin: 8px 0 14px;
+  text-wrap: balance;
+}
+.invite-hero .lede {
+  margin-top: 0;
+  color: #3a4c63;
+}
+.invite-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+.invite-card {
+  background: #fff;
+  border: 1px solid #dbe3ef;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+.invite-card-single {
+  max-width: 720px;
+  margin-bottom: 8px;
+}
+.invite-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.invite-card h2 {
+  font-size: 22px;
+  margin: 0;
+}
+.invite-benefit {
+  margin: 0;
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #3a4c63;
+}
+.invite-code-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.invite-code-label {
+  font-size: 13px;
+  font-weight: 650;
+  color: #172c48;
+}
+.invite-code-row code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 15px;
+  line-height: 1.4;
+  background: #eef2fa;
+  color: #172c48;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+.copy-button {
+  min-height: 40px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 650;
+  color: #172c48;
+}
+.invite-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.affiliate-line {
+  margin: 16px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #172c48;
+}
+.affiliate-line a {
+  color: #244bca;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.fee-snapshot-section h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+.fee-snapshot {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 760px;
+  font-size: 14px;
+  color: #172c48;
+}
+.fee-snapshot caption {
+  caption-side: top;
+  text-align: start;
+  padding: 0 4px 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #172c48;
+}
+.fee-snapshot th,
+.fee-snapshot td {
+  text-align: start;
+  vertical-align: middle;
+  padding: 12px 14px;
+  border-bottom: 1px solid #dbe3ef;
+  font-variant-numeric: tabular-nums;
+}
+.fee-snapshot thead th {
+  background: #eef2fa;
+  font-size: 13px;
+}
+.fee-snapshot td a {
+  margin-inline-start: 8px;
+  color: #244bca;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.fee-tier {
+  font-size: 13px;
+  font-weight: 600;
+}
+.sticky-invites {
+  display: none;
+}
+@media (max-width: 760px) {
+  .invite-hero {
+    padding-block: 28px 8px;
+  }
+  .invite-hero h1 {
+    font-size: 34px;
+  }
+  .invite-grid {
+    grid-template-columns: 1fr;
+  }
+  .invite-actions .button {
+    flex: 1;
+  }
+  body {
+    padding-bottom: 76px;
+  }
+  body.sticky-dismissed {
+    padding-bottom: 0;
+  }
+  .sticky-invites {
+    display: flex;
+    position: fixed;
+    z-index: 40;
+    inset-inline: 0;
+    bottom: 0;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    background: #fff;
+    border-top: 1px solid #dbe3ef;
+  }
+  .sticky-invite {
+    flex: 1;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #315ce7;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 650;
+    text-align: center;
+  }
+  .sticky-invite:hover {
+    color: #fff;
+  }
+  .sticky-dismiss {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    color: #172c48;
+    font-size: 20px;
+  }
+  body:not(.sticky-dismissed) .consent {
+    bottom: 92px;
+  }
+}
+[dir="rtl"] .invite-code-row code,
+[dir="rtl"] .fee-snapshot td bdi,
+[dir="rtl"] .fee-tier bdi {
+  direction: ltr;
+  unicode-bidi: isolate;
 }

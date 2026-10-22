@@ -4,6 +4,8 @@ import { isLang, siteUrl } from "@/lib/site";
 import { langs, locale, t, type MessageKey } from "@/lib/i18n";
 import Analytics from "@/components/Analytics";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ReferralTracker from "@/components/ReferralTracker";
+import StickyInvites from "@/components/StickyInvites";
 export function generateStaticParams() {
   return langs.map((lang) => ({ lang }));
 }
@@ -54,13 +56,13 @@ export default async function Layout({
         </a>
         <header className="header">
           <div className="container nav">
-            <Link className="brand" href={`/${lang}`} aria-label="FeeLens">
+            <Link className="brand" href={`/${lang}`}>
               <span className="brand-mark" aria-hidden="true">
                 f<span>l</span>
               </span>
               FeeLens
             </Link>
-            <nav aria-label={t(lang, "exchanges")}>
+            <nav>
               {nav.map(([path, key]) => (
                 <Link key={path} href={`/${lang}/${path}`}>
                   {t(lang, key)}
@@ -71,6 +73,8 @@ export default async function Layout({
           </div>
         </header>
         {children}
+        <StickyInvites lang={lang} />
+        <ReferralTracker />
         <footer className="footer">
           <div className="container">
             <div className="footer-top">

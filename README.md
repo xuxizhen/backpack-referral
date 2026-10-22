@@ -21,7 +21,8 @@ Use the Codex in-app browser to verify responsive layouts, native language selec
 
 - `src/content/messages.json`: complete UI and policy copy for en, zh-cn, fr, pt, ko, ja, ru and fa.
 - `src/content/exchanges.json`: localized product, fee and referral descriptions.
-- `src/lib/exchanges.ts`: exchange identifiers, exact referral destinations and official sources.
+- `src/lib/invites.ts`: the only place invite codes and destination URLs are set. `/go/backpack`, `/go/binance` and `/go/okx` redirect there.
+- `src/lib/exchanges.ts`: exchange identifiers, referral destinations (from `invites.ts`) and official sources.
 - `src/content/updates.json`: official news, source dates, UTC campaign windows, exchange identity and eight-language copy. The original English/Chinese arrays remain compatible with archived data.
 - `src/lib/updates.ts`: deterministic campaign status and expiry.
 - `src/components/FeeComparison.tsx`: client-side cost worksheet. No presumed exchange rate or unverified rebate is prefilled.
@@ -35,7 +36,7 @@ Backpack: the operator states a 40% affiliate commission split into 20 percentag
 
 OKX: invitation X45LZTTE. No fixed reward or cashback percentage verified.
 
-Binance: user-supplied links on bsmkweb.cc, primary BNBBABA and alternative JH5SZIO4. Official ownership and final destination remain unverified; this is disclosed next to the links. Do not label these as verified official links or promise a “super rebate” percentage. BNB fee discounts are distinct from referral cashback.
+Binance: invite code BNBBABA. The registration button uses `/go/binance`. The page says this link opens Binance’s registration page and links to Binance’s official referral program. No fixed rebate percentage is confirmed. Do not promise a “super rebate”. BNB fee discounts are distinct from referral cashback.
 
 ## Publishing and SEO
 

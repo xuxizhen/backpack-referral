@@ -54,6 +54,12 @@ test("legacy urls resolve to the final feelens path in one decision", () => {
     "https://www.feelens.net/zh-cn/exchanges/backpack?utm_source=seo",
   );
   assert.equal(canonicalLocation("www.feelens.net", "/en", ""), null);
+  assert.equal(finalPathname("/go/backpack"), "/go/backpack");
+  assert.equal(canonicalLocation("www.feelens.net", "/go/binance", ""), null);
+  assert.equal(
+    canonicalLocation("feelens.net", "/go/okx", "?x=1"),
+    "https://www.feelens.net/go/okx?x=1",
+  );
   assert.equal(
     canonicalLocation("www.feelens.net", "/zh-cn/exchanges/backpack", "?a=1"),
     null,

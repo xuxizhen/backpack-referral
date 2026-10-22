@@ -11,14 +11,14 @@
       "fa": "معاملات اسپات و قراردادهای دائمی، API و محیط یکپارچه معامله ارائه می‌شود. Equity Perps محصولی جداگانه است؛ دسترسی، وثیقه و ساعات معامله ابزار انتخابی را بررسی کنید."
     },
     "costs": {
-      "en": "Check the current fee tier in your account and the official schedule. Staking, holdings and trading volume may affect your tier. A single public rate would not represent every account or product.",
-      "zh-cn": "请核对账户当前费率等级和官方费率表。质押、持仓及成交量可能影响等级，单一公开费率无法代表所有账户和产品。",
-      "fr": "Vérifiez votre niveau de frais et le barème officiel. Staking, avoirs et volume peuvent modifier le niveau. Un taux unique ne représente pas tous les comptes ou produits.",
-      "pt": "Confira o nível da conta e a tabela oficial. Staking, saldo e volume podem afetar o nível. Uma taxa única não representa todas as contas ou produtos.",
-      "ko": "계정 등급과 공식 수수료표를 확인하세요. 스테이킹, 보유 자산, 거래량이 등급에 영향을 줄 수 있습니다. 하나의 요율로 모든 계정과 상품을 설명할 수는 없습니다.",
-      "ja": "口座の手数料ランクと公式表を確認してください。ステーキング、保有資産、取引高がランクに影響する場合があります。単一の料率は全口座・全商品には当てはまりません。",
-      "ru": "Сверяйте уровень аккаунта с официальными тарифами. На него могут влиять стейкинг, активы и оборот. Единая ставка не описывает все аккаунты и продукты.",
-      "fa": "سطح کارمزد حساب و جدول رسمی را بررسی کنید. استیکینگ، دارایی و حجم معامله ممکن است بر سطح شما اثر بگذارند. یک نرخ واحد نماینده همه حساب‌ها و محصولات نیست."
+      "en": "Tier 1 on the public fee schedule checked 2026-10-22: spot 0.08% maker / 0.10% taker, futures 0.02% maker / 0.05% taker. Check the current fee tier in your account and the official schedule. Staking, holdings and trading volume may affect your tier. A single public rate would not represent every account or product.",
+      "zh-cn": "2026-10-22 核对的公开费率表 Tier 1：现货 Maker 0.08%、Taker 0.10%，合约 Maker 0.02%、Taker 0.05%。请核对账户当前费率等级和官方费率表。质押、持仓及成交量可能影响等级，单一公开费率无法代表所有账户和产品。",
+      "fr": "Niveau 1 du barème public vérifié le 2026-10-22 : spot 0,08 % maker / 0,10 % taker, contrats 0,02 % maker / 0,05 % taker. Vérifiez votre niveau de frais et le barème officiel. Staking, avoirs et volume peuvent modifier le niveau. Un taux unique ne représente pas tous les comptes ou produits.",
+      "pt": "Nível 1 da tabela pública verificada em 2026-10-22: spot 0,08% maker / 0,10% taker, futuros 0,02% maker / 0,05% taker. Confira o nível da conta e a tabela oficial. Staking, saldo e volume podem afetar o nível. Uma taxa única não representa todas as contas ou produtos.",
+      "ko": "2026-10-22에 확인한 공개 수수료표 Tier 1: 현물 메이커 0.08% / 테이커 0.10%, 선물 메이커 0.02% / 테이커 0.05%. 계정 등급과 공식 수수료표를 확인하세요. 스테이킹, 보유 자산, 거래량이 등급에 영향을 줄 수 있습니다. 하나의 요율로 모든 계정과 상품을 설명할 수는 없습니다.",
+      "ja": "2026-10-22確認の公開手数料表Tier 1：現物メイカー0.08%／テイカー0.10%、先物メイカー0.02%／テイカー0.05%。口座の手数料ランクと公式表を確認してください。ステーキング、保有資産、取引高がランクに影響する場合があります。単一の料率は全口座・全商品には当てはまりません。",
+      "ru": "Уровень 1 публичного тарифа, проверенный 2026-10-22: спот 0,08% maker / 0,10% taker, фьючерсы 0,02% maker / 0,05% taker. Сверяйте уровень аккаунта с официальными тарифами. На него могут влиять стейкинг, активы и оборот. Единая ставка не описывает все аккаунты и продукты.",
+      "fa": "سطح ۱ جدول عمومی بررسی‌شده در ۲۰۲۶-۱۰-۲۲: اسپات میکر ۰٫۰۸٪ / تیکر ۰٫۱۰٪، آتی میکر ۰٫۰۲٪ / تیکر ۰٫۰۵٪. سطح کارمزد حساب و جدول رسمی را بررسی کنید. استیکینگ، دارایی و حجم معامله ممکن است بر سطح شما اثر بگذارند. یک نرخ واحد نماینده همه حساب‌ها و محصولات نیست."
     },
     "offer": {
       "en": "Mike Xu offers a 20% share of eligible trading fees through this Backpack affiliate link. This operator-provided rate has not been independently verified in the account settings: confirm the rate displayed before trading. Equity Perps are excluded. This is fee sharing, not a deposit bonus or guaranteed return.",
@@ -85,14 +85,14 @@
       "fa": "جدول رسمی اسپات کاربر عادی برای میکر و تیکر ۰٫۱۰۰٪ است؛ با تخفیف ۲۵٪ BNB هر دو ۰٫۰۷۵٪ می‌شوند. تنظیم مربوط و موجودی کافی BNB لازم است. کمپین جفت‌ارز، VIP و آتی نرخ جدا دارند. تخفیف BNB بازگشت کارمزد معرفی نیست."
     },
     "offer": {
-      "en": "Mike Xu supplied referral code BNBBABA and alternative JH5SZIO4. These links open bsmkweb.cc, an external redirect domain. Its official ownership and final Binance destination have not been verified. No “super rebate” percentage is confirmed. Verify the destination and account terms independently before entering credentials or depositing; the official referral page is linked below.",
-      "zh-cn": "Mike Xu 提供推荐码 BNBBABA，备用码 JH5SZIO4。链接打开第三方跳转域名 bsmkweb.cc，尚未核实其官方归属及最终 Binance 去向，也未确认“超级返佣”的比例。输入账号信息或入金前，请独立核实域名与账户条款；下方附官方推荐计划页面。",
-      "fr": "Mike Xu fournit BNBBABA et le code alternatif JH5SZIO4. Les liens ouvrent le domaine de redirection externe bsmkweb.cc, dont l’appartenance officielle et la destination finale Binance ne sont pas vérifiées. Aucun taux de « super remise » n’est confirmé. Vérifiez domaine et conditions avant connexion ou dépôt ; la page officielle figure ci-dessous.",
-      "pt": "Mike Xu forneceu BNBBABA e a alternativa JH5SZIO4. Os links abrem bsmkweb.cc, domínio externo de redirecionamento cuja propriedade oficial e destino final Binance não foram verificados. Nenhum percentual de “super rebate” foi confirmado. Verifique destino e termos antes de inserir credenciais ou depositar; veja a página oficial abaixo.",
-      "ko": "Mike Xu가 제공한 코드는 BNBBABA, 대체 코드는 JH5SZIO4입니다. 링크는 외부 리디렉션 도메인 bsmkweb.cc를 엽니다. 공식 소유 여부와 최종 Binance 목적지는 검증되지 않았으며 “슈퍼 리베이트” 비율도 확인되지 않았습니다. 로그인 정보 입력이나 입금 전에 목적지와 조건을 확인하세요. 공식 추천 페이지는 아래에 있습니다.",
-      "ja": "Mike Xu提供のコードはBNBBABA、代替はJH5SZIO4です。リンクは外部転送ドメインbsmkweb.ccを開きます。公式所有と最終的なBinanceへの転送先は未確認で、「スーパー還元」の比率も未確認です。認証情報の入力や入金前に転送先と条件を確認してください。公式紹介ページは下に掲載しています。",
-      "ru": "Mike Xu предоставил код BNBBABA и альтернативу JH5SZIO4. Ссылки открывают внешний домен перенаправления bsmkweb.cc. Его официальная принадлежность и конечный адрес Binance не подтверждены. Процент «супер-возврата» также не подтверждён. Проверьте адрес и условия до ввода данных или депозита; официальная страница приведена ниже.",
-      "fa": "Mike Xu کد BNBBABA و جایگزین JH5SZIO4 را ارائه کرده است. پیوندها دامنه واسط خارجی bsmkweb.cc را باز می‌کنند. مالکیت رسمی و مقصد نهایی Binance تأیید نشده و درصد «بازگشت ویژه» نیز مشخص نیست. پیش از وارد کردن اطلاعات ورود یا واریز، مقصد و شرایط را مستقلاً بررسی کنید؛ صفحه رسمی در پایین آمده است."
+      "en": "Mike Xu’s invite code is BNBBABA. This link opens Binance’s registration page. No fixed rebate percentage is confirmed. Check the offer and account terms before depositing. Binance’s official referral program page is linked below.",
+      "zh-cn": "Mike Xu 的邀请码是 BNBBABA。此链接打开 Binance 的注册页面。尚未确认固定返佣比例。入金前请核对活动与账户条款。下方附有 Binance 官方推荐计划页面。",
+      "fr": "Le code d’invitation de Mike Xu est BNBBABA. Ce lien ouvre la page d’inscription de Binance. Aucun pourcentage de remise fixe n’est confirmé. Vérifiez l’offre affichée avant un dépôt. La page officielle du programme de parrainage Binance est liée ci-dessous.",
+      "pt": "O código de convite de Mike Xu é BNBBABA. Este link abre a página de cadastro da Binance. Nenhum percentual fixo de reembolso foi confirmado. Confira a oferta exibida antes de depositar. A página oficial do programa de indicação da Binance está ligada abaixo.",
+      "ko": "Mike Xu의 초대 코드는 BNBBABA입니다. 이 링크는 Binance 가입 페이지를 엽니다. 고정 리베이트 비율은 확인되지 않았습니다. 입금 전에 계정에 표시된 조건을 확인하세요. Binance 공식 추천 프로그램 페이지는 아래에 있습니다.",
+      "ja": "Mike Xuの招待コードはBNBBABAです。このリンクはBinanceの登録ページを開きます。固定の還元率は未確認です。入金前に口座へ表示される条件を確認してください。Binance公式紹介プログラムのページは下に掲載しています。",
+      "ru": "Код приглашения Mike Xu — BNBBABA. Эта ссылка открывает страницу регистрации Binance. Фиксированный процент возврата не подтверждён. Проверьте предложение аккаунта до депозита. Официальная страница реферальной программы Binance приведена ниже.",
+      "fa": "کد دعوت Mike Xu برابر BNBBABA است. این پیوند صفحه ثبت‌نام Binance را باز می‌کند. درصد ثابت بازگشت تأیید نشده است. پیش از واریز، پیشنهاد نمایش‌داده‌شده در حساب را بررسی کنید. صفحه رسمی برنامه معرفی Binance در پایین آمده است."
     }
   }
 }

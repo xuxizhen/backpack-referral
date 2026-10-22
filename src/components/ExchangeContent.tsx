@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { exchanges, exchangeIds, type ExchangeId } from "@/lib/exchanges";
 import { t, type Lang } from "@/lib/i18n";
+import type { Placement } from "@/lib/invites";
 import ExchangeLink from "./ExchangeLink";
 export function ExchangeCards({ lang }: { lang: Lang }) {
   return (
@@ -82,7 +83,15 @@ export function FeeMatrix({
     </div>
   );
 }
-export function Offer({ lang, id }: { lang: Lang; id: ExchangeId }) {
+export function Offer({
+  lang,
+  id,
+  placement,
+}: {
+  lang: Lang;
+  id: ExchangeId;
+  placement: Placement;
+}) {
   return (
     <section className="offer-detail">
       <span className="section-kicker">{exchanges[id].name}</span>
@@ -90,11 +99,10 @@ export function Offer({ lang, id }: { lang: Lang; id: ExchangeId }) {
       <p>{exchanges[id].offer[lang]}</p>
       <p>{t(lang, "eligibility")}</p>
       <div className="offer-actions">
-        <ExchangeLink lang={lang} id={id} />
-        {id === "binance" && <ExchangeLink lang={lang} id={id} alternate />}
+        <ExchangeLink lang={lang} id={id} placement={placement} />
       </div>
       <small dir="ltr" className="destination">
-        {exchanges[id].url}
+        <bdi>{exchanges[id].url}</bdi>
       </small>
     </section>
   );
