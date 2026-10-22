@@ -5,9 +5,8 @@ const vm = require("node:vm");
 const ts = require("typescript");
 const messages = require("../src/content/messages.json");
 const exchanges = require("../src/content/exchanges.json");
-const updates = require("../src/content/updates.json");
 const languages = ["en", "zh-cn", "fr", "pt", "ko", "ja", "ru", "fa"];
-test("all eight locales have complete UI, exchange and news translations", () => {
+test("all eight locales have complete UI and exchange translations", () => {
   assert.deepEqual(Object.keys(messages), languages);
   const keys = Object.keys(messages.en).sort();
   for (const lang of languages) {
@@ -20,10 +19,6 @@ test("all eight locales have complete UI, exchange and news translations", () =>
     for (const e of Object.values(exchanges))
       for (const field of ["products", "costs", "offer"])
         assert.ok(e[field][lang]?.trim());
-    if (!["en", "zh-cn"].includes(lang))
-      for (const item of updates)
-        for (const field of ["title", "summary", "details"])
-          assert.ok(item.translations[lang][field]?.trim());
   }
 });
 test("effective fee estimate does not invent missing rates and respects zero", () => {
@@ -48,9 +43,18 @@ test("effective fee estimate does not invent missing rates and respects zero", (
   ])
     assert.equal(estimateFee(...values), null);
 });
-test("published news retains exchange identity and source verification dates", () => {
-  for (const item of updates) {
+test("published news retains an exchange and a calendar date", () => {
+  const code = ts.transpileModule(
+    fs.readFileSync("src/data/updates.ts", "utf8"),
+    { compilerOptions: { module: ts.ModuleKind.CommonJS } },
+  ).outputText;
+  const loadedModule = { exports: {} };
+  vm.runInNewContext(code, {
+    module: loadedModule,
+    exports: loadedModule.exports,
+  });
+  for (const item of loadedModule.exports.updateItems) {
     assert.ok(["backpack", "okx", "binance"].includes(item.exchange));
-    assert.ok(!Number.isNaN(Date.parse(item.checkedAt)));
+    assert.match(item.date, /^\d{4}-\d{2}-\d{2}$/);
   }
 });

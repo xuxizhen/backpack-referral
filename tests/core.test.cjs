@@ -2,55 +2,61 @@ const { test } = require("node:test");
 const assert = require("node:assert/strict");
 const ts = require("typescript");
 const fs = require("node:fs");
+const path = require("node:path");
 const vm = require("node:vm");
+
 function load(file) {
   const code = ts.transpileModule(fs.readFileSync(file, "utf8"), {
-    compilerOptions: { module: ts.ModuleKind.CommonJS, esModuleInterop: true },
+    compilerOptions: {
+      module: ts.ModuleKind.CommonJS,
+      esModuleInterop: true,
+      target: ts.ScriptTarget.ES2022,
+    },
   }).outputText;
   const loadedModule = { exports: {} };
-  vm.runInNewContext(code, {
-    module: loadedModule,
-    exports: loadedModule.exports,
-    require: (path) =>
-      require(
-        path === "@/content/updates.json"
-          ? "../src/content/updates.json"
-          : path,
-      ),
-    Date,
-    Number,
-  });
+  const dirname = path.dirname(path.resolve(file));
+  vm.runInNewContext(
+    code,
+    {
+      module: loadedModule,
+      exports: loadedModule.exports,
+      require: (request) => {
+        if (request.startsWith("@/")) {
+          return load(path.join("src", request.slice(2) + ".ts"));
+        }
+        if (request.startsWith(".")) {
+          return load(path.resolve(dirname, request + ".ts"));
+        }
+        return require(request);
+      },
+      Date,
+      Number,
+    },
+    { filename: file },
+  );
   return loadedModule.exports;
 }
-const { status, featuredUpdates } = load("src/lib/updates.ts");
-test("campaign windows have deterministic UTC boundaries", () => {
-  const campaign = {
-    kind: "campaign",
-    startsAt: "2026-10-14T00:00:00Z",
-    endsAt: "2026-10-20T23:59:00Z",
-  };
-  assert.equal(
-    status(campaign, Date.parse("2026-10-13T23:59:59Z")),
-    "upcoming",
-  );
-  assert.equal(status(campaign, Date.parse(campaign.startsAt)), "active");
-  assert.equal(status(campaign, Date.parse(campaign.endsAt)), "ended");
-  assert.equal(status({ kind: "campaign" }), "unconfirmed");
-});
-test("expired campaigns disappear from featured slots", () => {
-  assert.equal(
-    featuredUpdates(Date.parse("2026-10-21T00:00:00Z")).some(
-      (x) => x.id === "unpack-real-stocks-week-3",
-    ),
-    false,
-  );
-});
-test("news entries have bilingual copy and allowlisted original sources", () => {
-  const data = require("../src/content/updates.json");
+
+const { updates, selectUpdates, newestUpdateDate, updateCopy } = load(
+  "src/lib/updates.ts",
+);
+const { updateItems, updateCategories, updateExchanges } = load(
+  "src/data/updates.ts",
+);
+
+test("news entries are unique, dated and sourced from allowlisted hosts", () => {
   const ids = new Set();
-  for (const item of data) {
-    assert.ok(!ids.has(item.id));
+  for (const item of updateItems) {
+    assert.ok(!ids.has(item.id), item.id);
     ids.add(item.id);
+    assert.match(item.date, /^\d{4}-\d{2}-\d{2}$/, item.id);
+    assert.ok(!Number.isNaN(Date.parse(item.date)), item.id);
+    assert.ok(updateExchanges.includes(item.exchange), item.id);
+    assert.ok(updateCategories.includes(item.category), item.id);
+    for (const field of ["title", "summary"]) {
+      assert.ok(item[field].en.trim(), item.id);
+      assert.ok(item[field].zh.trim(), item.id);
+    }
     assert.ok(
       [
         "learn.backpack.exchange",
@@ -60,14 +66,70 @@ test("news entries have bilingual copy and allowlisted original sources", () => 
         "x.com",
         "www.okx.com",
         "www.binance.com",
-      ].includes(new URL(item.source).hostname),
+      ].includes(new URL(item.sourceUrl).hostname),
+      item.sourceUrl,
     );
-    for (const field of ["title", "summary", "details"]) {
-      assert.equal(item[field].length, 2);
-      assert.ok(item[field].every(Boolean));
-    }
-    if (item.kind === "campaign") {
-      assert.ok(Date.parse(item.endsAt) > Date.parse(item.startsAt));
-    }
   }
+  assert.equal(
+    JSON.stringify(Array.from(updates, (item) => item.id)),
+    JSON.stringify([
+      "tokenized-uvxy",
+      "backpack-ai-search",
+      "stock-limit-orders",
+      "unpack-real-stocks-week-3",
+    ]),
+  );
+  assert.equal(String(newestUpdateDate()), "2026-10-17");
+});
+
+test("exchange filters keep newest-first order and ignore unknown values", () => {
+  const fixture = [
+    {
+      id: "old-okx",
+      exchange: "okx",
+      date: "2026-09-01",
+      category: "fees",
+      title: { en: "OKX fees", zh: "欧易费率" },
+      summary: { en: "OKX summary", zh: "欧易摘要" },
+      sourceUrl: "https://www.okx.com/fees",
+    },
+    {
+      id: "new-binance",
+      exchange: "binance",
+      date: "2026-10-02",
+      category: "product",
+      title: { en: "Binance product", zh: "币安产品" },
+      summary: { en: "Binance summary", zh: "币安摘要" },
+      sourceUrl: "https://www.binance.com/en/fee/trading",
+    },
+    {
+      id: "mid-backpack",
+      exchange: "backpack",
+      date: "2026-10-01",
+      category: "listing",
+      title: { en: "Backpack listing", zh: "背包上新" },
+      summary: { en: "Backpack summary", zh: "背包摘要" },
+      sourceUrl: "https://learn.backpack.exchange/blog/example",
+    },
+  ];
+  assert.equal(
+    JSON.stringify(Array.from(selectUpdates(fixture, "all"), (item) => item.id)),
+    JSON.stringify(["new-binance", "mid-backpack", "old-okx"]),
+  );
+  assert.equal(
+    JSON.stringify(
+      Array.from(selectUpdates(fixture, "binance"), (item) => item.exchange),
+    ),
+    JSON.stringify(["binance"]),
+  );
+  assert.equal(
+    JSON.stringify(Array.from(selectUpdates(fixture, "nope"), (item) => item.id)),
+    JSON.stringify(["new-binance", "mid-backpack", "old-okx"]),
+  );
+  assert.equal(selectUpdates(updates, "binance").length, 0);
+  assert.equal(selectUpdates(updates, "okx").length, 0);
+  assert.equal(selectUpdates(updates, "backpack").length, updates.length);
+  assert.equal(String(updateCopy(fixture[1], "zh-cn").title), "币安产品");
+  assert.equal(String(updateCopy(fixture[1], "fr").title), "Binance product");
+  assert.equal(String(updateCopy(fixture[1], "ja").summary), "Binance summary");
 });

@@ -101,11 +101,18 @@ test("robots disallow /go and the sitemap omits those redirects", () => {
   const robots = load("src/app/robots.ts").default();
   const rules = Array.isArray(robots.rules) ? robots.rules : [robots.rules];
   assert.ok(rules.some((rule) => rule.disallow.includes("/go")));
-  const urls = load("src/app/sitemap.ts")
-    .default()
-    .map((entry) => entry.url);
+  const entries = load("src/app/sitemap.ts").default();
+  const urls = entries.map((entry) => entry.url);
   assert.ok(urls.length > 0);
   assert.ok(urls.every((url) => !url.includes("/go")));
+  const news = entries.filter((entry) => entry.url.endsWith("/updates"));
+  assert.equal(news.length, 8);
+  assert.ok(news.every((entry) => entry.lastModified === "2026-10-17"));
+  assert.ok(
+    entries
+      .filter((entry) => !entry.url.endsWith("/updates"))
+      .every((entry) => entry.lastModified === "2026-10-22"),
+  );
 });
 
 test("english and simplified chinese homepages show the three invite CTAs", async () => {
@@ -200,4 +207,128 @@ test("referral clicks are not sent before consent or without gtag", () => {
   assert.doesNotThrow(() => trackReferral("okx", "referral_page", "en"));
   delete global.localStorage;
   delete global.window;
+});
+
+test("compare pages expose /go register links for the exchanges on the page", async () => {
+  const index = load("src/app/[lang]/compare/page.tsx").default;
+  const indexHtml = renderToStaticMarkup(
+    await index({ params: Promise.resolve({ lang: "zh-cn" }) }),
+  );
+  for (const id of ["backpack", "binance", "okx"]) {
+    const links = indexHtml.match(new RegExp(`href="/go/${id}"`, "g")) || [];
+    assert.ok(links.length >= 2, `compare index ${id}`);
+    assert.match(indexHtml, /data-placement="compare_page"/);
+    assert.match(indexHtml, /rel="sponsored nofollow noopener"/);
+  }
+  const pairPage = load("src/app/[lang]/compare/[pair]/page.tsx").default;
+  const cases = {
+    "backpack-vs-binance": ["backpack", "binance"],
+    "backpack-vs-okx": ["backpack", "okx"],
+    "okx-vs-binance": ["okx", "binance"],
+  };
+  for (const [pair, ids] of Object.entries(cases)) {
+    const html = renderToStaticMarkup(
+      await pairPage({ params: Promise.resolve({ lang: "en", pair }) }),
+    );
+    for (const id of ids) {
+      const links = html.match(new RegExp(`href="/go/${id}"`, "g")) || [];
+      assert.equal(links.length, 2, `${pair} ${id}`);
+    }
+    const absent = ["backpack", "binance", "okx"].filter((id) => !ids.includes(id));
+    for (const id of absent) assert.equal(html.includes(`/go/${id}`), false, pair);
+    assert.equal((html.match(/data-placement="compare_detail"/g) || []).length, 4);
+  }
+});
+
+test("updates renders every exchange once items exist and filters on the server", async () => {
+  const { selectUpdates } = load("src/lib/updates.ts");
+  const Updates = load("src/components/Updates.tsx").default;
+  const fixture = [
+    {
+      id: "binance-fees",
+      exchange: "binance",
+      date: "2026-10-01",
+      category: "fees",
+      title: { en: "Binance fee note", zh: "币安费率说明" },
+      summary: { en: "Binance summary", zh: "币安摘要" },
+      sourceUrl: "https://www.binance.com/en/fee/trading",
+    },
+    {
+      id: "okx-product",
+      exchange: "okx",
+      date: "2026-10-02",
+      category: "product",
+      title: { en: "OKX product note", zh: "欧易产品说明" },
+      summary: { en: "OKX summary", zh: "欧易摘要" },
+      sourceUrl: "https://www.okx.com/fees",
+    },
+    {
+      id: "backpack-listing",
+      exchange: "backpack",
+      date: "2026-10-03",
+      category: "listing",
+      title: { en: "Backpack listing note", zh: "背包上新说明" },
+      summary: { en: "Backpack summary", zh: "背包摘要" },
+      sourceUrl: "https://learn.backpack.exchange/blog/example",
+    },
+  ];
+  const allHtml = renderToStaticMarkup(
+    Updates({
+      lang: "zh-cn",
+      exchange: "all",
+      items: selectUpdates(fixture, "all"),
+    }),
+  );
+  assert.match(allHtml, /背包上新说明/);
+  assert.match(allHtml, /欧易产品说明/);
+  assert.match(allHtml, /币安费率说明/);
+  assert.match(allHtml, /2026-10-03/);
+  assert.ok(allHtml.indexOf("2026-10-03") < allHtml.indexOf("2026-10-01"));
+  assert.match(allHtml, /rel="nofollow noopener"/);
+  assert.match(allHtml, /target="_blank"/);
+  assert.match(allHtml, /href="\/zh-cn\/updates\?exchange=binance"/);
+  const binanceHtml = renderToStaticMarkup(
+    Updates({
+      lang: "en",
+      exchange: "binance",
+      items: selectUpdates(fixture, "binance"),
+    }),
+  );
+  assert.match(binanceHtml, /Binance fee note/);
+  assert.doesNotMatch(binanceHtml, /OKX product note/);
+  assert.doesNotMatch(binanceHtml, /Backpack listing note/);
+  assert.match(binanceHtml, /aria-current="page"/);
+  const french = renderToStaticMarkup(
+    Updates({
+      lang: "fr",
+      exchange: "all",
+      items: selectUpdates(fixture, "all"),
+    }),
+  );
+  assert.match(french, /Binance fee note/);
+  assert.doesNotMatch(french, /币安费率说明/);
+
+  const page = load("src/app/[lang]/updates/page.tsx").default;
+  const live = renderToStaticMarkup(
+    await page({
+      params: Promise.resolve({ lang: "zh-cn" }),
+      searchParams: Promise.resolve({}),
+    }),
+  );
+  assert.match(live, /Unpack Real Stocks 美股盲盒/);
+  assert.match(live, /AI Search：用自然语言发现市场/);
+  assert.match(live, /href="\/go\/backpack"/);
+  assert.match(live, /data-placement="updates_page"/);
+  assert.match(live, /"@type":"ItemList"/);
+  assert.match(live, /"@type":"NewsArticle"/);
+  const filtered = renderToStaticMarkup(
+    await page({
+      params: Promise.resolve({ lang: "en" }),
+      searchParams: Promise.resolve({ exchange: "okx" }),
+    }),
+  );
+  assert.match(filtered, /No updates for this exchange yet/);
+  assert.doesNotMatch(filtered, /Unpack Real Stocks/);
+  assert.doesNotMatch(filtered, /ItemList/);
+  assert.match(filtered, /href="\/go\/okx"/);
 });

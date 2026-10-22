@@ -13,11 +13,11 @@
 
 ## 当前内容格式
 
-`src/content/updates.json`：英文/中文 title、summary、details；id；kind（campaign/product/listing）；publishedAt；checkedAt；source。活动必须包含 ISO UTC startsAt 和 endsAt。没有可靠时间的活动不进入首页当前推荐。
+`src/data/updates.ts`：每周在文件顶部追加一条。字段为 `id`、`exchange`（backpack | binance | okx）、`date`（YYYY-MM-DD）、`category`（listing | fees | product | promotion | regulatory | other）、`title` / `summary` 的 `{ en, zh }`、`sourceUrl`。其他语言回退英文。页面按日期新到旧排序，并用 `?exchange=` 筛选。`/updates` 的 sitemap `lastmod` 取最新一条的日期。没有核实来源就不要补条目。
 
 日期来源不一致时注明差异，不假定所有官方页面同步。2026-10-18 核对发现旧证券教程与当前官网对抵押品/转出支持存在差异，本站不把旧描述写成当前事实。
 
-首页优先显示处于活动窗口的公告，其次最近产品消息。已结束的活动保留在动态页并标记结束。首页/动态页 ISR 300 秒，访问时更新；过期状态最多存在缓存窗口。取消活动立即修改 endsAt 或移出数据，部署清除缓存。
+动态页按发布日期从新到旧列出全部条目，筛选走 `?exchange=backpack|binance|okx`，不另建索引 URL。动态页 ISR 300 秒。撤下一条新闻就从数据文件删除并重新部署。
 
 ## 编辑标准
 
@@ -47,7 +47,7 @@
 
 - `src/content/exchanges.json`：三家介绍、费用与推荐权益，按 en/zh-cn/fr/pt/ko/ja/ru/fa 维护。
 - `src/content/messages.json`：八语 UI 和编辑说明；波斯语页面必须 `lang=fa dir=rtl`，网址与代码使用 bdi 或 LTR。
-- `src/content/updates.json`：历史 en/zh-cn 数组保留，其他六语置于 translations。新增内容必须同时提供八语。exchange 标明所属交易所，组件显示不可写死。
+- `src/data/updates.ts`：三家交易所共用一份新闻数据。标题和摘要提供英文与简体中文，其余语言显示英文。`exchange` 只能是 backpack、binance 或 okx。
 - `src/lib/invites.ts`：邀请码和注册链接只在这里修改。站内按钮走 `/go/backpack`、`/go/binance`、`/go/okx`。
 - `src/lib/exchanges.ts`：交易所标识和官方来源。OKX 使用 X45LZTTE，用户给的 Ef6h7R 页面仅作研究参考，不作本站 CTA。Binance 只保留 BNBBABA。
 - 费用计算器不预填平台费率，用户输入已确认折扣后的实际有效费率。不得把 Backpack 20% 套到其他交易所。

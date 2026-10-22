@@ -115,6 +115,36 @@ const slugs = [
           path,
         );
       }
+      if (slug === "compare") {
+        for (const id of ["backpack", "binance", "okx"]) {
+          assert.ok(html.includes(`href="/go/${id}"`), `${path} /go/${id}`);
+        }
+        assert.ok(html.includes('data-placement="compare_page"'), path);
+      }
+      if (slug.startsWith("compare/")) {
+        assert.ok(html.includes('data-placement="compare_detail"'), path);
+        const pairIds = {
+          "compare/backpack-vs-okx": ["backpack", "okx"],
+          "compare/backpack-vs-binance": ["backpack", "binance"],
+          "compare/okx-vs-binance": ["okx", "binance"],
+        }[slug];
+        for (const id of pairIds) {
+          assert.ok(html.includes(`href="/go/${id}"`), `${path} /go/${id}`);
+        }
+      }
+      if (slug === "updates") {
+        assert.ok(
+          html.includes(
+            lang === "zh-cn"
+              ? "Unpack Real Stocks 美股盲盒"
+              : "Unpack Real Stocks",
+          ),
+          path,
+        );
+        assert.ok(html.includes('rel="nofollow noopener"'), path);
+        assert.ok(html.includes(`/${lang}/updates?exchange=binance`), path);
+        assert.ok(html.includes('data-placement="updates_page"'), path);
+      }
       if (slug === "" && (lang === "en" || lang === "zh-cn")) {
         for (const id of ["backpack", "binance", "okx"]) {
           assert.ok(html.includes(`href="/go/${id}"`), `${path} /go/${id}`);
@@ -155,6 +185,27 @@ const slugs = [
   assert.ok(!robots.includes("backpackref.com"), "robots host");
   assert.match(robots, /Disallow:\s*\/go\/?/);
   assert.ok(!sitemap.includes("/go/"), "sitemap excludes /go");
+  assert.match(
+    sitemap,
+    /<loc>https:\/\/www\.feelens\.net\/zh-cn\/updates<\/loc>(?:(?!<loc>)[\s\S])*?<lastmod>2026-10-17<\/lastmod>/,
+  );
+  const filteredUpdates = await fetch(
+    base + "/en/updates?exchange=binance",
+    { redirect: "manual" },
+  );
+  assert.equal(filteredUpdates.status, 200);
+  const filteredHtml = await filteredUpdates.text();
+  assert.ok(
+    filteredHtml.includes(
+      'rel="canonical" href="https://www.feelens.net/en/updates"',
+    ),
+  );
+  assert.ok(filteredHtml.includes("No updates for this exchange yet."));
+  assert.ok(!filteredHtml.includes("Unpack Real Stocks"));
+  const backpackUpdates = await fetch(base + "/zh-cn/updates?exchange=backpack");
+  const backpackHtml = await backpackUpdates.text();
+  assert.ok(backpackHtml.includes("AI Search：用自然语言发现市场"));
+  assert.ok(backpackHtml.includes('aria-current="page"'));
   for (const [id, location] of [
     ["backpack", "https://backpack.exchange/join/meme"],
     ["binance", "https://www.bsmkweb.cc/register?ref=BNBBABA"],

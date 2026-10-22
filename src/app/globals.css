@@ -1227,6 +1227,84 @@ html[lang="zh-Hans"] .article-header h1 {
 .updates-full {
   max-width: 1000px;
 }
+.updates-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 28px;
+  align-items: start;
+}
+.update-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 8px;
+}
+.update-filters a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid #dbe3ef;
+  border-radius: 999px;
+  background: #fff;
+  color: #172c48;
+  font-size: 14px;
+  font-weight: 650;
+}
+.update-filters a[aria-current="page"] {
+  background: #172c48;
+  border-color: #172c48;
+  color: #fff;
+}
+.category-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border: 1px solid #d6e0ed;
+  border-radius: 5px;
+  background: #eef2fa;
+  color: #172c48;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+.updates-empty {
+  margin: 24px 0;
+  color: #172c48;
+  font-size: 15px;
+}
+.update-item a {
+  color: #244bca;
+  font-size: 14px;
+  font-weight: 650;
+}
+.updates-invites {
+  border: 1px solid #dbe3ef;
+  border-radius: 12px;
+  background: #fff;
+  padding: 16px;
+}
+.updates-invites h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+.updates-invites ul {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.updates-invites li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.updates-invites .button {
+  padding: 8px 12px;
+  font-size: 13px;
+}
 @media (max-width: 760px) {
   .updates-section {
     padding-top: 45px;
@@ -1241,6 +1319,9 @@ html[lang="zh-Hans"] .article-header h1 {
   }
   .update-item h3 {
     font-size: 21px;
+  }
+  .updates-layout {
+    grid-template-columns: 1fr;
   }
   .nav nav {
     gap: 10px;
@@ -1566,6 +1647,14 @@ html[lang="zh-Hans"] .article-header h1 {
   margin-top: 0;
   line-height: 1.8;
 }
+.fee-matrix .matrix-register {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.fee-matrix .matrix-register .button {
+  padding: 10px 14px;
+}
 .profile-grid,
 .comparison-profiles {
   display: grid;
@@ -1777,6 +1866,10 @@ html[lang="zh-Hans"] .article-header h1 {
   gap: 16px;
   margin-top: 28px;
 }
+.invite-grid-pair {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 8px;
+}
 .invite-card {
   background: #fff;
   border: 1px solid #dbe3ef;
@@ -1902,7 +1995,8 @@ html[lang="zh-Hans"] .article-header h1 {
   .invite-hero h1 {
     font-size: 34px;
   }
-  .invite-grid {
+  .invite-grid,
+  .invite-grid-pair {
     grid-template-columns: 1fr;
   }
   .invite-actions .button {

@@ -5,6 +5,7 @@ import { t } from "@/lib/i18n";
 import { exchangeIds, exchanges, pairs } from "@/lib/exchanges";
 import { FeeMatrix, Sources } from "@/components/ExchangeContent";
 import FeeComparison from "@/components/FeeComparison";
+import { InviteCards } from "@/components/InviteCard";
 export async function generateMetadata({
   params,
 }: {
@@ -29,6 +30,7 @@ export default async function Page({
         <h1>{t(lang, "compare")}</h1>
         <p className="lede">{t(lang, "method")}</p>
       </header>
+      <InviteCards lang={lang} placement="compare_page" />
       <div className="pair-links">
         {Object.entries(pairs).map(([slug, ids]) => (
           <Link key={slug} href={`/${lang}/compare/${slug}`}>
@@ -36,7 +38,7 @@ export default async function Page({
           </Link>
         ))}
       </div>
-      <FeeMatrix lang={lang} ids={exchangeIds} />
+      <FeeMatrix lang={lang} ids={exchangeIds} placement="compare_page" />
       <p>{t(lang, "matrixNote")}</p>
       <FeeComparison lang={lang} />
       <Sources lang={lang} ids={exchangeIds} />
