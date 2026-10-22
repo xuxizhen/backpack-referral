@@ -133,24 +133,46 @@ test("english and simplified chinese homepages show the three invite CTAs", asyn
     for (const code of ["meme", "BNBBABA", "X45LZTTE"])
       assert.match(html, new RegExp(`>${code}<`), `${lang} ${code}`);
     assert.match(html, /affiliate-disclosure/);
+    assert.match(html, /0\.0200%/);
+    assert.match(html, /0\.0500%/);
+    assert.match(html, /https:\/\/www\.binance\.com\/en\/fee\/futureFee/);
+    assert.equal((html.match(/2026-10-22/g) || []).length >= 3, true, lang);
+    assert.doesNotMatch(html, /notListed|已核来源未列出/);
   }
 });
 
-test("published fee rows reuse checked Binance and OKX rates and add Backpack Tier 1", () => {
+test("published fee rows use the 2026-10-22 base tier for spot and futures", () => {
   const { feeSnapshots } = load("src/lib/fees.ts");
   const exchanges = require("../src/content/exchanges.json");
+  const messages = require("../src/content/messages.json");
   assert.deepEqual(feeSnapshots.backpack.spot, { maker: "0.08%", taker: "0.10%" });
   assert.deepEqual(feeSnapshots.backpack.futures, { maker: "0.02%", taker: "0.05%" });
   assert.equal(feeSnapshots.backpack.checked, "2026-10-22");
   assert.equal(feeSnapshots.backpack.tier, "Tier 1");
+  assert.equal(feeSnapshots.backpack.source, feeSnapshots.backpack.futuresSource);
   assert.match(exchanges.okx.costs.en, /0\.0800%/);
-  assert.match(exchanges.okx.costs.en, /0\.1000%/);
+  assert.match(exchanges.okx.costs.en, /0\.0200%/);
+  assert.match(exchanges.okx.costs["zh-cn"], /0\.0200%/);
   assert.deepEqual(feeSnapshots.okx.spot, { maker: "0.0800%", taker: "0.1000%" });
-  assert.equal(feeSnapshots.okx.futures, null);
+  assert.deepEqual(feeSnapshots.okx.futures, { maker: "0.0200%", taker: "0.0500%" });
+  assert.equal(feeSnapshots.okx.checked, "2026-10-22");
+  assert.equal(feeSnapshots.okx.source, "https://www.okx.com/fees");
   assert.match(exchanges.binance.costs.en, /0\.100%/);
+  assert.match(exchanges.binance.costs.en, /0\.0200%/);
   assert.match(exchanges.binance.costs.en, /0\.075%/);
+  assert.match(exchanges.binance.costs["zh-cn"], /0\.0200%/);
   assert.deepEqual(feeSnapshots.binance.spot, { maker: "0.100%", taker: "0.100%" });
-  assert.equal(feeSnapshots.binance.futures, null);
+  assert.deepEqual(feeSnapshots.binance.futures, { maker: "0.0200%", taker: "0.0500%" });
+  assert.equal(feeSnapshots.binance.checked, "2026-10-22");
+  assert.equal(feeSnapshots.binance.source, "https://www.binance.com/en/fee/trading");
+  assert.equal(
+    feeSnapshots.binance.futuresSource,
+    "https://www.binance.com/en/fee/futureFee",
+  );
+  for (const lang of Object.keys(messages)) {
+    assert.match(messages[lang].feeTableNote, /BNB|토큰|トークン|токен|توکن|jeton|token/i);
+    assert.doesNotMatch(messages[lang].feeTableNote, /blank|空栏|空欄|branco|비어|Пустая|خالی/);
+  }
 });
 
 test("the retired Binance backup code is gone and invite URLs live in one file", () => {
@@ -220,6 +242,9 @@ test("compare pages expose /go register links for the exchanges on the page", as
     assert.match(indexHtml, /data-placement="compare_page"/);
     assert.match(indexHtml, /rel="sponsored nofollow noopener"/);
   }
+  assert.match(indexHtml, /0\.0200%/);
+  assert.match(indexHtml, /0\.0500%/);
+  assert.match(indexHtml, /https:\/\/www\.binance\.com\/en\/fee\/futureFee/);
   const pairPage = load("src/app/[lang]/compare/[pair]/page.tsx").default;
   const cases = {
     "backpack-vs-binance": ["backpack", "binance"],

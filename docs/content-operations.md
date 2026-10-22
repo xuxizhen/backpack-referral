@@ -67,6 +67,14 @@
 
 官方动态优先看 Backpack Learn/Support/Docs，OKX 官网公告与 Help，Binance Support 公告；不要将 Binance Square 用户帖子当官方来源。官方 X 账号必须从官网确认后才能作为来源。来源不可访问时记录限制，不补造内容。现有 Backpack 活动保留原核对日期，翻译更新不等于重新核验活动。
 
+### 2026-10-22 基础档费率
+
+首页费率表与各交易所费用说明改为已核对的基础档，不含 BNB、代币折扣或活动费率。
+
+- Backpack Tier 1，https://backpack.exchange/fees ：现货 0.08% / 0.10%，合约 0.02% / 0.05%。
+- Binance 普通用户：现货 0.100% / 0.100%（https://www.binance.com/en/fee/trading）；USDⓈ-M、USDT 本位合约 0.0200% / 0.0500%（https://www.binance.com/en/fee/futureFee）。BNB 25% 折扣后的 0.075% 仍写在说明里，不写入基础档数字。
+- OKX 普通用户，https://www.okx.com/fees ：现货 0.0800% / 0.1000%，合约 0.0200% / 0.0500%。
+
 ### 2026-10-21 补充核验
 
 内置浏览器成功读取 https://www.okx.com/zh-hans/fees 的可见费率表：现货／标准交易对／普通用户，Maker 0.0800%、Taker 0.1000%。八语费用说明已补充此公开快照，保留地区与登录账户费率优先说明。此记录替代此前“未提取到公开数值”的状态，不证明该值全球通用。官网页脚确认中文官方 X 为 https://x.com/okxchinese 。Backpack 官网本次浏览器重试 DNS 失败，保留其此前核对日期。
